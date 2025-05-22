@@ -13,10 +13,10 @@ namespace VitaPharm.Data
         [MaxLength(20)]
         public string BatchCode { get; set; } = null!;
 
-        [Column(TypeName = "date")]
+        [Column(TypeName = "datetime")]
         public DateTime MfgDate { get; set; }
 
-        [Column(TypeName = "date")]
+        [Column(TypeName = "datetime")]
         public DateTime ExpDate { get; set; }
 
         public int QtyAvailable { get; set; }
