@@ -6,6 +6,7 @@ namespace VitaPharm.Data
     class Batch
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BatchID { get; set; }
 
         [Required]

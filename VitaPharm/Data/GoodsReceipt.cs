@@ -6,6 +6,7 @@ namespace VitaPharm.Data
     class GoodsReceipt
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ReceiptID { get; set; }
 
         [Required]

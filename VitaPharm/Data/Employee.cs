@@ -6,6 +6,7 @@ namespace VitaPharm.Data
     class Employee
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EmployeeID { get; set; }
 
         [Required]

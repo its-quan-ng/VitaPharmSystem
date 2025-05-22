@@ -6,6 +6,7 @@ namespace VitaPharm.Data
     class Commodity
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CommodityID { get; set; }
 
         [Required]
