@@ -6,6 +6,7 @@ namespace VitaPharm.Data
     class InvoiceDetail
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int InvoiceDetailID { get; set; }
         public int Quantity { get; set; }
 

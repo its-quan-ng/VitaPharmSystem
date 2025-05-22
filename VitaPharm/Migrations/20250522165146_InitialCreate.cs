@@ -133,7 +133,7 @@ namespace VitaPharm.Migrations
                 {
                     InvoiceID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    InvoiceCode = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
+                    InvoiceCode = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     Note = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     TaxRate = table.Column<float>(type: "real", nullable: false),
@@ -163,7 +163,7 @@ namespace VitaPharm.Migrations
                 {
                     BatchID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    BatchCode = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    BatchCode = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     MfgDate = table.Column<DateTime>(type: "date", nullable: false),
                     ExpDate = table.Column<DateTime>(type: "date", nullable: false),
                     QtyAvailable = table.Column<int>(type: "int", nullable: false),

@@ -12,7 +12,7 @@ using VitaPharm.Data;
 namespace VitaPharm.Migrations
 {
     [DbContext(typeof(PharmacyDbContext))]
-    [Migration("20250522161108_InitialCreate")]
+    [Migration("20250522165146_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -73,8 +73,8 @@ namespace VitaPharm.Migrations
 
                     b.Property<string>("BatchCode")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("BatchStatus")
                         .IsRequired()
@@ -312,8 +312,8 @@ namespace VitaPharm.Migrations
 
                     b.Property<string>("InvoiceCode")
                         .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("Note")
                         .IsRequired()

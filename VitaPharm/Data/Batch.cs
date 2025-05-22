@@ -9,7 +9,7 @@ namespace VitaPharm.Data
         public int BatchID { get; set; }
 
         [Required]
-        [MaxLength(30)]
+        [MaxLength(20)]
         public string BatchCode { get; set; } = null!;
 
         [Column(TypeName = "date")]

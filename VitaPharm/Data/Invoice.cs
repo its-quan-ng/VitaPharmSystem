@@ -9,7 +9,7 @@ namespace VitaPharm.Data
         public int InvoiceID { get; set; }
 
         [Required]
-        [MaxLength(5)]
+        [MaxLength(15)]
         public string InvoiceCode { get; set; } = null!;
 
         [Column(TypeName = "datetime")]
