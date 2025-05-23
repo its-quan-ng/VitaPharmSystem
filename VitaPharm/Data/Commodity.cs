@@ -14,6 +14,10 @@ namespace VitaPharm.Data
         public string CommodityName { get; set; } = null!;
 
         [Required]
+        [MaxLength(200)]
+        public string Manufacturer { get; set; } = null!;
+
+        [Required]
         [MaxLength(30)]
         public string BaseUnit { get; set; } = null!;
 
