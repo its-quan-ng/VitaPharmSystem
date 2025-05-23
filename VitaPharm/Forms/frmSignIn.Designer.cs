@@ -127,9 +127,9 @@
             simpleButton1.Appearance.Options.UseFont = true;
             simpleButton1.AppearanceHovered.BackColor = Color.FromArgb(170, 188, 217);
             simpleButton1.AppearanceHovered.Options.UseBackColor = true;
-            simpleButton1.Location = new Point(49, 314);
+            simpleButton1.Location = new Point(90, 314);
             simpleButton1.Name = "simpleButton1";
-            simpleButton1.Size = new Size(440, 50);
+            simpleButton1.Size = new Size(363, 50);
             simpleButton1.TabIndex = 7;
             simpleButton1.Text = "Sign In";
             // 
