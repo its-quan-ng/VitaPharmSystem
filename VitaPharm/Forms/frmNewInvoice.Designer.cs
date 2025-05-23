@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            btnSave = new DevExpress.XtraEditors.PanelControl();
+            btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            labelControl9 = new DevExpress.XtraEditors.LabelControl();
             groupControl2 = new DevExpress.XtraEditors.GroupControl();
             gridControl = new DevExpress.XtraGrid.GridControl();
             gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -41,6 +50,7 @@
             seTaxRate = new DevExpress.XtraEditors.SpinEdit();
             meNote = new DevExpress.XtraEditors.MemoEdit();
             txtEmployee = new DevExpress.XtraEditors.TextEdit();
+            txtContact = new DevExpress.XtraEditors.TextEdit();
             txtAddress = new DevExpress.XtraEditors.TextEdit();
             cboCustomer = new DevExpress.XtraEditors.LookUpEdit();
             deCreatedDate = new DevExpress.XtraEditors.DateEdit();
@@ -49,6 +59,7 @@
             labelControl8 = new DevExpress.XtraEditors.LabelControl();
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
             labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            labelControl6 = new DevExpress.XtraEditors.LabelControl();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -56,20 +67,11 @@
             layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            btnSave = new DevExpress.XtraEditors.PanelControl();
             layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            txtContact = new DevExpress.XtraEditors.TextEdit();
-            labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            btnCancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)layoutControl1).BeginInit();
             layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnSave).BeginInit();
+            btnSave.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)groupControl2).BeginInit();
             groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
@@ -79,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)seTaxRate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)meNote.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtContact.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtAddress.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cboCustomer.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)deCreatedDate.Properties).BeginInit();
@@ -88,10 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)layoutControlItem1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)emptySpaceItem1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnSave).BeginInit();
-            btnSave.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtContact.Properties).BeginInit();
             SuspendLayout();
             // 
             // layoutControl1
@@ -107,6 +107,107 @@
             layoutControl1.Size = new Size(601, 570);
             layoutControl1.TabIndex = 0;
             layoutControl1.Text = "layoutControl1";
+            // 
+            // btnSave
+            // 
+            btnSave.Controls.Add(btnCancel);
+            btnSave.Controls.Add(simpleButton1);
+            btnSave.Controls.Add(labelControl11);
+            btnSave.Controls.Add(labelControl14);
+            btnSave.Controls.Add(labelControl13);
+            btnSave.Controls.Add(labelControl10);
+            btnSave.Controls.Add(labelControl12);
+            btnSave.Controls.Add(labelControl9);
+            btnSave.Location = new Point(12, 413);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(567, 145);
+            btnSave.TabIndex = 7;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            btnCancel.Appearance.Options.UseFont = true;
+            btnCancel.Location = new Point(291, 116);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(77, 24);
+            btnCancel.TabIndex = 1;
+            btnCancel.Text = "Cancel";
+            // 
+            // simpleButton1
+            // 
+            simpleButton1.Appearance.BackColor = Color.FromArgb(50, 112, 188);
+            simpleButton1.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            simpleButton1.Appearance.Options.UseBackColor = true;
+            simpleButton1.Appearance.Options.UseFont = true;
+            simpleButton1.Location = new Point(199, 116);
+            simpleButton1.Name = "simpleButton1";
+            simpleButton1.Size = new Size(77, 24);
+            simpleButton1.TabIndex = 1;
+            simpleButton1.Text = "Save";
+            // 
+            // labelControl11
+            // 
+            labelControl11.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl11.Appearance.ForeColor = Color.Blue;
+            labelControl11.Appearance.Options.UseFont = true;
+            labelControl11.Appearance.Options.UseForeColor = true;
+            labelControl11.Location = new Point(352, 86);
+            labelControl11.Name = "labelControl11";
+            labelControl11.Size = new Size(32, 16);
+            labelControl11.TabIndex = 0;
+            labelControl11.Text = "Total";
+            // 
+            // labelControl14
+            // 
+            labelControl14.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl14.Appearance.ForeColor = Color.Blue;
+            labelControl14.Appearance.Options.UseFont = true;
+            labelControl14.Appearance.Options.UseForeColor = true;
+            labelControl14.Location = new Point(503, 86);
+            labelControl14.Name = "labelControl14";
+            labelControl14.Size = new Size(44, 16);
+            labelControl14.TabIndex = 0;
+            labelControl14.Text = "385.00";
+            // 
+            // labelControl13
+            // 
+            labelControl13.Appearance.ForeColor = Color.FromArgb(0, 192, 0);
+            labelControl13.Appearance.Options.UseForeColor = true;
+            labelControl13.Location = new Point(515, 54);
+            labelControl13.Name = "labelControl13";
+            labelControl13.Size = new Size(32, 16);
+            labelControl13.TabIndex = 0;
+            labelControl13.Text = "35.00";
+            // 
+            // labelControl10
+            // 
+            labelControl10.Appearance.ForeColor = Color.FromArgb(0, 192, 0);
+            labelControl10.Appearance.Options.UseForeColor = true;
+            labelControl10.Location = new Point(352, 54);
+            labelControl10.Name = "labelControl10";
+            labelControl10.Size = new Size(69, 16);
+            labelControl10.TabIndex = 0;
+            labelControl10.Text = "Tax Amount";
+            // 
+            // labelControl12
+            // 
+            labelControl12.Appearance.ForeColor = Color.Black;
+            labelControl12.Appearance.Options.UseForeColor = true;
+            labelControl12.Location = new Point(508, 22);
+            labelControl12.Name = "labelControl12";
+            labelControl12.Size = new Size(39, 16);
+            labelControl12.TabIndex = 0;
+            labelControl12.Text = "350.00";
+            // 
+            // labelControl9
+            // 
+            labelControl9.Appearance.ForeColor = Color.Black;
+            labelControl9.Appearance.Options.UseForeColor = true;
+            labelControl9.Location = new Point(354, 22);
+            labelControl9.Name = "labelControl9";
+            labelControl9.Size = new Size(47, 16);
+            labelControl9.TabIndex = 0;
+            labelControl9.Text = "Subtotal";
             // 
             // groupControl2
             // 
@@ -232,6 +333,13 @@
             txtEmployee.Size = new Size(156, 22);
             txtEmployee.TabIndex = 6;
             // 
+            // txtContact
+            // 
+            txtContact.Location = new Point(93, 107);
+            txtContact.Name = "txtContact";
+            txtContact.Size = new Size(156, 22);
+            txtContact.TabIndex = 9;
+            // 
             // txtAddress
             // 
             txtAddress.Location = new Point(93, 142);
@@ -304,6 +412,16 @@
             labelControl5.TabIndex = 0;
             labelControl5.Text = "Note";
             // 
+            // labelControl6
+            // 
+            labelControl6.Appearance.Font = new Font("Tahoma", 8F);
+            labelControl6.Appearance.Options.UseFont = true;
+            labelControl6.Location = new Point(14, 110);
+            labelControl6.Name = "labelControl6";
+            labelControl6.Size = new Size(43, 16);
+            labelControl6.TabIndex = 0;
+            labelControl6.Text = "Contact";
+            // 
             // labelControl3
             // 
             labelControl3.Appearance.Font = new Font("Tahoma", 8F);
@@ -370,21 +488,6 @@
             layoutControlItem2.TextSize = new Size(0, 0);
             layoutControlItem2.TextVisible = false;
             // 
-            // btnSave
-            // 
-            btnSave.Controls.Add(btnCancel);
-            btnSave.Controls.Add(simpleButton1);
-            btnSave.Controls.Add(labelControl11);
-            btnSave.Controls.Add(labelControl14);
-            btnSave.Controls.Add(labelControl13);
-            btnSave.Controls.Add(labelControl10);
-            btnSave.Controls.Add(labelControl12);
-            btnSave.Controls.Add(labelControl9);
-            btnSave.Location = new Point(12, 413);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(567, 145);
-            btnSave.TabIndex = 7;
-            // 
             // layoutControlItem4
             // 
             layoutControlItem4.Control = btnSave;
@@ -393,91 +496,6 @@
             layoutControlItem4.Size = new Size(571, 149);
             layoutControlItem4.TextSize = new Size(0, 0);
             layoutControlItem4.TextVisible = false;
-            // 
-            // labelControl6
-            // 
-            labelControl6.Appearance.Font = new Font("Tahoma", 8F);
-            labelControl6.Appearance.Options.UseFont = true;
-            labelControl6.Location = new Point(14, 110);
-            labelControl6.Name = "labelControl6";
-            labelControl6.Size = new Size(43, 16);
-            labelControl6.TabIndex = 0;
-            labelControl6.Text = "Contact";
-            // 
-            // txtContact
-            // 
-            txtContact.Location = new Point(93, 107);
-            txtContact.Name = "txtContact";
-            txtContact.Size = new Size(156, 22);
-            txtContact.TabIndex = 9;
-            // 
-            // labelControl9
-            // 
-            labelControl9.Location = new Point(40, 17);
-            labelControl9.Name = "labelControl9";
-            labelControl9.Size = new Size(47, 16);
-            labelControl9.TabIndex = 0;
-            labelControl9.Text = "Subtotal";
-            // 
-            // labelControl10
-            // 
-            labelControl10.Location = new Point(38, 49);
-            labelControl10.Name = "labelControl10";
-            labelControl10.Size = new Size(69, 16);
-            labelControl10.TabIndex = 0;
-            labelControl10.Text = "Tax Amount";
-            // 
-            // labelControl11
-            // 
-            labelControl11.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelControl11.Appearance.Options.UseFont = true;
-            labelControl11.Location = new Point(38, 81);
-            labelControl11.Name = "labelControl11";
-            labelControl11.Size = new Size(32, 16);
-            labelControl11.TabIndex = 0;
-            labelControl11.Text = "Total";
-            // 
-            // labelControl12
-            // 
-            labelControl12.Location = new Point(194, 17);
-            labelControl12.Name = "labelControl12";
-            labelControl12.Size = new Size(39, 16);
-            labelControl12.TabIndex = 0;
-            labelControl12.Text = "350.00";
-            // 
-            // labelControl13
-            // 
-            labelControl13.Location = new Point(201, 49);
-            labelControl13.Name = "labelControl13";
-            labelControl13.Size = new Size(32, 16);
-            labelControl13.TabIndex = 0;
-            labelControl13.Text = "35.00";
-            // 
-            // labelControl14
-            // 
-            labelControl14.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelControl14.Appearance.Options.UseFont = true;
-            labelControl14.Location = new Point(194, 81);
-            labelControl14.Name = "labelControl14";
-            labelControl14.Size = new Size(44, 16);
-            labelControl14.TabIndex = 0;
-            labelControl14.Text = "385.00";
-            // 
-            // simpleButton1
-            // 
-            simpleButton1.Location = new Point(384, 116);
-            simpleButton1.Name = "simpleButton1";
-            simpleButton1.Size = new Size(77, 24);
-            simpleButton1.TabIndex = 1;
-            simpleButton1.Text = "Save";
-            // 
-            // btnCancel
-            // 
-            btnCancel.Location = new Point(476, 116);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(77, 24);
-            btnCancel.TabIndex = 1;
-            btnCancel.Text = "Cancel";
             // 
             // frmNewInvoice
             // 
@@ -490,6 +508,9 @@
             Text = "New Invoice";
             ((System.ComponentModel.ISupportInitialize)layoutControl1).EndInit();
             layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)btnSave).EndInit();
+            btnSave.ResumeLayout(false);
+            btnSave.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)groupControl2).EndInit();
             groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
@@ -500,6 +521,7 @@
             ((System.ComponentModel.ISupportInitialize)seTaxRate.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)meNote.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtContact.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtAddress.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cboCustomer.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)deCreatedDate.Properties.CalendarTimeProperties).EndInit();
@@ -509,11 +531,7 @@
             ((System.ComponentModel.ISupportInitialize)layoutControlItem1).EndInit();
             ((System.ComponentModel.ISupportInitialize)emptySpaceItem1).EndInit();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnSave).EndInit();
-            btnSave.ResumeLayout(false);
-            btnSave.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)layoutControlItem4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtContact.Properties).EndInit();
             ResumeLayout(false);
         }
 
