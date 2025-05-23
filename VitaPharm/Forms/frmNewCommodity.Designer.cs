@@ -36,18 +36,25 @@
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             textEdit4 = new DevExpress.XtraEditors.TextEdit();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)groupControl2).BeginInit();
+            groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)comboBoxEdit1.Properties).BeginInit();
             SuspendLayout();
             // 
             // groupControl1
             // 
             groupControl1.AppearanceCaption.BorderColor = Color.FromArgb(222, 228, 255);
             groupControl1.AppearanceCaption.Options.UseBorderColor = true;
+            groupControl1.Controls.Add(labelControl4);
             groupControl1.Controls.Add(textEdit4);
             groupControl1.Controls.Add(labelControl3);
             groupControl1.Controls.Add(textEdit3);
@@ -57,7 +64,7 @@
             groupControl1.Controls.Add(labelControl1);
             groupControl1.Location = new Point(27, 12);
             groupControl1.Name = "groupControl1";
-            groupControl1.Size = new Size(403, 234);
+            groupControl1.Size = new Size(403, 204);
             groupControl1.TabIndex = 0;
             groupControl1.Text = "Basic Information";
             // 
@@ -85,18 +92,18 @@
             // 
             // textEdit3
             // 
-            textEdit3.Location = new Point(118, 76);
+            textEdit3.Location = new Point(118, 77);
             textEdit3.Name = "textEdit3";
             textEdit3.Size = new Size(271, 22);
             textEdit3.TabIndex = 3;
             // 
             // labelControl2
             // 
-            labelControl2.Location = new Point(16, 82);
+            labelControl2.Location = new Point(16, 83);
             labelControl2.Name = "labelControl2";
-            labelControl2.Size = new Size(33, 16);
+            labelControl2.Size = new Size(76, 16);
             labelControl2.TabIndex = 2;
-            labelControl2.Text = "Name";
+            labelControl2.Text = "Manufacturer";
             // 
             // textEdit4
             // 
@@ -109,15 +116,43 @@
             // 
             labelControl3.Location = new Point(16, 126);
             labelControl3.Name = "labelControl3";
-            labelControl3.Size = new Size(33, 16);
+            labelControl3.Size = new Size(53, 16);
             labelControl3.TabIndex = 4;
-            labelControl3.Text = "Name";
+            labelControl3.Text = "Base Unit";
+            // 
+            // labelControl4
+            // 
+            labelControl4.Location = new Point(16, 168);
+            labelControl4.Name = "labelControl4";
+            labelControl4.Size = new Size(53, 16);
+            labelControl4.TabIndex = 6;
+            labelControl4.Text = "Base Unit";
+            // 
+            // groupControl2
+            // 
+            groupControl2.AppearanceCaption.BorderColor = Color.FromArgb(226, 251, 219);
+            groupControl2.AppearanceCaption.Options.UseBorderColor = true;
+            groupControl2.Controls.Add(comboBoxEdit1);
+            groupControl2.Location = new Point(436, 12);
+            groupControl2.Name = "groupControl2";
+            groupControl2.Size = new Size(193, 116);
+            groupControl2.TabIndex = 1;
+            groupControl2.Text = "Type of commodity";
+            // 
+            // comboBoxEdit1
+            // 
+            comboBoxEdit1.Location = new Point(7, 36);
+            comboBoxEdit1.Name = "comboBoxEdit1";
+            comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            comboBoxEdit1.Size = new Size(181, 22);
+            comboBoxEdit1.TabIndex = 0;
             // 
             // frmNewCommodity
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(641, 274);
+            Controls.Add(groupControl2);
             Controls.Add(groupControl1);
             Name = "frmNewCommodity";
             StartPosition = FormStartPosition.CenterScreen;
@@ -129,6 +164,9 @@
             ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)groupControl2).EndInit();
+            groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)comboBoxEdit1.Properties).EndInit();
             ResumeLayout(false);
         }
 
@@ -142,5 +180,8 @@
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
     }
 }
