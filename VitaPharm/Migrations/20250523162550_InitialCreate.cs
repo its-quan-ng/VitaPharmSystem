@@ -64,6 +64,7 @@ namespace VitaPharm.Migrations
                     CommodityID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CommodityName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Manufacturer = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     BaseUnit = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     SellingPrice = table.Column<decimal>(type: "money", nullable: false),
                     IsTerminated = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
@@ -110,7 +111,7 @@ namespace VitaPharm.Migrations
                     ReceiptID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ReceiptCode = table.Column<string>(type: "nvarchar(6)", maxLength: 6, nullable: false),
-                    ReceiptDate = table.Column<DateTime>(type: "date", nullable: false),
+                    ReceiptDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     SupplierName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Note = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     ReceiptStatus = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
@@ -164,8 +165,8 @@ namespace VitaPharm.Migrations
                     BatchID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BatchCode = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    MfgDate = table.Column<DateTime>(type: "date", nullable: false),
-                    ExpDate = table.Column<DateTime>(type: "date", nullable: false),
+                    MfgDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ExpDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     QtyAvailable = table.Column<int>(type: "int", nullable: false),
                     PurchasePrice = table.Column<decimal>(type: "money", nullable: false),
                     BatchStatus = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),

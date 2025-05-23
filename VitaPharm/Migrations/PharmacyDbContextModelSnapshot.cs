@@ -144,6 +144,11 @@ namespace VitaPharm.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
+                    b.Property<string>("Manufacturer")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
                     b.Property<decimal>("SellingPrice")
                         .HasColumnType("money");
 

@@ -12,7 +12,11 @@ using VitaPharm.Data;
 namespace VitaPharm.Migrations
 {
     [DbContext(typeof(PharmacyDbContext))]
-    [Migration("20250522165644_InitialCreate")]
+<<<<<<<< HEAD:VitaPharm/Migrations/20250523162550_InitialCreate.Designer.cs
+    [Migration("20250523162550_InitialCreate")]
+========
+    [Migration("20250523161924_InitialCreate")]
+>>>>>>>> 3273a79e62a6e557228f494ddd8594dcf0854553:VitaPharm/Migrations/20250523161924_InitialCreate.Designer.cs
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -85,10 +89,10 @@ namespace VitaPharm.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ExpDate")
-                        .HasColumnType("date");
+                        .HasColumnType("datetime");
 
                     b.Property<DateTime>("MfgDate")
-                        .HasColumnType("date");
+                        .HasColumnType("datetime");
 
                     b.Property<decimal>("PurchasePrice")
                         .HasColumnType("money");
@@ -146,6 +150,11 @@ namespace VitaPharm.Migrations
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("Manufacturer")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<decimal>("SellingPrice")
                         .HasColumnType("money");
@@ -248,7 +257,7 @@ namespace VitaPharm.Migrations
                         .HasColumnType("nvarchar(6)");
 
                     b.Property<DateTime>("ReceiptDate")
-                        .HasColumnType("date");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("ReceiptStatus")
                         .IsRequired()
