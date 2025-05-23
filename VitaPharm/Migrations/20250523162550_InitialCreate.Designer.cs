@@ -12,8 +12,8 @@ using VitaPharm.Data;
 namespace VitaPharm.Migrations
 {
     [DbContext(typeof(PharmacyDbContext))]
-    [Migration("20250522170153_Change-Type-Properties")]
-    partial class ChangeTypeProperties
+    [Migration("20250523162550_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -146,6 +146,11 @@ namespace VitaPharm.Migrations
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("Manufacturer")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<decimal>("SellingPrice")
                         .HasColumnType("money");
