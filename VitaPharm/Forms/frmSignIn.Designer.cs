@@ -32,13 +32,13 @@
             pictureBox2 = new PictureBox();
             panel1 = new Panel();
             panel2 = new Panel();
+            textBox2 = new TextBox();
             pictureBox3 = new PictureBox();
             checkButton1 = new DevExpress.XtraEditors.CheckButton();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             textBox1 = new TextBox();
-            textBox2 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -79,6 +79,18 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(440, 2);
             panel2.TabIndex = 4;
+            // 
+            // textBox2
+            // 
+            textBox2.BorderStyle = BorderStyle.None;
+            textBox2.Font = new Font("Inter Semi Bold", 12F, FontStyle.Bold);
+            textBox2.ForeColor = Color.FromArgb(16, 53, 113);
+            textBox2.Location = new Point(92, 226);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
+            textBox2.Size = new Size(397, 43);
+            textBox2.TabIndex = 10;
             // 
             // pictureBox3
             // 
@@ -135,19 +147,14 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(92, 137);
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Inter Semi Bold", 12F, FontStyle.Bold);
+            textBox1.ForeColor = Color.FromArgb(16, 53, 113);
+            textBox1.Location = new Point(90, 145);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(396, 34);
+            textBox1.Size = new Size(396, 39);
             textBox1.TabIndex = 9;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(92, 215);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(396, 34);
-            textBox2.TabIndex = 10;
             // 
             // frmSignIn
             // 
@@ -156,8 +163,6 @@
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(548, 416);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
             Controls.Add(labelControl2);
             Controls.Add(simpleButton1);
             Controls.Add(labelControl1);
@@ -167,6 +172,8 @@
             Controls.Add(panel1);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
+            Controls.Add(textBox1);
+            Controls.Add(textBox2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmSignIn";
             StartPosition = FormStartPosition.CenterScreen;
