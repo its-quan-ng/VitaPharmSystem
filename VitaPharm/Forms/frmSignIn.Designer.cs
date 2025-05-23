@@ -115,33 +115,33 @@
             labelControl1.Appearance.Options.UseFont = true;
             labelControl1.Location = new Point(363, 277);
             labelControl1.Name = "labelControl1";
-            labelControl1.Size = new Size(117, 18);
+            labelControl1.Size = new Size(118, 18);
             labelControl1.TabIndex = 6;
             labelControl1.Text = "Show password";
             // 
             // simpleButton1
             // 
             simpleButton1.Appearance.BackColor = Color.FromArgb(16, 53, 113);
-            simpleButton1.Appearance.Font = new Font("Inter", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            simpleButton1.Appearance.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             simpleButton1.Appearance.Options.UseBackColor = true;
             simpleButton1.Appearance.Options.UseFont = true;
             simpleButton1.AppearanceHovered.BackColor = Color.FromArgb(170, 188, 217);
             simpleButton1.AppearanceHovered.Options.UseBackColor = true;
-            simpleButton1.Location = new Point(90, 314);
+            simpleButton1.Location = new Point(147, 312);
             simpleButton1.Name = "simpleButton1";
-            simpleButton1.Size = new Size(363, 50);
+            simpleButton1.Size = new Size(254, 50);
             simpleButton1.TabIndex = 7;
             simpleButton1.Text = "Sign In";
             // 
             // labelControl2
             // 
-            labelControl2.Appearance.Font = new Font("Inter", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl2.Appearance.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelControl2.Appearance.ForeColor = Color.FromArgb(66, 176, 109);
             labelControl2.Appearance.Options.UseFont = true;
             labelControl2.Appearance.Options.UseForeColor = true;
-            labelControl2.Location = new Point(251, 380);
+            labelControl2.Location = new Point(249, 380);
             labelControl2.Name = "labelControl2";
-            labelControl2.Size = new Size(36, 24);
+            labelControl2.Size = new Size(37, 25);
             labelControl2.TabIndex = 8;
             labelControl2.Text = "Exit";
             // 
