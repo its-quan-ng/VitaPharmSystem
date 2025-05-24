@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            colBaseUnit = new DevExpress.XtraGrid.Columns.GridColumn();
             colID = new DevExpress.XtraGrid.Columns.GridColumn();
             colCommodityName = new DevExpress.XtraGrid.Columns.GridColumn();
             colManufacturer = new DevExpress.XtraGrid.Columns.GridColumn();
+            colBaseUnit = new DevExpress.XtraGrid.Columns.GridColumn();
             colSellingPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             colCommodityStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -47,6 +47,10 @@
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             textEdit1 = new DevExpress.XtraEditors.TextEdit();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
@@ -56,6 +60,8 @@
             ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
+            panelControl1.SuspendLayout();
             SuspendLayout();
             // 
             // gridView1
@@ -63,16 +69,6 @@
             gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, colCommodityName, colManufacturer, colBaseUnit, colSellingPrice, colCommodityStatus });
             gridView1.GridControl = gridControl1;
             gridView1.Name = "gridView1";
-            // 
-            // colBaseUnit
-            // 
-            colBaseUnit.Caption = "Base Unit";
-            colBaseUnit.FieldName = "BaseUnit";
-            colBaseUnit.MinWidth = 25;
-            colBaseUnit.Name = "colBaseUnit";
-            colBaseUnit.Visible = true;
-            colBaseUnit.VisibleIndex = 3;
-            colBaseUnit.Width = 94;
             // 
             // colID
             // 
@@ -103,6 +99,16 @@
             colManufacturer.Visible = true;
             colManufacturer.VisibleIndex = 2;
             colManufacturer.Width = 94;
+            // 
+            // colBaseUnit
+            // 
+            colBaseUnit.Caption = "Base Unit";
+            colBaseUnit.FieldName = "BaseUnit";
+            colBaseUnit.MinWidth = 25;
+            colBaseUnit.Name = "colBaseUnit";
+            colBaseUnit.Visible = true;
+            colBaseUnit.VisibleIndex = 3;
+            colBaseUnit.Width = 94;
             // 
             // colSellingPrice
             // 
@@ -237,11 +243,47 @@
             labelControl1.TabIndex = 0;
             labelControl1.Text = "Name: ";
             // 
+            // panelControl1
+            // 
+            panelControl1.Controls.Add(simpleButton3);
+            panelControl1.Controls.Add(simpleButton2);
+            panelControl1.Controls.Add(simpleButton1);
+            panelControl1.Dock = DockStyle.Bottom;
+            panelControl1.Location = new Point(0, 398);
+            panelControl1.Name = "panelControl1";
+            panelControl1.Size = new Size(831, 64);
+            panelControl1.TabIndex = 2;
+            // 
+            // simpleButton1
+            // 
+            simpleButton1.Location = new Point(402, 12);
+            simpleButton1.Name = "simpleButton1";
+            simpleButton1.Size = new Size(118, 36);
+            simpleButton1.TabIndex = 3;
+            simpleButton1.Text = "Edit";
+            // 
+            // simpleButton2
+            // 
+            simpleButton2.Location = new Point(262, 12);
+            simpleButton2.Name = "simpleButton2";
+            simpleButton2.Size = new Size(118, 36);
+            simpleButton2.TabIndex = 4;
+            simpleButton2.Text = "Deactive";
+            // 
+            // simpleButton3
+            // 
+            simpleButton3.Location = new Point(556, 12);
+            simpleButton3.Name = "simpleButton3";
+            simpleButton3.Size = new Size(118, 36);
+            simpleButton3.TabIndex = 5;
+            simpleButton3.Text = "Reload";
+            // 
             // frmAllCommodities
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(831, 462);
+            Controls.Add(panelControl1);
             Controls.Add(gridControl1);
             Controls.Add(groupControl1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -258,6 +300,8 @@
             ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
+            panelControl1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -282,5 +326,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colManufacturer;
         private DevExpress.XtraGrid.Columns.GridColumn colSellingPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colCommodityStatus;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
