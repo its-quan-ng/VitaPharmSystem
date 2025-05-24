@@ -32,16 +32,16 @@
             pictureBox2 = new PictureBox();
             panel1 = new Panel();
             panel2 = new Panel();
-            textBox2 = new TextBox();
+            txtPassword = new TextBox();
             pictureBox3 = new PictureBox();
-            checkButton1 = new DevExpress.XtraEditors.CheckButton();
-            labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            textBox1 = new TextBox();
+            btnSignIn = new DevExpress.XtraEditors.SimpleButton();
+            lblExit = new DevExpress.XtraEditors.LabelControl();
+            txtUsername = new TextBox();
+            chkShowPassword = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chkShowPassword.Properties).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -80,17 +80,17 @@
             panel2.Size = new Size(440, 2);
             panel2.TabIndex = 4;
             // 
-            // textBox2
+            // txtPassword
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Inter Semi Bold", 12F, FontStyle.Bold);
-            textBox2.ForeColor = Color.FromArgb(16, 53, 113);
-            textBox2.Location = new Point(92, 226);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(397, 43);
-            textBox2.TabIndex = 10;
+            txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Font = new Font("Inter Semi Bold", 12F, FontStyle.Bold);
+            txtPassword.ForeColor = Color.FromArgb(16, 53, 113);
+            txtPassword.Location = new Point(92, 226);
+            txtPassword.Multiline = true;
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(397, 43);
+            txtPassword.TabIndex = 10;
             // 
             // pictureBox3
             // 
@@ -102,59 +102,52 @@
             pictureBox3.TabIndex = 3;
             pictureBox3.TabStop = false;
             // 
-            // checkButton1
+            // btnSignIn
             // 
-            checkButton1.Location = new Point(337, 275);
-            checkButton1.Name = "checkButton1";
-            checkButton1.Size = new Size(20, 20);
-            checkButton1.TabIndex = 5;
+            btnSignIn.Appearance.BackColor = Color.FromArgb(16, 53, 113);
+            btnSignIn.Appearance.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSignIn.Appearance.Options.UseBackColor = true;
+            btnSignIn.Appearance.Options.UseFont = true;
+            btnSignIn.AppearanceHovered.BackColor = Color.FromArgb(170, 188, 217);
+            btnSignIn.AppearanceHovered.Options.UseBackColor = true;
+            btnSignIn.Location = new Point(147, 312);
+            btnSignIn.Name = "btnSignIn";
+            btnSignIn.Size = new Size(254, 50);
+            btnSignIn.TabIndex = 7;
+            btnSignIn.Text = "Sign In";
             // 
-            // labelControl1
+            // lblExit
             // 
-            labelControl1.Appearance.Font = new Font("Inter Semi Bold", 9F, FontStyle.Bold | FontStyle.Italic);
-            labelControl1.Appearance.Options.UseFont = true;
-            labelControl1.Location = new Point(363, 277);
-            labelControl1.Name = "labelControl1";
-            labelControl1.Size = new Size(117, 18);
-            labelControl1.TabIndex = 6;
-            labelControl1.Text = "Show password";
+            lblExit.Appearance.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblExit.Appearance.ForeColor = Color.FromArgb(66, 176, 109);
+            lblExit.Appearance.Options.UseFont = true;
+            lblExit.Appearance.Options.UseForeColor = true;
+            lblExit.Location = new Point(249, 380);
+            lblExit.Name = "lblExit";
+            lblExit.Size = new Size(37, 25);
+            lblExit.TabIndex = 8;
+            lblExit.Text = "Exit";
             // 
-            // simpleButton1
+            // txtUsername
             // 
-            simpleButton1.Appearance.BackColor = Color.FromArgb(16, 53, 113);
-            simpleButton1.Appearance.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            simpleButton1.Appearance.Options.UseBackColor = true;
-            simpleButton1.Appearance.Options.UseFont = true;
-            simpleButton1.AppearanceHovered.BackColor = Color.FromArgb(170, 188, 217);
-            simpleButton1.AppearanceHovered.Options.UseBackColor = true;
-            simpleButton1.Location = new Point(147, 312);
-            simpleButton1.Name = "simpleButton1";
-            simpleButton1.Size = new Size(254, 50);
-            simpleButton1.TabIndex = 7;
-            simpleButton1.Text = "Sign In";
+            txtUsername.BorderStyle = BorderStyle.None;
+            txtUsername.Font = new Font("Inter Semi Bold", 12F, FontStyle.Bold);
+            txtUsername.ForeColor = Color.FromArgb(16, 53, 113);
+            txtUsername.Location = new Point(90, 145);
+            txtUsername.Multiline = true;
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(396, 39);
+            txtUsername.TabIndex = 9;
             // 
-            // labelControl2
+            // chkShowPassword
             // 
-            labelControl2.Appearance.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelControl2.Appearance.ForeColor = Color.FromArgb(66, 176, 109);
-            labelControl2.Appearance.Options.UseFont = true;
-            labelControl2.Appearance.Options.UseForeColor = true;
-            labelControl2.Location = new Point(249, 380);
-            labelControl2.Name = "labelControl2";
-            labelControl2.Size = new Size(37, 25);
-            labelControl2.TabIndex = 8;
-            labelControl2.Text = "Exit";
-            // 
-            // textBox1
-            // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Inter Semi Bold", 12F, FontStyle.Bold);
-            textBox1.ForeColor = Color.FromArgb(16, 53, 113);
-            textBox1.Location = new Point(90, 145);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(396, 39);
-            textBox1.TabIndex = 9;
+            chkShowPassword.Location = new Point(344, 258);
+            chkShowPassword.Name = "chkShowPassword";
+            chkShowPassword.Properties.Appearance.Font = new Font("Inter Semi Bold", 9F, FontStyle.Bold | FontStyle.Italic);
+            chkShowPassword.Properties.Appearance.Options.UseFont = true;
+            chkShowPassword.Properties.Caption = "Show password";
+            chkShowPassword.Size = new Size(145, 24);
+            chkShowPassword.TabIndex = 11;
             // 
             // frmSignIn
             // 
@@ -163,17 +156,16 @@
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(548, 416);
-            Controls.Add(labelControl2);
-            Controls.Add(simpleButton1);
-            Controls.Add(labelControl1);
-            Controls.Add(checkButton1);
+            Controls.Add(chkShowPassword);
+            Controls.Add(lblExit);
+            Controls.Add(btnSignIn);
             Controls.Add(panel2);
             Controls.Add(pictureBox3);
             Controls.Add(panel1);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Controls.Add(textBox1);
-            Controls.Add(textBox2);
+            Controls.Add(txtUsername);
+            Controls.Add(txtPassword);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmSignIn";
             StartPosition = FormStartPosition.CenterScreen;
@@ -182,6 +174,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chkShowPassword.Properties).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,9 +188,10 @@
         private PictureBox pictureBox3;
         private DevExpress.XtraEditors.CheckButton checkButton1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private DevExpress.XtraEditors.SimpleButton btnSignIn;
+        private DevExpress.XtraEditors.LabelControl lblExit;
+        private TextBox txtUsername;
+        private TextBox txtPassword;
+        private DevExpress.XtraEditors.CheckEdit chkShowPassword;
     }
 }

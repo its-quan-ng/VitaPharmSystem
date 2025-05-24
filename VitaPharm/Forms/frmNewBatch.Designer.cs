@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            cboBatchCode = new DevExpress.XtraEditors.ComboBoxEdit();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnAdd = new DevExpress.XtraEditors.SimpleButton();
             txtAmount = new DevExpress.XtraEditors.TextEdit();
@@ -44,9 +45,9 @@
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            cboBatchCode = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtAmount.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtPurchasePrice.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spinQuantity.Properties).BeginInit();
@@ -55,7 +56,6 @@
             ((System.ComponentModel.ISupportInitialize)dateMfg.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateMfg.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).BeginInit();
             SuspendLayout();
             // 
             // groupControl1
@@ -82,6 +82,15 @@
             groupControl1.Size = new Size(440, 382);
             groupControl1.TabIndex = 0;
             groupControl1.Text = "Add Batch";
+            groupControl1.Paint += groupControl1_Paint;
+            // 
+            // cboBatchCode
+            // 
+            cboBatchCode.Location = new Point(147, 89);
+            cboBatchCode.Name = "cboBatchCode";
+            cboBatchCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            cboBatchCode.Size = new Size(156, 22);
+            cboBatchCode.TabIndex = 9;
             // 
             // btnCancel
             // 
@@ -228,14 +237,6 @@
             labelControl1.TabIndex = 0;
             labelControl1.Text = "Commodity:";
             // 
-            // cboBatchCode
-            // 
-            cboBatchCode.Location = new Point(147, 89);
-            cboBatchCode.Name = "cboBatchCode";
-            cboBatchCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboBatchCode.Size = new Size(156, 22);
-            cboBatchCode.TabIndex = 9;
-            // 
             // frmNewBatch
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -248,6 +249,7 @@
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtAmount.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtPurchasePrice.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)spinQuantity.Properties).EndInit();
@@ -256,7 +258,6 @@
             ((System.ComponentModel.ISupportInitialize)dateMfg.Properties.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateMfg.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).EndInit();
             ResumeLayout(false);
         }
 
