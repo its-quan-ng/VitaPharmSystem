@@ -34,7 +34,7 @@
             panel2 = new Panel();
             txtPassword = new TextBox();
             pictureBox3 = new PictureBox();
-            this.btnSignIn = new DevExpress.XtraEditors.SimpleButton();
+            btnSignIn = new DevExpress.XtraEditors.SimpleButton();
             lblExit = new DevExpress.XtraEditors.LabelControl();
             txtUsername = new TextBox();
             chkShowPassword = new DevExpress.XtraEditors.CheckEdit();
@@ -104,17 +104,17 @@
             // 
             // btnSignIn
             // 
-            this.btnSignIn.Appearance.BackColor = Color.FromArgb(16, 53, 113);
-            this.btnSignIn.Appearance.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            this.btnSignIn.Appearance.Options.UseBackColor = true;
-            this.btnSignIn.Appearance.Options.UseFont = true;
-            this.btnSignIn.AppearanceHovered.BackColor = Color.FromArgb(170, 188, 217);
-            this.btnSignIn.AppearanceHovered.Options.UseBackColor = true;
-            this.btnSignIn.Location = new Point(147, 312);
-            this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new Size(254, 50);
-            this.btnSignIn.TabIndex = 7;
-            this.btnSignIn.Text = "Sign In";
+            btnSignIn.Appearance.BackColor = Color.FromArgb(16, 53, 113);
+            btnSignIn.Appearance.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSignIn.Appearance.Options.UseBackColor = true;
+            btnSignIn.Appearance.Options.UseFont = true;
+            btnSignIn.AppearanceHovered.BackColor = Color.FromArgb(170, 188, 217);
+            btnSignIn.AppearanceHovered.Options.UseBackColor = true;
+            btnSignIn.Location = new Point(147, 312);
+            btnSignIn.Name = "btnSignIn";
+            btnSignIn.Size = new Size(254, 50);
+            btnSignIn.TabIndex = 7;
+            btnSignIn.Text = "Sign In";
             // 
             // lblExit
             // 
@@ -158,7 +158,7 @@
             ClientSize = new Size(548, 416);
             Controls.Add(chkShowPassword);
             Controls.Add(lblExit);
-            Controls.Add(this.btnSignIn);
+            Controls.Add(btnSignIn);
             Controls.Add(panel2);
             Controls.Add(pictureBox3);
             Controls.Add(panel1);
@@ -188,7 +188,7 @@
         private PictureBox pictureBox3;
         private DevExpress.XtraEditors.CheckButton checkButton1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnSignIn;
         private DevExpress.XtraEditors.LabelControl lblExit;
         private TextBox txtUsername;
         private TextBox txtPassword;
