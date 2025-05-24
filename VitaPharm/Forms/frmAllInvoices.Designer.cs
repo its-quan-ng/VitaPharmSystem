@@ -59,11 +59,12 @@
             // 
             // gridControl
             // 
-            gridControl.Location = new Point(12, 12);
+            gridControl.Dock = DockStyle.Fill;
+            gridControl.Location = new Point(0, 0);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
             gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repoImageCboStatus, repobtnAction });
-            gridControl.Size = new Size(500, 250);
+            gridControl.Size = new Size(853, 351);
             gridControl.TabIndex = 0;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
@@ -77,6 +78,8 @@
             gridView.OptionsEditForm.EditFormColumnCount = 5;
             gridView.OptionsPrint.PrintFilterInfo = true;
             gridView.OptionsView.ShowAutoFilterRow = true;
+            gridView.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
+            gridView.OptionsView.ShowGroupedColumns = true;
             // 
             // colID
             // 
@@ -181,9 +184,10 @@
             panelControl1.Controls.Add(btnReload);
             panelControl1.Controls.Add(btnDeactive);
             panelControl1.Controls.Add(btnNewGoodsReceipt);
+            panelControl1.Dock = DockStyle.Bottom;
             panelControl1.Location = new Point(0, 351);
             panelControl1.Name = "panelControl1";
-            panelControl1.Size = new Size(856, 64);
+            panelControl1.Size = new Size(853, 64);
             panelControl1.TabIndex = 1;
             // 
             // btnCancel
@@ -245,8 +249,8 @@
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(853, 415);
-            Controls.Add(panelControl1);
             Controls.Add(gridControl);
+            Controls.Add(panelControl1);
             Name = "frmAllInvoices";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "All Invoices";
