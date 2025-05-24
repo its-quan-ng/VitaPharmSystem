@@ -51,6 +51,7 @@
             simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
@@ -132,7 +133,8 @@
             // 
             // gridControl1
             // 
-            gridControl1.Location = new Point(0, 152);
+            gridControl1.Dock = DockStyle.Fill;
+            gridControl1.Location = new Point(0, 146);
             gridControl1.MainView = gridView1;
             gridControl1.Name = "gridControl1";
             gridControl1.Size = new Size(831, 252);
@@ -245,6 +247,7 @@
             // 
             // panelControl1
             // 
+            panelControl1.Controls.Add(simpleButton4);
             panelControl1.Controls.Add(simpleButton3);
             panelControl1.Controls.Add(simpleButton2);
             panelControl1.Controls.Add(simpleButton1);
@@ -256,7 +259,11 @@
             // 
             // simpleButton1
             // 
-            simpleButton1.Location = new Point(402, 12);
+            simpleButton1.Appearance.BackColor = Color.FromArgb(100, 165, 80);
+            simpleButton1.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            simpleButton1.Appearance.Options.UseBackColor = true;
+            simpleButton1.Appearance.Options.UseFont = true;
+            simpleButton1.Location = new Point(329, 16);
             simpleButton1.Name = "simpleButton1";
             simpleButton1.Size = new Size(118, 36);
             simpleButton1.TabIndex = 3;
@@ -264,7 +271,11 @@
             // 
             // simpleButton2
             // 
-            simpleButton2.Location = new Point(262, 12);
+            simpleButton2.Appearance.BackColor = Color.FromArgb(78, 109, 156);
+            simpleButton2.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            simpleButton2.Appearance.Options.UseBackColor = true;
+            simpleButton2.Appearance.Options.UseFont = true;
+            simpleButton2.Location = new Point(453, 16);
             simpleButton2.Name = "simpleButton2";
             simpleButton2.Size = new Size(118, 36);
             simpleButton2.TabIndex = 4;
@@ -272,20 +283,36 @@
             // 
             // simpleButton3
             // 
-            simpleButton3.Location = new Point(556, 12);
+            simpleButton3.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Warning;
+            simpleButton3.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            simpleButton3.Appearance.Options.UseBackColor = true;
+            simpleButton3.Appearance.Options.UseFont = true;
+            simpleButton3.Location = new Point(577, 16);
             simpleButton3.Name = "simpleButton3";
             simpleButton3.Size = new Size(118, 36);
             simpleButton3.TabIndex = 5;
             simpleButton3.Text = "Reload";
+            // 
+            // simpleButton4
+            // 
+            simpleButton4.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
+            simpleButton4.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            simpleButton4.Appearance.Options.UseBackColor = true;
+            simpleButton4.Appearance.Options.UseFont = true;
+            simpleButton4.Location = new Point(701, 16);
+            simpleButton4.Name = "simpleButton4";
+            simpleButton4.Size = new Size(118, 36);
+            simpleButton4.TabIndex = 6;
+            simpleButton4.Text = "Cancel";
             // 
             // frmAllCommodities
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(831, 462);
-            Controls.Add(panelControl1);
             Controls.Add(gridControl1);
             Controls.Add(groupControl1);
+            Controls.Add(panelControl1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmAllCommodities";
             StartPosition = FormStartPosition.CenterScreen;
@@ -330,5 +357,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
 }
