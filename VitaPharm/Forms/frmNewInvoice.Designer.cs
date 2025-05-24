@@ -503,6 +503,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(601, 570);
             Controls.Add(layoutControl1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmNewInvoice";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "New Invoice";
