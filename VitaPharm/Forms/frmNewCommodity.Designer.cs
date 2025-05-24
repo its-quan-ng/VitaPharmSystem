@@ -140,6 +140,7 @@
             // 
             // comboBoxEdit1
             // 
+            comboBoxEdit1.EditValue = "Type";
             comboBoxEdit1.Location = new Point(7, 36);
             comboBoxEdit1.Name = "comboBoxEdit1";
             comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
