@@ -167,6 +167,7 @@
             // 
             // labelControl5
             // 
+            labelControl5.Anchor = AnchorStyles.Top;
             labelControl5.Location = new Point(20, 103);
             labelControl5.Name = "labelControl5";
             labelControl5.Size = new Size(33, 16);
@@ -175,6 +176,7 @@
             // 
             // comboBoxEdit1
             // 
+            comboBoxEdit1.Anchor = AnchorStyles.Top;
             comboBoxEdit1.EditValue = "";
             comboBoxEdit1.Location = new Point(122, 100);
             comboBoxEdit1.Name = "comboBoxEdit1";
@@ -184,16 +186,18 @@
             // 
             // textEdit5
             // 
-            textEdit5.Location = new Point(536, 63);
+            textEdit5.Anchor = AnchorStyles.Top;
+            textEdit5.Location = new Point(577, 60);
             textEdit5.Name = "textEdit5";
             textEdit5.Size = new Size(156, 22);
             textEdit5.TabIndex = 9;
             // 
             // labelControl4
             // 
+            labelControl4.Anchor = AnchorStyles.Top;
             labelControl4.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelControl4.Appearance.Options.UseFont = true;
-            labelControl4.Location = new Point(434, 66);
+            labelControl4.Location = new Point(475, 63);
             labelControl4.Name = "labelControl4";
             labelControl4.Size = new Size(75, 16);
             labelControl4.TabIndex = 8;
@@ -201,14 +205,16 @@
             // 
             // textEdit4
             // 
-            textEdit4.Location = new Point(536, 28);
+            textEdit4.Anchor = AnchorStyles.Top;
+            textEdit4.Location = new Point(577, 25);
             textEdit4.Name = "textEdit4";
             textEdit4.Size = new Size(157, 22);
             textEdit4.TabIndex = 7;
             // 
             // labelControl3
             // 
-            labelControl3.Location = new Point(434, 31);
+            labelControl3.Anchor = AnchorStyles.Top;
+            labelControl3.Location = new Point(475, 28);
             labelControl3.Name = "labelControl3";
             labelControl3.Size = new Size(58, 16);
             labelControl3.TabIndex = 6;
@@ -216,6 +222,7 @@
             // 
             // textEdit3
             // 
+            textEdit3.Anchor = AnchorStyles.Top;
             textEdit3.Location = new Point(122, 63);
             textEdit3.Name = "textEdit3";
             textEdit3.Size = new Size(271, 22);
@@ -223,6 +230,7 @@
             // 
             // labelControl2
             // 
+            labelControl2.Anchor = AnchorStyles.Top;
             labelControl2.Location = new Point(20, 66);
             labelControl2.Name = "labelControl2";
             labelControl2.Size = new Size(81, 16);
@@ -231,6 +239,7 @@
             // 
             // textEdit1
             // 
+            textEdit1.Anchor = AnchorStyles.Top;
             textEdit1.EditValue = "";
             textEdit1.Location = new Point(122, 28);
             textEdit1.Name = "textEdit1";
@@ -239,6 +248,7 @@
             // 
             // labelControl1
             // 
+            labelControl1.Anchor = AnchorStyles.Top;
             labelControl1.Location = new Point(21, 31);
             labelControl1.Name = "labelControl1";
             labelControl1.Size = new Size(42, 16);
