@@ -79,7 +79,7 @@
             colID.Name = "colID";
             colID.Visible = true;
             colID.VisibleIndex = 0;
-            colID.Width = 94;
+            colID.Width = 47;
             // 
             // colCommodityName
             // 
