@@ -36,7 +36,7 @@
             dtpBirthday = new DevExpress.XtraEditors.DateEdit();
             chkFemale = new DevExpress.XtraEditors.CheckEdit();
             labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            txt = new DevExpress.XtraEditors.TextEdit();
+            txtFullName = new DevExpress.XtraEditors.TextEdit();
             cboRole = new DevExpress.XtraEditors.ComboBoxEdit();
             labelControl8 = new DevExpress.XtraEditors.LabelControl();
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -71,7 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)dtpBirthday.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtpBirthday.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chkFemale.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txt.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtFullName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cboRole.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtContact.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtUserName.Properties).BeginInit();
@@ -85,7 +85,7 @@
             // 
             // groupControl1
             // 
-            groupControl1.AppearanceCaption.Font = new Font("Inter", 7.8F, FontStyle.Bold);
+            groupControl1.AppearanceCaption.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
             groupControl1.AppearanceCaption.ForeColor = Color.FromArgb(16, 53, 113);
             groupControl1.AppearanceCaption.Options.UseFont = true;
             groupControl1.AppearanceCaption.Options.UseForeColor = true;
@@ -95,7 +95,7 @@
             groupControl1.Controls.Add(dtpBirthday);
             groupControl1.Controls.Add(chkFemale);
             groupControl1.Controls.Add(labelControl5);
-            groupControl1.Controls.Add(txt);
+            groupControl1.Controls.Add(txtFullName);
             groupControl1.Controls.Add(cboRole);
             groupControl1.Controls.Add(labelControl8);
             groupControl1.Controls.Add(labelControl4);
@@ -126,7 +126,7 @@
             // 
             btnResetPassword.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnResetPassword.Appearance.Options.UseFont = true;
-            btnResetPassword.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("simpleButton1.ImageOptions.SvgImage");
+            btnResetPassword.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnResetPassword.ImageOptions.SvgImage");
             btnResetPassword.ImageOptions.SvgImageSize = new Size(20, 20);
             btnResetPassword.Location = new Point(678, 24);
             btnResetPassword.Name = "btnResetPassword";
@@ -168,12 +168,12 @@
             labelControl5.TabIndex = 6;
             labelControl5.Text = "Birthday:";
             // 
-            // txt
+            // txtFullName
             // 
-            txt.Location = new Point(91, 74);
-            txt.Name = "txt";
-            txt.Size = new Size(189, 22);
-            txt.TabIndex = 11;
+            txtFullName.Location = new Point(91, 74);
+            txtFullName.Name = "txtFullName";
+            txtFullName.Size = new Size(189, 22);
+            txtFullName.TabIndex = 11;
             // 
             // cboRole
             // 
@@ -463,7 +463,7 @@
             ((System.ComponentModel.ISupportInitialize)dtpBirthday.Properties.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtpBirthday.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)chkFemale.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txt.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtFullName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cboRole.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtContact.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtUserName.Properties).EndInit();
@@ -488,7 +488,7 @@
         private DevExpress.XtraEditors.TextEdit txtUserName;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.ComboBoxEdit cboRole;
-        private DevExpress.XtraEditors.TextEdit txt;
+        private DevExpress.XtraEditors.TextEdit txtFullName;
         private DevExpress.XtraEditors.CheckEdit chkFemale;
         private DevExpress.XtraEditors.TextEdit txtAddress;
         private DevExpress.XtraEditors.DateEdit dtpBirthday;
