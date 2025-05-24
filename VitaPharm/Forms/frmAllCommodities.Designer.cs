@@ -52,6 +52,7 @@
             simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
@@ -257,6 +258,7 @@
             // 
             // panelControl1
             // 
+            panelControl1.Controls.Add(simpleButton5);
             panelControl1.Controls.Add(simpleButton4);
             panelControl1.Controls.Add(simpleButton3);
             panelControl1.Controls.Add(simpleButton2);
@@ -297,7 +299,7 @@
             simpleButton2.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             simpleButton2.Appearance.Options.UseBackColor = true;
             simpleButton2.Appearance.Options.UseFont = true;
-            simpleButton2.Location = new Point(453, 16);
+            simpleButton2.Location = new Point(136, 16);
             simpleButton2.Name = "simpleButton2";
             simpleButton2.Size = new Size(118, 36);
             simpleButton2.TabIndex = 4;
@@ -309,11 +311,23 @@
             simpleButton1.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             simpleButton1.Appearance.Options.UseBackColor = true;
             simpleButton1.Appearance.Options.UseFont = true;
-            simpleButton1.Location = new Point(329, 16);
+            simpleButton1.Location = new Point(12, 16);
             simpleButton1.Name = "simpleButton1";
             simpleButton1.Size = new Size(118, 36);
             simpleButton1.TabIndex = 3;
             simpleButton1.Text = "Edit";
+            // 
+            // simpleButton5
+            // 
+            simpleButton5.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
+            simpleButton5.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            simpleButton5.Appearance.Options.UseBackColor = true;
+            simpleButton5.Appearance.Options.UseFont = true;
+            simpleButton5.Location = new Point(453, 16);
+            simpleButton5.Name = "simpleButton5";
+            simpleButton5.Size = new Size(118, 36);
+            simpleButton5.TabIndex = 7;
+            simpleButton5.Text = "Save";
             // 
             // frmAllCommodities
             // 
@@ -368,5 +382,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
     }
 }
