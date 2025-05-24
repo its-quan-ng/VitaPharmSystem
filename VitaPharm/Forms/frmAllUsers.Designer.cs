@@ -30,21 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAllUsers));
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            labelControl5 = new DevExpress.XtraEditors.LabelControl();
             textEdit3 = new DevExpress.XtraEditors.TextEdit();
             comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            checkButton1 = new DevExpress.XtraEditors.CheckButton();
             labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            labelControl5 = new DevExpress.XtraEditors.LabelControl();
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
             textEdit2 = new DevExpress.XtraEditors.TextEdit();
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
-            dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             gridControl1 = new DevExpress.XtraGrid.GridControl();
             gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             colID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,31 +52,35 @@
             colGender = new DevExpress.XtraGrid.Columns.GridColumn();
             colBirthday = new DevExpress.XtraGrid.Columns.GridColumn();
             colContact = new DevExpress.XtraGrid.Columns.GridColumn();
+            colRole = new DevExpress.XtraGrid.Columns.GridColumn();
             colIsActive = new DevExpress.XtraGrid.Columns.GridColumn();
             repochkEditIsActive = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            repotxtPassword = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            colRole = new DevExpress.XtraGrid.Columns.GridColumn();
             colPassword = new DevExpress.XtraGrid.Columns.GridColumn();
+            repotxtPassword = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
+            simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties.CalendarTimeProperties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)checkEdit1.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)comboBoxEdit1.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)checkEdit1.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties.CalendarTimeProperties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repochkEditIsActive).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repotxtPassword).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)checkEdit2.Properties).BeginInit();
             SuspendLayout();
             // 
             // groupControl1
@@ -86,6 +89,7 @@
             groupControl1.AppearanceCaption.ForeColor = Color.FromArgb(16, 53, 113);
             groupControl1.AppearanceCaption.Options.UseFont = true;
             groupControl1.AppearanceCaption.Options.UseForeColor = true;
+            groupControl1.Controls.Add(checkEdit2);
             groupControl1.Controls.Add(simpleButton1);
             groupControl1.Controls.Add(textEdit4);
             groupControl1.Controls.Add(dateEdit1);
@@ -93,7 +97,6 @@
             groupControl1.Controls.Add(labelControl5);
             groupControl1.Controls.Add(textEdit3);
             groupControl1.Controls.Add(comboBoxEdit1);
-            groupControl1.Controls.Add(checkButton1);
             groupControl1.Controls.Add(labelControl8);
             groupControl1.Controls.Add(labelControl4);
             groupControl1.Controls.Add(labelControl3);
@@ -109,40 +112,43 @@
             groupControl1.TabIndex = 0;
             groupControl1.Text = "User Information";
             // 
-            // textEdit3
+            // simpleButton1
             // 
-            textEdit3.Location = new Point(91, 71);
-            textEdit3.Name = "textEdit3";
-            textEdit3.Size = new Size(189, 22);
-            textEdit3.TabIndex = 11;
+            simpleButton1.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            simpleButton1.Appearance.Options.UseFont = true;
+            simpleButton1.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("simpleButton1.ImageOptions.SvgImage");
+            simpleButton1.ImageOptions.SvgImageSize = new Size(20, 20);
+            simpleButton1.Location = new Point(678, 24);
+            simpleButton1.Name = "simpleButton1";
+            simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            simpleButton1.Size = new Size(138, 36);
+            simpleButton1.TabIndex = 16;
+            simpleButton1.Text = "Reset Password";
             // 
-            // comboBoxEdit1
+            // textEdit4
             // 
-            comboBoxEdit1.EditValue = "User";
-            comboBoxEdit1.Location = new Point(389, 33);
-            comboBoxEdit1.Name = "comboBoxEdit1";
-            comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            comboBoxEdit1.Size = new Size(71, 22);
-            comboBoxEdit1.TabIndex = 10;
+            textEdit4.Location = new Point(389, 116);
+            textEdit4.Name = "textEdit4";
+            textEdit4.Size = new Size(427, 22);
+            textEdit4.TabIndex = 14;
             // 
-            // checkButton1
+            // dateEdit1
             // 
-            checkButton1.ImageOptions.Image = (Image)resources.GetObject("checkButton1.ImageOptions.Image");
-            checkButton1.ImageOptions.SvgImageSize = new Size(20, 20);
-            checkButton1.Location = new Point(523, 27);
-            checkButton1.Name = "checkButton1";
-            checkButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            checkButton1.Size = new Size(100, 30);
-            checkButton1.TabIndex = 1;
-            checkButton1.Text = "Is Active?";
+            dateEdit1.EditValue = null;
+            dateEdit1.Location = new Point(91, 116);
+            dateEdit1.Name = "dateEdit1";
+            dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateEdit1.Size = new Size(155, 22);
+            dateEdit1.TabIndex = 13;
             // 
-            // labelControl8
+            // checkEdit1
             // 
-            labelControl8.Location = new Point(327, 36);
-            labelControl8.Name = "labelControl8";
-            labelControl8.Size = new Size(30, 16);
-            labelControl8.TabIndex = 9;
-            labelControl8.Text = "Role:";
+            checkEdit1.Location = new Point(606, 73);
+            checkEdit1.Name = "checkEdit1";
+            checkEdit1.Properties.Caption = "Female";
+            checkEdit1.Size = new Size(128, 24);
+            checkEdit1.TabIndex = 12;
             // 
             // labelControl5
             // 
@@ -152,9 +158,33 @@
             labelControl5.TabIndex = 6;
             labelControl5.Text = "Birthday:";
             // 
+            // textEdit3
+            // 
+            textEdit3.Location = new Point(91, 74);
+            textEdit3.Name = "textEdit3";
+            textEdit3.Size = new Size(189, 22);
+            textEdit3.TabIndex = 11;
+            // 
+            // comboBoxEdit1
+            // 
+            comboBoxEdit1.EditValue = "User";
+            comboBoxEdit1.Location = new Point(389, 31);
+            comboBoxEdit1.Name = "comboBoxEdit1";
+            comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            comboBoxEdit1.Size = new Size(71, 22);
+            comboBoxEdit1.TabIndex = 10;
+            // 
+            // labelControl8
+            // 
+            labelControl8.Location = new Point(327, 34);
+            labelControl8.Name = "labelControl8";
+            labelControl8.Size = new Size(30, 16);
+            labelControl8.TabIndex = 9;
+            labelControl8.Text = "Role:";
+            // 
             // labelControl4
             // 
-            labelControl4.Location = new Point(327, 122);
+            labelControl4.Location = new Point(327, 119);
             labelControl4.Name = "labelControl4";
             labelControl4.Size = new Size(51, 16);
             labelControl4.TabIndex = 5;
@@ -170,7 +200,7 @@
             // 
             // textEdit2
             // 
-            textEdit2.Location = new Point(389, 71);
+            textEdit2.Location = new Point(389, 74);
             textEdit2.Name = "textEdit2";
             textEdit2.Size = new Size(159, 22);
             textEdit2.TabIndex = 3;
@@ -197,44 +227,6 @@
             textEdit1.Name = "textEdit1";
             textEdit1.Size = new Size(189, 22);
             textEdit1.TabIndex = 0;
-            // 
-            // checkEdit1
-            // 
-            checkEdit1.Location = new Point(606, 69);
-            checkEdit1.Name = "checkEdit1";
-            checkEdit1.Properties.Caption = "Female";
-            checkEdit1.Size = new Size(128, 24);
-            checkEdit1.TabIndex = 12;
-            // 
-            // dateEdit1
-            // 
-            dateEdit1.EditValue = null;
-            dateEdit1.Location = new Point(91, 116);
-            dateEdit1.Name = "dateEdit1";
-            dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateEdit1.Size = new Size(155, 22);
-            dateEdit1.TabIndex = 13;
-            // 
-            // textEdit4
-            // 
-            textEdit4.Location = new Point(389, 113);
-            textEdit4.Name = "textEdit4";
-            textEdit4.Size = new Size(345, 22);
-            textEdit4.TabIndex = 14;
-            // 
-            // simpleButton1
-            // 
-            simpleButton1.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            simpleButton1.Appearance.Options.UseFont = true;
-            simpleButton1.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("simpleButton1.ImageOptions.SvgImage");
-            simpleButton1.ImageOptions.SvgImageSize = new Size(20, 20);
-            simpleButton1.Location = new Point(678, 23);
-            simpleButton1.Name = "simpleButton1";
-            simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            simpleButton1.Size = new Size(138, 36);
-            simpleButton1.TabIndex = 16;
-            simpleButton1.Text = "Reset Password";
             // 
             // gridControl1
             // 
@@ -321,6 +313,17 @@
             colContact.VisibleIndex = 5;
             colContact.Width = 85;
             // 
+            // colRole
+            // 
+            colRole.AccessibleDescription = "";
+            colRole.Caption = "Role";
+            colRole.FieldName = "UserRole";
+            colRole.MinWidth = 25;
+            colRole.Name = "colRole";
+            colRole.Visible = true;
+            colRole.VisibleIndex = 8;
+            colRole.Width = 85;
+            // 
             // colIsActive
             // 
             colIsActive.Caption = "IsActive";
@@ -338,24 +341,6 @@
             repochkEditIsActive.AutoHeight = false;
             repochkEditIsActive.Name = "repochkEditIsActive";
             // 
-            // repotxtPassword
-            // 
-            repotxtPassword.AutoHeight = false;
-            repotxtPassword.Name = "repotxtPassword";
-            repotxtPassword.PasswordChar = '•';
-            repotxtPassword.UseSystemPasswordChar = true;
-            // 
-            // colRole
-            // 
-            colRole.AccessibleDescription = "";
-            colRole.Caption = "Role";
-            colRole.FieldName = "UserRole";
-            colRole.MinWidth = 25;
-            colRole.Name = "colRole";
-            colRole.Visible = true;
-            colRole.VisibleIndex = 8;
-            colRole.Width = 85;
-            // 
             // colPassword
             // 
             colPassword.AccessibleDescription = "";
@@ -368,8 +353,17 @@
             colPassword.VisibleIndex = 3;
             colPassword.Width = 98;
             // 
+            // repotxtPassword
+            // 
+            repotxtPassword.AutoHeight = false;
+            repotxtPassword.Name = "repotxtPassword";
+            repotxtPassword.PasswordChar = '•';
+            repotxtPassword.UseSystemPasswordChar = true;
+            // 
             // panelControl1
             // 
+            panelControl1.Controls.Add(simpleButton6);
+            panelControl1.Controls.Add(simpleButton5);
             panelControl1.Controls.Add(simpleButton4);
             panelControl1.Controls.Add(simpleButton3);
             panelControl1.Controls.Add(simpleButton2);
@@ -378,6 +372,18 @@
             panelControl1.Name = "panelControl1";
             panelControl1.Size = new Size(828, 64);
             panelControl1.TabIndex = 2;
+            // 
+            // simpleButton5
+            // 
+            simpleButton5.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
+            simpleButton5.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            simpleButton5.Appearance.Options.UseBackColor = true;
+            simpleButton5.Appearance.Options.UseFont = true;
+            simpleButton5.Location = new Point(450, 16);
+            simpleButton5.Name = "simpleButton5";
+            simpleButton5.Size = new Size(118, 36);
+            simpleButton5.TabIndex = 10;
+            simpleButton5.Text = "Save";
             // 
             // simpleButton4
             // 
@@ -405,15 +411,37 @@
             // 
             // simpleButton2
             // 
-            simpleButton2.Appearance.BackColor = Color.FromArgb(100, 165, 80);
+            simpleButton2.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             simpleButton2.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             simpleButton2.Appearance.Options.UseBackColor = true;
             simpleButton2.Appearance.Options.UseFont = true;
-            simpleButton2.Location = new Point(326, 16);
+            simpleButton2.Location = new Point(129, 16);
             simpleButton2.Name = "simpleButton2";
             simpleButton2.Size = new Size(118, 36);
             simpleButton2.TabIndex = 7;
             simpleButton2.Text = "Edit";
+            // 
+            // checkEdit2
+            // 
+            checkEdit2.Location = new Point(541, 30);
+            checkEdit2.Name = "checkEdit2";
+            checkEdit2.Properties.Appearance.BackColor = Color.YellowGreen;
+            checkEdit2.Properties.Appearance.Options.UseBackColor = true;
+            checkEdit2.Properties.Caption = "Is Active?";
+            checkEdit2.Size = new Size(81, 24);
+            checkEdit2.TabIndex = 17;
+            // 
+            // simpleButton6
+            // 
+            simpleButton6.Appearance.BackColor = Color.FromArgb(100, 165, 80);
+            simpleButton6.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            simpleButton6.Appearance.Options.UseBackColor = true;
+            simpleButton6.Appearance.Options.UseFont = true;
+            simpleButton6.Location = new Point(5, 16);
+            simpleButton6.Name = "simpleButton6";
+            simpleButton6.Size = new Size(118, 36);
+            simpleButton6.TabIndex = 11;
+            simpleButton6.Text = "New User";
             // 
             // frmAllUsers
             // 
@@ -430,20 +458,21 @@
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)checkEdit1.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)comboBoxEdit1.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)checkEdit1.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties.CalendarTimeProperties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)repochkEditIsActive).EndInit();
             ((System.ComponentModel.ISupportInitialize)repotxtPassword).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)checkEdit2.Properties).EndInit();
             ResumeLayout(false);
         }
 
@@ -457,7 +486,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.CheckButton checkButton1;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.TextEdit textEdit3;
@@ -482,5 +510,8 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.CheckEdit checkEdit2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton6;
     }
 }
