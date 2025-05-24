@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            cboCommodity = new DevExpress.XtraEditors.ComboBoxEdit();
-            txtBatchCode = new DevExpress.XtraEditors.TextEdit();
-            dateMfg = new DevExpress.XtraEditors.DateEdit();
-            dateExp = new DevExpress.XtraEditors.DateEdit();
-            spinPurchasePrice = new DevExpress.XtraEditors.SpinEdit();
-            txtQuantity = new DevExpress.XtraEditors.TextEdit();
-            txtAmount = new DevExpress.XtraEditors.TextEdit();
-            btnAdd = new DevExpress.XtraEditors.SimpleButton();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            txtAmount = new DevExpress.XtraEditors.TextEdit();
+            txtQuantity = new DevExpress.XtraEditors.TextEdit();
+            spinPurchasePrice = new DevExpress.XtraEditors.SpinEdit();
+            dateExp = new DevExpress.XtraEditors.DateEdit();
+            dateMfg = new DevExpress.XtraEditors.DateEdit();
+            txtBatchCode = new DevExpress.XtraEditors.TextEdit();
+            cboCommodity = new DevExpress.XtraEditors.ComboBoxEdit();
+            labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtBatchCode.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dateMfg.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dateMfg.Properties.CalendarTimeProperties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtAmount.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)spinPurchasePrice.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateExp.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateExp.Properties.CalendarTimeProperties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)spinPurchasePrice.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtAmount.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dateMfg.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dateMfg.Properties.CalendarTimeProperties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtBatchCode.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).BeginInit();
             SuspendLayout();
             // 
             // groupControl1
@@ -83,133 +83,17 @@
             groupControl1.TabIndex = 0;
             groupControl1.Text = "Add Batch";
             // 
-            // labelControl1
+            // btnCancel
             // 
-            labelControl1.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            labelControl1.Appearance.Options.UseFont = true;
-            labelControl1.Location = new Point(40, 51);
-            labelControl1.Name = "labelControl1";
-            labelControl1.Size = new Size(76, 16);
-            labelControl1.TabIndex = 0;
-            labelControl1.Text = "Commodity:";
-            // 
-            // labelControl2
-            // 
-            labelControl2.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            labelControl2.Appearance.Options.UseFont = true;
-            labelControl2.Location = new Point(40, 92);
-            labelControl2.Name = "labelControl2";
-            labelControl2.Size = new Size(78, 16);
-            labelControl2.TabIndex = 0;
-            labelControl2.Text = "Batch Code:";
-            // 
-            // labelControl3
-            // 
-            labelControl3.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            labelControl3.Appearance.Options.UseFont = true;
-            labelControl3.Location = new Point(40, 133);
-            labelControl3.Name = "labelControl3";
-            labelControl3.Size = new Size(64, 16);
-            labelControl3.TabIndex = 1;
-            labelControl3.Text = "Mfg Date:";
-            // 
-            // labelControl4
-            // 
-            labelControl4.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            labelControl4.Appearance.Options.UseFont = true;
-            labelControl4.Location = new Point(40, 174);
-            labelControl4.Name = "labelControl4";
-            labelControl4.Size = new Size(62, 16);
-            labelControl4.TabIndex = 1;
-            labelControl4.Text = "Exp Date:";
-            // 
-            // labelControl5
-            // 
-            labelControl5.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            labelControl5.Appearance.Options.UseFont = true;
-            labelControl5.Location = new Point(40, 215);
-            labelControl5.Name = "labelControl5";
-            labelControl5.Size = new Size(61, 16);
-            labelControl5.TabIndex = 2;
-            labelControl5.Text = "Quantity:";
-            // 
-            // labelControl6
-            // 
-            labelControl6.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            labelControl6.Appearance.Options.UseFont = true;
-            labelControl6.Location = new Point(40, 256);
-            labelControl6.Name = "labelControl6";
-            labelControl6.Size = new Size(101, 16);
-            labelControl6.TabIndex = 2;
-            labelControl6.Text = "Purchase Price:";
-            // 
-            // labelControl7
-            // 
-            labelControl7.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            labelControl7.Appearance.Options.UseFont = true;
-            labelControl7.Location = new Point(40, 297);
-            labelControl7.Name = "labelControl7";
-            labelControl7.Size = new Size(51, 16);
-            labelControl7.TabIndex = 2;
-            labelControl7.Text = "Amount";
-            // 
-            // cboCommodity
-            // 
-            cboCommodity.Location = new Point(147, 48);
-            cboCommodity.Name = "cboCommodity";
-            cboCommodity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboCommodity.Size = new Size(262, 22);
-            cboCommodity.TabIndex = 3;
-            // 
-            // txtBatchCode
-            // 
-            txtBatchCode.Location = new Point(147, 89);
-            txtBatchCode.Name = "txtBatchCode";
-            txtBatchCode.Size = new Size(156, 22);
-            txtBatchCode.TabIndex = 4;
-            // 
-            // dateMfg
-            // 
-            dateMfg.EditValue = null;
-            dateMfg.Location = new Point(147, 130);
-            dateMfg.Name = "dateMfg";
-            dateMfg.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateMfg.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateMfg.Size = new Size(156, 22);
-            dateMfg.TabIndex = 5;
-            // 
-            // dateExp
-            // 
-            dateExp.EditValue = null;
-            dateExp.Location = new Point(147, 171);
-            dateExp.Name = "dateExp";
-            dateExp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateExp.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateExp.Size = new Size(156, 22);
-            dateExp.TabIndex = 5;
-            // 
-            // spinPurchasePrice
-            // 
-            spinPurchasePrice.EditValue = new decimal(new int[] { 0, 0, 0, 0 });
-            spinPurchasePrice.Location = new Point(147, 252);
-            spinPurchasePrice.Name = "spinPurchasePrice";
-            spinPurchasePrice.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            spinPurchasePrice.Size = new Size(156, 24);
-            spinPurchasePrice.TabIndex = 6;
-            // 
-            // txtQuantity
-            // 
-            txtQuantity.Location = new Point(147, 212);
-            txtQuantity.Name = "txtQuantity";
-            txtQuantity.Size = new Size(156, 22);
-            txtQuantity.TabIndex = 7;
-            // 
-            // txtAmount
-            // 
-            txtAmount.Location = new Point(147, 294);
-            txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(156, 22);
-            txtAmount.TabIndex = 7;
+            btnCancel.Appearance.BackColor = Color.FromArgb(195, 49, 49);
+            btnCancel.Appearance.FontStyleDelta = FontStyle.Bold;
+            btnCancel.Appearance.Options.UseBackColor = true;
+            btnCancel.Appearance.Options.UseFont = true;
+            btnCancel.Location = new Point(248, 338);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(109, 31);
+            btnCancel.TabIndex = 8;
+            btnCancel.Text = "Cancel";
             // 
             // btnAdd
             // 
@@ -223,17 +107,133 @@
             btnAdd.TabIndex = 8;
             btnAdd.Text = "Add";
             // 
-            // btnCancel
+            // txtAmount
             // 
-            btnCancel.Appearance.BackColor = Color.FromArgb(195, 49, 49);
-            btnCancel.Appearance.FontStyleDelta = FontStyle.Bold;
-            btnCancel.Appearance.Options.UseBackColor = true;
-            btnCancel.Appearance.Options.UseFont = true;
-            btnCancel.Location = new Point(248, 338);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(109, 31);
-            btnCancel.TabIndex = 8;
-            btnCancel.Text = "Cancel";
+            txtAmount.Location = new Point(147, 294);
+            txtAmount.Name = "txtAmount";
+            txtAmount.Size = new Size(156, 22);
+            txtAmount.TabIndex = 7;
+            // 
+            // txtQuantity
+            // 
+            txtQuantity.Location = new Point(147, 212);
+            txtQuantity.Name = "txtQuantity";
+            txtQuantity.Size = new Size(156, 22);
+            txtQuantity.TabIndex = 7;
+            // 
+            // spinPurchasePrice
+            // 
+            spinPurchasePrice.EditValue = new decimal(new int[] { 0, 0, 0, 0 });
+            spinPurchasePrice.Location = new Point(147, 252);
+            spinPurchasePrice.Name = "spinPurchasePrice";
+            spinPurchasePrice.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            spinPurchasePrice.Size = new Size(156, 24);
+            spinPurchasePrice.TabIndex = 6;
+            // 
+            // dateExp
+            // 
+            dateExp.EditValue = null;
+            dateExp.Location = new Point(147, 171);
+            dateExp.Name = "dateExp";
+            dateExp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateExp.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateExp.Size = new Size(156, 22);
+            dateExp.TabIndex = 5;
+            // 
+            // dateMfg
+            // 
+            dateMfg.EditValue = null;
+            dateMfg.Location = new Point(147, 130);
+            dateMfg.Name = "dateMfg";
+            dateMfg.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateMfg.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateMfg.Size = new Size(156, 22);
+            dateMfg.TabIndex = 5;
+            // 
+            // txtBatchCode
+            // 
+            txtBatchCode.Location = new Point(147, 89);
+            txtBatchCode.Name = "txtBatchCode";
+            txtBatchCode.Size = new Size(156, 22);
+            txtBatchCode.TabIndex = 4;
+            // 
+            // cboCommodity
+            // 
+            cboCommodity.Location = new Point(147, 48);
+            cboCommodity.Name = "cboCommodity";
+            cboCommodity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            cboCommodity.Size = new Size(262, 22);
+            cboCommodity.TabIndex = 3;
+            // 
+            // labelControl7
+            // 
+            labelControl7.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            labelControl7.Appearance.Options.UseFont = true;
+            labelControl7.Location = new Point(40, 297);
+            labelControl7.Name = "labelControl7";
+            labelControl7.Size = new Size(51, 16);
+            labelControl7.TabIndex = 2;
+            labelControl7.Text = "Amount";
+            // 
+            // labelControl6
+            // 
+            labelControl6.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            labelControl6.Appearance.Options.UseFont = true;
+            labelControl6.Location = new Point(40, 256);
+            labelControl6.Name = "labelControl6";
+            labelControl6.Size = new Size(101, 16);
+            labelControl6.TabIndex = 2;
+            labelControl6.Text = "Purchase Price:";
+            // 
+            // labelControl5
+            // 
+            labelControl5.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            labelControl5.Appearance.Options.UseFont = true;
+            labelControl5.Location = new Point(40, 215);
+            labelControl5.Name = "labelControl5";
+            labelControl5.Size = new Size(61, 16);
+            labelControl5.TabIndex = 2;
+            labelControl5.Text = "Quantity:";
+            // 
+            // labelControl4
+            // 
+            labelControl4.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            labelControl4.Appearance.Options.UseFont = true;
+            labelControl4.Location = new Point(40, 174);
+            labelControl4.Name = "labelControl4";
+            labelControl4.Size = new Size(62, 16);
+            labelControl4.TabIndex = 1;
+            labelControl4.Text = "Exp Date:";
+            // 
+            // labelControl3
+            // 
+            labelControl3.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            labelControl3.Appearance.Options.UseFont = true;
+            labelControl3.Location = new Point(40, 133);
+            labelControl3.Name = "labelControl3";
+            labelControl3.Size = new Size(64, 16);
+            labelControl3.TabIndex = 1;
+            labelControl3.Text = "Mfg Date:";
+            // 
+            // labelControl2
+            // 
+            labelControl2.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            labelControl2.Appearance.Options.UseFont = true;
+            labelControl2.Location = new Point(40, 92);
+            labelControl2.Name = "labelControl2";
+            labelControl2.Size = new Size(78, 16);
+            labelControl2.TabIndex = 0;
+            labelControl2.Text = "Batch Code:";
+            // 
+            // labelControl1
+            // 
+            labelControl1.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            labelControl1.Appearance.Options.UseFont = true;
+            labelControl1.Location = new Point(40, 51);
+            labelControl1.Name = "labelControl1";
+            labelControl1.Size = new Size(76, 16);
+            labelControl1.TabIndex = 0;
+            labelControl1.Text = "Commodity:";
             // 
             // frmNewBatch
             // 
@@ -242,19 +242,20 @@
             ClientSize = new Size(440, 382);
             Controls.Add(groupControl1);
             Name = "frmNewBatch";
-            Text = "frmNewBatch";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "New Batch";
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtBatchCode.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dateMfg.Properties.CalendarTimeProperties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dateMfg.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtAmount.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)spinPurchasePrice.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateExp.Properties.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateExp.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)spinPurchasePrice.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtAmount.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dateMfg.Properties.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dateMfg.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtBatchCode.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).EndInit();
             ResumeLayout(false);
         }
 
