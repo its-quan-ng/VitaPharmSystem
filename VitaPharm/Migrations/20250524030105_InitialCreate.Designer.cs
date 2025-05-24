@@ -12,11 +12,7 @@ using VitaPharm.Data;
 namespace VitaPharm.Migrations
 {
     [DbContext(typeof(PharmacyDbContext))]
-<<<<<<<< HEAD:VitaPharm/Migrations/20250523162550_InitialCreate.Designer.cs
-    [Migration("20250523162550_InitialCreate")]
-========
-    [Migration("20250523161924_InitialCreate")]
->>>>>>>> 3273a79e62a6e557228f494ddd8594dcf0854553:VitaPharm/Migrations/20250523161924_InitialCreate.Designer.cs
+    [Migration("20250524030105_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
