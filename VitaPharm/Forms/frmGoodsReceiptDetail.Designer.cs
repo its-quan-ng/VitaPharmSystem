@@ -31,6 +31,10 @@
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             gridControl1 = new DevExpress.XtraGrid.GridControl();
             gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
@@ -58,8 +62,45 @@
             // 
             // gridView1
             // 
+            gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { gridColumn1, gridColumn2, gridColumn3, gridColumn4 });
             gridView1.GridControl = gridControl1;
             gridView1.Name = "gridView1";
+            // 
+            // gridColumn1
+            // 
+            gridColumn1.Caption = "gridColumn1";
+            gridColumn1.MinWidth = 25;
+            gridColumn1.Name = "gridColumn1";
+            gridColumn1.Visible = true;
+            gridColumn1.VisibleIndex = 0;
+            gridColumn1.Width = 94;
+            // 
+            // gridColumn2
+            // 
+            gridColumn2.Caption = "gridColumn2";
+            gridColumn2.MinWidth = 25;
+            gridColumn2.Name = "gridColumn2";
+            gridColumn2.Visible = true;
+            gridColumn2.VisibleIndex = 1;
+            gridColumn2.Width = 94;
+            // 
+            // gridColumn3
+            // 
+            gridColumn3.Caption = "gridColumn3";
+            gridColumn3.MinWidth = 25;
+            gridColumn3.Name = "gridColumn3";
+            gridColumn3.Visible = true;
+            gridColumn3.VisibleIndex = 2;
+            gridColumn3.Width = 94;
+            // 
+            // gridColumn4
+            // 
+            gridColumn4.Caption = "gridColumn4";
+            gridColumn4.MinWidth = 25;
+            gridColumn4.Name = "gridColumn4";
+            gridColumn4.Visible = true;
+            gridColumn4.VisibleIndex = 3;
+            gridColumn4.Width = 94;
             // 
             // frmGoodsReceiptDetail
             // 
@@ -81,5 +122,9 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }
