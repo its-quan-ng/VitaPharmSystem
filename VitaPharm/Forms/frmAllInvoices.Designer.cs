@@ -28,32 +28,152 @@
         /// </summary>
         private void InitializeComponent()
         {
-            gridControl1 = new DevExpress.XtraGrid.GridControl();
-            gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAllInvoices));
+            gridControl = new DevExpress.XtraGrid.GridControl();
+            gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            colInvoiceCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            colDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            colCustomerName = new DevExpress.XtraGrid.Columns.GridColumn();
+            colEmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
+            colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            repoImageCboStatus = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
+            colNote = new DevExpress.XtraGrid.Columns.GridColumn();
+            colAction = new DevExpress.XtraGrid.Columns.GridColumn();
+            repobtnAction = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnReload = new DevExpress.XtraEditors.SimpleButton();
             btnDeactive = new DevExpress.XtraEditors.SimpleButton();
             btnNewGoodsReceipt = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
+            imageCollection = new DevExpress.Utils.ImageCollection(components);
+            ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repoImageCboStatus).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repobtnAction).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)imageCollection).BeginInit();
             SuspendLayout();
             // 
-            // gridControl1
+            // gridControl
             // 
-            gridControl1.Location = new Point(12, 12);
-            gridControl1.MainView = gridView1;
-            gridControl1.Name = "gridControl1";
-            gridControl1.Size = new Size(500, 250);
-            gridControl1.TabIndex = 0;
-            gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
+            gridControl.Location = new Point(12, 12);
+            gridControl.MainView = gridView;
+            gridControl.Name = "gridControl";
+            gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repoImageCboStatus, repobtnAction });
+            gridControl.Size = new Size(500, 250);
+            gridControl.TabIndex = 0;
+            gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
-            // gridView1
+            // gridView
             // 
-            gridView1.GridControl = gridControl1;
-            gridView1.Name = "gridView1";
+            gridView.Appearance.FilterPanel.BorderColor = Color.FromArgb(255, 224, 192);
+            gridView.Appearance.FilterPanel.Options.UseBorderColor = true;
+            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, colInvoiceCode, colDate, colCustomerName, colEmployeeName, colStatus, colNote, colAction });
+            gridView.GridControl = gridControl;
+            gridView.Name = "gridView";
+            gridView.OptionsEditForm.EditFormColumnCount = 5;
+            gridView.OptionsPrint.PrintFilterInfo = true;
+            gridView.OptionsView.ShowAutoFilterRow = true;
+            // 
+            // colID
+            // 
+            colID.Caption = "ID";
+            colID.FieldName = "InvoiceID";
+            colID.MinWidth = 25;
+            colID.Name = "colID";
+            colID.Visible = true;
+            colID.VisibleIndex = 0;
+            colID.Width = 48;
+            // 
+            // colInvoiceCode
+            // 
+            colInvoiceCode.Caption = "Invoice Code";
+            colInvoiceCode.FieldName = "InvoiceCode";
+            colInvoiceCode.MinWidth = 25;
+            colInvoiceCode.Name = "colInvoiceCode";
+            colInvoiceCode.Visible = true;
+            colInvoiceCode.VisibleIndex = 1;
+            colInvoiceCode.Width = 98;
+            // 
+            // colDate
+            // 
+            colDate.Caption = "Created Date";
+            colDate.DisplayFormat.FormatString = "dd/MM/yyyy";
+            colDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            colDate.FieldName = "CreatedDate";
+            colDate.MinWidth = 25;
+            colDate.Name = "colDate";
+            colDate.Visible = true;
+            colDate.VisibleIndex = 2;
+            colDate.Width = 120;
+            // 
+            // colCustomerName
+            // 
+            colCustomerName.Caption = "Customer";
+            colCustomerName.FieldName = "CustomerName";
+            colCustomerName.MinWidth = 25;
+            colCustomerName.Name = "colCustomerName";
+            colCustomerName.Visible = true;
+            colCustomerName.VisibleIndex = 3;
+            colCustomerName.Width = 145;
+            // 
+            // colEmployeeName
+            // 
+            colEmployeeName.Caption = "Employee";
+            colEmployeeName.FieldName = "EmployeeName";
+            colEmployeeName.MinWidth = 25;
+            colEmployeeName.Name = "colEmployeeName";
+            colEmployeeName.Visible = true;
+            colEmployeeName.VisibleIndex = 4;
+            colEmployeeName.Width = 160;
+            // 
+            // colStatus
+            // 
+            colStatus.Caption = "Status";
+            colStatus.ColumnEdit = repoImageCboStatus;
+            colStatus.FieldName = "InvoiceStatus";
+            colStatus.MinWidth = 25;
+            colStatus.Name = "colStatus";
+            colStatus.Visible = true;
+            colStatus.VisibleIndex = 5;
+            colStatus.Width = 64;
+            // 
+            // repoImageCboStatus
+            // 
+            repoImageCboStatus.AutoHeight = false;
+            repoImageCboStatus.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repoImageCboStatus.Name = "repoImageCboStatus";
+            repoImageCboStatus.SmallImages = imageCollection;
+            // 
+            // colNote
+            // 
+            colNote.Caption = "Note";
+            colNote.FieldName = "Note";
+            colNote.MinWidth = 25;
+            colNote.Name = "colNote";
+            colNote.Visible = true;
+            colNote.VisibleIndex = 6;
+            colNote.Width = 136;
+            // 
+            // colAction
+            // 
+            colAction.Caption = "Action";
+            colAction.ColumnEdit = repobtnAction;
+            colAction.FieldName = "Action";
+            colAction.MinWidth = 25;
+            colAction.Name = "colAction";
+            colAction.Visible = true;
+            colAction.VisibleIndex = 7;
+            colAction.Width = 80;
+            // 
+            // repobtnAction
+            // 
+            repobtnAction.AutoHeight = false;
+            repobtnAction.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton() });
+            repobtnAction.Name = "repobtnAction";
             // 
             // panelControl1
             // 
@@ -114,31 +234,51 @@
             btnNewGoodsReceipt.TabIndex = 11;
             btnNewGoodsReceipt.Text = "New Invoice";
             // 
+            // imageCollection
+            // 
+            imageCollection.ImageStream = (DevExpress.Utils.ImageCollectionStreamer)resources.GetObject("imageCollection.ImageStream");
+            imageCollection.Images.SetKeyName(0, "canceled.png");
+            imageCollection.Images.SetKeyName(1, "success.png");
+            // 
             // frmAllInvoices
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(853, 415);
             Controls.Add(panelControl1);
-            Controls.Add(gridControl1);
+            Controls.Add(gridControl);
             Name = "frmAllInvoices";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "All Invoices";
-            ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repoImageCboStatus).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repobtnAction).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)imageCollection).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.SimpleButton btnReload;
         private DevExpress.XtraEditors.SimpleButton btnDeactive;
         private DevExpress.XtraEditors.SimpleButton btnNewGoodsReceipt;
+        private DevExpress.XtraGrid.Columns.GridColumn colID;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvoiceCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomerName;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmployeeName;
+        private DevExpress.XtraGrid.Columns.GridColumn colStatus;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repoImageCboStatus;
+        private DevExpress.XtraGrid.Columns.GridColumn colNote;
+        private DevExpress.XtraGrid.Columns.GridColumn colAction;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repobtnAction;
+        private DevExpress.Utils.ImageCollection imageCollection;
     }
 }
