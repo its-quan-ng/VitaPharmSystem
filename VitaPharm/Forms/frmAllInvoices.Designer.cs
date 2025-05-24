@@ -39,6 +39,7 @@
             colEmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
             colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             repoImageCboStatus = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
+            imageCollection = new DevExpress.Utils.ImageCollection(components);
             colNote = new DevExpress.XtraGrid.Columns.GridColumn();
             colAction = new DevExpress.XtraGrid.Columns.GridColumn();
             repobtnAction = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -46,15 +47,14 @@
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnReload = new DevExpress.XtraEditors.SimpleButton();
             btnDeactive = new DevExpress.XtraEditors.SimpleButton();
-            btnNewGoodsReceipt = new DevExpress.XtraEditors.SimpleButton();
-            imageCollection = new DevExpress.Utils.ImageCollection(components);
+            btnNewInvoice = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repoImageCboStatus).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imageCollection).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repobtnAction).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)imageCollection).BeginInit();
             SuspendLayout();
             // 
             // gridControl
@@ -151,6 +151,12 @@
             repoImageCboStatus.Name = "repoImageCboStatus";
             repoImageCboStatus.SmallImages = imageCollection;
             // 
+            // imageCollection
+            // 
+            imageCollection.ImageStream = (DevExpress.Utils.ImageCollectionStreamer)resources.GetObject("imageCollection.ImageStream");
+            imageCollection.Images.SetKeyName(0, "canceled.png");
+            imageCollection.Images.SetKeyName(1, "success.png");
+            // 
             // colNote
             // 
             colNote.Caption = "Note";
@@ -183,7 +189,7 @@
             panelControl1.Controls.Add(btnCancel);
             panelControl1.Controls.Add(btnReload);
             panelControl1.Controls.Add(btnDeactive);
-            panelControl1.Controls.Add(btnNewGoodsReceipt);
+            panelControl1.Controls.Add(btnNewInvoice);
             panelControl1.Dock = DockStyle.Bottom;
             panelControl1.Location = new Point(0, 351);
             panelControl1.Name = "panelControl1";
@@ -226,23 +232,17 @@
             btnDeactive.TabIndex = 12;
             btnDeactive.Text = "Deactive";
             // 
-            // btnNewGoodsReceipt
+            // btnNewInvoice
             // 
-            btnNewGoodsReceipt.Appearance.BackColor = Color.FromArgb(100, 165, 80);
-            btnNewGoodsReceipt.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            btnNewGoodsReceipt.Appearance.Options.UseBackColor = true;
-            btnNewGoodsReceipt.Appearance.Options.UseFont = true;
-            btnNewGoodsReceipt.Location = new Point(351, 16);
-            btnNewGoodsReceipt.Name = "btnNewGoodsReceipt";
-            btnNewGoodsReceipt.Size = new Size(118, 36);
-            btnNewGoodsReceipt.TabIndex = 11;
-            btnNewGoodsReceipt.Text = "New Invoice";
-            // 
-            // imageCollection
-            // 
-            imageCollection.ImageStream = (DevExpress.Utils.ImageCollectionStreamer)resources.GetObject("imageCollection.ImageStream");
-            imageCollection.Images.SetKeyName(0, "canceled.png");
-            imageCollection.Images.SetKeyName(1, "success.png");
+            btnNewInvoice.Appearance.BackColor = Color.FromArgb(100, 165, 80);
+            btnNewInvoice.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            btnNewInvoice.Appearance.Options.UseBackColor = true;
+            btnNewInvoice.Appearance.Options.UseFont = true;
+            btnNewInvoice.Location = new Point(351, 16);
+            btnNewInvoice.Name = "btnNewInvoice";
+            btnNewInvoice.Size = new Size(118, 36);
+            btnNewInvoice.TabIndex = 11;
+            btnNewInvoice.Text = "New Invoice";
             // 
             // frmAllInvoices
             // 
@@ -257,10 +257,10 @@
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)repoImageCboStatus).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imageCollection).EndInit();
             ((System.ComponentModel.ISupportInitialize)repobtnAction).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)imageCollection).EndInit();
             ResumeLayout(false);
         }
 
@@ -272,7 +272,7 @@
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.SimpleButton btnReload;
         private DevExpress.XtraEditors.SimpleButton btnDeactive;
-        private DevExpress.XtraEditors.SimpleButton btnNewGoodsReceipt;
+        private DevExpress.XtraEditors.SimpleButton btnNewInvoice;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn colInvoiceCode;
         private DevExpress.XtraGrid.Columns.GridColumn colDate;
