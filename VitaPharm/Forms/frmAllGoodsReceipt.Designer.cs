@@ -246,6 +246,7 @@
             gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colReceiptID, colReceiptCode, colReceiptDate, colSupplierName, colNote, colReceiptSatus, colAction });
             gridView1.GridControl = gridControl;
             gridView1.Name = "gridView1";
+            gridView1.OptionsView.ShowAutoFilterRow = true;
             // 
             // colReceiptID
             // 
