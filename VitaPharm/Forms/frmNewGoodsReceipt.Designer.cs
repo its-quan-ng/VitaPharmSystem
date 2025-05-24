@@ -212,7 +212,7 @@
             // 
             txtEmployee.Location = new Point(427, 66);
             txtEmployee.Name = "txtEmployee";
-            txtEmployee.Size = new Size(134, 22);
+            txtEmployee.Size = new Size(130, 22);
             txtEmployee.TabIndex = 4;
             // 
             // txtReceiptCode
