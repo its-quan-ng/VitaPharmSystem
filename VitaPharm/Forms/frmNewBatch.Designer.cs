@@ -32,11 +32,10 @@
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnAdd = new DevExpress.XtraEditors.SimpleButton();
             txtAmount = new DevExpress.XtraEditors.TextEdit();
-            txtQuantity = new DevExpress.XtraEditors.TextEdit();
-            spinPurchasePrice = new DevExpress.XtraEditors.SpinEdit();
+            txtPurchasePrice = new DevExpress.XtraEditors.TextEdit();
+            spinQuantity = new DevExpress.XtraEditors.SpinEdit();
             dateExp = new DevExpress.XtraEditors.DateEdit();
             dateMfg = new DevExpress.XtraEditors.DateEdit();
-            txtBatchCode = new DevExpress.XtraEditors.TextEdit();
             cboCommodity = new DevExpress.XtraEditors.ComboBoxEdit();
             labelControl7 = new DevExpress.XtraEditors.LabelControl();
             labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -45,29 +44,30 @@
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            cboBatchCode = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtAmount.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)spinPurchasePrice.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtPurchasePrice.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)spinQuantity.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateExp.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateExp.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateMfg.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateMfg.Properties.CalendarTimeProperties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtBatchCode.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).BeginInit();
             SuspendLayout();
             // 
             // groupControl1
             // 
+            groupControl1.Controls.Add(cboBatchCode);
             groupControl1.Controls.Add(btnCancel);
             groupControl1.Controls.Add(btnAdd);
             groupControl1.Controls.Add(txtAmount);
-            groupControl1.Controls.Add(txtQuantity);
-            groupControl1.Controls.Add(spinPurchasePrice);
+            groupControl1.Controls.Add(txtPurchasePrice);
+            groupControl1.Controls.Add(spinQuantity);
             groupControl1.Controls.Add(dateExp);
             groupControl1.Controls.Add(dateMfg);
-            groupControl1.Controls.Add(txtBatchCode);
             groupControl1.Controls.Add(cboCommodity);
             groupControl1.Controls.Add(labelControl7);
             groupControl1.Controls.Add(labelControl6);
@@ -114,21 +114,21 @@
             txtAmount.Size = new Size(156, 22);
             txtAmount.TabIndex = 7;
             // 
-            // txtQuantity
+            // txtPurchasePrice
             // 
-            txtQuantity.Location = new Point(147, 212);
-            txtQuantity.Name = "txtQuantity";
-            txtQuantity.Size = new Size(156, 22);
-            txtQuantity.TabIndex = 7;
+            txtPurchasePrice.Location = new Point(147, 253);
+            txtPurchasePrice.Name = "txtPurchasePrice";
+            txtPurchasePrice.Size = new Size(156, 22);
+            txtPurchasePrice.TabIndex = 7;
             // 
-            // spinPurchasePrice
+            // spinQuantity
             // 
-            spinPurchasePrice.EditValue = new decimal(new int[] { 0, 0, 0, 0 });
-            spinPurchasePrice.Location = new Point(147, 252);
-            spinPurchasePrice.Name = "spinPurchasePrice";
-            spinPurchasePrice.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            spinPurchasePrice.Size = new Size(156, 24);
-            spinPurchasePrice.TabIndex = 6;
+            spinQuantity.EditValue = new decimal(new int[] { 0, 0, 0, 0 });
+            spinQuantity.Location = new Point(147, 211);
+            spinQuantity.Name = "spinQuantity";
+            spinQuantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            spinQuantity.Size = new Size(156, 24);
+            spinQuantity.TabIndex = 6;
             // 
             // dateExp
             // 
@@ -150,19 +150,12 @@
             dateMfg.Size = new Size(156, 22);
             dateMfg.TabIndex = 5;
             // 
-            // txtBatchCode
-            // 
-            txtBatchCode.Location = new Point(147, 89);
-            txtBatchCode.Name = "txtBatchCode";
-            txtBatchCode.Size = new Size(156, 22);
-            txtBatchCode.TabIndex = 4;
-            // 
             // cboCommodity
             // 
             cboCommodity.Location = new Point(147, 48);
             cboCommodity.Name = "cboCommodity";
             cboCommodity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboCommodity.Size = new Size(262, 22);
+            cboCommodity.Size = new Size(245, 22);
             cboCommodity.TabIndex = 3;
             // 
             // labelControl7
@@ -235,6 +228,14 @@
             labelControl1.TabIndex = 0;
             labelControl1.Text = "Commodity:";
             // 
+            // cboBatchCode
+            // 
+            cboBatchCode.Location = new Point(147, 89);
+            cboBatchCode.Name = "cboBatchCode";
+            cboBatchCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            cboBatchCode.Size = new Size(156, 22);
+            cboBatchCode.TabIndex = 9;
+            // 
             // frmNewBatch
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -248,14 +249,14 @@
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)txtAmount.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)spinPurchasePrice.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtPurchasePrice.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)spinQuantity.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateExp.Properties.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateExp.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateMfg.Properties.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateMfg.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtBatchCode.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).EndInit();
             ResumeLayout(false);
         }
 
@@ -272,11 +273,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.DateEdit dateExp;
         private DevExpress.XtraEditors.DateEdit dateMfg;
-        private DevExpress.XtraEditors.TextEdit txtBatchCode;
         private DevExpress.XtraEditors.TextEdit txtAmount;
-        private DevExpress.XtraEditors.TextEdit txtQuantity;
-        private DevExpress.XtraEditors.SpinEdit spinPurchasePrice;
+        private DevExpress.XtraEditors.TextEdit txtPurchasePrice;
+        private DevExpress.XtraEditors.SpinEdit spinQuantity;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
+        private DevExpress.XtraEditors.ComboBoxEdit cboBatchCode;
     }
 }
