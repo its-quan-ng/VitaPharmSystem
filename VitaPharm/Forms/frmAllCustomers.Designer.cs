@@ -95,7 +95,7 @@
             groupControl.Name = "groupControl";
             groupControl.Size = new Size(619, 158);
             groupControl.TabIndex = 1;
-            groupControl.Text = "User Information";
+            groupControl.Text = "Customer Information";
             // 
             // txtAddress
             // 
@@ -306,7 +306,7 @@
             Controls.Add(panelControl1);
             Name = "frmAllCustomers";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmAllCustomer";
+            Text = "All Customers";
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)groupControl).EndInit();
