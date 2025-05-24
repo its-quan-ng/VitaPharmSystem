@@ -278,6 +278,7 @@
             Controls.Add(panelControl2);
             Controls.Add(panelControl1);
             Name = "frmNewUser";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "New User";
             Load += frmNewUser_Load;
             ((System.ComponentModel.ISupportInitialize)chkIsActive.Properties).EndInit();
