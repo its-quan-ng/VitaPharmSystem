@@ -48,10 +48,11 @@
             textEdit1 = new DevExpress.XtraEditors.TextEdit();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
@@ -137,7 +138,7 @@
             gridControl1.Location = new Point(0, 146);
             gridControl1.MainView = gridView1;
             gridControl1.Name = "gridControl1";
-            gridControl1.Size = new Size(831, 252);
+            gridControl1.Size = new Size(828, 250);
             gridControl1.TabIndex = 0;
             gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
             // 
@@ -161,12 +162,13 @@
             groupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             groupControl1.Location = new Point(0, 0);
             groupControl1.Name = "groupControl1";
-            groupControl1.Size = new Size(831, 146);
+            groupControl1.Size = new Size(828, 146);
             groupControl1.TabIndex = 1;
             groupControl1.Text = "Commodity Information";
             // 
             // labelControl5
             // 
+            labelControl5.Anchor = AnchorStyles.Top;
             labelControl5.Location = new Point(20, 103);
             labelControl5.Name = "labelControl5";
             labelControl5.Size = new Size(33, 16);
@@ -175,6 +177,7 @@
             // 
             // comboBoxEdit1
             // 
+            comboBoxEdit1.Anchor = AnchorStyles.Top;
             comboBoxEdit1.EditValue = "";
             comboBoxEdit1.Location = new Point(122, 100);
             comboBoxEdit1.Name = "comboBoxEdit1";
@@ -184,16 +187,18 @@
             // 
             // textEdit5
             // 
-            textEdit5.Location = new Point(536, 63);
+            textEdit5.Anchor = AnchorStyles.Top;
+            textEdit5.Location = new Point(577, 60);
             textEdit5.Name = "textEdit5";
             textEdit5.Size = new Size(156, 22);
             textEdit5.TabIndex = 9;
             // 
             // labelControl4
             // 
+            labelControl4.Anchor = AnchorStyles.Top;
             labelControl4.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelControl4.Appearance.Options.UseFont = true;
-            labelControl4.Location = new Point(434, 66);
+            labelControl4.Location = new Point(475, 63);
             labelControl4.Name = "labelControl4";
             labelControl4.Size = new Size(75, 16);
             labelControl4.TabIndex = 8;
@@ -201,14 +206,16 @@
             // 
             // textEdit4
             // 
-            textEdit4.Location = new Point(536, 28);
+            textEdit4.Anchor = AnchorStyles.Top;
+            textEdit4.Location = new Point(577, 25);
             textEdit4.Name = "textEdit4";
             textEdit4.Size = new Size(157, 22);
             textEdit4.TabIndex = 7;
             // 
             // labelControl3
             // 
-            labelControl3.Location = new Point(434, 31);
+            labelControl3.Anchor = AnchorStyles.Top;
+            labelControl3.Location = new Point(475, 28);
             labelControl3.Name = "labelControl3";
             labelControl3.Size = new Size(58, 16);
             labelControl3.TabIndex = 6;
@@ -216,6 +223,7 @@
             // 
             // textEdit3
             // 
+            textEdit3.Anchor = AnchorStyles.Top;
             textEdit3.Location = new Point(122, 63);
             textEdit3.Name = "textEdit3";
             textEdit3.Size = new Size(271, 22);
@@ -223,6 +231,7 @@
             // 
             // labelControl2
             // 
+            labelControl2.Anchor = AnchorStyles.Top;
             labelControl2.Location = new Point(20, 66);
             labelControl2.Name = "labelControl2";
             labelControl2.Size = new Size(81, 16);
@@ -231,6 +240,7 @@
             // 
             // textEdit1
             // 
+            textEdit1.Anchor = AnchorStyles.Top;
             textEdit1.EditValue = "";
             textEdit1.Location = new Point(122, 28);
             textEdit1.Name = "textEdit1";
@@ -239,6 +249,7 @@
             // 
             // labelControl1
             // 
+            labelControl1.Anchor = AnchorStyles.Top;
             labelControl1.Location = new Point(21, 31);
             labelControl1.Name = "labelControl1";
             labelControl1.Size = new Size(42, 16);
@@ -247,51 +258,16 @@
             // 
             // panelControl1
             // 
+            panelControl1.Controls.Add(simpleButton5);
             panelControl1.Controls.Add(simpleButton4);
             panelControl1.Controls.Add(simpleButton3);
             panelControl1.Controls.Add(simpleButton2);
             panelControl1.Controls.Add(simpleButton1);
             panelControl1.Dock = DockStyle.Bottom;
-            panelControl1.Location = new Point(0, 398);
+            panelControl1.Location = new Point(0, 396);
             panelControl1.Name = "panelControl1";
-            panelControl1.Size = new Size(831, 64);
+            panelControl1.Size = new Size(828, 64);
             panelControl1.TabIndex = 2;
-            // 
-            // simpleButton1
-            // 
-            simpleButton1.Appearance.BackColor = Color.FromArgb(100, 165, 80);
-            simpleButton1.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            simpleButton1.Appearance.Options.UseBackColor = true;
-            simpleButton1.Appearance.Options.UseFont = true;
-            simpleButton1.Location = new Point(329, 16);
-            simpleButton1.Name = "simpleButton1";
-            simpleButton1.Size = new Size(118, 36);
-            simpleButton1.TabIndex = 3;
-            simpleButton1.Text = "Edit";
-            // 
-            // simpleButton2
-            // 
-            simpleButton2.Appearance.BackColor = Color.FromArgb(78, 109, 156);
-            simpleButton2.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            simpleButton2.Appearance.Options.UseBackColor = true;
-            simpleButton2.Appearance.Options.UseFont = true;
-            simpleButton2.Location = new Point(453, 16);
-            simpleButton2.Name = "simpleButton2";
-            simpleButton2.Size = new Size(118, 36);
-            simpleButton2.TabIndex = 4;
-            simpleButton2.Text = "Deactive";
-            // 
-            // simpleButton3
-            // 
-            simpleButton3.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Warning;
-            simpleButton3.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            simpleButton3.Appearance.Options.UseBackColor = true;
-            simpleButton3.Appearance.Options.UseFont = true;
-            simpleButton3.Location = new Point(577, 16);
-            simpleButton3.Name = "simpleButton3";
-            simpleButton3.Size = new Size(118, 36);
-            simpleButton3.TabIndex = 5;
-            simpleButton3.Text = "Reload";
             // 
             // simpleButton4
             // 
@@ -305,11 +281,59 @@
             simpleButton4.TabIndex = 6;
             simpleButton4.Text = "Cancel";
             // 
+            // simpleButton3
+            // 
+            simpleButton3.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Warning;
+            simpleButton3.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            simpleButton3.Appearance.Options.UseBackColor = true;
+            simpleButton3.Appearance.Options.UseFont = true;
+            simpleButton3.Location = new Point(577, 16);
+            simpleButton3.Name = "simpleButton3";
+            simpleButton3.Size = new Size(118, 36);
+            simpleButton3.TabIndex = 5;
+            simpleButton3.Text = "Reload";
+            // 
+            // simpleButton2
+            // 
+            simpleButton2.Appearance.BackColor = Color.FromArgb(78, 109, 156);
+            simpleButton2.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            simpleButton2.Appearance.Options.UseBackColor = true;
+            simpleButton2.Appearance.Options.UseFont = true;
+            simpleButton2.Location = new Point(136, 16);
+            simpleButton2.Name = "simpleButton2";
+            simpleButton2.Size = new Size(118, 36);
+            simpleButton2.TabIndex = 4;
+            simpleButton2.Text = "Deactive";
+            // 
+            // simpleButton1
+            // 
+            simpleButton1.Appearance.BackColor = Color.FromArgb(100, 165, 80);
+            simpleButton1.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            simpleButton1.Appearance.Options.UseBackColor = true;
+            simpleButton1.Appearance.Options.UseFont = true;
+            simpleButton1.Location = new Point(12, 16);
+            simpleButton1.Name = "simpleButton1";
+            simpleButton1.Size = new Size(118, 36);
+            simpleButton1.TabIndex = 3;
+            simpleButton1.Text = "Edit";
+            // 
+            // simpleButton5
+            // 
+            simpleButton5.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
+            simpleButton5.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            simpleButton5.Appearance.Options.UseBackColor = true;
+            simpleButton5.Appearance.Options.UseFont = true;
+            simpleButton5.Location = new Point(453, 16);
+            simpleButton5.Name = "simpleButton5";
+            simpleButton5.Size = new Size(118, 36);
+            simpleButton5.TabIndex = 7;
+            simpleButton5.Text = "Save";
+            // 
             // frmAllCommodities
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(831, 462);
+            ClientSize = new Size(828, 460);
             Controls.Add(gridControl1);
             Controls.Add(groupControl1);
             Controls.Add(panelControl1);
@@ -358,5 +382,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
     }
 }
