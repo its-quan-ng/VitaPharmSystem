@@ -32,7 +32,7 @@
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             txtAddress = new DevExpress.XtraEditors.TextEdit();
             chkFemale = new DevExpress.XtraEditors.CheckEdit();
-            txt = new DevExpress.XtraEditors.TextEdit();
+            txtFullName = new DevExpress.XtraEditors.TextEdit();
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
             txtContact = new DevExpress.XtraEditors.TextEdit();
@@ -46,15 +46,21 @@
             colSex = new DevExpress.XtraGrid.Columns.GridColumn();
             colContact = new DevExpress.XtraGrid.Columns.GridColumn();
             colCustomerAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            btnSave = new DevExpress.XtraEditors.SimpleButton();
+            btnReload = new DevExpress.XtraEditors.SimpleButton();
+            btnDelete = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtAddress.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chkFemale.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txt.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtFullName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtContact.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl2).BeginInit();
+            panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)panelControl3).BeginInit();
             panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
@@ -78,7 +84,7 @@
             groupControl1.AppearanceCaption.Options.UseForeColor = true;
             groupControl1.Controls.Add(txtAddress);
             groupControl1.Controls.Add(chkFemale);
-            groupControl1.Controls.Add(txt);
+            groupControl1.Controls.Add(txtFullName);
             groupControl1.Controls.Add(labelControl4);
             groupControl1.Controls.Add(labelControl3);
             groupControl1.Controls.Add(txtContact);
@@ -106,12 +112,12 @@
             chkFemale.Size = new Size(128, 24);
             chkFemale.TabIndex = 12;
             // 
-            // txt
+            // txtFullName
             // 
-            txt.Location = new Point(91, 31);
-            txt.Name = "txt";
-            txt.Size = new Size(189, 22);
-            txt.TabIndex = 11;
+            txtFullName.Location = new Point(91, 31);
+            txtFullName.Name = "txtFullName";
+            txtFullName.Size = new Size(189, 22);
+            txtFullName.TabIndex = 11;
             // 
             // labelControl4
             // 
@@ -133,7 +139,7 @@
             // 
             txtContact.Location = new Point(91, 72);
             txtContact.Name = "txtContact";
-            txtContact.Size = new Size(159, 22);
+            txtContact.Size = new Size(189, 22);
             txtContact.TabIndex = 3;
             // 
             // labelControl2
@@ -146,6 +152,11 @@
             // 
             // panelControl2
             // 
+            panelControl2.Controls.Add(btnDelete);
+            panelControl2.Controls.Add(btnReload);
+            panelControl2.Controls.Add(btnSave);
+            panelControl2.Controls.Add(btnEdit);
+            panelControl2.Controls.Add(btnAdd);
             panelControl2.Dock = DockStyle.Bottom;
             panelControl2.Location = new Point(0, 343);
             panelControl2.Name = "panelControl2";
@@ -227,6 +238,64 @@
             colCustomerAddress.VisibleIndex = 4;
             colCustomerAddress.Width = 94;
             // 
+            // btnAdd
+            // 
+            btnAdd.Appearance.BackColor = Color.FromArgb(100, 165, 80);
+            btnAdd.Appearance.FontStyleDelta = FontStyle.Bold;
+            btnAdd.Appearance.Options.UseBackColor = true;
+            btnAdd.Appearance.Options.UseFont = true;
+            btnAdd.Location = new Point(29, 18);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(102, 30);
+            btnAdd.TabIndex = 0;
+            btnAdd.Text = "Add";
+            // 
+            // btnEdit
+            // 
+            btnEdit.Appearance.BackColor = Color.FromArgb(29, 22, 80);
+            btnEdit.Appearance.FontStyleDelta = FontStyle.Bold;
+            btnEdit.Appearance.Options.UseBackColor = true;
+            btnEdit.Appearance.Options.UseFont = true;
+            btnEdit.Location = new Point(137, 18);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(102, 30);
+            btnEdit.TabIndex = 0;
+            btnEdit.Text = "Edit";
+            // 
+            // btnSave
+            // 
+            btnSave.Appearance.BackColor = Color.FromArgb(254, 145, 19);
+            btnSave.Appearance.FontStyleDelta = FontStyle.Bold;
+            btnSave.Appearance.Options.UseBackColor = true;
+            btnSave.Appearance.Options.UseFont = true;
+            btnSave.Location = new Point(245, 18);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(102, 30);
+            btnSave.TabIndex = 0;
+            btnSave.Text = "Save";
+            // 
+            // btnReload
+            // 
+            btnReload.Appearance.FontStyleDelta = FontStyle.Bold;
+            btnReload.Appearance.Options.UseFont = true;
+            btnReload.Location = new Point(353, 18);
+            btnReload.Name = "btnReload";
+            btnReload.Size = new Size(102, 30);
+            btnReload.TabIndex = 0;
+            btnReload.Text = "Reload";
+            // 
+            // btnDelete
+            // 
+            btnDelete.Appearance.BackColor = Color.FromArgb(195, 49, 49);
+            btnDelete.Appearance.FontStyleDelta = FontStyle.Bold;
+            btnDelete.Appearance.Options.UseBackColor = true;
+            btnDelete.Appearance.Options.UseFont = true;
+            btnDelete.Location = new Point(463, 18);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(102, 30);
+            btnDelete.TabIndex = 0;
+            btnDelete.Text = "Delete";
+            // 
             // frmAllCustomers
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -244,9 +313,10 @@
             groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)txtAddress.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)chkFemale.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txt.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtFullName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtContact.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl2).EndInit();
+            panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)panelControl3).EndInit();
             panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
@@ -260,7 +330,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit txtAddress;
         private DevExpress.XtraEditors.CheckEdit chkFemale;
-        private DevExpress.XtraEditors.TextEdit txt;
+        private DevExpress.XtraEditors.TextEdit txtFullName;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtContact;
@@ -274,5 +344,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSex;
         private DevExpress.XtraGrid.Columns.GridColumn colContact;
         private DevExpress.XtraGrid.Columns.GridColumn colCustomerAddress;
+        private DevExpress.XtraEditors.SimpleButton btnDelete;
+        private DevExpress.XtraEditors.SimpleButton btnReload;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
+        private DevExpress.XtraEditors.SimpleButton btnEdit;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
     }
 }
