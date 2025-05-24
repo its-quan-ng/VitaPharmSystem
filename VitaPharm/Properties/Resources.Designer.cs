@@ -163,6 +163,16 @@ namespace VitaPharm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap vitapharm_logo {
+            get {
+                object obj = ResourceManager.GetObject("vitapharm_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap vitapharm_transparent {
             get {
                 object obj = ResourceManager.GetObject("vitapharm-transparent", resourceCulture);
