@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmAllInvoices";
+            SuspendLayout();
+            // 
+            // frmAllInvoices
+            // 
+            AutoScaleDimensions = new SizeF(7F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(853, 415);
+            Name = "frmAllInvoices";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "All Invoices";
+            ResumeLayout(false);
         }
 
         #endregion
