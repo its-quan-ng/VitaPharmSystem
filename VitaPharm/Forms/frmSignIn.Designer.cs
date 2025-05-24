@@ -115,7 +115,7 @@
             labelControl1.Appearance.Options.UseFont = true;
             labelControl1.Location = new Point(363, 277);
             labelControl1.Name = "labelControl1";
-            labelControl1.Size = new Size(118, 18);
+            labelControl1.Size = new Size(117, 18);
             labelControl1.TabIndex = 6;
             labelControl1.Text = "Show password";
             // 
