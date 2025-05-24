@@ -36,6 +36,14 @@
             barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            tabCommodity = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            tabGoodReceipt = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).BeginInit();
             SuspendLayout();
             // 
@@ -43,11 +51,11 @@
             // 
             ribbonControl1.BackColor = Color.White;
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, barButtonItem1, barButtonItem2, barButtonItem3, barButtonItem4 });
+            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, barButtonItem1, barButtonItem2, barButtonItem3, barButtonItem4, barButtonItem5, barButtonItem6, barButtonItem7, barButtonItem8 });
             ribbonControl1.Location = new Point(0, 0);
-            ribbonControl1.MaxItemId = 5;
+            ribbonControl1.MaxItemId = 9;
             ribbonControl1.Name = "ribbonControl1";
-            ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { tabHumanManage });
+            ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { tabHumanManage, tabCommodity, tabGoodReceipt });
             ribbonControl1.Size = new Size(1278, 183);
             // 
             // barButtonItem1
@@ -56,6 +64,7 @@
             barButtonItem1.Id = 1;
             barButtonItem1.ImageOptions.LargeImage = (Image)resources.GetObject("barButtonItem1.ImageOptions.LargeImage");
             barButtonItem1.Name = "barButtonItem1";
+            barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // tabHumanManage
             // 
@@ -78,6 +87,7 @@
             barButtonItem2.Id = 2;
             barButtonItem2.ImageOptions.LargeImage = (Image)resources.GetObject("barButtonItem2.ImageOptions.LargeImage");
             barButtonItem2.Name = "barButtonItem2";
+            barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // barButtonItem3
             // 
@@ -85,6 +95,7 @@
             barButtonItem3.Id = 3;
             barButtonItem3.ImageOptions.LargeImage = (Image)resources.GetObject("barButtonItem3.ImageOptions.LargeImage");
             barButtonItem3.Name = "barButtonItem3";
+            barButtonItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // barButtonItem4
             // 
@@ -92,6 +103,65 @@
             barButtonItem4.Id = 4;
             barButtonItem4.ImageOptions.LargeImage = (Image)resources.GetObject("barButtonItem4.ImageOptions.LargeImage");
             barButtonItem4.Name = "barButtonItem4";
+            barButtonItem4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // tabCommodity
+            // 
+            tabCommodity.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] { ribbonPageGroup2 });
+            tabCommodity.Name = "tabCommodity";
+            tabCommodity.Text = "Commodity";
+            // 
+            // ribbonPageGroup2
+            // 
+            ribbonPageGroup2.ItemLinks.Add(barButtonItem5);
+            ribbonPageGroup2.ItemLinks.Add(barButtonItem6);
+            ribbonPageGroup2.Name = "ribbonPageGroup2";
+            ribbonPageGroup2.Text = "ribbonPageGroup2";
+            // 
+            // barButtonItem5
+            // 
+            barButtonItem5.Caption = "New Commodity";
+            barButtonItem5.Id = 5;
+            barButtonItem5.ImageOptions.Image = Properties.Resources.medicine_32px;
+            barButtonItem5.Name = "barButtonItem5";
+            barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem6
+            // 
+            barButtonItem6.Caption = "All Commmodities";
+            barButtonItem6.Id = 6;
+            barButtonItem6.ImageOptions.Image = Properties.Resources.medical_equipment_32;
+            barButtonItem6.Name = "barButtonItem6";
+            barButtonItem6.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // tabGoodReceipt
+            // 
+            tabGoodReceipt.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] { ribbonPageGroup3 });
+            tabGoodReceipt.Name = "tabGoodReceipt";
+            tabGoodReceipt.Text = "Goods Receipt";
+            // 
+            // ribbonPageGroup3
+            // 
+            ribbonPageGroup3.ItemLinks.Add(barButtonItem7);
+            ribbonPageGroup3.ItemLinks.Add(barButtonItem8);
+            ribbonPageGroup3.Name = "ribbonPageGroup3";
+            ribbonPageGroup3.Text = "ribbonPageGroup3";
+            // 
+            // barButtonItem7
+            // 
+            barButtonItem7.Caption = "New Good Receipt";
+            barButtonItem7.Id = 7;
+            barButtonItem7.ImageOptions.Image = Properties.Resources.form_blue;
+            barButtonItem7.Name = "barButtonItem7";
+            barButtonItem7.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem8
+            // 
+            barButtonItem8.Caption = "All Goods Receipt";
+            barButtonItem8.Id = 8;
+            barButtonItem8.ImageOptions.Image = Properties.Resources.receipt;
+            barButtonItem8.Name = "barButtonItem8";
+            barButtonItem8.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // frmMain
             // 
@@ -116,5 +186,13 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.Ribbon.RibbonPage tabCommodity;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.Ribbon.RibbonPage tabGoodReceipt;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
     }
 }
