@@ -31,6 +31,7 @@
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             grpDetails = new DevExpress.XtraEditors.GroupControl();
+            btnAddBatch = new DevExpress.XtraEditors.SimpleButton();
             gridControl = new DevExpress.XtraGrid.GridControl();
             gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             Commodity = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,8 +51,8 @@
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             grpSum = new DevExpress.XtraEditors.GroupControl();
-            simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            btnAdd = new DevExpress.XtraEditors.SimpleButton();
             label3 = new Label();
             labelControl8 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
@@ -99,6 +100,7 @@
             // 
             grpDetails.AppearanceCaption.FontStyleDelta = FontStyle.Bold;
             grpDetails.AppearanceCaption.Options.UseFont = true;
+            grpDetails.Controls.Add(btnAddBatch);
             grpDetails.Controls.Add(gridControl);
             grpDetails.Dock = DockStyle.Fill;
             grpDetails.GroupStyle = DevExpress.Utils.GroupStyle.Light;
@@ -107,6 +109,14 @@
             grpDetails.Size = new Size(606, 153);
             grpDetails.TabIndex = 1;
             grpDetails.Text = "Good Receipt Details";
+            // 
+            // btnAddBatch
+            // 
+            btnAddBatch.Location = new Point(496, 34);
+            btnAddBatch.Name = "btnAddBatch";
+            btnAddBatch.Size = new Size(99, 29);
+            btnAddBatch.TabIndex = 1;
+            btnAddBatch.Text = "Add Batch";
             // 
             // gridControl
             // 
@@ -281,8 +291,8 @@
             // 
             grpSum.AppearanceCaption.FontStyleDelta = FontStyle.Bold;
             grpSum.AppearanceCaption.Options.UseFont = true;
-            grpSum.Controls.Add(simpleButton2);
-            grpSum.Controls.Add(simpleButton1);
+            grpSum.Controls.Add(btnCancel);
+            grpSum.Controls.Add(btnAdd);
             grpSum.Controls.Add(label3);
             grpSum.Controls.Add(labelControl8);
             grpSum.Dock = DockStyle.Bottom;
@@ -293,29 +303,29 @@
             grpSum.TabIndex = 2;
             grpSum.Text = "Summary";
             // 
-            // simpleButton2
+            // btnCancel
             // 
-            simpleButton2.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            simpleButton2.Appearance.Options.UseFont = true;
-            simpleButton2.Location = new Point(463, 58);
-            simpleButton2.Name = "simpleButton2";
-            simpleButton2.Size = new Size(97, 29);
-            simpleButton2.TabIndex = 1;
-            simpleButton2.Text = "Cancel";
+            btnCancel.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancel.Appearance.Options.UseFont = true;
+            btnCancel.Location = new Point(463, 58);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(97, 29);
+            btnCancel.TabIndex = 1;
+            btnCancel.Text = "Cancel";
             // 
-            // simpleButton1
+            // btnAdd
             // 
-            simpleButton1.Appearance.BackColor = Color.FromArgb(50, 112, 188);
-            simpleButton1.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            simpleButton1.Appearance.ForeColor = Color.Black;
-            simpleButton1.Appearance.Options.UseBackColor = true;
-            simpleButton1.Appearance.Options.UseFont = true;
-            simpleButton1.Appearance.Options.UseForeColor = true;
-            simpleButton1.Location = new Point(349, 58);
-            simpleButton1.Name = "simpleButton1";
-            simpleButton1.Size = new Size(97, 29);
-            simpleButton1.TabIndex = 0;
-            simpleButton1.Text = "Save";
+            btnAdd.Appearance.BackColor = Color.FromArgb(50, 112, 188);
+            btnAdd.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdd.Appearance.ForeColor = Color.Black;
+            btnAdd.Appearance.Options.UseBackColor = true;
+            btnAdd.Appearance.Options.UseFont = true;
+            btnAdd.Appearance.Options.UseForeColor = true;
+            btnAdd.Location = new Point(349, 58);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(97, 29);
+            btnAdd.TabIndex = 0;
+            btnAdd.Text = "Add";
             // 
             // label3
             // 
@@ -398,10 +408,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn Amount;
         private Label label3;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.TextEdit txtEmployee;
         private DevExpress.XtraEditors.TextEdit txtSupplier;
         private DevExpress.XtraEditors.TextEdit txtReceiptCode;
+        private DevExpress.XtraEditors.SimpleButton btnAddBatch;
     }
 }
