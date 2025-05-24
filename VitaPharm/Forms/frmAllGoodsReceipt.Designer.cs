@@ -29,17 +29,21 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            dateCreate = new DevExpress.XtraEditors.DateEdit();
-            labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            cboSupplier = new DevExpress.XtraEditors.ComboBoxEdit();
-            labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            cboEmployee = new DevExpress.XtraEditors.ComboBoxEdit();
-            labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            cboStatus = new DevExpress.XtraEditors.ComboBoxEdit();
-            panel2 = new Panel();
-            panel3 = new Panel();
             btnFilter = new DevExpress.XtraEditors.SimpleButton();
+            cboStatus = new DevExpress.XtraEditors.ComboBoxEdit();
+            labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            cboEmployee = new DevExpress.XtraEditors.ComboBoxEdit();
+            labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            cboSupplier = new DevExpress.XtraEditors.ComboBoxEdit();
+            labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            dateCreate = new DevExpress.XtraEditors.DateEdit();
+            labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            panel2 = new Panel();
+            btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            btnReload = new DevExpress.XtraEditors.SimpleButton();
+            btnDeactive = new DevExpress.XtraEditors.SimpleButton();
+            btnNewGoodsReceipt = new DevExpress.XtraEditors.SimpleButton();
+            panel3 = new Panel();
             gridControl = new DevExpress.XtraGrid.GridControl();
             gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             colReceiptID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,16 +53,12 @@
             colNote = new DevExpress.XtraGrid.Columns.GridColumn();
             colReceiptSatus = new DevExpress.XtraGrid.Columns.GridColumn();
             colAction = new DevExpress.XtraGrid.Columns.GridColumn();
-            btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            btnReload = new DevExpress.XtraEditors.SimpleButton();
-            btnDeactive = new DevExpress.XtraEditors.SimpleButton();
-            btnNewGoodsReceipt = new DevExpress.XtraEditors.SimpleButton();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cboStatus.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cboEmployee.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cboSupplier.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateCreate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateCreate.Properties.CalendarTimeProperties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cboSupplier.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cboEmployee.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cboStatus.Properties).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
@@ -79,95 +79,8 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(851, 83);
+            panel1.Size = new Size(853, 83);
             panel1.TabIndex = 0;
-            // 
-            // labelControl1
-            // 
-            labelControl1.Location = new Point(12, 12);
-            labelControl1.Name = "labelControl1";
-            labelControl1.Size = new Size(73, 16);
-            labelControl1.TabIndex = 0;
-            labelControl1.Text = "Date Create:";
-            // 
-            // dateCreate
-            // 
-            dateCreate.EditValue = null;
-            dateCreate.Location = new Point(12, 34);
-            dateCreate.Name = "dateCreate";
-            dateCreate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateCreate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateCreate.Size = new Size(113, 22);
-            dateCreate.TabIndex = 1;
-            // 
-            // labelControl2
-            // 
-            labelControl2.Location = new Point(185, 12);
-            labelControl2.Name = "labelControl2";
-            labelControl2.Size = new Size(47, 16);
-            labelControl2.TabIndex = 2;
-            labelControl2.Text = "Supplier";
-            // 
-            // cboSupplier
-            // 
-            cboSupplier.Location = new Point(185, 34);
-            cboSupplier.Name = "cboSupplier";
-            cboSupplier.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboSupplier.Size = new Size(143, 22);
-            cboSupplier.TabIndex = 3;
-            // 
-            // labelControl3
-            // 
-            labelControl3.Location = new Point(381, 12);
-            labelControl3.Name = "labelControl3";
-            labelControl3.Size = new Size(55, 16);
-            labelControl3.TabIndex = 4;
-            labelControl3.Text = "Employee";
-            // 
-            // cboEmployee
-            // 
-            cboEmployee.Location = new Point(381, 34);
-            cboEmployee.Name = "cboEmployee";
-            cboEmployee.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboEmployee.Size = new Size(156, 22);
-            cboEmployee.TabIndex = 5;
-            // 
-            // labelControl4
-            // 
-            labelControl4.Location = new Point(578, 12);
-            labelControl4.Name = "labelControl4";
-            labelControl4.Size = new Size(36, 16);
-            labelControl4.TabIndex = 6;
-            labelControl4.Text = "Status";
-            // 
-            // cboStatus
-            // 
-            cboStatus.Location = new Point(578, 34);
-            cboStatus.Name = "cboStatus";
-            cboStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboStatus.Size = new Size(146, 22);
-            cboStatus.TabIndex = 7;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(btnCancel);
-            panel2.Controls.Add(btnReload);
-            panel2.Controls.Add(btnDeactive);
-            panel2.Controls.Add(btnNewGoodsReceipt);
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 345);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(851, 71);
-            panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(gridControl);
-            panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 83);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(851, 262);
-            panel3.TabIndex = 2;
             // 
             // btnFilter
             // 
@@ -183,13 +96,148 @@
             btnFilter.TabIndex = 8;
             btnFilter.Text = "Filter";
             // 
+            // cboStatus
+            // 
+            cboStatus.Location = new Point(578, 34);
+            cboStatus.Name = "cboStatus";
+            cboStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            cboStatus.Size = new Size(146, 22);
+            cboStatus.TabIndex = 7;
+            // 
+            // labelControl4
+            // 
+            labelControl4.Location = new Point(578, 12);
+            labelControl4.Name = "labelControl4";
+            labelControl4.Size = new Size(36, 16);
+            labelControl4.TabIndex = 6;
+            labelControl4.Text = "Status";
+            // 
+            // cboEmployee
+            // 
+            cboEmployee.Location = new Point(381, 34);
+            cboEmployee.Name = "cboEmployee";
+            cboEmployee.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            cboEmployee.Size = new Size(156, 22);
+            cboEmployee.TabIndex = 5;
+            // 
+            // labelControl3
+            // 
+            labelControl3.Location = new Point(381, 12);
+            labelControl3.Name = "labelControl3";
+            labelControl3.Size = new Size(55, 16);
+            labelControl3.TabIndex = 4;
+            labelControl3.Text = "Employee";
+            // 
+            // cboSupplier
+            // 
+            cboSupplier.Location = new Point(185, 34);
+            cboSupplier.Name = "cboSupplier";
+            cboSupplier.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            cboSupplier.Size = new Size(143, 22);
+            cboSupplier.TabIndex = 3;
+            // 
+            // labelControl2
+            // 
+            labelControl2.Location = new Point(185, 12);
+            labelControl2.Name = "labelControl2";
+            labelControl2.Size = new Size(47, 16);
+            labelControl2.TabIndex = 2;
+            labelControl2.Text = "Supplier";
+            // 
+            // dateCreate
+            // 
+            dateCreate.EditValue = null;
+            dateCreate.Location = new Point(12, 34);
+            dateCreate.Name = "dateCreate";
+            dateCreate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateCreate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateCreate.Size = new Size(113, 22);
+            dateCreate.TabIndex = 1;
+            // 
+            // labelControl1
+            // 
+            labelControl1.Location = new Point(12, 12);
+            labelControl1.Name = "labelControl1";
+            labelControl1.Size = new Size(73, 16);
+            labelControl1.TabIndex = 0;
+            labelControl1.Text = "Date Create:";
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(btnCancel);
+            panel2.Controls.Add(btnReload);
+            panel2.Controls.Add(btnDeactive);
+            panel2.Controls.Add(btnNewGoodsReceipt);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 344);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(853, 71);
+            panel2.TabIndex = 1;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
+            btnCancel.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            btnCancel.Appearance.Options.UseBackColor = true;
+            btnCancel.Appearance.Options.UseFont = true;
+            btnCancel.Location = new Point(714, 20);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(118, 36);
+            btnCancel.TabIndex = 10;
+            btnCancel.Text = "Cancel";
+            // 
+            // btnReload
+            // 
+            btnReload.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Warning;
+            btnReload.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            btnReload.Appearance.Options.UseBackColor = true;
+            btnReload.Appearance.Options.UseFont = true;
+            btnReload.Location = new Point(590, 20);
+            btnReload.Name = "btnReload";
+            btnReload.Size = new Size(118, 36);
+            btnReload.TabIndex = 9;
+            btnReload.Text = "Reload";
+            // 
+            // btnDeactive
+            // 
+            btnDeactive.Appearance.BackColor = Color.FromArgb(78, 109, 156);
+            btnDeactive.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            btnDeactive.Appearance.Options.UseBackColor = true;
+            btnDeactive.Appearance.Options.UseFont = true;
+            btnDeactive.Location = new Point(466, 20);
+            btnDeactive.Name = "btnDeactive";
+            btnDeactive.Size = new Size(118, 36);
+            btnDeactive.TabIndex = 8;
+            btnDeactive.Text = "Deactive";
+            // 
+            // btnNewGoodsReceipt
+            // 
+            btnNewGoodsReceipt.Appearance.BackColor = Color.FromArgb(100, 165, 80);
+            btnNewGoodsReceipt.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            btnNewGoodsReceipt.Appearance.Options.UseBackColor = true;
+            btnNewGoodsReceipt.Appearance.Options.UseFont = true;
+            btnNewGoodsReceipt.Location = new Point(311, 20);
+            btnNewGoodsReceipt.Name = "btnNewGoodsReceipt";
+            btnNewGoodsReceipt.Size = new Size(149, 36);
+            btnNewGoodsReceipt.TabIndex = 7;
+            btnNewGoodsReceipt.Text = "New Goods Receipt";
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(gridControl);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 83);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(853, 261);
+            panel3.TabIndex = 2;
+            // 
             // gridControl
             // 
             gridControl.Dock = DockStyle.Fill;
             gridControl.Location = new Point(0, 0);
             gridControl.MainView = gridView1;
             gridControl.Name = "gridControl";
-            gridControl.Size = new Size(851, 262);
+            gridControl.Size = new Size(853, 261);
             gridControl.TabIndex = 0;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
             // 
@@ -274,59 +322,11 @@
             colAction.VisibleIndex = 6;
             colAction.Width = 94;
             // 
-            // btnCancel
-            // 
-            btnCancel.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
-            btnCancel.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            btnCancel.Appearance.Options.UseBackColor = true;
-            btnCancel.Appearance.Options.UseFont = true;
-            btnCancel.Location = new Point(714, 20);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(118, 36);
-            btnCancel.TabIndex = 10;
-            btnCancel.Text = "Cancel";
-            // 
-            // btnReload
-            // 
-            btnReload.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Warning;
-            btnReload.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            btnReload.Appearance.Options.UseBackColor = true;
-            btnReload.Appearance.Options.UseFont = true;
-            btnReload.Location = new Point(590, 20);
-            btnReload.Name = "btnReload";
-            btnReload.Size = new Size(118, 36);
-            btnReload.TabIndex = 9;
-            btnReload.Text = "Reload";
-            // 
-            // btnDeactive
-            // 
-            btnDeactive.Appearance.BackColor = Color.FromArgb(78, 109, 156);
-            btnDeactive.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            btnDeactive.Appearance.Options.UseBackColor = true;
-            btnDeactive.Appearance.Options.UseFont = true;
-            btnDeactive.Location = new Point(466, 20);
-            btnDeactive.Name = "btnDeactive";
-            btnDeactive.Size = new Size(118, 36);
-            btnDeactive.TabIndex = 8;
-            btnDeactive.Text = "Deactive";
-            // 
-            // btnNewGoodsReceipt
-            // 
-            btnNewGoodsReceipt.Appearance.BackColor = Color.FromArgb(100, 165, 80);
-            btnNewGoodsReceipt.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            btnNewGoodsReceipt.Appearance.Options.UseBackColor = true;
-            btnNewGoodsReceipt.Appearance.Options.UseFont = true;
-            btnNewGoodsReceipt.Location = new Point(311, 20);
-            btnNewGoodsReceipt.Name = "btnNewGoodsReceipt";
-            btnNewGoodsReceipt.Size = new Size(149, 36);
-            btnNewGoodsReceipt.TabIndex = 7;
-            btnNewGoodsReceipt.Text = "New Goods Receipt";
-            // 
             // frmAllGoodsReceipt
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(851, 416);
+            ClientSize = new Size(853, 415);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -335,11 +335,11 @@
             Text = "All Goods Receipt";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cboStatus.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cboEmployee.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cboSupplier.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateCreate.Properties.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateCreate.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cboSupplier.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cboEmployee.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cboStatus.Properties).EndInit();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
