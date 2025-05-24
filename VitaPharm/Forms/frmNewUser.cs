@@ -1,24 +1,24 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
 namespace VitaPharm.Forms
 {
-    public partial class frmNewBatch : DevExpress.XtraEditors.XtraForm
+    public partial class frmNewUser : DevExpress.XtraEditors.XtraForm
     {
-        public frmNewBatch()
+        public frmNewUser()
         {
             InitializeComponent();
         }
 
-        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        private void frmNewUser_Load(object sender, EventArgs e)
         {
 
         }

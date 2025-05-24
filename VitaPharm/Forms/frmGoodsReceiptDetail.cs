@@ -11,16 +11,11 @@ using DevExpress.XtraEditors;
 
 namespace VitaPharm.Forms
 {
-    public partial class frmNewBatch : DevExpress.XtraEditors.XtraForm
-    {
-        public frmNewBatch()
-        {
+	public partial class frmGoodsReceiptDetail: DevExpress.XtraEditors.XtraForm
+	{
+        public frmGoodsReceiptDetail()
+		{
             InitializeComponent();
-        }
-
-        private void groupControl1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-    }
+		}
+	}
 }

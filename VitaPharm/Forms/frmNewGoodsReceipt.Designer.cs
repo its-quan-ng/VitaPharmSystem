@@ -43,7 +43,7 @@
             txtEmployee = new DevExpress.XtraEditors.TextEdit();
             txtReceiptCode = new DevExpress.XtraEditors.TextEdit();
             txtSupplier = new DevExpress.XtraEditors.TextEdit();
-            deReceiptDate = new DevExpress.XtraEditors.DateEdit();
+            dateReceiptDate = new DevExpress.XtraEditors.DateEdit();
             meNote = new DevExpress.XtraEditors.MemoEdit();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
             labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -68,8 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtReceiptCode.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtSupplier.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)deReceiptDate.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)deReceiptDate.Properties.CalendarTimeProperties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dateReceiptDate.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dateReceiptDate.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)meNote.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grpSum).BeginInit();
             grpSum.SuspendLayout();
@@ -193,7 +193,7 @@
             grpInfo.Controls.Add(txtEmployee);
             grpInfo.Controls.Add(txtReceiptCode);
             grpInfo.Controls.Add(txtSupplier);
-            grpInfo.Controls.Add(deReceiptDate);
+            grpInfo.Controls.Add(dateReceiptDate);
             grpInfo.Controls.Add(meNote);
             grpInfo.Controls.Add(labelControl3);
             grpInfo.Controls.Add(labelControl5);
@@ -229,15 +229,15 @@
             txtSupplier.Size = new Size(134, 22);
             txtSupplier.TabIndex = 3;
             // 
-            // deReceiptDate
+            // dateReceiptDate
             // 
-            deReceiptDate.EditValue = null;
-            deReceiptDate.Location = new Point(427, 32);
-            deReceiptDate.Name = "deReceiptDate";
-            deReceiptDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            deReceiptDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            deReceiptDate.Size = new Size(130, 22);
-            deReceiptDate.TabIndex = 2;
+            dateReceiptDate.EditValue = null;
+            dateReceiptDate.Location = new Point(427, 32);
+            dateReceiptDate.Name = "dateReceiptDate";
+            dateReceiptDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateReceiptDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateReceiptDate.Size = new Size(130, 22);
+            dateReceiptDate.TabIndex = 2;
             // 
             // meNote
             // 
@@ -371,8 +371,8 @@
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtReceiptCode.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtSupplier.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)deReceiptDate.Properties.CalendarTimeProperties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)deReceiptDate.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dateReceiptDate.Properties.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dateReceiptDate.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)meNote.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)grpSum).EndInit();
             grpSum.ResumeLayout(false);
@@ -397,7 +397,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.DateEdit deReceiptDate;
+        private DevExpress.XtraEditors.DateEdit dateReceiptDate;
         private DevExpress.XtraEditors.MemoEdit meNote;
         private DevExpress.XtraGrid.GridControl gridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
