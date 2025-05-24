@@ -29,36 +29,50 @@
         private void InitializeComponent()
         {
             gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            colBaseUnit = new DevExpress.XtraGrid.Columns.GridColumn();
             colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            colCommodityName = new DevExpress.XtraGrid.Columns.GridColumn();
+            colManufacturer = new DevExpress.XtraGrid.Columns.GridColumn();
+            colSellingPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            colCommodityStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             gridControl1 = new DevExpress.XtraGrid.GridControl();
-            gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             textEdit5 = new DevExpress.XtraEditors.TextEdit();
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit5.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)comboBoxEdit1.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)textEdit5.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).BeginInit();
             SuspendLayout();
             // 
             // gridView1
             // 
-            gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, gridColumn1 });
+            gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, colCommodityName, colManufacturer, colBaseUnit, colSellingPrice, colCommodityStatus });
             gridView1.GridControl = gridControl1;
             gridView1.Name = "gridView1";
+            // 
+            // colBaseUnit
+            // 
+            colBaseUnit.Caption = "Base Unit";
+            colBaseUnit.FieldName = "BaseUnit";
+            colBaseUnit.MinWidth = 25;
+            colBaseUnit.Name = "colBaseUnit";
+            colBaseUnit.Visible = true;
+            colBaseUnit.VisibleIndex = 3;
+            colBaseUnit.Width = 94;
             // 
             // colID
             // 
@@ -70,6 +84,46 @@
             colID.VisibleIndex = 0;
             colID.Width = 94;
             // 
+            // colCommodityName
+            // 
+            colCommodityName.Caption = "Name";
+            colCommodityName.FieldName = "CommodityName";
+            colCommodityName.MinWidth = 25;
+            colCommodityName.Name = "colCommodityName";
+            colCommodityName.Visible = true;
+            colCommodityName.VisibleIndex = 1;
+            colCommodityName.Width = 94;
+            // 
+            // colManufacturer
+            // 
+            colManufacturer.Caption = "Manufacturer";
+            colManufacturer.FieldName = "Manufacturer";
+            colManufacturer.MinWidth = 25;
+            colManufacturer.Name = "colManufacturer";
+            colManufacturer.Visible = true;
+            colManufacturer.VisibleIndex = 2;
+            colManufacturer.Width = 94;
+            // 
+            // colSellingPrice
+            // 
+            colSellingPrice.Caption = "Selling Price";
+            colSellingPrice.FieldName = "SellingPrice";
+            colSellingPrice.MinWidth = 25;
+            colSellingPrice.Name = "colSellingPrice";
+            colSellingPrice.Visible = true;
+            colSellingPrice.VisibleIndex = 4;
+            colSellingPrice.Width = 94;
+            // 
+            // colCommodityStatus
+            // 
+            colCommodityStatus.Caption = "Status";
+            colCommodityStatus.FieldName = "IsTerminated";
+            colCommodityStatus.MinWidth = 25;
+            colCommodityStatus.Name = "colCommodityStatus";
+            colCommodityStatus.Visible = true;
+            colCommodityStatus.VisibleIndex = 5;
+            colCommodityStatus.Width = 94;
+            // 
             // gridControl1
             // 
             gridControl1.Location = new Point(0, 152);
@@ -78,15 +132,6 @@
             gridControl1.Size = new Size(831, 252);
             gridControl1.TabIndex = 0;
             gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
-            // 
-            // gridColumn1
-            // 
-            gridColumn1.Caption = "gridColumn1";
-            gridColumn1.MinWidth = 25;
-            gridColumn1.Name = "gridColumn1";
-            gridColumn1.Visible = true;
-            gridColumn1.VisibleIndex = 1;
-            gridColumn1.Width = 94;
             // 
             // groupControl1
             // 
@@ -112,51 +157,22 @@
             groupControl1.TabIndex = 1;
             groupControl1.Text = "Commodity Information";
             // 
-            // labelControl1
+            // labelControl5
             // 
-            labelControl1.Location = new Point(21, 31);
-            labelControl1.Name = "labelControl1";
-            labelControl1.Size = new Size(42, 16);
-            labelControl1.TabIndex = 0;
-            labelControl1.Text = "Name: ";
+            labelControl5.Location = new Point(20, 103);
+            labelControl5.Name = "labelControl5";
+            labelControl5.Size = new Size(33, 16);
+            labelControl5.TabIndex = 11;
+            labelControl5.Text = "Type:";
             // 
-            // textEdit1
+            // comboBoxEdit1
             // 
-            textEdit1.EditValue = "";
-            textEdit1.Location = new Point(122, 28);
-            textEdit1.Name = "textEdit1";
-            textEdit1.Size = new Size(271, 22);
-            textEdit1.TabIndex = 1;
-            // 
-            // textEdit3
-            // 
-            textEdit3.Location = new Point(122, 63);
-            textEdit3.Name = "textEdit3";
-            textEdit3.Size = new Size(271, 22);
-            textEdit3.TabIndex = 5;
-            // 
-            // labelControl2
-            // 
-            labelControl2.Location = new Point(20, 66);
-            labelControl2.Name = "labelControl2";
-            labelControl2.Size = new Size(81, 16);
-            labelControl2.TabIndex = 4;
-            labelControl2.Text = "Manufacturer:";
-            // 
-            // textEdit4
-            // 
-            textEdit4.Location = new Point(536, 28);
-            textEdit4.Name = "textEdit4";
-            textEdit4.Size = new Size(157, 22);
-            textEdit4.TabIndex = 7;
-            // 
-            // labelControl3
-            // 
-            labelControl3.Location = new Point(434, 31);
-            labelControl3.Name = "labelControl3";
-            labelControl3.Size = new Size(58, 16);
-            labelControl3.TabIndex = 6;
-            labelControl3.Text = "Base Unit:";
+            comboBoxEdit1.EditValue = "";
+            comboBoxEdit1.Location = new Point(122, 100);
+            comboBoxEdit1.Name = "comboBoxEdit1";
+            comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            comboBoxEdit1.Size = new Size(169, 22);
+            comboBoxEdit1.TabIndex = 10;
             // 
             // textEdit5
             // 
@@ -175,22 +191,51 @@
             labelControl4.TabIndex = 8;
             labelControl4.Text = "Selling Price:";
             // 
-            // comboBoxEdit1
+            // textEdit4
             // 
-            comboBoxEdit1.EditValue = "";
-            comboBoxEdit1.Location = new Point(122, 100);
-            comboBoxEdit1.Name = "comboBoxEdit1";
-            comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            comboBoxEdit1.Size = new Size(169, 22);
-            comboBoxEdit1.TabIndex = 10;
+            textEdit4.Location = new Point(536, 28);
+            textEdit4.Name = "textEdit4";
+            textEdit4.Size = new Size(157, 22);
+            textEdit4.TabIndex = 7;
             // 
-            // labelControl5
+            // labelControl3
             // 
-            labelControl5.Location = new Point(20, 103);
-            labelControl5.Name = "labelControl5";
-            labelControl5.Size = new Size(33, 16);
-            labelControl5.TabIndex = 11;
-            labelControl5.Text = "Type:";
+            labelControl3.Location = new Point(434, 31);
+            labelControl3.Name = "labelControl3";
+            labelControl3.Size = new Size(58, 16);
+            labelControl3.TabIndex = 6;
+            labelControl3.Text = "Base Unit:";
+            // 
+            // textEdit3
+            // 
+            textEdit3.Location = new Point(122, 63);
+            textEdit3.Name = "textEdit3";
+            textEdit3.Size = new Size(271, 22);
+            textEdit3.TabIndex = 5;
+            // 
+            // labelControl2
+            // 
+            labelControl2.Location = new Point(20, 66);
+            labelControl2.Name = "labelControl2";
+            labelControl2.Size = new Size(81, 16);
+            labelControl2.TabIndex = 4;
+            labelControl2.Text = "Manufacturer:";
+            // 
+            // textEdit1
+            // 
+            textEdit1.EditValue = "";
+            textEdit1.Location = new Point(122, 28);
+            textEdit1.Name = "textEdit1";
+            textEdit1.Size = new Size(271, 22);
+            textEdit1.TabIndex = 1;
+            // 
+            // labelControl1
+            // 
+            labelControl1.Location = new Point(21, 31);
+            labelControl1.Name = "labelControl1";
+            labelControl1.Size = new Size(42, 16);
+            labelControl1.TabIndex = 0;
+            labelControl1.Text = "Name: ";
             // 
             // frmAllCommodities
             // 
@@ -199,18 +244,20 @@
             ClientSize = new Size(831, 462);
             Controls.Add(gridControl1);
             Controls.Add(groupControl1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmAllCommodities";
-            Text = "frmAllCommodities";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "All Commodities";
             ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit5.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)comboBoxEdit1.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)textEdit5.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).EndInit();
             ResumeLayout(false);
         }
 
@@ -219,7 +266,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCommodityName;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -231,5 +278,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn colBaseUnit;
+        private DevExpress.XtraGrid.Columns.GridColumn colManufacturer;
+        private DevExpress.XtraGrid.Columns.GridColumn colSellingPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colCommodityStatus;
     }
 }
