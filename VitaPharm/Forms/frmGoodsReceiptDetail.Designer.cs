@@ -244,6 +244,7 @@
             Controls.Add(panel1);
             Controls.Add(panelControl1);
             Name = "frmGoodsReceiptDetail";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Goods Receipt Detail";
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
