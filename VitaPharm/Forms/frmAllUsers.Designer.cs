@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAllUsers));
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
             simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             textEdit4 = new DevExpress.XtraEditors.TextEdit();
             dateEdit1 = new DevExpress.XtraEditors.DateEdit();
@@ -58,14 +59,14 @@
             colPassword = new DevExpress.XtraGrid.Columns.GridColumn();
             repotxtPassword = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
-            simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)checkEdit2.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties.CalendarTimeProperties).BeginInit();
@@ -80,7 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)repotxtPassword).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)checkEdit2.Properties).BeginInit();
             SuspendLayout();
             // 
             // groupControl1
@@ -111,6 +111,16 @@
             groupControl1.Size = new Size(828, 161);
             groupControl1.TabIndex = 0;
             groupControl1.Text = "User Information";
+            // 
+            // checkEdit2
+            // 
+            checkEdit2.Location = new Point(541, 30);
+            checkEdit2.Name = "checkEdit2";
+            checkEdit2.Properties.Appearance.BackColor = Color.YellowGreen;
+            checkEdit2.Properties.Appearance.Options.UseBackColor = true;
+            checkEdit2.Properties.Caption = "Is Active?";
+            checkEdit2.Size = new Size(81, 24);
+            checkEdit2.TabIndex = 17;
             // 
             // simpleButton1
             // 
@@ -235,7 +245,7 @@
             gridControl1.MainView = gridView;
             gridControl1.Name = "gridControl1";
             gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repochkEditIsActive, repotxtPassword });
-            gridControl1.Size = new Size(828, 299);
+            gridControl1.Size = new Size(828, 235);
             gridControl1.TabIndex = 1;
             gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
@@ -373,6 +383,18 @@
             panelControl1.Size = new Size(828, 64);
             panelControl1.TabIndex = 2;
             // 
+            // simpleButton6
+            // 
+            simpleButton6.Appearance.BackColor = Color.FromArgb(100, 165, 80);
+            simpleButton6.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            simpleButton6.Appearance.Options.UseBackColor = true;
+            simpleButton6.Appearance.Options.UseFont = true;
+            simpleButton6.Location = new Point(5, 16);
+            simpleButton6.Name = "simpleButton6";
+            simpleButton6.Size = new Size(118, 36);
+            simpleButton6.TabIndex = 11;
+            simpleButton6.Text = "New User";
+            // 
             // simpleButton5
             // 
             simpleButton5.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
@@ -421,43 +443,22 @@
             simpleButton2.TabIndex = 7;
             simpleButton2.Text = "Edit";
             // 
-            // checkEdit2
-            // 
-            checkEdit2.Location = new Point(541, 30);
-            checkEdit2.Name = "checkEdit2";
-            checkEdit2.Properties.Appearance.BackColor = Color.YellowGreen;
-            checkEdit2.Properties.Appearance.Options.UseBackColor = true;
-            checkEdit2.Properties.Caption = "Is Active?";
-            checkEdit2.Size = new Size(81, 24);
-            checkEdit2.TabIndex = 17;
-            // 
-            // simpleButton6
-            // 
-            simpleButton6.Appearance.BackColor = Color.FromArgb(100, 165, 80);
-            simpleButton6.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            simpleButton6.Appearance.Options.UseBackColor = true;
-            simpleButton6.Appearance.Options.UseFont = true;
-            simpleButton6.Location = new Point(5, 16);
-            simpleButton6.Name = "simpleButton6";
-            simpleButton6.Size = new Size(118, 36);
-            simpleButton6.TabIndex = 11;
-            simpleButton6.Text = "New User";
-            // 
             // frmAllUsers
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(828, 460);
-            Controls.Add(panelControl1);
             Controls.Add(gridControl1);
+            Controls.Add(panelControl1);
             Controls.Add(groupControl1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmAllUsers";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmAllUsers";
+            Text = "All Users";
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)checkEdit2.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties).EndInit();
@@ -472,7 +473,6 @@
             ((System.ComponentModel.ISupportInitialize)repotxtPassword).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)checkEdit2.Properties).EndInit();
             ResumeLayout(false);
         }
 

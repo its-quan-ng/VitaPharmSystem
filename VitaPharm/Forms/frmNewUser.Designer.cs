@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
-            textEdit4 = new DevExpress.XtraEditors.TextEdit();
             dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -50,8 +49,8 @@
             panelControl2 = new DevExpress.XtraEditors.PanelControl();
             simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            textEdit4 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)checkEdit2.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)checkEdit1.Properties).BeginInit();
@@ -65,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)textEdit6.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl2).BeginInit();
             panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).BeginInit();
             SuspendLayout();
             // 
             // checkEdit2
@@ -76,13 +76,6 @@
             checkEdit2.Properties.Caption = "Is Active?";
             checkEdit2.Size = new Size(81, 24);
             checkEdit2.TabIndex = 32;
-            // 
-            // textEdit4
-            // 
-            textEdit4.Location = new Point(140, 211);
-            textEdit4.Name = "textEdit4";
-            textEdit4.Size = new Size(286, 22);
-            textEdit4.TabIndex = 30;
             // 
             // dateEdit1
             // 
@@ -203,7 +196,7 @@
             panelControl1.Dock = DockStyle.Fill;
             panelControl1.Location = new Point(0, 0);
             panelControl1.Name = "panelControl1";
-            panelControl1.Size = new Size(441, 308);
+            panelControl1.Size = new Size(441, 319);
             panelControl1.TabIndex = 33;
             // 
             // labelControl6
@@ -241,7 +234,7 @@
             panelControl2.Controls.Add(simpleButton2);
             panelControl2.Controls.Add(simpleButton1);
             panelControl2.Dock = DockStyle.Bottom;
-            panelControl2.Location = new Point(0, 244);
+            panelControl2.Location = new Point(0, 255);
             panelControl2.Name = "panelControl2";
             panelControl2.Size = new Size(441, 64);
             panelControl2.TabIndex = 34;
@@ -270,18 +263,24 @@
             simpleButton1.TabIndex = 5;
             simpleButton1.Text = "Add";
             // 
+            // textEdit4
+            // 
+            textEdit4.Location = new Point(140, 211);
+            textEdit4.Name = "textEdit4";
+            textEdit4.Size = new Size(286, 22);
+            textEdit4.TabIndex = 30;
+            // 
             // frmNewUser
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(441, 308);
+            ClientSize = new Size(441, 319);
             Controls.Add(panelControl2);
             Controls.Add(panelControl1);
             Name = "frmNewUser";
             Text = "New User";
             Load += frmNewUser_Load;
             ((System.ComponentModel.ISupportInitialize)checkEdit2.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)checkEdit1.Properties).EndInit();
@@ -296,13 +295,13 @@
             ((System.ComponentModel.ISupportInitialize)textEdit6.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl2).EndInit();
             panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private DevExpress.XtraEditors.CheckEdit checkEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
         private DevExpress.XtraEditors.DateEdit dateEdit1;
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -323,5 +322,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.TextEdit textEdit4;
     }
 }
