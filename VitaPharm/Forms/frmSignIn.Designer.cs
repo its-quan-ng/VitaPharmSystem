@@ -91,6 +91,7 @@
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(397, 43);
             txtPassword.TabIndex = 10;
+            txtPassword.KeyPress += txtPassword_KeyPress;
             // 
             // pictureBox3
             // 
@@ -115,6 +116,7 @@
             btnSignIn.Size = new Size(254, 50);
             btnSignIn.TabIndex = 7;
             btnSignIn.Text = "Sign In";
+            btnSignIn.Click += btnSignIn_Click;
             // 
             // lblExit
             // 
@@ -127,6 +129,7 @@
             lblExit.Size = new Size(37, 25);
             lblExit.TabIndex = 8;
             lblExit.Text = "Exit";
+            lblExit.Click += lblExit_Click;
             // 
             // txtUsername
             // 
@@ -138,6 +141,7 @@
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(396, 39);
             txtUsername.TabIndex = 9;
+            txtUsername.KeyPress += txtUsername_KeyPress;
             // 
             // chkShowPassword
             // 
@@ -170,7 +174,6 @@
             Name = "frmSignIn";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sign In";
-            Load += frmSignIn_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
