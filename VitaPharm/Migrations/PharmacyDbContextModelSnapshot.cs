@@ -350,6 +350,9 @@ namespace VitaPharm.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("money");
 
+                    b.Property<int>("BatchID")
+                        .HasColumnType("int");
+
                     b.Property<int>("CommodityID")
                         .HasColumnType("int");
 

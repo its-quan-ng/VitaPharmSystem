@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace VitaPharm.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -138,6 +138,7 @@ namespace VitaPharm.Migrations
                     CreatedDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     Note = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     TaxRate = table.Column<float>(type: "real", nullable: false),
+                    InvoiceStatus = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     EmployeeID = table.Column<int>(type: "int", nullable: false),
                     CustomerID = table.Column<int>(type: "int", nullable: false)
                 },
@@ -189,10 +190,10 @@ namespace VitaPharm.Migrations
                 {
                     InvoiceDetailID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    BatchID = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     UnitPrice = table.Column<decimal>(type: "money", nullable: false),
                     Amount = table.Column<decimal>(type: "money", nullable: false),
-                    InvoiceStatus = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     InvoiceID = table.Column<int>(type: "int", nullable: false),
                     CommodityID = table.Column<int>(type: "int", nullable: false)
                 },

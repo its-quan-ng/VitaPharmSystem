@@ -12,8 +12,8 @@ using VitaPharm.Data;
 namespace VitaPharm.Migrations
 {
     [DbContext(typeof(PharmacyDbContext))]
-    [Migration("20250524030105_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250525054304_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -320,6 +320,11 @@ namespace VitaPharm.Migrations
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
+                    b.Property<string>("InvoiceStatus")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
                     b.Property<string>("Note")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -348,16 +353,14 @@ namespace VitaPharm.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("money");
 
+                    b.Property<int>("BatchID")
+                        .HasColumnType("int");
+
                     b.Property<int>("CommodityID")
                         .HasColumnType("int");
 
                     b.Property<int>("InvoiceID")
                         .HasColumnType("int");
-
-                    b.Property<string>("InvoiceStatus")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
