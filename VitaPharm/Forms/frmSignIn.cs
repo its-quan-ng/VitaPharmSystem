@@ -9,6 +9,7 @@ namespace VitaPharm.Forms
         public frmSignIn()
         {
             InitializeComponent();
+            txtUsername.Focus();
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
