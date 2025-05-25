@@ -11,16 +11,11 @@ using System.Windows.Forms;
 
 namespace VitaPharm.Forms.Invoice
 {
-    public partial class frmInvoideDetail : DevExpress.XtraEditors.XtraForm
+    public partial class frmInvoiceDetail : DevExpress.XtraEditors.XtraForm
     {
-        public frmInvoideDetail()
+        public frmInvoiceDetail()
         {
             InitializeComponent();
-        }
-
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
