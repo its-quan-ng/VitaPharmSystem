@@ -33,6 +33,7 @@ namespace VitaPharm.Forms
 
             btnProfile.Enabled = true;
             btnNewUser.Enabled = isAdmin;
+            btnAllGoodsReceipt.Enabled = true;
         }
 
         private void OpenProfile()

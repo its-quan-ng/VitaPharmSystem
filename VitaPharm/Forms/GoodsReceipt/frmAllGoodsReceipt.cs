@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
 using DevExpress.XtraEditors;
 using VitaPharm.Data;
 
@@ -25,7 +17,8 @@ namespace VitaPharm.Forms
         {
             LoadReceipts();
 
-            if (CurrentUser.Role == "Admin")
+            if (!string.IsNullOrEmpty(CurrentUser.Role) && 
+                CurrentUser.Role.Trim().Equals("Admin", StringComparison.OrdinalIgnoreCase))
             {
                 btnDeactive.Enabled = false;
             }
@@ -86,7 +79,7 @@ namespace VitaPharm.Forms
         {
             IQueryable<GoodsReceipt> query = context.GoodsReceipts;
 
-            if (CurrentUser.Role == "User")
+            if (CurrentUser.Role.Trim().Equals("user", StringComparison.OrdinalIgnoreCase))
             {
                 query = query.Where(r => r.Employee.EmployeeID == CurrentUser.EmployeeID);
             }

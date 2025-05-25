@@ -258,6 +258,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "All Goods Receipt";
             Load += frmAllGoodsReceipt_Load;
+            Click += frmAllGoodsReceipt_Load;
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
