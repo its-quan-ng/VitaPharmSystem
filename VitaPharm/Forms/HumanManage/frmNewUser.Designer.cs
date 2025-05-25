@@ -43,14 +43,14 @@
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             txtUsername = new DevExpress.XtraEditors.TextEdit();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            txtConfirmPassword = new TextBox();
+            txtPassword = new TextBox();
             txtAddress = new DevExpress.XtraEditors.TextEdit();
             labelControl7 = new DevExpress.XtraEditors.LabelControl();
             labelControl6 = new DevExpress.XtraEditors.LabelControl();
             panelControl2 = new DevExpress.XtraEditors.PanelControl();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            txtPassword = new TextBox();
-            txtConfirmPassword = new TextBox();
             ((System.ComponentModel.ISupportInitialize)chkIsActive.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtpBirthday.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtpBirthday.Properties.CalendarTimeProperties).BeginInit();
@@ -99,7 +99,7 @@
             labelControl5.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             labelControl5.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("labelControl5.ImageOptions.SvgImage");
             labelControl5.ImageOptions.SvgImageSize = new Size(16, 16);
-            labelControl5.Location = new Point(22, 152);
+            labelControl5.Location = new Point(23, 188);
             labelControl5.Name = "labelControl5";
             labelControl5.Size = new Size(77, 24);
             labelControl5.TabIndex = 24;
@@ -137,7 +137,7 @@
             labelControl4.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             labelControl4.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("labelControl4.ImageOptions.SvgImage");
             labelControl4.ImageOptions.SvgImageSize = new Size(16, 16);
-            labelControl4.Location = new Point(22, 261);
+            labelControl4.Location = new Point(22, 260);
             labelControl4.Name = "labelControl4";
             labelControl4.Size = new Size(77, 24);
             labelControl4.TabIndex = 23;
@@ -166,7 +166,7 @@
             labelControl2.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             labelControl2.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("labelControl2.ImageOptions.SvgImage");
             labelControl2.ImageOptions.SvgImageSize = new Size(16, 16);
-            labelControl2.Location = new Point(22, 188);
+            labelControl2.Location = new Point(23, 152);
             labelControl2.Name = "labelControl2";
             labelControl2.Size = new Size(88, 24);
             labelControl2.TabIndex = 20;
@@ -216,9 +216,27 @@
             panelControl1.Size = new Size(519, 372);
             panelControl1.TabIndex = 33;
             // 
+            // txtConfirmPassword
+            // 
+            txtConfirmPassword.BackColor = Color.White;
+            txtConfirmPassword.BorderStyle = BorderStyle.FixedSingle;
+            txtConfirmPassword.Location = new Point(174, 83);
+            txtConfirmPassword.Name = "txtConfirmPassword";
+            txtConfirmPassword.Size = new Size(144, 23);
+            txtConfirmPassword.TabIndex = 3;
+            // 
+            // txtPassword
+            // 
+            txtPassword.BackColor = Color.White;
+            txtPassword.BorderStyle = BorderStyle.FixedSingle;
+            txtPassword.Location = new Point(174, 47);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(144, 23);
+            txtPassword.TabIndex = 2;
+            // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(174, 263);
+            txtAddress.Location = new Point(174, 259);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(281, 22);
             txtAddress.TabIndex = 10;
@@ -280,24 +298,6 @@
             btnAdd.TabIndex = 1;
             btnAdd.Text = "Add";
             btnAdd.Click += btnAdd_Click;
-            // 
-            // txtPassword
-            // 
-            txtPassword.BackColor = Color.White;
-            txtPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtPassword.Location = new Point(174, 47);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(144, 23);
-            txtPassword.TabIndex = 2;
-            // 
-            // txtConfirmPassword
-            // 
-            txtConfirmPassword.BackColor = Color.White;
-            txtConfirmPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtConfirmPassword.Location = new Point(174, 83);
-            txtConfirmPassword.Name = "txtConfirmPassword";
-            txtConfirmPassword.Size = new Size(144, 23);
-            txtConfirmPassword.TabIndex = 3;
             // 
             // frmNewUser
             // 
