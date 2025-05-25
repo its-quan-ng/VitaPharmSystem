@@ -23,6 +23,58 @@ namespace VitaPharm.Forms
 
         private void frmAllGoodsReceipt_Load(object sender, EventArgs e)
         {
+            LoadReceipts();
+        }
+
+        private void btnNewGoodsReceipt_Click(object sender, EventArgs e)
+        {
+            var frm = new frmNewGoodsReceipt();
+            frm.ShowDialog();
+            LoadReceipts();
+        }
+
+        private void btnDeactive_Click(object sender, EventArgs e)
+        {
+            int rowHandle = gridView.FocusedRowHandle;
+            if (rowHandle < 0)
+            {
+                XtraMessageBox.Show("Please select a receipt to deactivate.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            var receiptID = gridView.GetRowCellValue(rowHandle, "ReceiptID");
+            if (receiptID == null)
+            {
+                XtraMessageBox.Show("Invalid selection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (XtraMessageBox.Show("Are you sure you want to deactivate this receipt?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var receipt = context.GoodsReceipts.FirstOrDefault(r => r.ReceiptID == (int)receiptID);
+                if (receipt != null)
+                {
+                    receipt.ReceiptStatus = "Canceled";
+                    context.SaveChanges();
+                    LoadReceipts();
+                    XtraMessageBox.Show("Receipt deactivated.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            frmAllGoodsReceipt_Load(sender, e);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Do you want to exit this screen?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void LoadReceipts()
+        {
             var receipts = context.GoodsReceipts
                 .Select(r => new
                 {
@@ -34,28 +86,7 @@ namespace VitaPharm.Forms
                     r.ReceiptStatus
                 })
                 .ToList();
-
             gridControl.DataSource = receipts;
-        }
-
-        private void btnNewGoodsReceipt_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDeactive_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
