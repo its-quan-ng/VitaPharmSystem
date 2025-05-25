@@ -12,13 +12,17 @@ namespace VitaPharm.Forms.HumanManage
         public frmAllUsers()
         {
             InitializeComponent();
+            this.Load += frmAllUsers_Load;
+            gridView.FocusedRowChanged += GridView_FocusedRowChanged;
         }
 
         private void frmAllUsers_Load(object sender, EventArgs e)
         {
             LoadUsersData();
+            ToggleControls(false);
         }
 
+        #region Fetch data
         private void LoadUsersData()
         {
             context?.Dispose();
@@ -57,6 +61,25 @@ namespace VitaPharm.Forms.HumanManage
             txtAddress.Text = row.EmployeeAddress;
             cboRole.SelectedItem = row.UserRole;
             chkIsActive.Checked = (row.IsActive == "Active");
+        }
+        #endregion
+
+        private void ToggleControls(bool isEnabled)
+        {
+            txtUserName.Enabled = isEnabled;
+            txtFullName.Enabled = isEnabled;
+            chkFemale.Enabled = isEnabled;
+            dtpBirthday.Enabled = isEnabled;
+            txtContact.Enabled = isEnabled;
+            txtAddress.Enabled = isEnabled;
+            cboRole.Enabled = isEnabled;
+            chkIsActive.Enabled = isEnabled;
+
+            btnSave.Enabled = isEnabled;
+            btnCancel.Enabled = isEnabled;
+            btnEdit.Enabled = !isEnabled;
+            btnReload.Enabled = true;
+            btnNewUser.Enabled = true;
         }
     }
 }
