@@ -21,6 +21,10 @@ namespace VitaPharm.Data
 
         public float TaxRate { get; set; }
 
+        [Required]
+        [MaxLength(10)]
+        public string InvoiceStatus { get; set; } = null!;
+
         public virtual Employee Employee { get; set; } = null!;
         public virtual Customer Customer { get; set; } = null!;
         public virtual ICollection<InvoiceDetail> InvoiceDetail { get; } = new List<InvoiceDetail>();

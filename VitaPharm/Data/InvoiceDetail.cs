@@ -16,10 +16,6 @@ namespace VitaPharm.Data
         [Column(TypeName = "money")]
         public decimal Amount { get; set; }
 
-        [Required]
-        [MaxLength(10)]
-        public string InvoiceStatus { get; set; } = null!;
-
         public virtual Invoice Invoice { get; set; } = null!;
         public virtual Commodity Commodity { get; set; } = null!;
     }
