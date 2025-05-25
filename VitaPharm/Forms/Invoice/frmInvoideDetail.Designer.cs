@@ -41,6 +41,14 @@
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnReload = new DevExpress.XtraEditors.SimpleButton();
             btnPrint = new DevExpress.XtraEditors.SimpleButton();
+            gridControl = new DevExpress.XtraGrid.GridControl();
+            gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            colCommodityName = new DevExpress.XtraGrid.Columns.GridColumn();
+            colBatchCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            colBaseUnit = new DevExpress.XtraGrid.Columns.GridColumn();
+            colUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).BeginInit();
@@ -50,6 +58,8 @@
             ((System.ComponentModel.ISupportInitialize)deCreatedDate.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             SuspendLayout();
             // 
             // groupControl1
@@ -195,11 +205,88 @@
             btnPrint.Text = "Print";
             btnPrint.Click += btnPrint_Click;
             // 
+            // gridControl
+            // 
+            gridControl.Dock = DockStyle.Fill;
+            gridControl.Location = new Point(0, 124);
+            gridControl.MainView = gridView;
+            gridControl.Name = "gridControl";
+            gridControl.Size = new Size(813, 192);
+            gridControl.TabIndex = 2;
+            gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
+            // 
+            // gridView
+            // 
+            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colCommodityName, colBatchCode, colQuantity, colBaseUnit, colUnitPrice, colAmount });
+            gridView.GridControl = gridControl;
+            gridView.Name = "gridView";
+            // 
+            // colCommodityName
+            // 
+            colCommodityName.Caption = "Product Name";
+            colCommodityName.FieldName = "CommodityName";
+            colCommodityName.MinWidth = 25;
+            colCommodityName.Name = "colCommodityName";
+            colCommodityName.Visible = true;
+            colCommodityName.VisibleIndex = 0;
+            colCommodityName.Width = 262;
+            // 
+            // colBatchCode
+            // 
+            colBatchCode.Caption = "Batch Code";
+            colBatchCode.FieldName = "BatchCode";
+            colBatchCode.MinWidth = 25;
+            colBatchCode.Name = "colBatchCode";
+            colBatchCode.Visible = true;
+            colBatchCode.VisibleIndex = 1;
+            colBatchCode.Width = 157;
+            // 
+            // colQuantity
+            // 
+            colQuantity.Caption = "Qty";
+            colQuantity.FieldName = "Quantity";
+            colQuantity.MinWidth = 25;
+            colQuantity.Name = "colQuantity";
+            colQuantity.Visible = true;
+            colQuantity.VisibleIndex = 2;
+            colQuantity.Width = 55;
+            // 
+            // colBaseUnit
+            // 
+            colBaseUnit.Caption = "Base Unit";
+            colBaseUnit.FieldName = "BaseUnit";
+            colBaseUnit.MinWidth = 25;
+            colBaseUnit.Name = "colBaseUnit";
+            colBaseUnit.Visible = true;
+            colBaseUnit.VisibleIndex = 3;
+            colBaseUnit.Width = 97;
+            // 
+            // colUnitPrice
+            // 
+            colUnitPrice.Caption = "Unit Price";
+            colUnitPrice.FieldName = "UnitPrice";
+            colUnitPrice.MinWidth = 25;
+            colUnitPrice.Name = "colUnitPrice";
+            colUnitPrice.Visible = true;
+            colUnitPrice.VisibleIndex = 4;
+            colUnitPrice.Width = 130;
+            // 
+            // colAmount
+            // 
+            colAmount.Caption = "Amount";
+            colAmount.FieldName = "Amount";
+            colAmount.MinWidth = 25;
+            colAmount.Name = "colAmount";
+            colAmount.Visible = true;
+            colAmount.VisibleIndex = 5;
+            colAmount.Width = 150;
+            // 
             // frmInvoideDetail
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(813, 380);
+            Controls.Add(gridControl);
             Controls.Add(panelControl1);
             Controls.Add(groupControl1);
             Name = "frmInvoideDetail";
@@ -215,6 +302,8 @@
             ((System.ComponentModel.ISupportInitialize)deCreatedDate.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -233,5 +322,13 @@
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.SimpleButton btnReload;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
+        private DevExpress.XtraGrid.GridControl gridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
+        private DevExpress.XtraGrid.Columns.GridColumn colCommodityName;
+        private DevExpress.XtraGrid.Columns.GridColumn colBatchCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
+        private DevExpress.XtraGrid.Columns.GridColumn colBaseUnit;
+        private DevExpress.XtraGrid.Columns.GridColumn colUnitPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colAmount;
     }
 }
