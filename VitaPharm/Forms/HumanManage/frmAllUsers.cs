@@ -64,6 +64,7 @@ namespace VitaPharm.Forms.HumanManage
         }
         #endregion
 
+        #region Toggle Controls
         private void ToggleControls(bool isEnabled)
         {
             txtUserName.Enabled = isEnabled;
@@ -80,6 +81,30 @@ namespace VitaPharm.Forms.HumanManage
             btnEdit.Enabled = !isEnabled;
             btnReload.Enabled = true;
             btnNewUser.Enabled = true;
+        }
+        #endregion
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            ToggleControls(true);
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            frmAllUsers_Load(sender, e);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            var result = XtraMessageBox.Show(
+                "Are you sure you want to cancel the changes?", 
+                "Confirmation",
+                MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                frmAllUsers_Load(sender, e);
+            }
         }
     }
 }

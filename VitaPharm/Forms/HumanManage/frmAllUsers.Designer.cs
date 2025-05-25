@@ -58,15 +58,15 @@
             repochkEditIsActive = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             colPassword = new DevExpress.XtraGrid.Columns.GridColumn();
             repotxtPassword = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            repositoryItemConditionalType1 = new DevExpress.XtraRichEdit.Design.RepositoryItemConditionalType();
+            repositoryItemAlignment1 = new DevExpress.XtraRichEdit.Design.RepositoryItemAlignment();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             btnNewUser = new DevExpress.XtraEditors.SimpleButton();
             btnSave = new DevExpress.XtraEditors.SimpleButton();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnReload = new DevExpress.XtraEditors.SimpleButton();
             btnEdit = new DevExpress.XtraEditors.SimpleButton();
-            repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            repositoryItemConditionalType1 = new DevExpress.XtraRichEdit.Design.RepositoryItemConditionalType();
-            repositoryItemAlignment1 = new DevExpress.XtraRichEdit.Design.RepositoryItemAlignment();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chkIsActive.Properties).BeginInit();
@@ -82,12 +82,12 @@
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repochkEditIsActive).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repotxtPassword).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
-            panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)repositoryItemDateEdit1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemDateEdit1.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemConditionalType1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemAlignment1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
+            panelControl1.SuspendLayout();
             SuspendLayout();
             // 
             // groupControl1
@@ -392,6 +392,28 @@
             repotxtPassword.PasswordChar = '•';
             repotxtPassword.UseSystemPasswordChar = true;
             // 
+            // repositoryItemDateEdit1
+            // 
+            repositoryItemDateEdit1.AutoHeight = false;
+            repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            // 
+            // repositoryItemConditionalType1
+            // 
+            repositoryItemConditionalType1.AutoHeight = false;
+            repositoryItemConditionalType1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repositoryItemConditionalType1.Name = "repositoryItemConditionalType1";
+            // 
+            // repositoryItemAlignment1
+            // 
+            repositoryItemAlignment1.AutoHeight = false;
+            repositoryItemAlignment1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repositoryItemAlignment1.HasArabic = false;
+            repositoryItemAlignment1.HasDistribute = false;
+            repositoryItemAlignment1.HasThaiDistribute = false;
+            repositoryItemAlignment1.Name = "repositoryItemAlignment1";
+            // 
             // panelControl1
             // 
             panelControl1.Controls.Add(btnNewUser);
@@ -443,6 +465,7 @@
             btnCancel.Size = new Size(118, 36);
             btnCancel.TabIndex = 4;
             btnCancel.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnReload
             // 
@@ -456,6 +479,7 @@
             btnReload.Size = new Size(118, 36);
             btnReload.TabIndex = 4;
             btnReload.Text = "Reload";
+            btnReload.Click += btnReload_Click;
             // 
             // btnEdit
             // 
@@ -469,28 +493,7 @@
             btnEdit.Size = new Size(118, 36);
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Edit";
-            // 
-            // repositoryItemDateEdit1
-            // 
-            repositoryItemDateEdit1.AutoHeight = false;
-            repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
-            // 
-            // repositoryItemConditionalType1
-            // 
-            repositoryItemConditionalType1.AutoHeight = false;
-            repositoryItemConditionalType1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            repositoryItemConditionalType1.Name = "repositoryItemConditionalType1";
-            // 
-            // repositoryItemAlignment1
-            // 
-            repositoryItemAlignment1.AutoHeight = false;
-            repositoryItemAlignment1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            repositoryItemAlignment1.HasArabic = false;
-            repositoryItemAlignment1.HasDistribute = false;
-            repositoryItemAlignment1.HasThaiDistribute = false;
-            repositoryItemAlignment1.Name = "repositoryItemAlignment1";
+            btnEdit.Click += btnEdit_Click;
             // 
             // frmAllUsers
             // 
@@ -521,12 +524,12 @@
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)repochkEditIsActive).EndInit();
             ((System.ComponentModel.ISupportInitialize)repotxtPassword).EndInit();
-            ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
-            panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)repositoryItemDateEdit1.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemDateEdit1).EndInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemConditionalType1).EndInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemAlignment1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
+            panelControl1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
