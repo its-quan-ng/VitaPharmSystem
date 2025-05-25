@@ -45,9 +45,9 @@
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             panel2 = new Panel();
-            btnSave = new DevExpress.XtraEditors.SimpleButton();
-            btnEdit = new DevExpress.XtraEditors.SimpleButton();
             btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            btnSave = new DevExpress.XtraEditors.SimpleButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties.CalendarTimeProperties).BeginInit();
@@ -214,21 +214,21 @@
             panel2.Size = new Size(726, 50);
             panel2.TabIndex = 1;
             // 
-            // btnSave
+            // btnDelete
             // 
-            btnSave.Appearance.BackColor = Color.FromArgb(78, 154, 81);
-            btnSave.Appearance.FontStyleDelta = FontStyle.Bold;
-            btnSave.Appearance.Options.UseBackColor = true;
-            btnSave.Appearance.Options.UseFont = true;
-            btnSave.Location = new Point(197, 9);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(98, 32);
-            btnSave.TabIndex = 0;
-            btnSave.Text = "Save";
+            btnDelete.Appearance.BackColor = Color.FromArgb(220, 54, 46);
+            btnDelete.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            btnDelete.Appearance.Options.UseBackColor = true;
+            btnDelete.Appearance.Options.UseFont = true;
+            btnDelete.Location = new Point(411, 9);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(98, 32);
+            btnDelete.TabIndex = 2;
+            btnDelete.Text = "Cancel";
             // 
             // btnEdit
             // 
-            btnEdit.Appearance.BackColor = Color.FromArgb(249, 253, 83);
+            btnEdit.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
             btnEdit.Appearance.BorderColor = Color.Black;
             btnEdit.Appearance.FontStyleDelta = FontStyle.Bold;
             btnEdit.Appearance.ForeColor = Color.White;
@@ -242,17 +242,17 @@
             btnEdit.TabIndex = 1;
             btnEdit.Text = "Edit";
             // 
-            // btnDelete
+            // btnSave
             // 
-            btnDelete.Appearance.BackColor = Color.FromArgb(220, 54, 46);
-            btnDelete.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            btnDelete.Appearance.Options.UseBackColor = true;
-            btnDelete.Appearance.Options.UseFont = true;
-            btnDelete.Location = new Point(411, 9);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(98, 32);
-            btnDelete.TabIndex = 2;
-            btnDelete.Text = "Delete";
+            btnSave.Appearance.BackColor = Color.FromArgb(78, 154, 81);
+            btnSave.Appearance.FontStyleDelta = FontStyle.Bold;
+            btnSave.Appearance.Options.UseBackColor = true;
+            btnSave.Appearance.Options.UseFont = true;
+            btnSave.Location = new Point(197, 9);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(98, 32);
+            btnSave.TabIndex = 0;
+            btnSave.Text = "Save";
             // 
             // frmProfile
             // 
