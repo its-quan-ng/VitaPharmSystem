@@ -88,7 +88,7 @@
             txtPassword.Location = new Point(92, 226);
             txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '*';
+            txtPassword.PasswordChar = '●';
             txtPassword.Size = new Size(397, 43);
             txtPassword.TabIndex = 10;
             txtPassword.KeyPress += txtPassword_KeyPress;
