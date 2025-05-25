@@ -31,8 +31,14 @@ namespace VitaPharm.Forms
             }
             else
             {
-                if (HandleUsernameMismatch(context, password)) return;
-                HandleBothWrong();
+                XtraMessageBox.Show(
+                    "Username not found.",
+                    "Login Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                txtUsername.Clear();
+                txtPassword.Clear();
+                txtUsername.Focus();
             }
         }
 
@@ -94,34 +100,6 @@ namespace VitaPharm.Forms
             return false;
         }
 
-        private bool HandleUsernameMismatch(PharmacyDbContext context, string password)
-        {
-            bool passwordExists = context.Accounts.Any(a => a.UserPassword == password);
-            if (passwordExists)
-            {
-                XtraMessageBox.Show(
-                    "Username not found.",
-                    "Login Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                txtUsername.Focus();
-                return true;
-            }
-            return false;
-        }
-
-        private void HandleBothWrong()
-        {
-            XtraMessageBox.Show(
-                "Username and password are incorrect.",
-                "Login Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-            txtUsername.Clear();
-            txtPassword.Clear();
-            txtUsername.Focus();
-        }
-
         private void LoginSuccess(Account account)
         {
             XtraMessageBox.Show(
@@ -151,7 +129,6 @@ namespace VitaPharm.Forms
             {
                 btnSignIn_Click(sender, e);
             }
-
         }
 
         private void lblExit_Click(object sender, EventArgs e)
