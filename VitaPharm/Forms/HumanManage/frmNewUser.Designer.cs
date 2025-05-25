@@ -68,6 +68,7 @@
             // 
             // chkIsActive
             // 
+            chkIsActive.Anchor = AnchorStyles.Top;
             chkIsActive.Location = new Point(374, 117);
             chkIsActive.Name = "chkIsActive";
             chkIsActive.Properties.Appearance.BackColor = Color.YellowGreen;
@@ -78,6 +79,7 @@
             // 
             // dtpBirthday
             // 
+            dtpBirthday.Anchor = AnchorStyles.Top;
             dtpBirthday.EditValue = null;
             dtpBirthday.Location = new Point(174, 189);
             dtpBirthday.Name = "dtpBirthday";
@@ -88,6 +90,7 @@
             // 
             // chkFemale
             // 
+            chkFemale.Anchor = AnchorStyles.Top;
             chkFemale.Location = new Point(374, 188);
             chkFemale.Name = "chkFemale";
             chkFemale.Properties.Caption = "Female";
@@ -96,6 +99,7 @@
             // 
             // labelControl5
             // 
+            labelControl5.Anchor = AnchorStyles.Top;
             labelControl5.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             labelControl5.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("labelControl5.ImageOptions.SvgImage");
             labelControl5.ImageOptions.SvgImageSize = new Size(16, 16);
@@ -107,6 +111,7 @@
             // 
             // txtName
             // 
+            txtName.Anchor = AnchorStyles.Top;
             txtName.Location = new Point(174, 154);
             txtName.Name = "txtName";
             txtName.Size = new Size(281, 22);
@@ -114,6 +119,7 @@
             // 
             // cboRole
             // 
+            cboRole.Anchor = AnchorStyles.Top;
             cboRole.EditValue = "";
             cboRole.Location = new Point(174, 119);
             cboRole.Name = "cboRole";
@@ -123,6 +129,7 @@
             // 
             // labelControl8
             // 
+            labelControl8.Anchor = AnchorStyles.Top;
             labelControl8.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             labelControl8.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("labelControl8.ImageOptions.SvgImage");
             labelControl8.ImageOptions.SvgImageSize = new Size(16, 16);
@@ -134,6 +141,7 @@
             // 
             // labelControl4
             // 
+            labelControl4.Anchor = AnchorStyles.Top;
             labelControl4.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             labelControl4.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("labelControl4.ImageOptions.SvgImage");
             labelControl4.ImageOptions.SvgImageSize = new Size(16, 16);
@@ -145,6 +153,7 @@
             // 
             // labelControl3
             // 
+            labelControl3.Anchor = AnchorStyles.Top;
             labelControl3.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             labelControl3.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("labelControl3.ImageOptions.SvgImage");
             labelControl3.ImageOptions.SvgImageSize = new Size(16, 16);
@@ -156,6 +165,7 @@
             // 
             // txtContact
             // 
+            txtContact.Anchor = AnchorStyles.Top;
             txtContact.Location = new Point(174, 224);
             txtContact.Name = "txtContact";
             txtContact.Size = new Size(154, 22);
@@ -163,6 +173,7 @@
             // 
             // labelControl2
             // 
+            labelControl2.Anchor = AnchorStyles.Top;
             labelControl2.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             labelControl2.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("labelControl2.ImageOptions.SvgImage");
             labelControl2.ImageOptions.SvgImageSize = new Size(16, 16);
@@ -174,6 +185,7 @@
             // 
             // labelControl1
             // 
+            labelControl1.Anchor = AnchorStyles.Top;
             labelControl1.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             labelControl1.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("labelControl1.ImageOptions.SvgImage");
             labelControl1.ImageOptions.SvgImageSize = new Size(16, 16);
@@ -185,6 +197,7 @@
             // 
             // txtUsername
             // 
+            txtUsername.Anchor = AnchorStyles.Top;
             txtUsername.Location = new Point(174, 12);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(281, 22);
@@ -218,6 +231,7 @@
             // 
             // txtConfirmPassword
             // 
+            txtConfirmPassword.Anchor = AnchorStyles.Top;
             txtConfirmPassword.BackColor = Color.White;
             txtConfirmPassword.BorderStyle = BorderStyle.FixedSingle;
             txtConfirmPassword.Location = new Point(174, 83);
@@ -229,6 +243,7 @@
             // 
             // txtPassword
             // 
+            txtPassword.Anchor = AnchorStyles.Top;
             txtPassword.BackColor = Color.White;
             txtPassword.BorderStyle = BorderStyle.FixedSingle;
             txtPassword.Location = new Point(174, 47);
@@ -240,6 +255,7 @@
             // 
             // txtAddress
             // 
+            txtAddress.Anchor = AnchorStyles.Top;
             txtAddress.Location = new Point(174, 259);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(281, 22);
@@ -247,6 +263,7 @@
             // 
             // labelControl7
             // 
+            labelControl7.Anchor = AnchorStyles.Top;
             labelControl7.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             labelControl7.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("labelControl7.ImageOptions.SvgImage");
             labelControl7.ImageOptions.SvgImageSize = new Size(16, 16);
@@ -258,6 +275,7 @@
             // 
             // labelControl6
             // 
+            labelControl6.Anchor = AnchorStyles.Top;
             labelControl6.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             labelControl6.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("labelControl6.ImageOptions.SvgImage");
             labelControl6.ImageOptions.SvgImageSize = new Size(16, 16);
@@ -279,6 +297,7 @@
             // 
             // btnCancel
             // 
+            btnCancel.Anchor = AnchorStyles.Top;
             btnCancel.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             btnCancel.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancel.Appearance.Options.UseBackColor = true;
@@ -292,6 +311,7 @@
             // 
             // btnAdd
             // 
+            btnAdd.Anchor = AnchorStyles.Top;
             btnAdd.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
             btnAdd.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAdd.Appearance.Options.UseBackColor = true;
