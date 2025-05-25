@@ -18,8 +18,6 @@ namespace VitaPharm.Data
         public decimal Amount { get; set; }
         [NotMapped] public int OnHand { get; set; }   // tồn kho (hiển thị)
 
-
-
         public virtual Invoice Invoice { get; set; } = null!;
         public virtual Commodity Commodity { get; set; } = null!;
     }

@@ -10,7 +10,7 @@ namespace VitaPharm.Data
         public int ReceiptID { get; set; }
 
         [Required]
-        [MaxLength(6)]
+        [MaxLength(20)]
         public string ReceiptCode { get; set; } = null!;
 
         [Column(TypeName = "datetime")]
