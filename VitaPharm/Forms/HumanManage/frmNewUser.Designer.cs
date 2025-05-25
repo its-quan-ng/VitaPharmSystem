@@ -1,4 +1,4 @@
-﻿namespace VitaPharm.Forms
+﻿namespace VitaPharm.Forms.HumanManage
 {
     partial class frmNewUser
     {
@@ -112,7 +112,7 @@
             // 
             // cboRole
             // 
-            cboRole.EditValue = "User";
+            cboRole.EditValue = "";
             cboRole.Location = new Point(140, 93);
             cboRole.Name = "cboRole";
             cboRole.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
