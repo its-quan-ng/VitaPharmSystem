@@ -9,7 +9,8 @@ namespace VitaPharm.Forms
         private readonly Account currentAccount;
         private readonly string currentRole;
         private frmProfile? profileForm = null;
-        frmNewUser? newUserForm = null;
+        private frmNewUser? newUserForm = null;
+        private frmAllGoodsReceipt? allGoodsReceiptForm = null;
 
         internal frmMain(Account account)
         {
@@ -19,6 +20,9 @@ namespace VitaPharm.Forms
             this.IsMdiContainer = true;
             ConfigureBasedOnRole();
             OpenProfile();
+            CurrentUser.Username = account.Username;
+            CurrentUser.Role = account.UserRole;
+            CurrentUser.EmployeeID = account.Employee.EmployeeID;
         }
 
         #region ConfigureBasedOnRole
@@ -29,6 +33,7 @@ namespace VitaPharm.Forms
 
             btnProfile.Enabled = true;
             btnNewUser.Enabled = isAdmin;
+            btnAllGoodsReceipt.Enabled = true;
         }
 
         private void OpenProfile()
@@ -45,7 +50,7 @@ namespace VitaPharm.Forms
         {
             if (!currentRole.Equals("Admin", StringComparison.OrdinalIgnoreCase))
             {
-                XtraMessageBox.Show("You do not have permission to access this feature!","Notification",
+                XtraMessageBox.Show("You do not have permission to access this feature!", "Notification",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -62,6 +67,20 @@ namespace VitaPharm.Forms
             newUserForm.Show();
             newUserForm.BringToFront();
         }
+
+        private void OpenAllGoodsReceipt()
+        {
+            foreach (var f in this.MdiChildren) f.Close();
+            if (allGoodsReceiptForm == null || allGoodsReceiptForm.IsDisposed)
+            {
+                allGoodsReceiptForm = new frmAllGoodsReceipt()
+                {
+                    MdiParent = this
+                };
+            }
+            allGoodsReceiptForm.Show();
+            allGoodsReceiptForm.BringToFront();
+        }
         #endregion
 
         private void btnProfile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -72,6 +91,11 @@ namespace VitaPharm.Forms
         private void btnNewUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenNewUser();
+        }
+
+        private void btnAllGoodsReceipt_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenAllGoodsReceipt();
         }
     }
 }
