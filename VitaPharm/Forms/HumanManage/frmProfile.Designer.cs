@@ -285,6 +285,7 @@
             Name = "frmProfile";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Profile";
+            Load += frmProfile_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dateBirthday.Properties.CalendarTimeProperties).EndInit();

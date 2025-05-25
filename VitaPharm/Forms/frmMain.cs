@@ -9,23 +9,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using VitaPharm.Forms.HumanManage;
+using VitaPharm.Data;
 
 namespace VitaPharm.Forms
 {
     public partial class frmMain : DevExpress.XtraEditors.XtraForm
     {
+        private readonly Account currentAccount;
         private frmProfile? profileForm = null;
-        public frmMain()
+
+        internal frmMain(Account account)
         {
             InitializeComponent();
             this.IsMdiContainer = true;
+            currentAccount = account;
         }
 
         private void btnProfile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (profileForm == null || profileForm.IsDisposed)
             {
-                profileForm = new frmProfile
+                profileForm = new frmProfile(currentAccount)
                 {
                     MdiParent = this
                 };

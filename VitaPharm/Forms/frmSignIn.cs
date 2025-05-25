@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using Microsoft.EntityFrameworkCore;
 using VitaPharm.Data;
 
 namespace VitaPharm.Forms
@@ -25,35 +26,35 @@ namespace VitaPharm.Forms
                 return;
             }
 
-            using (var context = new PharmacyDbContext())
+            using var context = new PharmacyDbContext();
+            // include luôn Employee để dùng trong Profile 
+            var account = context.Accounts
+                .Include(a => a.Employee)
+                .FirstOrDefault(a =>
+                    a.Username == username &&
+                    a.UserPassword == password &&
+                    a.IsActive == "Active");
+
+            if (account != null)
             {
-                var account = context.Accounts
-                    .FirstOrDefault(a =>
-                        a.Username == username &&
-                        a.UserPassword == password &&
-                        a.IsActive == "Active");
+                XtraMessageBox.Show(
+                    "Login successful!",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
-                if (account != null)
-                {
-                    XtraMessageBox.Show(
-                        "Login successful!",
-                        "Success",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-
-                    this.Hide();
-                    var mainForm = new frmMain();
-                    mainForm.FormClosed += (s, args) => this.Close();
-                    mainForm.Show();
-                }
-                else
-                {
-                    XtraMessageBox.Show(
-                        "Invalid username or password.",
-                        "Login Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
+                this.Hide();
+                var mainForm = new frmMain(account);
+                mainForm.FormClosed += (s, args) => this.Close();
+                mainForm.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show(
+                    "Invalid username or password.",
+                    "Login Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
