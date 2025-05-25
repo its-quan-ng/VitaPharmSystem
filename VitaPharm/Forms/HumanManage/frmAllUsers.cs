@@ -17,7 +17,6 @@ namespace VitaPharm.Forms.HumanManage
             cboRole.Properties.Items.Clear();
             cboRole.Properties.Items.AddRange(new[] { "Admin", "User" });
 
-            this.Load += frmAllUsers_Load;
             gridView.FocusedRowChanged += GridView_FocusedRowChanged;
         }
 
@@ -27,6 +26,7 @@ namespace VitaPharm.Forms.HumanManage
             ToggleControls(false);
         }
 
+        #region Fetch data
         private void LoadUsersData()
         {
             context?.Dispose();
@@ -66,7 +66,9 @@ namespace VitaPharm.Forms.HumanManage
             cboRole.SelectedItem = row.UserRole;
             chkIsActive.Checked = (row.IsActive == "Active");
         }
+        #endregion
 
+        #region Toggle Controls
         private void ToggleControls(bool isEnabled)
         {
             txtUserName.Enabled = isEnabled;
@@ -84,7 +86,9 @@ namespace VitaPharm.Forms.HumanManage
             btnReload.Enabled = true;
             btnNewUser.Enabled = true;
         }
+        #endregion
 
+        #region Handle events for buttons
         private void btnEdit_Click(object sender, EventArgs e)
         {
             ToggleControls(true);
@@ -185,5 +189,6 @@ namespace VitaPharm.Forms.HumanManage
             newUserForm.Show();
             newUserForm.BringToFront();
         }
+        #endregion
     }
 }
