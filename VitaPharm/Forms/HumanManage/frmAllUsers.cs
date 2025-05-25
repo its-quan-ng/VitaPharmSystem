@@ -8,6 +8,7 @@ namespace VitaPharm.Forms.HumanManage
     public partial class frmAllUsers : XtraForm
     {
         private PharmacyDbContext context;
+        private int currentAccountId = 0;
 
         public frmAllUsers()
         {
@@ -27,7 +28,6 @@ namespace VitaPharm.Forms.HumanManage
         {
             context?.Dispose();
             context = new PharmacyDbContext();
-
             var users = context.Accounts
                 .Include(acc => acc.Employee)
                 .Select(acc => new
@@ -44,7 +44,6 @@ namespace VitaPharm.Forms.HumanManage
                     acc.UserPassword
                 })
                 .ToList();
-
             gridControl.DataSource = users;
         }
 
@@ -52,6 +51,8 @@ namespace VitaPharm.Forms.HumanManage
         {
             var row = gridView.GetRow(e.FocusedRowHandle) as dynamic;
             if (row == null) return;
+
+            currentAccountId = row.AccountID;
 
             txtUserName.Text = row.Username;
             txtFullName.Text = row.EmployeeName;
@@ -75,7 +76,6 @@ namespace VitaPharm.Forms.HumanManage
             txtAddress.Enabled = isEnabled;
             cboRole.Enabled = isEnabled;
             chkIsActive.Enabled = isEnabled;
-
             btnSave.Enabled = isEnabled;
             btnCancel.Enabled = isEnabled;
             btnEdit.Enabled = !isEnabled;
@@ -84,8 +84,53 @@ namespace VitaPharm.Forms.HumanManage
         }
         #endregion
 
+        #region Validation
+        private bool ValidateInput()
+        {
+            if (string.IsNullOrWhiteSpace(txtUserName.Text))
+            {
+                XtraMessageBox.Show("Username cannot be empty!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUserName.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtFullName.Text))
+            {
+                XtraMessageBox.Show("Employee name cannot be empty!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtFullName.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtContact.Text))
+            {
+                XtraMessageBox.Show("Contact number cannot be empty!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtContact.Focus();
+                return false;
+            }
+
+            if (cboRole.SelectedItem == null)
+            {
+                XtraMessageBox.Show("Please select a role!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboRole.Focus();
+                return false;
+            }
+
+            return true;
+        }
+        #endregion
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (currentAccountId == 0)
+            {
+                XtraMessageBox.Show("Please select a user to edit!", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             ToggleControls(true);
         }
 
@@ -97,14 +142,89 @@ namespace VitaPharm.Forms.HumanManage
         private void btnCancel_Click(object sender, EventArgs e)
         {
             var result = XtraMessageBox.Show(
-                "Are you sure you want to cancel the changes?", 
+                "Are you sure you want to cancel the changes?",
                 "Confirmation",
-                MessageBoxButtons.YesNo, 
+                MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 frmAllUsers_Load(sender, e);
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!ValidateInput())
+                    return;
+
+                var result = XtraMessageBox.Show(
+                    "Are you sure you want to save the changes?",
+                    "Confirmation",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (result != DialogResult.Yes)
+                    return;
+
+                using (var saveContext = new PharmacyDbContext())
+                {
+                    var account = saveContext.Accounts
+                        .Include(acc => acc.Employee)
+                        .FirstOrDefault(acc => acc.AccountID == currentAccountId);
+
+                    if (account == null)
+                    {
+                        XtraMessageBox.Show("Account not found!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    bool usernameExists = saveContext.Accounts
+                        .Any(acc => acc.Username == txtUserName.Text.Trim() && acc.AccountID != currentAccountId);
+
+                    if (usernameExists)
+                    {
+                        XtraMessageBox.Show("Username already exists!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtUserName.Focus();
+                        return;
+                    }
+
+                    account.Username = txtUserName.Text.Trim();
+                    account.UserRole = cboRole.SelectedItem.ToString();
+                    account.IsActive = chkIsActive.Checked ? "Active" : "Inactive";
+
+                    if (account.Employee != null)
+                    {
+                        account.Employee.EmployeeName = txtFullName.Text.Trim();
+                        account.Employee.Sex = chkFemale.Checked ? "F" : "M";
+                        account.Employee.Birthday = dtpBirthday.DateTime;
+                        account.Employee.Contact = txtContact.Text.Trim();
+                        account.Employee.EmployeeAddress = txtAddress.Text.Trim();
+                    }
+
+                    saveContext.SaveChanges();
+
+                    XtraMessageBox.Show("Information updated successfully!", "Success",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LoadUsersData();
+                    ToggleControls(false);
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"An error occurred while saving data: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            context?.Dispose();
+            base.OnFormClosed(e);
         }
     }
 }
