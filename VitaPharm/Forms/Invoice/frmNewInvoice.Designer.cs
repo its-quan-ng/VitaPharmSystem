@@ -71,8 +71,8 @@
             colCommodityName = new DevExpress.XtraGrid.Columns.GridColumn();
             colBatchCode = new DevExpress.XtraGrid.Columns.GridColumn();
             colQty = new DevExpress.XtraGrid.Columns.GridColumn();
-            gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            colUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)seTaxRate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)meNote.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).BeginInit();
@@ -501,7 +501,7 @@
             // 
             // gridView
             // 
-            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colCommodityName, colBatchCode, colQty, gridColumn4, gridColumn5 });
+            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colCommodityName, colBatchCode, colQty, colUnitPrice, colAmount });
             gridView.GridControl = gridControl;
             gridView.Name = "gridView";
             // 
@@ -535,23 +535,25 @@
             colQty.VisibleIndex = 2;
             colQty.Width = 94;
             // 
-            // gridColumn4
+            // colUnitPrice
             // 
-            gridColumn4.Caption = "gridColumn4";
-            gridColumn4.MinWidth = 25;
-            gridColumn4.Name = "gridColumn4";
-            gridColumn4.Visible = true;
-            gridColumn4.VisibleIndex = 3;
-            gridColumn4.Width = 94;
+            colUnitPrice.Caption = "Unit Price";
+            colUnitPrice.FieldName = "UnitPrice";
+            colUnitPrice.MinWidth = 25;
+            colUnitPrice.Name = "colUnitPrice";
+            colUnitPrice.Visible = true;
+            colUnitPrice.VisibleIndex = 3;
+            colUnitPrice.Width = 94;
             // 
-            // gridColumn5
+            // colAmount
             // 
-            gridColumn5.Caption = "gridColumn5";
-            gridColumn5.MinWidth = 25;
-            gridColumn5.Name = "gridColumn5";
-            gridColumn5.Visible = true;
-            gridColumn5.VisibleIndex = 4;
-            gridColumn5.Width = 94;
+            colAmount.Caption = "Amount";
+            colAmount.FieldName = "Amount";
+            colAmount.MinWidth = 25;
+            colAmount.Name = "colAmount";
+            colAmount.Visible = true;
+            colAmount.VisibleIndex = 4;
+            colAmount.Width = 94;
             // 
             // frmNewInvoice
             // 
@@ -637,7 +639,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCommodityName;
         private DevExpress.XtraGrid.Columns.GridColumn colBatchCode;
         private DevExpress.XtraGrid.Columns.GridColumn colQty;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn colUnitPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colAmount;
     }
 }
