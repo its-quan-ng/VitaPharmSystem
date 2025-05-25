@@ -222,8 +222,10 @@
             txtConfirmPassword.BorderStyle = BorderStyle.FixedSingle;
             txtConfirmPassword.Location = new Point(174, 83);
             txtConfirmPassword.Name = "txtConfirmPassword";
+            txtConfirmPassword.PasswordChar = '●';
             txtConfirmPassword.Size = new Size(144, 23);
             txtConfirmPassword.TabIndex = 3;
+            txtConfirmPassword.UseSystemPasswordChar = true;
             // 
             // txtPassword
             // 
@@ -231,8 +233,10 @@
             txtPassword.BorderStyle = BorderStyle.FixedSingle;
             txtPassword.Location = new Point(174, 47);
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '●';
             txtPassword.Size = new Size(144, 23);
             txtPassword.TabIndex = 2;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // txtAddress
             // 
@@ -279,7 +283,7 @@
             btnCancel.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancel.Appearance.Options.UseBackColor = true;
             btnCancel.Appearance.Options.UseFont = true;
-            btnCancel.Location = new Point(226, 18);
+            btnCancel.Location = new Point(256, 15);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(84, 28);
             btnCancel.TabIndex = 2;
@@ -292,7 +296,7 @@
             btnAdd.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAdd.Appearance.Options.UseBackColor = true;
             btnAdd.Appearance.Options.UseFont = true;
-            btnAdd.Location = new Point(130, 18);
+            btnAdd.Location = new Point(160, 15);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(81, 28);
             btnAdd.TabIndex = 1;
