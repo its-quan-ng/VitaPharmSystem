@@ -23,7 +23,6 @@ namespace VitaPharm.Forms.HumanManage
             ToggleControls(false);
         }
 
-        #region Fetch data
         private void LoadUsersData()
         {
             context?.Dispose();
@@ -41,7 +40,8 @@ namespace VitaPharm.Forms.HumanManage
                     acc.Employee.EmployeeAddress,
                     acc.UserRole,
                     acc.IsActive,
-                    acc.UserPassword
+                    acc.UserPassword,
+                    acc.Employee.EmployeeID
                 })
                 .ToList();
             gridControl.DataSource = users;
@@ -53,7 +53,6 @@ namespace VitaPharm.Forms.HumanManage
             if (row == null) return;
 
             currentAccountId = row.AccountID;
-
             txtUserName.Text = row.Username;
             txtFullName.Text = row.EmployeeName;
             chkFemale.Checked = (row.Sex == "F");
@@ -63,9 +62,7 @@ namespace VitaPharm.Forms.HumanManage
             cboRole.SelectedItem = row.UserRole;
             chkIsActive.Checked = (row.IsActive == "Active");
         }
-        #endregion
 
-        #region Toggle Controls
         private void ToggleControls(bool isEnabled)
         {
             txtUserName.Enabled = isEnabled;
@@ -82,55 +79,9 @@ namespace VitaPharm.Forms.HumanManage
             btnReload.Enabled = true;
             btnNewUser.Enabled = true;
         }
-        #endregion
-
-        #region Validation
-        private bool ValidateInput()
-        {
-            if (string.IsNullOrWhiteSpace(txtUserName.Text))
-            {
-                XtraMessageBox.Show("Username cannot be empty!", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtUserName.Focus();
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtFullName.Text))
-            {
-                XtraMessageBox.Show("Employee name cannot be empty!", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtFullName.Focus();
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtContact.Text))
-            {
-                XtraMessageBox.Show("Contact number cannot be empty!", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtContact.Focus();
-                return false;
-            }
-
-            if (cboRole.SelectedItem == null)
-            {
-                XtraMessageBox.Show("Please select a role!", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cboRole.Focus();
-                return false;
-            }
-
-            return true;
-        }
-        #endregion
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (currentAccountId == 0)
-            {
-                XtraMessageBox.Show("Please select a user to edit!", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
             ToggleControls(true);
         }
 
@@ -156,8 +107,37 @@ namespace VitaPharm.Forms.HumanManage
         {
             try
             {
-                if (!ValidateInput())
+                if (string.IsNullOrWhiteSpace(txtUserName.Text))
+                {
+                    XtraMessageBox.Show("Username cannot be empty!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUserName.Focus();
                     return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtFullName.Text))
+                {
+                    XtraMessageBox.Show("Employee name cannot be empty!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtFullName.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtContact.Text))
+                {
+                    XtraMessageBox.Show("Contact number cannot be empty!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtContact.Focus();
+                    return;
+                }
+
+                if (cboRole.SelectedItem == null)
+                {
+                    XtraMessageBox.Show("Please select a role!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cboRole.Focus();
+                    return;
+                }
 
                 var result = XtraMessageBox.Show(
                     "Are you sure you want to save the changes?",
