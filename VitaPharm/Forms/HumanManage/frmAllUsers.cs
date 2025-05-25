@@ -13,6 +13,9 @@ namespace VitaPharm.Forms.HumanManage
         public frmAllUsers()
         {
             InitializeComponent();
+            cboRole.Properties.Items.Clear();
+            cboRole.Properties.Items.AddRange(new[] { "Admin", "User" });
+
             this.Load += frmAllUsers_Load;
             gridView.FocusedRowChanged += GridView_FocusedRowChanged;
         }
@@ -72,6 +75,7 @@ namespace VitaPharm.Forms.HumanManage
             txtContact.Enabled = isEnabled;
             txtAddress.Enabled = isEnabled;
             cboRole.Enabled = isEnabled;
+
             chkIsActive.Enabled = isEnabled;
             btnSave.Enabled = isEnabled;
             btnCancel.Enabled = isEnabled;
@@ -107,45 +111,12 @@ namespace VitaPharm.Forms.HumanManage
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtUserName.Text))
-                {
-                    XtraMessageBox.Show("Username cannot be empty!", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtUserName.Focus();
-                    return;
-                }
-
-                if (string.IsNullOrWhiteSpace(txtFullName.Text))
-                {
-                    XtraMessageBox.Show("Employee name cannot be empty!", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtFullName.Focus();
-                    return;
-                }
-
-                if (string.IsNullOrWhiteSpace(txtContact.Text))
-                {
-                    XtraMessageBox.Show("Contact number cannot be empty!", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtContact.Focus();
-                    return;
-                }
-
-                if (cboRole.SelectedItem == null)
-                {
-                    XtraMessageBox.Show("Please select a role!", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    cboRole.Focus();
-                    return;
-                }
-
-                var result = XtraMessageBox.Show(
+                var confirm = XtraMessageBox.Show(
                     "Are you sure you want to save the changes?",
                     "Confirmation",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
-
-                if (result != DialogResult.Yes)
+                if (confirm != DialogResult.Yes)
                     return;
 
                 using (var saveContext = new PharmacyDbContext())
@@ -154,23 +125,7 @@ namespace VitaPharm.Forms.HumanManage
                         .Include(acc => acc.Employee)
                         .FirstOrDefault(acc => acc.AccountID == currentAccountId);
 
-                    if (account == null)
-                    {
-                        XtraMessageBox.Show("Account not found!", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    bool usernameExists = saveContext.Accounts
-                        .Any(acc => acc.Username == txtUserName.Text.Trim() && acc.AccountID != currentAccountId);
-
-                    if (usernameExists)
-                    {
-                        XtraMessageBox.Show("Username already exists!", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtUserName.Focus();
-                        return;
-                    }
+                    if (account == null) throw new Exception("Account not found");
 
                     account.Username = txtUserName.Text.Trim();
                     account.UserRole = cboRole.SelectedItem.ToString();
@@ -187,8 +142,11 @@ namespace VitaPharm.Forms.HumanManage
 
                     saveContext.SaveChanges();
 
-                    XtraMessageBox.Show("Information updated successfully!", "Success",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show(
+                        "Information updated successfully!",
+                        "Success",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
 
                     LoadUsersData();
                     ToggleControls(false);
@@ -199,12 +157,6 @@ namespace VitaPharm.Forms.HumanManage
                 XtraMessageBox.Show($"An error occurred while saving data: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        protected override void OnFormClosed(FormClosedEventArgs e)
-        {
-            context?.Dispose();
-            base.OnFormClosed(e);
         }
     }
 }
