@@ -8,6 +8,7 @@ namespace VitaPharm.Data
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int InvoiceDetailID { get; set; }
+        public int BatchID { get; set; }
         public int Quantity { get; set; }
 
         [Column(TypeName = "money")]
@@ -15,10 +16,9 @@ namespace VitaPharm.Data
 
         [Column(TypeName = "money")]
         public decimal Amount { get; set; }
+        [NotMapped] public int OnHand { get; set; }   // tồn kho (hiển thị)
 
-        [Required]
-        [MaxLength(10)]
-        public string InvoiceStatus { get; set; } = null!;
+
 
         public virtual Invoice Invoice { get; set; } = null!;
         public virtual Commodity Commodity { get; set; } = null!;

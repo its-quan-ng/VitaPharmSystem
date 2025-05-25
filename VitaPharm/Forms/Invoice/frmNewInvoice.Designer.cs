@@ -66,6 +66,13 @@
             simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            gridControl = new DevExpress.XtraGrid.GridControl();
+            gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            colCommodityName = new DevExpress.XtraGrid.Columns.GridColumn();
+            colBatchCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            colQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)seTaxRate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)meNote.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).BeginInit();
@@ -77,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)groupControl2).BeginInit();
+            groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)groupControl3).BeginInit();
             groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtPurchasePrice.Properties).BeginInit();
@@ -85,6 +93,8 @@
             ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spinQuantity.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             SuspendLayout();
             // 
             // Commodity
@@ -293,9 +303,10 @@
             // 
             groupControl2.AppearanceCaption.BorderColor = Color.FromArgb(250, 230, 230);
             groupControl2.AppearanceCaption.Options.UseBorderColor = true;
+            groupControl2.Controls.Add(gridControl);
             groupControl2.Location = new Point(26, 165);
             groupControl2.Name = "groupControl2";
-            groupControl2.Size = new Size(525, 213);
+            groupControl2.Size = new Size(525, 224);
             groupControl2.TabIndex = 27;
             groupControl2.Text = "Cart";
             // 
@@ -478,6 +489,70 @@
             simpleButton3.TabIndex = 29;
             simpleButton3.Text = "Add";
             // 
+            // gridControl
+            // 
+            gridControl.Dock = DockStyle.Fill;
+            gridControl.Location = new Point(2, 28);
+            gridControl.MainView = gridView;
+            gridControl.Name = "gridControl";
+            gridControl.Size = new Size(521, 194);
+            gridControl.TabIndex = 0;
+            gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
+            // 
+            // gridView
+            // 
+            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colCommodityName, colBatchCode, colQty, gridColumn4, gridColumn5 });
+            gridView.GridControl = gridControl;
+            gridView.Name = "gridView";
+            // 
+            // colCommodityName
+            // 
+            colCommodityName.Caption = "Commodity";
+            colCommodityName.FieldName = "CommodityName";
+            colCommodityName.MinWidth = 25;
+            colCommodityName.Name = "colCommodityName";
+            colCommodityName.Visible = true;
+            colCommodityName.VisibleIndex = 0;
+            colCommodityName.Width = 94;
+            // 
+            // colBatchCode
+            // 
+            colBatchCode.Caption = "Batch";
+            colBatchCode.FieldName = "BatchCode";
+            colBatchCode.MinWidth = 25;
+            colBatchCode.Name = "colBatchCode";
+            colBatchCode.Visible = true;
+            colBatchCode.VisibleIndex = 1;
+            colBatchCode.Width = 94;
+            // 
+            // colQty
+            // 
+            colQty.Caption = "Qty";
+            colQty.FieldName = "Quantity";
+            colQty.MinWidth = 25;
+            colQty.Name = "colQty";
+            colQty.Visible = true;
+            colQty.VisibleIndex = 2;
+            colQty.Width = 94;
+            // 
+            // gridColumn4
+            // 
+            gridColumn4.Caption = "gridColumn4";
+            gridColumn4.MinWidth = 25;
+            gridColumn4.Name = "gridColumn4";
+            gridColumn4.Visible = true;
+            gridColumn4.VisibleIndex = 3;
+            gridColumn4.Width = 94;
+            // 
+            // gridColumn5
+            // 
+            gridColumn5.Caption = "gridColumn5";
+            gridColumn5.MinWidth = 25;
+            gridColumn5.Name = "gridColumn5";
+            gridColumn5.Visible = true;
+            gridColumn5.VisibleIndex = 4;
+            gridColumn5.Width = 94;
+            // 
             // frmNewInvoice
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -504,6 +579,7 @@
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)groupControl2).EndInit();
+            groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)groupControl3).EndInit();
             groupControl3.ResumeLayout(false);
             groupControl3.PerformLayout();
@@ -513,6 +589,8 @@
             ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)spinQuantity.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -554,5 +632,12 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraGrid.GridControl gridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
+        private DevExpress.XtraGrid.Columns.GridColumn colCommodityName;
+        private DevExpress.XtraGrid.Columns.GridColumn colBatchCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colQty;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
     }
 }
