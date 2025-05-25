@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace VitaPharm.Forms.HumanManage
 {
-	public partial class frmAllCustomers: DevExpress.XtraEditors.XtraForm
+	public partial class frmProfile: DevExpress.XtraEditors.XtraForm
 	{
-        public frmAllCustomers()
+        public frmProfile()
 		{
             InitializeComponent();
 		}
