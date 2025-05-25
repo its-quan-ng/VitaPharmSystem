@@ -24,6 +24,15 @@ namespace VitaPharm.Forms
         private void frmAllGoodsReceipt_Load(object sender, EventArgs e)
         {
             LoadReceipts();
+
+            if (CurrentUser.Role == "Admin")
+            {
+                btnDeactive.Enabled = false;
+            }
+            else
+            {
+                btnDeactive.Enabled = true;
+            }
         }
 
         private void btnNewGoodsReceipt_Click(object sender, EventArgs e)
@@ -75,7 +84,14 @@ namespace VitaPharm.Forms
 
         private void LoadReceipts()
         {
-            var receipts = context.GoodsReceipts
+            IQueryable<GoodsReceipt> query = context.GoodsReceipts;
+
+            if (CurrentUser.Role == "User")
+            {
+                query = query.Where(r => r.Employee.EmployeeID == CurrentUser.EmployeeID);
+            }
+            
+            var receipts = query
                 .Select(r => new
                 {
                     r.ReceiptID,

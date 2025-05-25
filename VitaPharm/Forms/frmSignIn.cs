@@ -102,6 +102,10 @@ namespace VitaPharm.Forms
 
         private void LoginSuccess(Account account)
         {
+            CurrentUser.Username = account.Username;
+            CurrentUser.Role = account.UserRole;
+            CurrentUser.EmployeeID = account.Employee.EmployeeID;
+
             XtraMessageBox.Show(
                 "Login successful!",
                 "Success",
