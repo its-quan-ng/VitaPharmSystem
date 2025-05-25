@@ -1,25 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using VitaPharm.Data;
 
 namespace VitaPharm.Forms.HumanManage
 {
-    public partial class frmProfile : DevExpress.XtraEditors.XtraForm
+    public partial class frmProfile : XtraForm
     {
         private readonly Account account;
         internal frmProfile(Account account)
         {
             InitializeComponent();
             this.account = account;
-            this.Load += frmProfile_Load;
         }
 
         private void frmProfile_Load(object sender, EventArgs e)
@@ -32,6 +22,27 @@ namespace VitaPharm.Forms.HumanManage
             dateBirthday.DateTime = account.Employee.Birthday;
             txtContact.Text = account.Employee.Contact;
             txtAddress.Text = account.Employee.EmployeeAddress;
+            ToggleControl(false);
+        }
+
+        private void ToggleControl(bool enable)
+        {
+            txtEmployeeID.Enabled = false;
+
+            txtUsername.Enabled = enable;
+            txtFullName.Enabled = enable;
+            ckcFemale.Enabled = enable;  
+            dateBirthday.Enabled = enable;  
+            txtContact.Enabled = enable;
+            txtAddress.Enabled = enable;
+
+            btnSave.Enabled = !enable;
+            btnCancel.Enabled = !enable;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            ToggleControl(true);
         }
     }
 }

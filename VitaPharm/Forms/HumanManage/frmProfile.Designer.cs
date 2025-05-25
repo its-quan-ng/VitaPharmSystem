@@ -261,6 +261,7 @@
             btnEdit.Size = new Size(98, 32);
             btnEdit.TabIndex = 1;
             btnEdit.Text = "Edit";
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnSave
             // 

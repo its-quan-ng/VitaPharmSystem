@@ -27,7 +27,6 @@ namespace VitaPharm.Forms
             }
 
             using var context = new PharmacyDbContext();
-            // include luôn Employee để dùng trong Profile 
             var account = context.Accounts
                 .Include(a => a.Employee)
                 .FirstOrDefault(a =>
