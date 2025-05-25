@@ -1,4 +1,4 @@
-﻿namespace VitaPharm.Forms
+﻿namespace VitaPharm.Forms.HumanManage
 {
     partial class frmAllUsers
     {
@@ -58,6 +58,9 @@
             repochkEditIsActive = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             colPassword = new DevExpress.XtraGrid.Columns.GridColumn();
             repotxtPassword = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            repositoryItemConditionalType1 = new DevExpress.XtraRichEdit.Design.RepositoryItemConditionalType();
+            repositoryItemAlignment1 = new DevExpress.XtraRichEdit.Design.RepositoryItemAlignment();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             btnNewUser = new DevExpress.XtraEditors.SimpleButton();
             btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -79,6 +82,10 @@
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repochkEditIsActive).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repotxtPassword).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repositoryItemDateEdit1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repositoryItemDateEdit1.CalendarTimeProperties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repositoryItemConditionalType1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repositoryItemAlignment1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             SuspendLayout();
@@ -114,6 +121,7 @@
             // 
             // chkIsActive
             // 
+            chkIsActive.Anchor = AnchorStyles.Top;
             chkIsActive.Location = new Point(541, 30);
             chkIsActive.Name = "chkIsActive";
             chkIsActive.Properties.Appearance.BackColor = Color.YellowGreen;
@@ -124,6 +132,7 @@
             // 
             // btnResetPassword
             // 
+            btnResetPassword.Anchor = AnchorStyles.Top;
             btnResetPassword.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnResetPassword.Appearance.Options.UseFont = true;
             btnResetPassword.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnResetPassword.ImageOptions.SvgImage");
@@ -137,6 +146,7 @@
             // 
             // txtAddress
             // 
+            txtAddress.Anchor = AnchorStyles.Top;
             txtAddress.Location = new Point(389, 116);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(427, 22);
@@ -144,6 +154,7 @@
             // 
             // dtpBirthday
             // 
+            dtpBirthday.Anchor = AnchorStyles.Top;
             dtpBirthday.EditValue = null;
             dtpBirthday.Location = new Point(91, 116);
             dtpBirthday.Name = "dtpBirthday";
@@ -154,6 +165,7 @@
             // 
             // chkFemale
             // 
+            chkFemale.Anchor = AnchorStyles.Top;
             chkFemale.Location = new Point(606, 73);
             chkFemale.Name = "chkFemale";
             chkFemale.Properties.Caption = "Female";
@@ -162,6 +174,7 @@
             // 
             // labelControl5
             // 
+            labelControl5.Anchor = AnchorStyles.Top;
             labelControl5.Location = new Point(22, 119);
             labelControl5.Name = "labelControl5";
             labelControl5.Size = new Size(51, 16);
@@ -170,6 +183,7 @@
             // 
             // txtFullName
             // 
+            txtFullName.Anchor = AnchorStyles.Top;
             txtFullName.Location = new Point(91, 74);
             txtFullName.Name = "txtFullName";
             txtFullName.Size = new Size(189, 22);
@@ -177,6 +191,7 @@
             // 
             // cboRole
             // 
+            cboRole.Anchor = AnchorStyles.Top;
             cboRole.EditValue = "User";
             cboRole.Location = new Point(389, 31);
             cboRole.Name = "cboRole";
@@ -186,6 +201,7 @@
             // 
             // labelControl8
             // 
+            labelControl8.Anchor = AnchorStyles.Top;
             labelControl8.Location = new Point(327, 34);
             labelControl8.Name = "labelControl8";
             labelControl8.Size = new Size(30, 16);
@@ -194,6 +210,7 @@
             // 
             // labelControl4
             // 
+            labelControl4.Anchor = AnchorStyles.Top;
             labelControl4.Location = new Point(327, 119);
             labelControl4.Name = "labelControl4";
             labelControl4.Size = new Size(51, 16);
@@ -202,6 +219,7 @@
             // 
             // labelControl3
             // 
+            labelControl3.Anchor = AnchorStyles.Top;
             labelControl3.Location = new Point(326, 77);
             labelControl3.Name = "labelControl3";
             labelControl3.Size = new Size(52, 16);
@@ -210,6 +228,7 @@
             // 
             // txtContact
             // 
+            txtContact.Anchor = AnchorStyles.Top;
             txtContact.Location = new Point(389, 74);
             txtContact.Name = "txtContact";
             txtContact.Size = new Size(159, 22);
@@ -217,6 +236,7 @@
             // 
             // labelControl2
             // 
+            labelControl2.Anchor = AnchorStyles.Top;
             labelControl2.Location = new Point(22, 77);
             labelControl2.Name = "labelControl2";
             labelControl2.Size = new Size(62, 16);
@@ -225,6 +245,7 @@
             // 
             // labelControl1
             // 
+            labelControl1.Anchor = AnchorStyles.Top;
             labelControl1.Location = new Point(22, 34);
             labelControl1.Name = "labelControl1";
             labelControl1.Size = new Size(63, 16);
@@ -233,6 +254,7 @@
             // 
             // txtUserName
             // 
+            txtUserName.Anchor = AnchorStyles.Top;
             txtUserName.Location = new Point(91, 31);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(189, 22);
@@ -244,7 +266,7 @@
             gridControl.Location = new Point(0, 161);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repochkEditIsActive, repotxtPassword });
+            gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repochkEditIsActive, repotxtPassword, repositoryItemDateEdit1, repositoryItemConditionalType1, repositoryItemAlignment1 });
             gridControl.Size = new Size(828, 235);
             gridControl.TabIndex = 1;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
@@ -302,7 +324,7 @@
             // colBirthday
             // 
             colBirthday.Caption = "Birthday";
-            colBirthday.DisplayFormat.FormatString = "\"dd/MM/yyyy\"";
+            colBirthday.DisplayFormat.FormatString = "dd/MM/yyyy";
             colBirthday.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             colBirthday.FieldName = "Birthday";
             colBirthday.MinWidth = 25;
@@ -370,6 +392,28 @@
             repotxtPassword.PasswordChar = '•';
             repotxtPassword.UseSystemPasswordChar = true;
             // 
+            // repositoryItemDateEdit1
+            // 
+            repositoryItemDateEdit1.AutoHeight = false;
+            repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            // 
+            // repositoryItemConditionalType1
+            // 
+            repositoryItemConditionalType1.AutoHeight = false;
+            repositoryItemConditionalType1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repositoryItemConditionalType1.Name = "repositoryItemConditionalType1";
+            // 
+            // repositoryItemAlignment1
+            // 
+            repositoryItemAlignment1.AutoHeight = false;
+            repositoryItemAlignment1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repositoryItemAlignment1.HasArabic = false;
+            repositoryItemAlignment1.HasDistribute = false;
+            repositoryItemAlignment1.HasThaiDistribute = false;
+            repositoryItemAlignment1.Name = "repositoryItemAlignment1";
+            // 
             // panelControl1
             // 
             panelControl1.Controls.Add(btnNewUser);
@@ -385,6 +429,7 @@
             // 
             // btnNewUser
             // 
+            btnNewUser.Anchor = AnchorStyles.Top;
             btnNewUser.Appearance.BackColor = Color.FromArgb(100, 165, 80);
             btnNewUser.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnNewUser.Appearance.Options.UseBackColor = true;
@@ -394,9 +439,11 @@
             btnNewUser.Size = new Size(118, 36);
             btnNewUser.TabIndex = 1;
             btnNewUser.Text = "New User";
+            btnNewUser.Click += btnNewUser_Click;
             // 
             // btnSave
             // 
+            btnSave.Anchor = AnchorStyles.Top;
             btnSave.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
             btnSave.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnSave.Appearance.Options.UseBackColor = true;
@@ -406,9 +453,11 @@
             btnSave.Size = new Size(118, 36);
             btnSave.TabIndex = 3;
             btnSave.Text = "Save";
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
+            btnCancel.Anchor = AnchorStyles.Top;
             btnCancel.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             btnCancel.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnCancel.Appearance.Options.UseBackColor = true;
@@ -418,9 +467,11 @@
             btnCancel.Size = new Size(118, 36);
             btnCancel.TabIndex = 4;
             btnCancel.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnReload
             // 
+            btnReload.Anchor = AnchorStyles.Top;
             btnReload.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Warning;
             btnReload.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnReload.Appearance.Options.UseBackColor = true;
@@ -430,9 +481,11 @@
             btnReload.Size = new Size(118, 36);
             btnReload.TabIndex = 4;
             btnReload.Text = "Reload";
+            btnReload.Click += btnReload_Click;
             // 
             // btnEdit
             // 
+            btnEdit.Anchor = AnchorStyles.Top;
             btnEdit.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             btnEdit.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnEdit.Appearance.Options.UseBackColor = true;
@@ -442,6 +495,7 @@
             btnEdit.Size = new Size(118, 36);
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Edit";
+            btnEdit.Click += btnEdit_Click;
             // 
             // frmAllUsers
             // 
@@ -455,6 +509,7 @@
             Name = "frmAllUsers";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "All Users";
+            Load += frmAllUsers_Load;
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
@@ -471,6 +526,10 @@
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)repochkEditIsActive).EndInit();
             ((System.ComponentModel.ISupportInitialize)repotxtPassword).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repositoryItemDateEdit1.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repositoryItemDateEdit1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repositoryItemConditionalType1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repositoryItemAlignment1).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
             ResumeLayout(false);
@@ -513,5 +572,8 @@
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.CheckEdit chkIsActive;
         private DevExpress.XtraEditors.SimpleButton btnNewUser;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
+        private DevExpress.XtraRichEdit.Design.RepositoryItemConditionalType repositoryItemConditionalType1;
+        private DevExpress.XtraRichEdit.Design.RepositoryItemAlignment repositoryItemAlignment1;
     }
 }

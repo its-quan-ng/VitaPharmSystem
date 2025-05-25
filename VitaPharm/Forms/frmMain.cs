@@ -11,6 +11,7 @@ namespace VitaPharm.Forms
         private frmProfile? profileForm = null;
         private frmNewUser? newUserForm = null;
         private frmAllGoodsReceipt? allGoodsReceiptForm = null;
+        private frmAllUsers? allUsersForm = null;
 
         internal frmMain(Account account)
         {
@@ -33,6 +34,7 @@ namespace VitaPharm.Forms
 
             btnProfile.Enabled = true;
             btnNewUser.Enabled = isAdmin;
+            btnAllUsers.Enabled = isAdmin;
             btnAllGoodsReceipt.Enabled = true;
         }
 
@@ -81,6 +83,28 @@ namespace VitaPharm.Forms
             allGoodsReceiptForm.Show();
             allGoodsReceiptForm.BringToFront();
         }
+
+        private void OpenAllUsers()
+        {
+            if (!currentRole.Equals("Admin", StringComparison.OrdinalIgnoreCase))
+            {
+                XtraMessageBox.Show("You do not have permission to access this feature!", "Notification",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            foreach (var f in this.MdiChildren) f.Close();
+
+            if (allUsersForm == null || allUsersForm.IsDisposed)
+            {
+                allUsersForm = new frmAllUsers()
+                {
+                    MdiParent = this
+                };
+            }
+            allUsersForm.Show();
+            allUsersForm.BringToFront();
+        }
         #endregion
 
         private void btnProfile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -96,6 +120,11 @@ namespace VitaPharm.Forms
         private void btnAllGoodsReceipt_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenAllGoodsReceipt();
+        }
+
+        private void btnAllUsers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenAllUsers();
         }
     }
 }
