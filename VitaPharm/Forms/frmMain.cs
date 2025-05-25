@@ -8,8 +8,8 @@ namespace VitaPharm.Forms
     {
         private readonly Account currentAccount;
         private readonly string currentRole;
-        private frmProfile? profileForm = null;
         frmNewUser? newUserForm = null;
+        frmAllUsers? allUsersForm = null;
 
         internal frmMain(Account account)
         {
@@ -29,6 +29,7 @@ namespace VitaPharm.Forms
 
             btnProfile.Enabled = true;
             btnNewUser.Enabled = isAdmin;
+            btnAllUsers.Enabled = isAdmin;
         }
 
         private void OpenProfile()
@@ -40,12 +41,18 @@ namespace VitaPharm.Forms
             };
             profileForm.Show();
         }
+        #endregion
 
-        private void OpenNewUser()
+        private void btnProfile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenProfile();
+        }
+
+        private void btnNewUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (!currentRole.Equals("Admin", StringComparison.OrdinalIgnoreCase))
             {
-                XtraMessageBox.Show("You do not have permission to access this feature!","Notification",
+                XtraMessageBox.Show("You do not have permission to access this feature!", "Notification",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -62,16 +69,27 @@ namespace VitaPharm.Forms
             newUserForm.Show();
             newUserForm.BringToFront();
         }
-        #endregion
 
-        private void btnProfile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnAllUsers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            OpenProfile();
-        }
+            if (!currentRole.Equals("Admin", StringComparison.OrdinalIgnoreCase))
+            {
+                XtraMessageBox.Show("You do not have permission to access this feature!", "Notification",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-        private void btnNewUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            OpenNewUser();
+            foreach (var f in this.MdiChildren) f.Close();
+
+            if (allUsersForm == null || allUsersForm.IsDisposed)
+            {
+                allUsersForm = new frmAllUsers()
+                {
+                    MdiParent = this
+                };
+            }
+            allUsersForm.Show();
+            allUsersForm.BringToFront();
         }
     }
 }
