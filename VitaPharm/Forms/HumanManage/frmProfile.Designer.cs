@@ -86,6 +86,7 @@
             // 
             // dateEdit1
             // 
+            dateEdit1.Anchor = AnchorStyles.Top;
             dateEdit1.EditValue = null;
             dateEdit1.Location = new Point(489, 124);
             dateEdit1.Name = "dateEdit1";
@@ -96,6 +97,7 @@
             // 
             // ckcFemale
             // 
+            ckcFemale.Anchor = AnchorStyles.Top;
             ckcFemale.Location = new Point(489, 75);
             ckcFemale.Name = "ckcFemale";
             ckcFemale.Properties.Caption = "Female";
@@ -104,6 +106,7 @@
             // 
             // textEdit4
             // 
+            textEdit4.Anchor = AnchorStyles.Top;
             textEdit4.Location = new Point(173, 172);
             textEdit4.Name = "textEdit4";
             textEdit4.Size = new Size(472, 22);
@@ -111,6 +114,7 @@
             // 
             // textEdit3
             // 
+            textEdit3.Anchor = AnchorStyles.Top;
             textEdit3.Location = new Point(173, 124);
             textEdit3.Name = "textEdit3";
             textEdit3.Size = new Size(156, 22);
@@ -118,6 +122,7 @@
             // 
             // textEdit2
             // 
+            textEdit2.Anchor = AnchorStyles.Top;
             textEdit2.Location = new Point(173, 76);
             textEdit2.Name = "textEdit2";
             textEdit2.Size = new Size(156, 22);
@@ -125,6 +130,7 @@
             // 
             // textEdit5
             // 
+            textEdit5.Anchor = AnchorStyles.Top;
             textEdit5.Location = new Point(489, 25);
             textEdit5.Name = "textEdit5";
             textEdit5.Size = new Size(156, 22);
@@ -132,6 +138,7 @@
             // 
             // textEdit1
             // 
+            textEdit1.Anchor = AnchorStyles.Top;
             textEdit1.Location = new Point(173, 25);
             textEdit1.Name = "textEdit1";
             textEdit1.Size = new Size(156, 22);
@@ -139,6 +146,7 @@
             // 
             // labelControl4
             // 
+            labelControl4.Anchor = AnchorStyles.Top;
             labelControl4.Location = new Point(420, 79);
             labelControl4.Name = "labelControl4";
             labelControl4.Size = new Size(26, 16);
@@ -147,6 +155,7 @@
             // 
             // labelControl6
             // 
+            labelControl6.Anchor = AnchorStyles.Top;
             labelControl6.Location = new Point(420, 127);
             labelControl6.Name = "labelControl6";
             labelControl6.Size = new Size(51, 16);
@@ -155,6 +164,7 @@
             // 
             // labelControl7
             // 
+            labelControl7.Anchor = AnchorStyles.Top;
             labelControl7.Location = new Point(81, 175);
             labelControl7.Name = "labelControl7";
             labelControl7.Size = new Size(51, 16);
@@ -163,6 +173,7 @@
             // 
             // labelControl5
             // 
+            labelControl5.Anchor = AnchorStyles.Top;
             labelControl5.Location = new Point(81, 127);
             labelControl5.Name = "labelControl5";
             labelControl5.Size = new Size(48, 16);
@@ -171,6 +182,7 @@
             // 
             // labelControl3
             // 
+            labelControl3.Anchor = AnchorStyles.Top;
             labelControl3.Location = new Point(81, 79);
             labelControl3.Name = "labelControl3";
             labelControl3.Size = new Size(62, 16);
@@ -179,6 +191,7 @@
             // 
             // labelControl2
             // 
+            labelControl2.Anchor = AnchorStyles.Top;
             labelControl2.Location = new Point(420, 28);
             labelControl2.Name = "labelControl2";
             labelControl2.Size = new Size(63, 16);
@@ -187,6 +200,7 @@
             // 
             // labelControl1
             // 
+            labelControl1.Anchor = AnchorStyles.Top;
             labelControl1.Location = new Point(81, 28);
             labelControl1.Name = "labelControl1";
             labelControl1.Size = new Size(76, 16);
@@ -220,6 +234,7 @@
             // 
             // btnDelete
             // 
+            btnDelete.Anchor = AnchorStyles.Top;
             btnDelete.Appearance.BackColor = Color.FromArgb(220, 54, 46);
             btnDelete.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnDelete.Appearance.Options.UseBackColor = true;
@@ -232,6 +247,7 @@
             // 
             // btnEdit
             // 
+            btnEdit.Anchor = AnchorStyles.Top;
             btnEdit.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
             btnEdit.Appearance.BorderColor = Color.Black;
             btnEdit.Appearance.FontStyleDelta = FontStyle.Bold;
@@ -248,6 +264,7 @@
             // 
             // btnSave
             // 
+            btnSave.Anchor = AnchorStyles.Top;
             btnSave.Appearance.BackColor = Color.FromArgb(78, 154, 81);
             btnSave.Appearance.FontStyleDelta = FontStyle.Bold;
             btnSave.Appearance.Options.UseBackColor = true;
@@ -266,6 +283,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "frmProfile";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmProfile";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
