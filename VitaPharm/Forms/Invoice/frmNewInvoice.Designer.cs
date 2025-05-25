@@ -55,6 +55,7 @@
             colCommodityName = new DevExpress.XtraGrid.Columns.GridColumn();
             colBatchCode = new DevExpress.XtraGrid.Columns.GridColumn();
             colQty = new DevExpress.XtraGrid.Columns.GridColumn();
+            colBaseUnit = new DevExpress.XtraGrid.Columns.GridColumn();
             colUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             groupControl3 = new DevExpress.XtraEditors.GroupControl();
@@ -73,7 +74,6 @@
             cboCommodity = new DevExpress.XtraEditors.ComboBoxEdit();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
             simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            colBaseUnit = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)seTaxRate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)meNote.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).BeginInit();
@@ -329,23 +329,23 @@
             // 
             // colCommodityName
             // 
-            colCommodityName.Caption = "Commodity";
+            colCommodityName.Caption = "Product Name";
             colCommodityName.FieldName = "CommodityName";
             colCommodityName.MinWidth = 25;
             colCommodityName.Name = "colCommodityName";
             colCommodityName.Visible = true;
             colCommodityName.VisibleIndex = 0;
-            colCommodityName.Width = 94;
+            colCommodityName.Width = 282;
             // 
             // colBatchCode
             // 
-            colBatchCode.Caption = "Batch";
+            colBatchCode.Caption = "Batch Code";
             colBatchCode.FieldName = "BatchCode";
             colBatchCode.MinWidth = 25;
             colBatchCode.Name = "colBatchCode";
             colBatchCode.Visible = true;
             colBatchCode.VisibleIndex = 1;
-            colBatchCode.Width = 94;
+            colBatchCode.Width = 118;
             // 
             // colQty
             // 
@@ -355,7 +355,17 @@
             colQty.Name = "colQty";
             colQty.Visible = true;
             colQty.VisibleIndex = 2;
-            colQty.Width = 94;
+            colQty.Width = 57;
+            // 
+            // colBaseUnit
+            // 
+            colBaseUnit.Caption = "Base Unit";
+            colBaseUnit.FieldName = "BaseUnit";
+            colBaseUnit.MinWidth = 25;
+            colBaseUnit.Name = "colBaseUnit";
+            colBaseUnit.Visible = true;
+            colBaseUnit.VisibleIndex = 3;
+            colBaseUnit.Width = 89;
             // 
             // colUnitPrice
             // 
@@ -365,7 +375,7 @@
             colUnitPrice.Name = "colUnitPrice";
             colUnitPrice.Visible = true;
             colUnitPrice.VisibleIndex = 4;
-            colUnitPrice.Width = 94;
+            colUnitPrice.Width = 158;
             // 
             // colAmount
             // 
@@ -375,7 +385,7 @@
             colAmount.Name = "colAmount";
             colAmount.Visible = true;
             colAmount.VisibleIndex = 5;
-            colAmount.Width = 94;
+            colAmount.Width = 147;
             // 
             // groupControl3
             // 
@@ -555,16 +565,6 @@
             simpleButton3.Size = new Size(85, 36);
             simpleButton3.TabIndex = 29;
             simpleButton3.Text = "Add";
-            // 
-            // colBaseUnit
-            // 
-            colBaseUnit.Caption = "Base Unit";
-            colBaseUnit.FieldName = "BaseUnit";
-            colBaseUnit.MinWidth = 25;
-            colBaseUnit.Name = "colBaseUnit";
-            colBaseUnit.Visible = true;
-            colBaseUnit.VisibleIndex = 3;
-            colBaseUnit.Width = 94;
             // 
             // frmNewInvoice
             // 
