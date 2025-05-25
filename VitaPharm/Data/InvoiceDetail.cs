@@ -16,7 +16,7 @@ namespace VitaPharm.Data
 
         [NotMapped]
         public decimal Amount => Quantity * UnitPrice;
-        [NotMapped] public int OnHand { get; set; }   // tồn kho (hiển thị)
+        [NotMapped] public int OnHand { get; set; }   // Quantity in stock (to display)
         public virtual Invoice Invoice { get; set; } = null!;
         public int BatchID { get; set; }
         public virtual Batch Batch { get; set; } = null!;
