@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace VitaPharm.Forms
+namespace VitaPharm.Forms.Invoice
 {
     public partial class frmNewInvoice : DevExpress.XtraEditors.XtraForm
     {
