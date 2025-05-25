@@ -22,6 +22,13 @@ namespace VitaPharm.Forms.HumanManage
             chkIsActive.Checked = true;
             chkFemale.Checked = false;
             dtpBirthday.EditValue = DateTime.Now;
+
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+            txtConfirmPassword.Text = "";
+            txtName.Text = "";
+            txtContact.Text = "";
+            txtAddress.Text = "";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -83,10 +90,13 @@ namespace VitaPharm.Forms.HumanManage
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            var result = XtraMessageBox.Show("Do you want to exit this form?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (XtraMessageBox.Show(
+                "Do you want to discard changes and reload original data?",
+                "Confirm Cancel",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Close();
+                frmNewUser_Load(sender, e);
             }
         }
     }
