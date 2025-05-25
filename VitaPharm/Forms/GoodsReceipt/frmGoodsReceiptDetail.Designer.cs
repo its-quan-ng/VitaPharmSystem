@@ -46,6 +46,7 @@
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             lblTotalQuantity = new DevExpress.XtraEditors.LabelControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            btnPrint = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
@@ -151,6 +152,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnPrint);
             panel1.Controls.Add(btnCancel);
             panel1.Controls.Add(btnReload);
             panel1.Dock = DockStyle.Bottom;
@@ -177,7 +179,7 @@
             btnReload.Appearance.FontStyleDelta = FontStyle.Bold;
             btnReload.Appearance.Options.UseBackColor = true;
             btnReload.Appearance.Options.UseFont = true;
-            btnReload.Location = new Point(590, 19);
+            btnReload.Location = new Point(602, 19);
             btnReload.Name = "btnReload";
             btnReload.Size = new Size(97, 32);
             btnReload.TabIndex = 0;
@@ -235,6 +237,18 @@
             labelControl1.TabIndex = 0;
             labelControl1.Text = "Total Quantity:";
             // 
+            // btnPrint
+            // 
+            btnPrint.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
+            btnPrint.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            btnPrint.Appearance.Options.UseBackColor = true;
+            btnPrint.Appearance.Options.UseFont = true;
+            btnPrint.Location = new Point(490, 19);
+            btnPrint.Name = "btnPrint";
+            btnPrint.Size = new Size(106, 32);
+            btnPrint.TabIndex = 12;
+            btnPrint.Text = "Print";
+            // 
             // frmGoodsReceiptDetail
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -276,5 +290,6 @@
         private DevExpress.XtraEditors.SimpleButton btnReload;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraGrid.Columns.GridColumn colReceiptCode;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
     }
 }
