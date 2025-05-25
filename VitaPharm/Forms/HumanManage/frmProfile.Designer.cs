@@ -195,6 +195,10 @@
             // 
             // groupControl1
             // 
+            groupControl1.AppearanceCaption.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
+            groupControl1.AppearanceCaption.ForeColor = Color.FromArgb(16, 53, 113);
+            groupControl1.AppearanceCaption.Options.UseFont = true;
+            groupControl1.AppearanceCaption.Options.UseForeColor = true;
             groupControl1.Dock = DockStyle.Fill;
             groupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             groupControl1.Location = new Point(0, 0);
