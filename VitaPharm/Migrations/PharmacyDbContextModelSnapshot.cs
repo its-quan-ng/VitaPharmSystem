@@ -347,13 +347,10 @@ namespace VitaPharm.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InvoiceDetailID"));
 
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("money");
-
                     b.Property<int>("BatchID")
                         .HasColumnType("int");
 
-                    b.Property<int>("CommodityID")
+                    b.Property<int?>("CommodityID")
                         .HasColumnType("int");
 
                     b.Property<int>("InvoiceID")
@@ -366,6 +363,8 @@ namespace VitaPharm.Migrations
                         .HasColumnType("money");
 
                     b.HasKey("InvoiceDetailID");
+
+                    b.HasIndex("BatchID");
 
                     b.HasIndex("CommodityID");
 
@@ -458,11 +457,15 @@ namespace VitaPharm.Migrations
 
             modelBuilder.Entity("VitaPharm.Data.InvoiceDetail", b =>
                 {
-                    b.HasOne("VitaPharm.Data.Commodity", "Commodity")
-                        .WithMany("InvoiceDetail")
-                        .HasForeignKey("CommodityID")
+                    b.HasOne("VitaPharm.Data.Batch", "Batch")
+                        .WithMany()
+                        .HasForeignKey("BatchID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("VitaPharm.Data.Commodity", null)
+                        .WithMany("InvoiceDetail")
+                        .HasForeignKey("CommodityID");
 
                     b.HasOne("VitaPharm.Data.Invoice", "Invoice")
                         .WithMany("InvoiceDetail")
@@ -470,7 +473,7 @@ namespace VitaPharm.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Commodity");
+                    b.Navigation("Batch");
 
                     b.Navigation("Invoice");
                 });

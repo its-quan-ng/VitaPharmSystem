@@ -120,7 +120,7 @@
             chkIsActive.Properties.Appearance.Options.UseBackColor = true;
             chkIsActive.Properties.Caption = "Is Active?";
             chkIsActive.Size = new Size(81, 24);
-            chkIsActive.TabIndex = 17;
+            chkIsActive.TabIndex = 3;
             // 
             // btnResetPassword
             // 
@@ -132,7 +132,7 @@
             btnResetPassword.Name = "btnResetPassword";
             btnResetPassword.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             btnResetPassword.Size = new Size(138, 36);
-            btnResetPassword.TabIndex = 16;
+            btnResetPassword.TabIndex = 4;
             btnResetPassword.Text = "Reset Password";
             // 
             // txtAddress
@@ -140,7 +140,7 @@
             txtAddress.Location = new Point(389, 116);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(427, 22);
-            txtAddress.TabIndex = 14;
+            txtAddress.TabIndex = 9;
             // 
             // dtpBirthday
             // 
@@ -150,7 +150,7 @@
             dtpBirthday.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             dtpBirthday.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             dtpBirthday.Size = new Size(155, 22);
-            dtpBirthday.TabIndex = 13;
+            dtpBirthday.TabIndex = 8;
             // 
             // chkFemale
             // 
@@ -158,7 +158,7 @@
             chkFemale.Name = "chkFemale";
             chkFemale.Properties.Caption = "Female";
             chkFemale.Size = new Size(128, 24);
-            chkFemale.TabIndex = 12;
+            chkFemale.TabIndex = 7;
             // 
             // labelControl5
             // 
@@ -173,7 +173,7 @@
             txtFullName.Location = new Point(91, 74);
             txtFullName.Name = "txtFullName";
             txtFullName.Size = new Size(189, 22);
-            txtFullName.TabIndex = 11;
+            txtFullName.TabIndex = 5;
             // 
             // cboRole
             // 
@@ -182,7 +182,7 @@
             cboRole.Name = "cboRole";
             cboRole.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             cboRole.Size = new Size(71, 22);
-            cboRole.TabIndex = 10;
+            cboRole.TabIndex = 2;
             // 
             // labelControl8
             // 
@@ -213,7 +213,7 @@
             txtContact.Location = new Point(389, 74);
             txtContact.Name = "txtContact";
             txtContact.Size = new Size(159, 22);
-            txtContact.TabIndex = 3;
+            txtContact.TabIndex = 6;
             // 
             // labelControl2
             // 
@@ -228,7 +228,7 @@
             labelControl1.Location = new Point(22, 34);
             labelControl1.Name = "labelControl1";
             labelControl1.Size = new Size(63, 16);
-            labelControl1.TabIndex = 1;
+            labelControl1.TabIndex = 0;
             labelControl1.Text = "Username:";
             // 
             // txtUserName
@@ -236,7 +236,7 @@
             txtUserName.Location = new Point(91, 31);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(189, 22);
-            txtUserName.TabIndex = 0;
+            txtUserName.TabIndex = 1;
             // 
             // gridControl
             // 
@@ -392,7 +392,7 @@
             btnNewUser.Location = new Point(5, 16);
             btnNewUser.Name = "btnNewUser";
             btnNewUser.Size = new Size(118, 36);
-            btnNewUser.TabIndex = 11;
+            btnNewUser.TabIndex = 1;
             btnNewUser.Text = "New User";
             // 
             // btnSave
@@ -404,7 +404,7 @@
             btnSave.Location = new Point(450, 16);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(118, 36);
-            btnSave.TabIndex = 10;
+            btnSave.TabIndex = 3;
             btnSave.Text = "Save";
             // 
             // btnCancel
@@ -416,7 +416,7 @@
             btnCancel.Location = new Point(698, 16);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(118, 36);
-            btnCancel.TabIndex = 9;
+            btnCancel.TabIndex = 4;
             btnCancel.Text = "Cancel";
             // 
             // btnReload
@@ -428,7 +428,7 @@
             btnReload.Location = new Point(574, 16);
             btnReload.Name = "btnReload";
             btnReload.Size = new Size(118, 36);
-            btnReload.TabIndex = 8;
+            btnReload.TabIndex = 4;
             btnReload.Text = "Reload";
             // 
             // btnEdit
@@ -440,7 +440,7 @@
             btnEdit.Location = new Point(129, 16);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(118, 36);
-            btnEdit.TabIndex = 7;
+            btnEdit.TabIndex = 2;
             btnEdit.Text = "Edit";
             // 
             // frmAllUsers

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace VitaPharm.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -110,7 +110,7 @@ namespace VitaPharm.Migrations
                 {
                     ReceiptID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ReceiptCode = table.Column<string>(type: "nvarchar(6)", maxLength: 6, nullable: false),
+                    ReceiptCode = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     ReceiptDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     SupplierName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Note = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
@@ -185,36 +185,6 @@ namespace VitaPharm.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "InvoiceDetails",
-                columns: table => new
-                {
-                    InvoiceDetailID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    BatchID = table.Column<int>(type: "int", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    UnitPrice = table.Column<decimal>(type: "money", nullable: false),
-                    Amount = table.Column<decimal>(type: "money", nullable: false),
-                    InvoiceID = table.Column<int>(type: "int", nullable: false),
-                    CommodityID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_InvoiceDetails", x => x.InvoiceDetailID);
-                    table.ForeignKey(
-                        name: "FK_InvoiceDetails_Commodities_CommodityID",
-                        column: x => x.CommodityID,
-                        principalTable: "Commodities",
-                        principalColumn: "CommodityID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_InvoiceDetails_Invoices_InvoiceID",
-                        column: x => x.InvoiceID,
-                        principalTable: "Invoices",
-                        principalColumn: "InvoiceID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "GoodsReceiptDetails",
                 columns: table => new
                 {
@@ -238,6 +208,40 @@ namespace VitaPharm.Migrations
                         column: x => x.GoodsReceiptReceiptID,
                         principalTable: "GoodsReceipts",
                         principalColumn: "ReceiptID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "InvoiceDetails",
+                columns: table => new
+                {
+                    InvoiceDetailID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    UnitPrice = table.Column<decimal>(type: "money", nullable: false),
+                    InvoiceID = table.Column<int>(type: "int", nullable: false),
+                    BatchID = table.Column<int>(type: "int", nullable: false),
+                    CommodityID = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_InvoiceDetails", x => x.InvoiceDetailID);
+                    table.ForeignKey(
+                        name: "FK_InvoiceDetails_Batches_BatchID",
+                        column: x => x.BatchID,
+                        principalTable: "Batches",
+                        principalColumn: "BatchID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_InvoiceDetails_Commodities_CommodityID",
+                        column: x => x.CommodityID,
+                        principalTable: "Commodities",
+                        principalColumn: "CommodityID");
+                    table.ForeignKey(
+                        name: "FK_InvoiceDetails_Invoices_InvoiceID",
+                        column: x => x.InvoiceID,
+                        principalTable: "Invoices",
+                        principalColumn: "InvoiceID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -270,6 +274,11 @@ namespace VitaPharm.Migrations
                 name: "IX_GoodsReceipts_EmployeeID",
                 table: "GoodsReceipts",
                 column: "EmployeeID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_InvoiceDetails_BatchID",
+                table: "InvoiceDetails",
+                column: "BatchID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_InvoiceDetails_CommodityID",
@@ -305,10 +314,10 @@ namespace VitaPharm.Migrations
                 name: "InvoiceDetails");
 
             migrationBuilder.DropTable(
-                name: "Batches");
+                name: "GoodsReceipts");
 
             migrationBuilder.DropTable(
-                name: "GoodsReceipts");
+                name: "Batches");
 
             migrationBuilder.DropTable(
                 name: "Invoices");

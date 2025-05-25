@@ -46,6 +46,7 @@
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             lblTotalQuantity = new DevExpress.XtraEditors.LabelControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            btnPrint = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
@@ -60,7 +61,7 @@
             panelControl1.Dock = DockStyle.Top;
             panelControl1.Location = new Point(0, 0);
             panelControl1.Name = "panelControl1";
-            panelControl1.Size = new Size(621, 243);
+            panelControl1.Size = new Size(813, 243);
             panelControl1.TabIndex = 0;
             // 
             // gridControl1
@@ -69,7 +70,7 @@
             gridControl1.Location = new Point(2, 2);
             gridControl1.MainView = gridView1;
             gridControl1.Name = "gridControl1";
-            gridControl1.Size = new Size(617, 239);
+            gridControl1.Size = new Size(809, 239);
             gridControl1.TabIndex = 0;
             gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
             // 
@@ -151,12 +152,13 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnPrint);
             panel1.Controls.Add(btnCancel);
             panel1.Controls.Add(btnReload);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 331);
+            panel1.Location = new Point(0, 317);
             panel1.Name = "panel1";
-            panel1.Size = new Size(621, 63);
+            panel1.Size = new Size(813, 63);
             panel1.TabIndex = 1;
             // 
             // btnCancel
@@ -165,7 +167,7 @@
             btnCancel.Appearance.FontStyleDelta = FontStyle.Bold;
             btnCancel.Appearance.Options.UseBackColor = true;
             btnCancel.Appearance.Options.UseFont = true;
-            btnCancel.Location = new Point(498, 19);
+            btnCancel.Location = new Point(705, 19);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(97, 32);
             btnCancel.TabIndex = 0;
@@ -177,7 +179,7 @@
             btnReload.Appearance.FontStyleDelta = FontStyle.Bold;
             btnReload.Appearance.Options.UseBackColor = true;
             btnReload.Appearance.Options.UseFont = true;
-            btnReload.Location = new Point(383, 19);
+            btnReload.Location = new Point(602, 19);
             btnReload.Name = "btnReload";
             btnReload.Size = new Size(97, 32);
             btnReload.TabIndex = 0;
@@ -192,14 +194,14 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 243);
             panel2.Name = "panel2";
-            panel2.Size = new Size(621, 88);
+            panel2.Size = new Size(813, 74);
             panel2.TabIndex = 2;
             // 
             // lblTotalAmount
             // 
             lblTotalAmount.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             lblTotalAmount.Appearance.Options.UseFont = true;
-            lblTotalAmount.Location = new Point(567, 47);
+            lblTotalAmount.Location = new Point(774, 47);
             lblTotalAmount.Name = "lblTotalAmount";
             lblTotalAmount.Size = new Size(28, 16);
             lblTotalAmount.TabIndex = 0;
@@ -219,7 +221,7 @@
             // 
             lblTotalQuantity.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             lblTotalQuantity.Appearance.Options.UseFont = true;
-            lblTotalQuantity.Location = new Point(567, 15);
+            lblTotalQuantity.Location = new Point(774, 15);
             lblTotalQuantity.Name = "lblTotalQuantity";
             lblTotalQuantity.Size = new Size(28, 16);
             lblTotalQuantity.TabIndex = 0;
@@ -235,11 +237,23 @@
             labelControl1.TabIndex = 0;
             labelControl1.Text = "Total Quantity:";
             // 
+            // btnPrint
+            // 
+            btnPrint.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
+            btnPrint.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            btnPrint.Appearance.Options.UseBackColor = true;
+            btnPrint.Appearance.Options.UseFont = true;
+            btnPrint.Location = new Point(490, 19);
+            btnPrint.Name = "btnPrint";
+            btnPrint.Size = new Size(106, 32);
+            btnPrint.TabIndex = 12;
+            btnPrint.Text = "Print";
+            // 
             // frmGoodsReceiptDetail
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(621, 394);
+            ClientSize = new Size(813, 380);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panelControl1);
@@ -276,5 +290,6 @@
         private DevExpress.XtraEditors.SimpleButton btnReload;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraGrid.Columns.GridColumn colReceiptCode;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
     }
 }
