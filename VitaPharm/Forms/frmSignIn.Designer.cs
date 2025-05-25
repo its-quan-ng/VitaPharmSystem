@@ -152,6 +152,7 @@
             chkShowPassword.Properties.Caption = "Show password";
             chkShowPassword.Size = new Size(145, 24);
             chkShowPassword.TabIndex = 11;
+            chkShowPassword.CheckedChanged += chkShowPassword_CheckedChanged;
             // 
             // frmSignIn
             // 
