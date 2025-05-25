@@ -243,7 +243,6 @@
             repobtnAction.Appearance.Options.UseFont = true;
             repobtnAction.Appearance.Options.UseForeColor = true;
             repobtnAction.AutoHeight = false;
-            serializableAppearanceObject1.Options.UseTextOptions = true;
             repobtnAction.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "View detail", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
             repobtnAction.Name = "repobtnAction";
             repobtnAction.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
