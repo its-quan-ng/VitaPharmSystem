@@ -14,25 +14,8 @@ namespace VitaPharm.Forms.HumanManage
             InitializeComponent();
         }
 
-        private void ToggleControl(bool enabled)
-        {
-            txtUsername.Enabled = enabled;
-            txtPassword.Enabled = enabled;
-            txtConfirmPassword.Enabled = enabled;
-            cboRole.Enabled = enabled;
-            chkIsActive.Enabled = enabled;
-            txtName.Enabled = enabled;
-            dtpBirthday.Enabled = enabled;
-            chkFemale.Enabled = enabled;
-            txtContact.Enabled = enabled;
-            txtAddress.Enabled = enabled;
-            btnAdd.Enabled = enabled;
-            btnCancel.Enabled = enabled;
-        }
-
         private void frmNewUser_Load(object sender, EventArgs e)
         {
-            ToggleControl(true);
             cboRole.Properties.Items.Clear();
             cboRole.Properties.Items.AddRange(roles);
             cboRole.SelectedIndex = 1;
