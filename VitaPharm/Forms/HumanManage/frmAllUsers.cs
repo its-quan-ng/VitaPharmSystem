@@ -9,6 +9,7 @@ namespace VitaPharm.Forms.HumanManage
     {
         private PharmacyDbContext context;
         private int currentAccountId = 0;
+        frmNewUser newUserForm;
 
         public frmAllUsers()
         {
@@ -157,6 +158,32 @@ namespace VitaPharm.Forms.HumanManage
                 XtraMessageBox.Show($"An error occurred while saving data: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnNewUser_Click(object sender, EventArgs e)
+        {
+            var mdiContainer = this.MdiParent;
+
+            if (mdiContainer == null || !mdiContainer.IsMdiContainer)
+            {
+                using (var form = new frmNewUser())
+                {
+                    form.StartPosition = FormStartPosition.CenterParent;
+                    form.ShowDialog(this);
+                }
+                return;
+            }
+
+            if (newUserForm == null || newUserForm.IsDisposed)
+            {
+                newUserForm = new frmNewUser
+                {
+                    MdiParent = mdiContainer,      
+                    StartPosition = FormStartPosition.CenterScreen
+                };
+            }
+            newUserForm.Show();
+            newUserForm.BringToFront();
         }
     }
 }

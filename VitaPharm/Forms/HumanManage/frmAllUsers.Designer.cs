@@ -439,6 +439,7 @@
             btnNewUser.Size = new Size(118, 36);
             btnNewUser.TabIndex = 1;
             btnNewUser.Text = "New User";
+            btnNewUser.Click += btnNewUser_Click;
             // 
             // btnSave
             // 
