@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            dateBirthday = new DevExpress.XtraEditors.DateEdit();
             ckcFemale = new DevExpress.XtraEditors.CheckEdit();
-            textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            txtAddress = new DevExpress.XtraEditors.TextEdit();
+            txtContact = new DevExpress.XtraEditors.TextEdit();
+            txtFullName = new DevExpress.XtraEditors.TextEdit();
+            txtUsername = new DevExpress.XtraEditors.TextEdit();
+            txtEmployeeID = new DevExpress.XtraEditors.TextEdit();
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
             labelControl6 = new DevExpress.XtraEditors.LabelControl();
             labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -45,31 +45,31 @@
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             panel2 = new Panel();
-            btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnEdit = new DevExpress.XtraEditors.SimpleButton();
             btnSave = new DevExpress.XtraEditors.SimpleButton();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties.CalendarTimeProperties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dateBirthday.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dateBirthday.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ckcFemale.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit5.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtAddress.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtContact.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtFullName.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtUsername.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtEmployeeID.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(dateEdit1);
+            panel1.Controls.Add(dateBirthday);
             panel1.Controls.Add(ckcFemale);
-            panel1.Controls.Add(textEdit4);
-            panel1.Controls.Add(textEdit3);
-            panel1.Controls.Add(textEdit2);
-            panel1.Controls.Add(textEdit5);
-            panel1.Controls.Add(textEdit1);
+            panel1.Controls.Add(txtAddress);
+            panel1.Controls.Add(txtContact);
+            panel1.Controls.Add(txtFullName);
+            panel1.Controls.Add(txtUsername);
+            panel1.Controls.Add(txtEmployeeID);
             panel1.Controls.Add(labelControl4);
             panel1.Controls.Add(labelControl6);
             panel1.Controls.Add(labelControl7);
@@ -84,61 +84,69 @@
             panel1.Size = new Size(726, 219);
             panel1.TabIndex = 0;
             // 
-            // dateEdit1
+            // dateBirthday
             // 
-            dateEdit1.EditValue = null;
-            dateEdit1.Location = new Point(489, 124);
-            dateEdit1.Name = "dateEdit1";
-            dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateEdit1.Size = new Size(156, 22);
-            dateEdit1.TabIndex = 3;
+            dateBirthday.Anchor = AnchorStyles.Top;
+            dateBirthday.EditValue = null;
+            dateBirthday.Location = new Point(489, 124);
+            dateBirthday.Name = "dateBirthday";
+            dateBirthday.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateBirthday.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateBirthday.Size = new Size(156, 22);
+            dateBirthday.TabIndex = 6;
             // 
             // ckcFemale
             // 
+            ckcFemale.Anchor = AnchorStyles.Top;
             ckcFemale.Location = new Point(489, 75);
             ckcFemale.Name = "ckcFemale";
             ckcFemale.Properties.Caption = "Female";
             ckcFemale.Size = new Size(118, 24);
-            ckcFemale.TabIndex = 2;
+            ckcFemale.TabIndex = 4;
             // 
-            // textEdit4
+            // txtAddress
             // 
-            textEdit4.Location = new Point(173, 172);
-            textEdit4.Name = "textEdit4";
-            textEdit4.Size = new Size(472, 22);
-            textEdit4.TabIndex = 1;
+            txtAddress.Anchor = AnchorStyles.Top;
+            txtAddress.Location = new Point(173, 172);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(472, 22);
+            txtAddress.TabIndex = 7;
             // 
-            // textEdit3
+            // txtContact
             // 
-            textEdit3.Location = new Point(173, 124);
-            textEdit3.Name = "textEdit3";
-            textEdit3.Size = new Size(156, 22);
-            textEdit3.TabIndex = 1;
+            txtContact.Anchor = AnchorStyles.Top;
+            txtContact.Location = new Point(173, 124);
+            txtContact.Name = "txtContact";
+            txtContact.Size = new Size(156, 22);
+            txtContact.TabIndex = 5;
             // 
-            // textEdit2
+            // txtFullName
             // 
-            textEdit2.Location = new Point(173, 76);
-            textEdit2.Name = "textEdit2";
-            textEdit2.Size = new Size(156, 22);
-            textEdit2.TabIndex = 1;
+            txtFullName.Anchor = AnchorStyles.Top;
+            txtFullName.Location = new Point(173, 76);
+            txtFullName.Name = "txtFullName";
+            txtFullName.Size = new Size(156, 22);
+            txtFullName.TabIndex = 3;
             // 
-            // textEdit5
+            // txtUsername
             // 
-            textEdit5.Location = new Point(489, 25);
-            textEdit5.Name = "textEdit5";
-            textEdit5.Size = new Size(156, 22);
-            textEdit5.TabIndex = 1;
+            txtUsername.Anchor = AnchorStyles.Top;
+            txtUsername.Location = new Point(489, 25);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(156, 22);
+            txtUsername.TabIndex = 2;
             // 
-            // textEdit1
+            // txtEmployeeID
             // 
-            textEdit1.Location = new Point(173, 25);
-            textEdit1.Name = "textEdit1";
-            textEdit1.Size = new Size(156, 22);
-            textEdit1.TabIndex = 1;
+            txtEmployeeID.Anchor = AnchorStyles.Top;
+            txtEmployeeID.Location = new Point(173, 25);
+            txtEmployeeID.Name = "txtEmployeeID";
+            txtEmployeeID.Size = new Size(156, 22);
+            txtEmployeeID.TabIndex = 1;
             // 
             // labelControl4
             // 
+            labelControl4.Anchor = AnchorStyles.Top;
             labelControl4.Location = new Point(420, 79);
             labelControl4.Name = "labelControl4";
             labelControl4.Size = new Size(26, 16);
@@ -147,6 +155,7 @@
             // 
             // labelControl6
             // 
+            labelControl6.Anchor = AnchorStyles.Top;
             labelControl6.Location = new Point(420, 127);
             labelControl6.Name = "labelControl6";
             labelControl6.Size = new Size(51, 16);
@@ -155,6 +164,7 @@
             // 
             // labelControl7
             // 
+            labelControl7.Anchor = AnchorStyles.Top;
             labelControl7.Location = new Point(81, 175);
             labelControl7.Name = "labelControl7";
             labelControl7.Size = new Size(51, 16);
@@ -163,6 +173,7 @@
             // 
             // labelControl5
             // 
+            labelControl5.Anchor = AnchorStyles.Top;
             labelControl5.Location = new Point(81, 127);
             labelControl5.Name = "labelControl5";
             labelControl5.Size = new Size(48, 16);
@@ -171,6 +182,7 @@
             // 
             // labelControl3
             // 
+            labelControl3.Anchor = AnchorStyles.Top;
             labelControl3.Location = new Point(81, 79);
             labelControl3.Name = "labelControl3";
             labelControl3.Size = new Size(62, 16);
@@ -179,6 +191,7 @@
             // 
             // labelControl2
             // 
+            labelControl2.Anchor = AnchorStyles.Top;
             labelControl2.Location = new Point(420, 28);
             labelControl2.Name = "labelControl2";
             labelControl2.Size = new Size(63, 16);
@@ -187,6 +200,7 @@
             // 
             // labelControl1
             // 
+            labelControl1.Anchor = AnchorStyles.Top;
             labelControl1.Location = new Point(81, 28);
             labelControl1.Name = "labelControl1";
             labelControl1.Size = new Size(76, 16);
@@ -209,7 +223,7 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(btnDelete);
+            panel2.Controls.Add(btnCancel);
             panel2.Controls.Add(btnEdit);
             panel2.Controls.Add(btnSave);
             panel2.Dock = DockStyle.Fill;
@@ -218,20 +232,23 @@
             panel2.Size = new Size(726, 50);
             panel2.TabIndex = 1;
             // 
-            // btnDelete
+            // btnCancel
             // 
-            btnDelete.Appearance.BackColor = Color.FromArgb(220, 54, 46);
-            btnDelete.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            btnDelete.Appearance.Options.UseBackColor = true;
-            btnDelete.Appearance.Options.UseFont = true;
-            btnDelete.Location = new Point(411, 9);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(98, 32);
-            btnDelete.TabIndex = 2;
-            btnDelete.Text = "Cancel";
+            btnCancel.Anchor = AnchorStyles.Top;
+            btnCancel.Appearance.BackColor = Color.FromArgb(220, 54, 46);
+            btnCancel.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            btnCancel.Appearance.Options.UseBackColor = true;
+            btnCancel.Appearance.Options.UseFont = true;
+            btnCancel.Location = new Point(411, 9);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(98, 32);
+            btnCancel.TabIndex = 2;
+            btnCancel.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnEdit
             // 
+            btnEdit.Anchor = AnchorStyles.Top;
             btnEdit.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
             btnEdit.Appearance.BorderColor = Color.Black;
             btnEdit.Appearance.FontStyleDelta = FontStyle.Bold;
@@ -245,9 +262,11 @@
             btnEdit.Size = new Size(98, 32);
             btnEdit.TabIndex = 1;
             btnEdit.Text = "Edit";
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnSave
             // 
+            btnSave.Anchor = AnchorStyles.Top;
             btnSave.Appearance.BackColor = Color.FromArgb(78, 154, 81);
             btnSave.Appearance.FontStyleDelta = FontStyle.Bold;
             btnSave.Appearance.Options.UseBackColor = true;
@@ -257,6 +276,7 @@
             btnSave.Size = new Size(98, 32);
             btnSave.TabIndex = 0;
             btnSave.Text = "Save";
+            btnSave.Click += btnSave_Click;
             // 
             // frmProfile
             // 
@@ -266,17 +286,19 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "frmProfile";
-            Text = "frmProfile";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Profile";
+            Load += frmProfile_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties.CalendarTimeProperties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dateEdit1.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dateBirthday.Properties.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dateBirthday.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)ckcFemale.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit5.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtAddress.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtContact.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtFullName.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtUsername.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtEmployeeID.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             panel2.ResumeLayout(false);
             ResumeLayout(false);
@@ -287,13 +309,13 @@
         private Panel panel1;
         private Panel panel2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit dateBirthday;
         private DevExpress.XtraEditors.CheckEdit ckcFemale;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtAddress;
+        private DevExpress.XtraEditors.TextEdit txtContact;
+        private DevExpress.XtraEditors.TextEdit txtFullName;
+        private DevExpress.XtraEditors.TextEdit txtUsername;
+        private DevExpress.XtraEditors.TextEdit txtEmployeeID;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
@@ -303,6 +325,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnSave;
-        private DevExpress.XtraEditors.SimpleButton btnDelete;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
     }
 }
