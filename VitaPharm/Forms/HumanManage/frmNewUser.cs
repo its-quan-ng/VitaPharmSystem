@@ -85,7 +85,7 @@ namespace VitaPharm.Forms.HumanManage
             context.Accounts.Add(acc);
             context.SaveChanges();
             XtraMessageBox.Show("New user added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            frmNewUser_Load(sender, e);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
