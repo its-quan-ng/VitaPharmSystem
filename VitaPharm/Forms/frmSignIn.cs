@@ -145,7 +145,7 @@ namespace VitaPharm.Forms
 
         private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-            txtPassword.UseSystemPasswordChar = !chkShowPassword.Checked;
+            txtPassword.UseSystemPasswordChar = chkShowPassword.Checked;
         }
     }
 }
