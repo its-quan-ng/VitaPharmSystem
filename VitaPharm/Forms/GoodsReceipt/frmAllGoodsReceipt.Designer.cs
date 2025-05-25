@@ -28,16 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            btnFilter = new DevExpress.XtraEditors.SimpleButton();
-            cboStatus = new DevExpress.XtraEditors.ComboBoxEdit();
-            labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            cboEmployee = new DevExpress.XtraEditors.ComboBoxEdit();
-            labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            cboSupplier = new DevExpress.XtraEditors.ComboBoxEdit();
-            labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            dateCreate = new DevExpress.XtraEditors.DateEdit();
-            labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             panel2 = new Panel();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnReload = new DevExpress.XtraEditors.SimpleButton();
@@ -45,122 +40,21 @@
             btnNewGoodsReceipt = new DevExpress.XtraEditors.SimpleButton();
             panel3 = new Panel();
             gridControl = new DevExpress.XtraGrid.GridControl();
-            gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             colReceiptID = new DevExpress.XtraGrid.Columns.GridColumn();
             colReceiptCode = new DevExpress.XtraGrid.Columns.GridColumn();
             colReceiptDate = new DevExpress.XtraGrid.Columns.GridColumn();
             colSupplierName = new DevExpress.XtraGrid.Columns.GridColumn();
             colNote = new DevExpress.XtraGrid.Columns.GridColumn();
-            colReceiptSatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            colReceiptStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             colAction = new DevExpress.XtraGrid.Columns.GridColumn();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)cboStatus.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cboEmployee.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cboSupplier.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dateCreate.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dateCreate.Properties.CalendarTimeProperties).BeginInit();
+            repobtnAction = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repobtnAction).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(btnFilter);
-            panel1.Controls.Add(cboStatus);
-            panel1.Controls.Add(labelControl4);
-            panel1.Controls.Add(cboEmployee);
-            panel1.Controls.Add(labelControl3);
-            panel1.Controls.Add(cboSupplier);
-            panel1.Controls.Add(labelControl2);
-            panel1.Controls.Add(dateCreate);
-            panel1.Controls.Add(labelControl1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(853, 83);
-            panel1.TabIndex = 0;
-            // 
-            // btnFilter
-            // 
-            btnFilter.Appearance.BackColor = Color.FromArgb(255, 126, 121);
-            btnFilter.Appearance.FontStyleDelta = FontStyle.Bold;
-            btnFilter.Appearance.ForeColor = Color.Black;
-            btnFilter.Appearance.Options.UseBackColor = true;
-            btnFilter.Appearance.Options.UseFont = true;
-            btnFilter.Appearance.Options.UseForeColor = true;
-            btnFilter.Location = new Point(754, 32);
-            btnFilter.Name = "btnFilter";
-            btnFilter.Size = new Size(85, 26);
-            btnFilter.TabIndex = 8;
-            btnFilter.Text = "Filter";
-            // 
-            // cboStatus
-            // 
-            cboStatus.Location = new Point(578, 34);
-            cboStatus.Name = "cboStatus";
-            cboStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboStatus.Size = new Size(146, 22);
-            cboStatus.TabIndex = 7;
-            // 
-            // labelControl4
-            // 
-            labelControl4.Location = new Point(578, 12);
-            labelControl4.Name = "labelControl4";
-            labelControl4.Size = new Size(36, 16);
-            labelControl4.TabIndex = 6;
-            labelControl4.Text = "Status";
-            // 
-            // cboEmployee
-            // 
-            cboEmployee.Location = new Point(381, 34);
-            cboEmployee.Name = "cboEmployee";
-            cboEmployee.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboEmployee.Size = new Size(156, 22);
-            cboEmployee.TabIndex = 5;
-            // 
-            // labelControl3
-            // 
-            labelControl3.Location = new Point(381, 12);
-            labelControl3.Name = "labelControl3";
-            labelControl3.Size = new Size(55, 16);
-            labelControl3.TabIndex = 4;
-            labelControl3.Text = "Employee";
-            // 
-            // cboSupplier
-            // 
-            cboSupplier.Location = new Point(185, 34);
-            cboSupplier.Name = "cboSupplier";
-            cboSupplier.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboSupplier.Size = new Size(143, 22);
-            cboSupplier.TabIndex = 3;
-            // 
-            // labelControl2
-            // 
-            labelControl2.Location = new Point(185, 12);
-            labelControl2.Name = "labelControl2";
-            labelControl2.Size = new Size(47, 16);
-            labelControl2.TabIndex = 2;
-            labelControl2.Text = "Supplier";
-            // 
-            // dateCreate
-            // 
-            dateCreate.EditValue = null;
-            dateCreate.Location = new Point(12, 34);
-            dateCreate.Name = "dateCreate";
-            dateCreate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateCreate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            dateCreate.Size = new Size(113, 22);
-            dateCreate.TabIndex = 1;
-            // 
-            // labelControl1
-            // 
-            labelControl1.Location = new Point(12, 12);
-            labelControl1.Name = "labelControl1";
-            labelControl1.Size = new Size(73, 16);
-            labelControl1.TabIndex = 0;
-            labelControl1.Text = "Date Create:";
             // 
             // panel2
             // 
@@ -176,6 +70,7 @@
             // 
             // btnCancel
             // 
+            btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancel.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             btnCancel.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnCancel.Appearance.Options.UseBackColor = true;
@@ -185,9 +80,11 @@
             btnCancel.Size = new Size(118, 36);
             btnCancel.TabIndex = 10;
             btnCancel.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnReload
             // 
+            btnReload.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnReload.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Warning;
             btnReload.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnReload.Appearance.Options.UseBackColor = true;
@@ -197,9 +94,11 @@
             btnReload.Size = new Size(118, 36);
             btnReload.TabIndex = 9;
             btnReload.Text = "Reload";
+            btnReload.Click += btnReload_Click;
             // 
             // btnDeactive
             // 
+            btnDeactive.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnDeactive.Appearance.BackColor = Color.FromArgb(78, 109, 156);
             btnDeactive.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnDeactive.Appearance.Options.UseBackColor = true;
@@ -209,9 +108,11 @@
             btnDeactive.Size = new Size(118, 36);
             btnDeactive.TabIndex = 8;
             btnDeactive.Text = "Deactive";
+            btnDeactive.Click += btnDeactive_Click;
             // 
             // btnNewGoodsReceipt
             // 
+            btnNewGoodsReceipt.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnNewGoodsReceipt.Appearance.BackColor = Color.FromArgb(100, 165, 80);
             btnNewGoodsReceipt.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnNewGoodsReceipt.Appearance.Options.UseBackColor = true;
@@ -221,43 +122,47 @@
             btnNewGoodsReceipt.Size = new Size(149, 36);
             btnNewGoodsReceipt.TabIndex = 7;
             btnNewGoodsReceipt.Text = "New Goods Receipt";
+            btnNewGoodsReceipt.Click += btnNewGoodsReceipt_Click;
             // 
             // panel3
             // 
             panel3.Controls.Add(gridControl);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 83);
+            panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(853, 261);
+            panel3.Size = new Size(853, 344);
             panel3.TabIndex = 2;
             // 
             // gridControl
             // 
             gridControl.Dock = DockStyle.Fill;
             gridControl.Location = new Point(0, 0);
-            gridControl.MainView = gridView1;
+            gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.Size = new Size(853, 261);
+            gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repobtnAction });
+            gridControl.Size = new Size(853, 344);
             gridControl.TabIndex = 0;
-            gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
+            gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
-            // gridView1
+            // gridView
             // 
-            gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colReceiptID, colReceiptCode, colReceiptDate, colSupplierName, colNote, colReceiptSatus, colAction });
-            gridView1.GridControl = gridControl;
-            gridView1.Name = "gridView1";
-            gridView1.OptionsView.ShowAutoFilterRow = true;
+            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colReceiptID, colReceiptCode, colReceiptDate, colSupplierName, colNote, colReceiptStatus, colAction });
+            gridView.GridControl = gridControl;
+            gridView.Name = "gridView";
+            gridView.OptionsFilter.AllowAutoFilterConditionChange = DevExpress.Utils.DefaultBoolean.True;
+            gridView.OptionsView.ShowAutoFilterRow = true;
+            gridView.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             // 
             // colReceiptID
             // 
             colReceiptID.Caption = "ID";
-            colReceiptID.FieldName = "ID";
+            colReceiptID.FieldName = "ReceiptID";
             colReceiptID.MinWidth = 25;
             colReceiptID.Name = "colReceiptID";
             colReceiptID.OptionsColumn.AllowEdit = false;
             colReceiptID.Visible = true;
             colReceiptID.VisibleIndex = 0;
-            colReceiptID.Width = 94;
+            colReceiptID.Width = 45;
             // 
             // colReceiptCode
             // 
@@ -268,18 +173,20 @@
             colReceiptCode.OptionsColumn.AllowEdit = false;
             colReceiptCode.Visible = true;
             colReceiptCode.VisibleIndex = 1;
-            colReceiptCode.Width = 94;
+            colReceiptCode.Width = 85;
             // 
             // colReceiptDate
             // 
             colReceiptDate.Caption = "Date";
+            colReceiptDate.DisplayFormat.FormatString = "dd/MM/yyyy";
+            colReceiptDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             colReceiptDate.FieldName = "ReceiptDate";
             colReceiptDate.MinWidth = 25;
             colReceiptDate.Name = "colReceiptDate";
             colReceiptDate.OptionsColumn.AllowEdit = false;
             colReceiptDate.Visible = true;
             colReceiptDate.VisibleIndex = 2;
-            colReceiptDate.Width = 94;
+            colReceiptDate.Width = 86;
             // 
             // colSupplierName
             // 
@@ -290,7 +197,7 @@
             colSupplierName.OptionsColumn.AllowEdit = false;
             colSupplierName.Visible = true;
             colSupplierName.VisibleIndex = 3;
-            colSupplierName.Width = 94;
+            colSupplierName.Width = 268;
             // 
             // colNote
             // 
@@ -301,27 +208,44 @@
             colNote.OptionsColumn.AllowEdit = false;
             colNote.Visible = true;
             colNote.VisibleIndex = 4;
-            colNote.Width = 94;
+            colNote.Width = 201;
             // 
-            // colReceiptSatus
+            // colReceiptStatus
             // 
-            colReceiptSatus.Caption = "Satus ";
-            colReceiptSatus.FieldName = "ReceiptSatus ";
-            colReceiptSatus.MinWidth = 25;
-            colReceiptSatus.Name = "colReceiptSatus";
-            colReceiptSatus.OptionsColumn.AllowEdit = false;
-            colReceiptSatus.Visible = true;
-            colReceiptSatus.VisibleIndex = 5;
-            colReceiptSatus.Width = 94;
+            colReceiptStatus.Caption = "Status ";
+            colReceiptStatus.FieldName = "ReceiptStatus";
+            colReceiptStatus.MinWidth = 25;
+            colReceiptStatus.Name = "colReceiptStatus";
+            colReceiptStatus.OptionsColumn.AllowEdit = false;
+            colReceiptStatus.Visible = true;
+            colReceiptStatus.VisibleIndex = 5;
+            colReceiptStatus.Width = 67;
             // 
             // colAction
             // 
             colAction.Caption = "Action";
+            colAction.ColumnEdit = repobtnAction;
+            colAction.FieldName = "colAction";
             colAction.MinWidth = 25;
             colAction.Name = "colAction";
+            colAction.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            colAction.UnboundDataType = typeof(object);
             colAction.Visible = true;
             colAction.VisibleIndex = 6;
-            colAction.Width = 94;
+            colAction.Width = 99;
+            // 
+            // repobtnAction
+            // 
+            repobtnAction.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
+            repobtnAction.Appearance.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            repobtnAction.Appearance.ForeColor = Color.White;
+            repobtnAction.Appearance.Options.UseBackColor = true;
+            repobtnAction.Appearance.Options.UseFont = true;
+            repobtnAction.Appearance.Options.UseForeColor = true;
+            repobtnAction.AutoHeight = false;
+            repobtnAction.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "View detail", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
+            repobtnAction.Name = "repobtnAction";
+            repobtnAction.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // frmAllGoodsReceipt
             // 
@@ -330,21 +254,16 @@
             ClientSize = new Size(853, 415);
             Controls.Add(panel3);
             Controls.Add(panel2);
-            Controls.Add(panel1);
             Name = "frmAllGoodsReceipt";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "All Goods Receipt";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)cboStatus.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cboEmployee.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cboSupplier.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dateCreate.Properties.CalendarTimeProperties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dateCreate.Properties).EndInit();
+            Load += frmAllGoodsReceipt_Load;
+            Click += frmAllGoodsReceipt_Load;
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repobtnAction).EndInit();
             ResumeLayout(false);
         }
 
@@ -363,17 +282,18 @@
         private Panel panel2;
         private Panel panel3;
         private DevExpress.XtraGrid.GridControl gridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraGrid.Columns.GridColumn colReceiptID;
         private DevExpress.XtraGrid.Columns.GridColumn colReceiptCode;
         private DevExpress.XtraGrid.Columns.GridColumn colReceiptDate;
         private DevExpress.XtraGrid.Columns.GridColumn colSupplierName;
         private DevExpress.XtraGrid.Columns.GridColumn colNote;
-        private DevExpress.XtraGrid.Columns.GridColumn colReceiptSatus;
+        private DevExpress.XtraGrid.Columns.GridColumn colReceiptStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colAction;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.SimpleButton btnReload;
         private DevExpress.XtraEditors.SimpleButton btnDeactive;
         private DevExpress.XtraEditors.SimpleButton btnNewGoodsReceipt;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repobtnAction;
     }
 }

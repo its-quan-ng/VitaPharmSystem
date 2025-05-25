@@ -8,8 +8,10 @@ namespace VitaPharm.Forms
     {
         private readonly Account currentAccount;
         private readonly string currentRole;
-        frmNewUser? newUserForm = null;
-        frmAllUsers? allUsersForm = null;
+        private frmProfile? profileForm = null;
+        private frmNewUser? newUserForm = null;
+        private frmAllGoodsReceipt? allGoodsReceiptForm = null;
+        private frmAllUsers? allUsersForm = null;
 
         internal frmMain(Account account)
         {
@@ -19,6 +21,9 @@ namespace VitaPharm.Forms
             this.IsMdiContainer = true;
             ConfigureBasedOnRole();
             OpenProfile();
+            CurrentUser.Username = account.Username;
+            CurrentUser.Role = account.UserRole;
+            CurrentUser.EmployeeID = account.Employee.EmployeeID;
         }
 
         #region ConfigureBasedOnRole
@@ -30,6 +35,7 @@ namespace VitaPharm.Forms
             btnProfile.Enabled = true;
             btnNewUser.Enabled = isAdmin;
             btnAllUsers.Enabled = isAdmin;
+            btnAllGoodsReceipt.Enabled = true;
         }
 
         private void OpenProfile()
@@ -41,14 +47,8 @@ namespace VitaPharm.Forms
             };
             profileForm.Show();
         }
-        #endregion
 
-        private void btnProfile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            OpenProfile();
-        }
-
-        private void btnNewUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void OpenNewUser()
         {
             if (!currentRole.Equals("Admin", StringComparison.OrdinalIgnoreCase))
             {
@@ -70,7 +70,21 @@ namespace VitaPharm.Forms
             newUserForm.BringToFront();
         }
 
-        private void btnAllUsers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void OpenAllGoodsReceipt()
+        {
+            foreach (var f in this.MdiChildren) f.Close();
+            if (allGoodsReceiptForm == null || allGoodsReceiptForm.IsDisposed)
+            {
+                allGoodsReceiptForm = new frmAllGoodsReceipt()
+                {
+                    MdiParent = this
+                };
+            }
+            allGoodsReceiptForm.Show();
+            allGoodsReceiptForm.BringToFront();
+        }
+
+        private void OpenAllUsers()
         {
             if (!currentRole.Equals("Admin", StringComparison.OrdinalIgnoreCase))
             {
@@ -90,6 +104,27 @@ namespace VitaPharm.Forms
             }
             allUsersForm.Show();
             allUsersForm.BringToFront();
+        }
+        #endregion
+
+        private void btnProfile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenProfile();
+        }
+
+        private void btnNewUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenNewUser();
+        }
+
+        private void btnAllGoodsReceipt_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenAllGoodsReceipt();
+        }
+
+        private void btnAllUsers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenAllUsers();
         }
     }
 }
