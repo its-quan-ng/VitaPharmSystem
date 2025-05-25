@@ -244,6 +244,7 @@
             btnCancel.Size = new Size(98, 32);
             btnCancel.TabIndex = 2;
             btnCancel.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnEdit
             // 
@@ -275,6 +276,7 @@
             btnSave.Size = new Size(98, 32);
             btnSave.TabIndex = 0;
             btnSave.Text = "Save";
+            btnSave.Click += btnSave_Click;
             // 
             // frmProfile
             // 
