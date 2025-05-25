@@ -12,8 +12,8 @@ using VitaPharm.Data;
 namespace VitaPharm.Migrations
 {
     [DbContext(typeof(PharmacyDbContext))]
-    [Migration("20250525091725_change-invoice-detail-status")]
-    partial class changeinvoicedetailstatus
+    [Migration("20250525095742_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
