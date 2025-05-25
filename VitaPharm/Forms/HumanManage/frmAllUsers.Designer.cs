@@ -324,7 +324,7 @@
             // colBirthday
             // 
             colBirthday.Caption = "Birthday";
-            colBirthday.DisplayFormat.FormatString = "\"dd/MM/yyyy\"";
+            colBirthday.DisplayFormat.FormatString = "dd/MM/yyyy";
             colBirthday.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             colBirthday.FieldName = "Birthday";
             colBirthday.MinWidth = 25;
