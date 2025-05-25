@@ -1,4 +1,4 @@
-﻿namespace VitaPharm.Forms
+﻿namespace VitaPharm.Forms.HumanManage
 {
     partial class frmAllCustomers
     {
