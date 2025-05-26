@@ -1,6 +1,6 @@
 ﻿using DevExpress.XtraEditors;
-using DevExpress.XtraGrid.Views.Base;
 using Microsoft.EntityFrameworkCore;
+using DevExpress.XtraGrid.Views.Base;
 using VitaPharm.Data;
 
 namespace VitaPharm.Forms.Commodity
@@ -36,47 +36,27 @@ namespace VitaPharm.Forms.Commodity
 
         private void LoadCommodities()
         {
-            var commodities = context.Commodities
-                                     .Include(c => c.Categories)
-                                     .Select(c => new
-                                     {
-                                         c.CommodityName,
-                                         c.Manufacturer,
-                                         c.BaseUnit,
-                                         c.SellingPrice,
-                                         Status = c.IsTerminated,
-                                         c.Categories.CategoryName
-                                     }).AsEnumerable()
-                                    .Select((x, idx) => new
-                                    {
-                                        ID = idx + 1,
-                                        x.CommodityName,
-                                        x.Manufacturer,
-                                        x.BaseUnit,
-                                        x.SellingPrice,
-                                        x.Status,
-                                        x.CategoryName
-                                    })
-                                    .ToList();
+            var items = context.Commodities
+                               .Include(c => c.Categories)
+                               .AsEnumerable()
+                               .Select((c, idx) => new
+                               {
+                                   ID = idx + 1,
+                                   c.CommodityID,
+                                   c.CommodityName,
+                                   c.Manufacturer,
+                                   c.BaseUnit,
+                                   c.SellingPrice,
+                                   Status = c.IsTerminated,
+                                   CategoryName = c.Categories?.CategoryName
+                               })
+                               .ToList();
 
-            bsCommodities.DataSource = commodities;
+            bsCommodities.DataSource = items;
             gridControl.DataSource = bsCommodities;
 
             gridView.PopulateColumns();
             gridView.BestFitColumns();
-        }
-
-        private void gridView_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
-        {
-            var row = gridView.GetRow(e.FocusedRowHandle) as dynamic;
-            if (row == null) return;
-
-            txtCommodityName.EditValue = row.CommodityName;
-            txtManufacturer.EditValue = row.Manufacturer;
-            txtBaseUnit.EditValue = row.BaseUnit;
-            txtSellingPrice.EditValue = row.SellingPrice;
-            txtIsTerminated.EditValue = row.Status;
-            cboCategoryName.EditValue = row.CategoryName;
         }
 
         private void ToggleControls(bool enable)
@@ -85,7 +65,7 @@ namespace VitaPharm.Forms.Commodity
             txtManufacturer.Enabled = enable;
             txtBaseUnit.Enabled = enable;
             txtSellingPrice.Enabled = enable;
-            txtIsTerminated.Enabled = enable;
+            cboIsTerminated.Enabled = enable;
             cboCategoryName.Enabled = enable;
 
             btnSave.Enabled = enable;
@@ -94,23 +74,135 @@ namespace VitaPharm.Forms.Commodity
             btnReload.Enabled = true;
         }
 
-        private void btnReload_Click(object sender, EventArgs e)
+        private void gridView_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            frmAllCommodities_Load(sender, e);
-        }
+            var row = gridView.GetRow(e.FocusedRowHandle) as dynamic;
+            if (row == null)
+            {
+                ToggleControls(false);
+                this.Tag = null;
+                return;
+            }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            var result = XtraMessageBox.Show("Are you sure you want to cancel?", "Confirmation",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-                btnReload_Click(sender, e);
+            txtCommodityName.EditValue = row.CommodityName;
+            txtManufacturer.EditValue = row.Manufacturer;
+            txtBaseUnit.EditValue = row.BaseUnit;
+            txtSellingPrice.EditValue = row.SellingPrice;
+            cboIsTerminated.EditValue = row.Status;
+            cboCategoryName.EditValue = row.CategoryName;
+
+            this.Tag = row.CommodityID;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (this.Tag == null)
+            {
+                XtraMessageBox.Show("Please select a commodity.", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             ToggleControls(true);
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            ToggleControls(false);
+            LoadCategories();
+            LoadCommodities();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Do you want to discard your changes?", "Confirm",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                btnReload_Click(sender, e);
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (this.Tag == null)
+                return;
+
+            if (string.IsNullOrWhiteSpace(txtCommodityName.Text))
+            {
+                XtraMessageBox.Show("Commodity Name cannot be empty.", "Validation",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCommodityName.Focus();
+                return;
+            }
+            if (!decimal.TryParse(txtSellingPrice.Text, out var price) || price < 0)
+            {
+                XtraMessageBox.Show("Enter a valid selling price.", "Validation",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSellingPrice.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(cboCategoryName.Text))
+            {
+                XtraMessageBox.Show("Select a category.", "Validation",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cboCategoryName.Focus();
+                return;
+            }
+
+            var confirm = XtraMessageBox.Show("Save changes to this commodity?", "Confirm",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm != DialogResult.Yes)
+                return;
+
+            int id = Convert.ToInt32(this.Tag);
+            try
+            {
+                var commodity = context.Commodities
+                                       .Include(c => c.Categories)
+                                       .FirstOrDefault(c => c.CommodityID == id);
+                if (commodity == null)
+                {
+                    XtraMessageBox.Show("Commodity not found.", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                commodity.CommodityName = txtCommodityName.Text.Trim();
+                commodity.Manufacturer = txtManufacturer.Text.Trim();
+                commodity.BaseUnit = txtBaseUnit.Text.Trim();
+                commodity.SellingPrice = price;
+                commodity.IsTerminated = cboIsTerminated.Text.Trim();
+
+                var selectedCat = context.Categories
+                                         .FirstOrDefault(c => c.CategoryName == cboCategoryName.Text.Trim());
+                if (selectedCat != null)
+                    commodity.Categories = selectedCat;
+
+                var changes = context.SaveChanges();
+                if (changes > 0)
+                {
+                    XtraMessageBox.Show("Save successful.", "Info",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    XtraMessageBox.Show("No changes detected.", "Info",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Error saving commodity: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            frmAllCommodities_Load(sender, e); 
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            context?.Dispose();
+            base.OnFormClosed(e);
         }
     }
 }

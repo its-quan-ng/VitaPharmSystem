@@ -40,7 +40,6 @@
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             labelControl9 = new DevExpress.XtraEditors.LabelControl();
             txtSellingPrice = new DevExpress.XtraEditors.TextEdit();
-            txtIsTerminated = new DevExpress.XtraEditors.TextEdit();
             Status = new DevExpress.XtraEditors.LabelControl();
             labelControl5 = new DevExpress.XtraEditors.LabelControl();
             cboCategoryName = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -56,18 +55,19 @@
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnReload = new DevExpress.XtraEditors.SimpleButton();
             btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            cboIsTerminated = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtSellingPrice.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtIsTerminated.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cboCategoryName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtBaseUnit.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtManufacturer.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtCommodityName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cboIsTerminated.Properties).BeginInit();
             SuspendLayout();
             // 
             // gridView
@@ -177,9 +177,9 @@
             groupControl1.AppearanceCaption.ForeColor = Color.FromArgb(16, 53, 113);
             groupControl1.AppearanceCaption.Options.UseFont = true;
             groupControl1.AppearanceCaption.Options.UseForeColor = true;
+            groupControl1.Controls.Add(cboIsTerminated);
             groupControl1.Controls.Add(labelControl9);
             groupControl1.Controls.Add(txtSellingPrice);
-            groupControl1.Controls.Add(txtIsTerminated);
             groupControl1.Controls.Add(Status);
             groupControl1.Controls.Add(labelControl5);
             groupControl1.Controls.Add(cboCategoryName);
@@ -224,19 +224,6 @@
             txtSellingPrice.Properties.UseMaskAsDisplayFormat = true;
             txtSellingPrice.Size = new Size(156, 22);
             txtSellingPrice.TabIndex = 4;
-            // 
-            // txtIsTerminated
-            // 
-            txtIsTerminated.Location = new Point(577, 100);
-            txtIsTerminated.Name = "txtIsTerminated";
-            txtIsTerminated.Properties.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtIsTerminated.Properties.Appearance.ForeColor = Color.Maroon;
-            txtIsTerminated.Properties.Appearance.Options.UseFont = true;
-            txtIsTerminated.Properties.Appearance.Options.UseForeColor = true;
-            txtIsTerminated.Properties.Appearance.Options.UseTextOptions = true;
-            txtIsTerminated.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            txtIsTerminated.Size = new Size(156, 24);
-            txtIsTerminated.TabIndex = 6;
             // 
             // Status
             // 
@@ -353,6 +340,7 @@
             btnSave.Size = new Size(118, 36);
             btnSave.TabIndex = 7;
             btnSave.Text = "Save";
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
@@ -393,6 +381,14 @@
             btnEdit.Text = "Edit";
             btnEdit.Click += btnEdit_Click;
             // 
+            // cboIsTerminated
+            // 
+            cboIsTerminated.Location = new Point(578, 100);
+            cboIsTerminated.Name = "cboIsTerminated";
+            cboIsTerminated.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            cboIsTerminated.Size = new Size(156, 22);
+            cboIsTerminated.TabIndex = 15;
+            // 
             // frmAllCommodities
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -412,13 +408,13 @@
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)txtSellingPrice.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtIsTerminated.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cboCategoryName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtBaseUnit.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtManufacturer.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtCommodityName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)cboIsTerminated.Properties).EndInit();
             ResumeLayout(false);
         }
 
@@ -449,8 +445,8 @@
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraGrid.Columns.GridColumn colCategoryName;
         private DevExpress.XtraEditors.LabelControl Status;
-        private DevExpress.XtraEditors.TextEdit txtIsTerminated;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit txtSellingPrice;
+        private DevExpress.XtraEditors.ComboBoxEdit cboIsTerminated;
     }
 }
