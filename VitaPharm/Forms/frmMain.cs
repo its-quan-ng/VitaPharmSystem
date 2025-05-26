@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using VitaPharm.Forms.HumanManage;
 using VitaPharm.Data;
+using VitaPharm.Forms.Receipt;
 
 namespace VitaPharm.Forms
 {
