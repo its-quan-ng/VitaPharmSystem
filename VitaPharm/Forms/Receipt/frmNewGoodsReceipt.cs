@@ -79,7 +79,22 @@ namespace VitaPharm.Forms.Receipt
             using var dlg = new frmNewBatch();
             if (dlg.ShowDialog() == DialogResult.OK && dlg.ResultBatch != null)
             {
-                var existingBatch = detailsList.FirstOrDefault(b => b.BatchCode == dlg.ResultBatch.BatchCode);
+                BatchDto existingBatch = null;
+                if (dlg.ResultBatch.BatchID == 0)
+                {
+                    existingBatch = detailsList.FirstOrDefault(b =>
+                        b.BatchID == 0 &&
+                        b.CommodityID == dlg.ResultBatch.CommodityID &&
+                        b.MfgDate == dlg.ResultBatch.MfgDate &&
+                        b.ExpDate == dlg.ResultBatch.ExpDate &&
+                        b.PurchasePrice == dlg.ResultBatch.PurchasePrice
+                    );
+                }
+                else
+                {
+                    existingBatch = detailsList.FirstOrDefault(b => b.BatchID == dlg.ResultBatch.BatchID);
+                }
+
                 if (existingBatch != null)
                 {
                     existingBatch.Qty += dlg.ResultBatch.Qty;
