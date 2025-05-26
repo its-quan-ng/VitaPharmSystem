@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewGoodsReceipt));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             grpDetails = new DevExpress.XtraEditors.GroupControl();
@@ -62,7 +62,7 @@
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             grpSum = new DevExpress.XtraEditors.GroupControl();
-            labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            lblTotal = new DevExpress.XtraEditors.LabelControl();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnAdd = new DevExpress.XtraEditors.SimpleButton();
             labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -236,9 +236,9 @@
             repoBtnDelete.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             repoBtnDelete.Appearance.Options.UseBackColor = true;
             repoBtnDelete.AutoHeight = false;
-            editorButtonImageOptions1.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("editorButtonImageOptions1.SvgImage");
-            editorButtonImageOptions1.SvgImageSize = new Size(16, 16);
-            repoBtnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
+            editorButtonImageOptions2.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("editorButtonImageOptions2.SvgImage");
+            editorButtonImageOptions2.SvgImageSize = new Size(16, 16);
+            repoBtnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
             repoBtnDelete.Name = "repoBtnDelete";
             repoBtnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -379,7 +379,7 @@
             // 
             grpSum.AppearanceCaption.FontStyleDelta = FontStyle.Bold;
             grpSum.AppearanceCaption.Options.UseFont = true;
-            grpSum.Controls.Add(labelControl6);
+            grpSum.Controls.Add(lblTotal);
             grpSum.Controls.Add(btnCancel);
             grpSum.Controls.Add(btnAdd);
             grpSum.Controls.Add(labelControl8);
@@ -391,17 +391,17 @@
             grpSum.TabIndex = 2;
             grpSum.Text = "Summary";
             // 
-            // labelControl6
+            // lblTotal
             // 
-            labelControl6.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelControl6.Appearance.ForeColor = Color.Green;
-            labelControl6.Appearance.Options.UseFont = true;
-            labelControl6.Appearance.Options.UseForeColor = true;
-            labelControl6.Location = new Point(816, 28);
-            labelControl6.Name = "labelControl6";
-            labelControl6.Size = new Size(62, 18);
-            labelControl6.TabIndex = 2;
-            labelControl6.Text = "0.0 VND";
+            lblTotal.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotal.Appearance.ForeColor = Color.Green;
+            lblTotal.Appearance.Options.UseFont = true;
+            lblTotal.Appearance.Options.UseForeColor = true;
+            lblTotal.Location = new Point(816, 28);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(62, 18);
+            lblTotal.TabIndex = 2;
+            lblTotal.Text = "0.0 VND";
             // 
             // btnCancel
             // 
@@ -452,6 +452,7 @@
             Name = "frmNewGoodsReceipt";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "New Goods Receipt";
+            Load += frmNewGoodsReceipt_Load;
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
@@ -512,7 +513,7 @@
         private DevExpress.XtraEditors.TextEdit txtReceiptCode;
         private DevExpress.XtraEditors.SimpleButton btnAddBatch;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl lblTotal;
         private DevExpress.XtraGrid.Columns.GridColumn colMgfDate;
         private DevExpress.XtraGrid.Columns.GridColumn colExpDate;
         private DevExpress.XtraGrid.Columns.GridColumn colDelete;

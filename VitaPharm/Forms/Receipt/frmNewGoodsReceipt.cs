@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.ComponentModel;
 using DevExpress.XtraEditors;
 using VitaPharm.Data;
 
@@ -29,9 +21,9 @@ namespace VitaPharm.Forms.Receipt
 
         private void InitializeForm()
         {
-            dateReceipt.DateTime = DateTime.Now;
+            dateReceiptDate.DateTime = DateTime.Now;
             txtReceiptCode.Text = GenerateReceiptCode();
-            
+
             var account = context.Accounts.FirstOrDefault(a => a.Username == currentUser);
             if (account != null)
             {
@@ -63,7 +55,7 @@ namespace VitaPharm.Forms.Receipt
         private void RecalcSummary()
         {
             decimal total = detailsList.Sum(d => d.Qty * d.PurchasePrice);
-            txtTotal.Text = total.ToString("N2");
+            lblTotal.Text = total.ToString("N2");
         }
 
         private void RepoBtnDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -98,10 +90,10 @@ namespace VitaPharm.Forms.Receipt
                 var receipt = new GoodsReceipt
                 {
                     ReceiptCode = txtReceiptCode.Text,
-                    ReceiptDate = dateReceipt.DateTime,
-                    Supplier = txtSupplier.Text,
-                    Note = txtNote.Text,
-                    Status = "Success",
+                    ReceiptDate = dateReceiptDate.DateTime,
+                    SupplierName = txtSupplier.Text,
+                    Note = meNote.Text,
+                    ReceiptStatus = "Success",
                     Employee = context.Accounts.First(a => a.Username == currentUser).Employee
                 };
                 context.GoodsReceipts.Add(receipt);
@@ -160,9 +152,14 @@ namespace VitaPharm.Forms.Receipt
                 detailsList.Clear();
                 txtReceiptCode.Text = GenerateReceiptCode();
                 txtSupplier.Text = "";
-                txtNote.Text = "";
+                meNote.Text = "";
                 RecalcSummary();
             }
+        }
+
+        private void frmNewGoodsReceipt_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
