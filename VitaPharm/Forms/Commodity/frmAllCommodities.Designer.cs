@@ -34,7 +34,7 @@
             colManufacturer = new DevExpress.XtraGrid.Columns.GridColumn();
             colBaseUnit = new DevExpress.XtraGrid.Columns.GridColumn();
             colSellingPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            colCommodityStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            colIsTerminated = new DevExpress.XtraGrid.Columns.GridColumn();
             gridControl1 = new DevExpress.XtraGrid.GridControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -48,11 +48,14 @@
             textEdit1 = new DevExpress.XtraEditors.TextEdit();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            colCategoryName = new DevExpress.XtraGrid.Columns.GridColumn();
+            Status = new DevExpress.XtraEditors.LabelControl();
+            txtIsTerminated = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
@@ -64,11 +67,12 @@
             ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)txtIsTerminated.Properties).BeginInit();
             SuspendLayout();
             // 
             // gridView1
             // 
-            gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, colCommodityName, colManufacturer, colBaseUnit, colSellingPrice, colCommodityStatus });
+            gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, colCommodityName, colManufacturer, colBaseUnit, colSellingPrice, colIsTerminated, colCategoryName });
             gridView1.GridControl = gridControl1;
             gridView1.Name = "gridView1";
             // 
@@ -84,7 +88,7 @@
             // 
             // colCommodityName
             // 
-            colCommodityName.Caption = "Name";
+            colCommodityName.Caption = "Commodity Name";
             colCommodityName.FieldName = "CommodityName";
             colCommodityName.MinWidth = 25;
             colCommodityName.Name = "colCommodityName";
@@ -122,15 +126,15 @@
             colSellingPrice.VisibleIndex = 4;
             colSellingPrice.Width = 94;
             // 
-            // colCommodityStatus
+            // colIsTerminated
             // 
-            colCommodityStatus.Caption = "Status";
-            colCommodityStatus.FieldName = "IsTerminated";
-            colCommodityStatus.MinWidth = 25;
-            colCommodityStatus.Name = "colCommodityStatus";
-            colCommodityStatus.Visible = true;
-            colCommodityStatus.VisibleIndex = 5;
-            colCommodityStatus.Width = 94;
+            colIsTerminated.Caption = "Status";
+            colIsTerminated.FieldName = "IsTerminated";
+            colIsTerminated.MinWidth = 25;
+            colIsTerminated.Name = "colIsTerminated";
+            colIsTerminated.Visible = true;
+            colIsTerminated.VisibleIndex = 5;
+            colIsTerminated.Width = 94;
             // 
             // gridControl1
             // 
@@ -144,10 +148,12 @@
             // 
             // groupControl1
             // 
-            groupControl1.AppearanceCaption.Font = new Font("Inter", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupControl1.AppearanceCaption.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupControl1.AppearanceCaption.ForeColor = Color.FromArgb(16, 53, 113);
             groupControl1.AppearanceCaption.Options.UseFont = true;
             groupControl1.AppearanceCaption.Options.UseForeColor = true;
+            groupControl1.Controls.Add(txtIsTerminated);
+            groupControl1.Controls.Add(Status);
             groupControl1.Controls.Add(labelControl5);
             groupControl1.Controls.Add(comboBoxEdit1);
             groupControl1.Controls.Add(textEdit5);
@@ -269,6 +275,18 @@
             panelControl1.Size = new Size(828, 64);
             panelControl1.TabIndex = 2;
             // 
+            // simpleButton5
+            // 
+            simpleButton5.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
+            simpleButton5.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            simpleButton5.Appearance.Options.UseBackColor = true;
+            simpleButton5.Appearance.Options.UseFont = true;
+            simpleButton5.Location = new Point(453, 16);
+            simpleButton5.Name = "simpleButton5";
+            simpleButton5.Size = new Size(118, 36);
+            simpleButton5.TabIndex = 7;
+            simpleButton5.Text = "Save";
+            // 
             // simpleButton4
             // 
             simpleButton4.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
@@ -317,17 +335,30 @@
             simpleButton1.TabIndex = 3;
             simpleButton1.Text = "Edit";
             // 
-            // simpleButton5
+            // colCategoryName
             // 
-            simpleButton5.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
-            simpleButton5.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            simpleButton5.Appearance.Options.UseBackColor = true;
-            simpleButton5.Appearance.Options.UseFont = true;
-            simpleButton5.Location = new Point(453, 16);
-            simpleButton5.Name = "simpleButton5";
-            simpleButton5.Size = new Size(118, 36);
-            simpleButton5.TabIndex = 7;
-            simpleButton5.Text = "Save";
+            colCategoryName.Caption = "Type";
+            colCategoryName.FieldName = "CategoryName";
+            colCategoryName.MinWidth = 25;
+            colCategoryName.Name = "colCategoryName";
+            colCategoryName.Visible = true;
+            colCategoryName.VisibleIndex = 6;
+            colCategoryName.Width = 94;
+            // 
+            // Status
+            // 
+            Status.Location = new Point(475, 103);
+            Status.Name = "Status";
+            Status.Size = new Size(41, 16);
+            Status.TabIndex = 12;
+            Status.Text = "Status:";
+            // 
+            // txtIsTerminated
+            // 
+            txtIsTerminated.Location = new Point(577, 100);
+            txtIsTerminated.Name = "txtIsTerminated";
+            txtIsTerminated.Size = new Size(156, 22);
+            txtIsTerminated.TabIndex = 13;
             // 
             // frmAllCommodities
             // 
@@ -353,6 +384,7 @@
             ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)txtIsTerminated.Properties).EndInit();
             ResumeLayout(false);
         }
 
@@ -376,12 +408,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn colBaseUnit;
         private DevExpress.XtraGrid.Columns.GridColumn colManufacturer;
         private DevExpress.XtraGrid.Columns.GridColumn colSellingPrice;
-        private DevExpress.XtraGrid.Columns.GridColumn colCommodityStatus;
+        private DevExpress.XtraGrid.Columns.GridColumn colIsTerminated;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraGrid.Columns.GridColumn colCategoryName;
+        private DevExpress.XtraEditors.LabelControl Status;
+        private DevExpress.XtraEditors.TextEdit txtIsTerminated;
     }
 }
