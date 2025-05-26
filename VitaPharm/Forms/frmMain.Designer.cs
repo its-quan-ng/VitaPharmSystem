@@ -40,7 +40,7 @@
             btnAllGoodsReceipt = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            btnSignOut = new DevExpress.XtraBars.BarButtonItem();
             tabHumanManage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -57,7 +57,7 @@
             // 
             ribbonControl1.BackColor = Color.White;
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnProfile, btnNewUser, btnAllUsers, btnAllCustomers, barButtonItem5, barButtonItem6, barButtonItem7, btnAllGoodsReceipt, barButtonItem9, barButtonItem10, barButtonItem11 });
+            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnProfile, btnNewUser, btnAllUsers, btnAllCustomers, barButtonItem5, barButtonItem6, barButtonItem7, btnAllGoodsReceipt, barButtonItem9, barButtonItem10, btnSignOut });
             ribbonControl1.Location = new Point(0, 0);
             ribbonControl1.MaxItemId = 12;
             ribbonControl1.Name = "ribbonControl1";
@@ -95,7 +95,7 @@
             // 
             btnAllCustomers.Caption = "All Customers";
             btnAllCustomers.Id = 4;
-            btnAllCustomers.ImageOptions.LargeImage = (Image)resources.GetObject("barButtonItem4.ImageOptions.LargeImage");
+            btnAllCustomers.ImageOptions.LargeImage = (Image)resources.GetObject("btnAllCustomers.ImageOptions.LargeImage");
             btnAllCustomers.Name = "btnAllCustomers";
             btnAllCustomers.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             btnAllCustomers.ItemClick += btnAllCustomers_ItemClick;
@@ -149,13 +149,14 @@
             barButtonItem10.Name = "barButtonItem10";
             barButtonItem10.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // barButtonItem11
+            // btnSignOut
             // 
-            barButtonItem11.Caption = "Sign Out";
-            barButtonItem11.Id = 11;
-            barButtonItem11.ImageOptions.Image = Properties.Resources.log_out;
-            barButtonItem11.Name = "barButtonItem11";
-            barButtonItem11.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            btnSignOut.Caption = "Sign Out";
+            btnSignOut.Id = 11;
+            btnSignOut.ImageOptions.Image = Properties.Resources.log_out;
+            btnSignOut.Name = "btnSignOut";
+            btnSignOut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            btnSignOut.ItemClick += btnSignOut_ItemClick;
             // 
             // tabHumanManage
             // 
@@ -173,7 +174,7 @@
             // 
             // ribbonPageGroup5
             // 
-            ribbonPageGroup5.ItemLinks.Add(barButtonItem11);
+            ribbonPageGroup5.ItemLinks.Add(btnSignOut);
             ribbonPageGroup5.Name = "ribbonPageGroup5";
             // 
             // tabCommodity
@@ -250,7 +251,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraBars.BarButtonItem btnSignOut;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
     }
 }
