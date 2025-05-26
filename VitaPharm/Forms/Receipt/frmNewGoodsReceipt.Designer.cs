@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewGoodsReceipt));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             grpDetails = new DevExpress.XtraEditors.GroupControl();
@@ -44,6 +44,7 @@
             colMgfDate = new DevExpress.XtraGrid.Columns.GridColumn();
             colExpDate = new DevExpress.XtraGrid.Columns.GridColumn();
             colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            repoSpinQty = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             colPurchasePrice = new DevExpress.XtraGrid.Columns.GridColumn();
             Amount = new DevExpress.XtraGrid.Columns.GridColumn();
             colDelete = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,7 +67,6 @@
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnAdd = new DevExpress.XtraEditors.SimpleButton();
             labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            repoSpinQty = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
@@ -75,6 +75,7 @@
             grpDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repoSpinQty).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repoBtnDelete).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl2).BeginInit();
             panelControl2.SuspendLayout();
@@ -88,7 +89,6 @@
             ((System.ComponentModel.ISupportInitialize)meNote.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)grpSum).BeginInit();
             grpSum.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)repoSpinQty).BeginInit();
             SuspendLayout();
             // 
             // panelControl1
@@ -202,6 +202,16 @@
             colQuantity.VisibleIndex = 4;
             colQuantity.Width = 31;
             // 
+            // repoSpinQty
+            // 
+            repoSpinQty.AutoHeight = false;
+            repoSpinQty.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repoSpinQty.MaskSettings.Set("mask", "N0");
+            repoSpinQty.MaxValue = new decimal(new int[] { 100000, 0, 0, 0 });
+            repoSpinQty.MinValue = new decimal(new int[] { 1, 0, 0, 0 });
+            repoSpinQty.Name = "repoSpinQty";
+            repoSpinQty.UseMaskAsDisplayFormat = true;
+            // 
             // colPurchasePrice
             // 
             colPurchasePrice.Caption = "Purchase Price";
@@ -239,9 +249,9 @@
             repoBtnDelete.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             repoBtnDelete.Appearance.Options.UseBackColor = true;
             repoBtnDelete.AutoHeight = false;
-            editorButtonImageOptions3.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("editorButtonImageOptions3.SvgImage");
-            editorButtonImageOptions3.SvgImageSize = new Size(16, 16);
-            repoBtnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
+            editorButtonImageOptions1.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("editorButtonImageOptions1.SvgImage");
+            editorButtonImageOptions1.SvgImageSize = new Size(16, 16);
+            repoBtnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
             repoBtnDelete.Name = "repoBtnDelete";
             repoBtnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -444,24 +454,13 @@
             labelControl8.TabIndex = 0;
             labelControl8.Text = "Total";
             // 
-            // repoSpinQty
-            // 
-            repoSpinQty.AutoHeight = false;
-            repoSpinQty.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            repoSpinQty.MaskSettings.Set("mask", "N0");
-            repoSpinQty.MaxValue = new decimal(new int[] { 100000, 0, 0, 0 });
-            repoSpinQty.MinValue = new decimal(new int[] { 1, 0, 0, 0 });
-            repoSpinQty.Name = "repoSpinQty";
-            repoSpinQty.UseMaskAsDisplayFormat = true;
-            // 
             // frmNewGoodsReceipt
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(917, 468);
             Controls.Add(panelControl1);
-            MaximizeBox = false;
-            MinimizeBox = false;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmNewGoodsReceipt";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "New Goods Receipt";
@@ -474,6 +473,7 @@
             grpDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repoSpinQty).EndInit();
             ((System.ComponentModel.ISupportInitialize)repoBtnDelete).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl2).EndInit();
             panelControl2.ResumeLayout(false);
@@ -489,7 +489,6 @@
             ((System.ComponentModel.ISupportInitialize)grpSum).EndInit();
             grpSum.ResumeLayout(false);
             grpSum.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)repoSpinQty).EndInit();
             ResumeLayout(false);
         }
 
