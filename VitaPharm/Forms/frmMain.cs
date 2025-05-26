@@ -26,8 +26,6 @@ namespace VitaPharm.Forms
             var signIn = new frmSignIn();
             if (signIn.ShowDialog() == DialogResult.OK)
             {
-                var account = signIn.GetLoggedInAccount();
-                this.currentAccount = account;
                 XtraMessageBox.Show(
                     "Login successful!",
                     "Success",
@@ -35,9 +33,6 @@ namespace VitaPharm.Forms
                     MessageBoxIcon.Information);
                 ConfigureBasedOnRole();
                 OpenProfile();
-                CurrentUser.Username = currentAccount.Username;
-                CurrentUser.Role = currentAccount.UserRole;
-                CurrentUser.EmployeeID = currentAccount.Employee.EmployeeID;
             }
             else
             {
