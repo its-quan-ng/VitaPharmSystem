@@ -37,7 +37,7 @@
             labelControl8 = new DevExpress.XtraEditors.LabelControl();
             txtBatchStatus = new DevExpress.XtraEditors.TextEdit();
             txtPurchasePrice = new DevExpress.XtraEditors.TextEdit();
-            spinQuantity = new DevExpress.XtraEditors.SpinEdit();
+            txtQuantity = new DevExpress.XtraEditors.SpinEdit();
             dateExp = new DevExpress.XtraEditors.DateEdit();
             dateMfg = new DevExpress.XtraEditors.DateEdit();
             labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -57,7 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)txtQtyAvailable.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtBatchStatus.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtPurchasePrice.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)spinQuantity.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateExp.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateExp.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateMfg.Properties).BeginInit();
@@ -77,7 +77,7 @@
             groupControl1.Controls.Add(labelControl8);
             groupControl1.Controls.Add(txtBatchStatus);
             groupControl1.Controls.Add(txtPurchasePrice);
-            groupControl1.Controls.Add(spinQuantity);
+            groupControl1.Controls.Add(txtQuantity);
             groupControl1.Controls.Add(dateExp);
             groupControl1.Controls.Add(dateMfg);
             groupControl1.Controls.Add(labelControl7);
@@ -188,18 +188,18 @@
             txtPurchasePrice.TabIndex = 6;
             txtPurchasePrice.EditValueChanged += txtPurchasePrice_EditValueChanged;
             // 
-            // spinQuantity
+            // txtQuantity
             // 
-            spinQuantity.Anchor = AnchorStyles.Top;
-            spinQuantity.EditValue = new decimal(new int[] { 1, 0, 0, 0 });
-            spinQuantity.Location = new Point(397, 210);
-            spinQuantity.Name = "spinQuantity";
-            spinQuantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            spinQuantity.Properties.MaxValue = new decimal(new int[] { 1000, 0, 0, 0 });
-            spinQuantity.Properties.MinValue = new decimal(new int[] { 1, 0, 0, 0 });
-            spinQuantity.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            spinQuantity.Size = new Size(83, 24);
-            spinQuantity.TabIndex = 8;
+            txtQuantity.Anchor = AnchorStyles.Top;
+            txtQuantity.EditValue = new decimal(new int[] { 1, 0, 0, 0 });
+            txtQuantity.Location = new Point(397, 210);
+            txtQuantity.Name = "txtQuantity";
+            txtQuantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            txtQuantity.Properties.MaxValue = new decimal(new int[] { 1000, 0, 0, 0 });
+            txtQuantity.Properties.MinValue = new decimal(new int[] { 1, 0, 0, 0 });
+            txtQuantity.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            txtQuantity.Size = new Size(83, 24);
+            txtQuantity.TabIndex = 8;
             // 
             // dateExp
             // 
@@ -374,7 +374,7 @@
             ((System.ComponentModel.ISupportInitialize)txtQtyAvailable.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtBatchStatus.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtPurchasePrice.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)spinQuantity.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateExp.Properties.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateExp.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateMfg.Properties.CalendarTimeProperties).EndInit();
@@ -396,7 +396,7 @@
         private DevExpress.XtraEditors.DateEdit dateExp;
         private DevExpress.XtraEditors.DateEdit dateMfg;
         private DevExpress.XtraEditors.TextEdit txtPurchasePrice;
-        private DevExpress.XtraEditors.SpinEdit spinQuantity;
+        private DevExpress.XtraEditors.SpinEdit txtQuantity;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.TextEdit txtBatchStatus;

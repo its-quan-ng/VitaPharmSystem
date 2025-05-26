@@ -52,7 +52,7 @@ namespace VitaPharm.Forms.Receipt
                 MfgDate = dateMfg.DateTime,
                 ExpDate = dateExp.DateTime,
                 PurchasePrice = decimal.Parse(txtPurchasePrice.Text),
-                Qty = (int)spinQuantity.Value
+                Qty = (int)txtQuantity.Value
             };
 
             if (cboBatchCode.EditValue != null)
@@ -164,7 +164,7 @@ namespace VitaPharm.Forms.Receipt
             txtPurchasePrice.Text = "";
             txtBatchStatus.Text = "";
             txtQtyAvailable.Text = "";
-            spinQuantity.Value = 1;
+            txtQuantity.Value = 1;
             lblNewBatchCode.Visible = false;
             cboBatchCode.Enabled = true;
         }
