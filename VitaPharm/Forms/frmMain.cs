@@ -179,29 +179,10 @@ namespace VitaPharm.Forms
         {
             var result = XtraMessageBox.Show("Are you sure you want to sign out?", "Confirmation",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result != DialogResult.Yes)
-                return;
-
-            foreach (var child in this.MdiChildren)
-                child.Close();
-
-            this.Hide();
-
-            using (var signInForm = new frmSignIn())
+            if (result == DialogResult.Yes)
             {
-                var dialogResult = signInForm.ShowDialog();
-                /*if (dialogResult == DialogResult.OK &&
-                    !string.IsNullOrEmpty(signInForm.CurrentUser.Username))
-                {
-                    var newMain = new frmMain(signInForm.CurrentUser);
-                    newMain.Show();
-                }
-                else
-                {
-                    Application.Exit();
-                }*/
+                SignOut();
             }
-            this.Close();
         }
     }
 }
