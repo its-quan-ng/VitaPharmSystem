@@ -51,7 +51,22 @@ namespace VitaPharm.Forms
             CurrentUser.Role = null;
             CurrentUser.EmployeeID = 0;
             foreach (var f in this.MdiChildren) f.Close();
-            ShowSignIn();
+            
+            this.Hide();
+            
+            using (var newSignIn = new frmSignIn())
+            {
+                if (newSignIn.ShowDialog() == DialogResult.OK)
+                {
+                    var newMain = new frmMain();
+                    newMain.Show();
+                    this.Close();
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
         }
 
         #region ConfigureBasedOnRole
