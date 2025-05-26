@@ -14,9 +14,22 @@ namespace VitaPharm.Forms.Receipt
         {
             InitializeComponent();
             currentUser = username;
-            repobtnDelete.ButtonClick += RepoBtnDelete_ButtonClick;
+            
             gridControl.DataSource = detailsList;
+            repoBtnDelete.ButtonClick += RepoBtnDelete_ButtonClick;
             InitializeForm();
+        }
+
+        private void RepoBtnDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var dto = gridView.GetFocusedRow() as BatchDto;
+            if (dto == null) return;
+
+            if (XtraMessageBox.Show("Remove this batch?", "Confirm",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
+
+            detailsList.Remove(dto);
+            RecalcSummary();
         }
 
         private void InitializeForm()
@@ -56,18 +69,6 @@ namespace VitaPharm.Forms.Receipt
         {
             decimal total = detailsList.Sum(d => d.Qty * d.PurchasePrice);
             lblTotal.Text = total.ToString("N2");
-        }
-
-        private void RepoBtnDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            var dto = gridView.GetFocusedRow() as BatchDto;
-            if (dto == null) return;
-
-            if (XtraMessageBox.Show("Remove this batch?", "Confirm",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
-
-            detailsList.Remove(dto);
-            RecalcSummary();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
