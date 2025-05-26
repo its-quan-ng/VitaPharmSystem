@@ -13,33 +13,37 @@ namespace VitaPharm.Forms
         private frmAllUsers? allUsersForm = null;
         private frmAllCustomers? allCustomersForm = null;
         private frmSignIn? signInForm = null;
+        private bool shouldClose = false;
         #endregion
 
         public frmMain()
         {
             InitializeComponent();
             this.IsMdiContainer = true;
-            ShowSignIn();
+
+            using (var signIn = new frmSignIn())
+            {
+                if (signIn.ShowDialog() != DialogResult.OK)
+                {
+                    shouldClose = true;
+                }
+                else
+                {
+                    XtraMessageBox.Show(
+                        "Login successful!",
+                        "Success",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    ConfigureBasedOnRole();
+                    OpenProfile();
+                }
+            }
         }
 
-        private void ShowSignIn()
+        protected override void OnLoad(EventArgs e)
         {
-            if (signInForm == null || signInForm.IsDisposed)
-            {
-                signInForm = new frmSignIn();
-            }
-
-            if (signInForm.ShowDialog() == DialogResult.OK)
-            {
-                XtraMessageBox.Show(
-                    "Login successful!",
-                    "Success",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                ConfigureBasedOnRole();
-                OpenProfile();
-            }
-            else
+            base.OnLoad(e);
+            if (shouldClose)
             {
                 this.Close();
             }
@@ -51,18 +55,19 @@ namespace VitaPharm.Forms
             CurrentUser.Role = null;
             CurrentUser.EmployeeID = 0;
             foreach (var f in this.MdiChildren) f.Close();
+
             this.Hide();
-            using (var newSignIn = new frmSignIn())
+            using (var signIn = new frmSignIn())
             {
-                if (newSignIn.ShowDialog() == DialogResult.OK)
+                if (signIn.ShowDialog() == DialogResult.OK)
                 {
-                    var newMain = new frmMain();
-                    newMain.Show();
-                    this.Close();
+                    this.Show();
+                    ConfigureBasedOnRole();
+                    OpenProfile();
                 }
                 else
                 {
-                    Application.Exit();
+                    this.Close();
                 }
             }
         }
