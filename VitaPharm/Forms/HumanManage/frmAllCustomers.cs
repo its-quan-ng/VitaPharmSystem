@@ -1,7 +1,6 @@
 ﻿using System.Data;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
-using Microsoft.EntityFrameworkCore;
 using VitaPharm.Data;
 
 namespace VitaPharm.Forms.HumanManage
@@ -65,6 +64,22 @@ namespace VitaPharm.Forms.HumanManage
             chkFemale.Enabled = enabled;
             txtContact.Enabled = enabled;
             txtAddress.Enabled = enabled;
+
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = !enabled;
+            btnSave.Enabled = enabled;
+            btnReload.Enabled = true;
+            btnDelete.Enabled = enabled;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            ToggleControls(true);
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            frmAllCustomers_Load(sender, e);
         }
     }
 }

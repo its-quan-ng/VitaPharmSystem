@@ -193,6 +193,7 @@
             btnReload.Size = new Size(102, 30);
             btnReload.TabIndex = 3;
             btnReload.Text = "Reload";
+            btnReload.Click += btnReload_Click;
             // 
             // btnSave
             // 
@@ -219,6 +220,7 @@
             btnEdit.Size = new Size(102, 30);
             btnEdit.TabIndex = 1;
             btnEdit.Text = "Edit";
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnAdd
             // 
