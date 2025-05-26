@@ -12,12 +12,12 @@ namespace VitaPharm.Forms.HumanManage
         private PharmacyDbContext contextAccount;
         private BindingSource bsAccount;
         private BindingSource bsEmployee;
-        private readonly int accountId;
+        private readonly int employeeId;
 
-        internal frmProfile(Account account)
+        internal frmProfile(int employeeId)
         {
             InitializeComponent();
-            accountId = account.AccountID;
+            this.employeeId = employeeId;
         }
 
         private void frmProfile_Load(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace VitaPharm.Forms.HumanManage
 
             var acct = contextAccount.Accounts
                         .Include(a => a.Employee)
-                        .First(a => a.AccountID == accountId);
+                        .First(a => a.Employee.EmployeeID == employeeId);
 
             bsAccount = new BindingSource { DataSource = acct };
             bsEmployee = new BindingSource { DataSource = acct.Employee };
