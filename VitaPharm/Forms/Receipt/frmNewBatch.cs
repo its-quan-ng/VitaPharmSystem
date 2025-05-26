@@ -1,12 +1,15 @@
 ﻿using System.Data;
 using VitaPharm.Data;
 using DevExpress.XtraEditors;
+using System.ComponentModel;
 
 namespace VitaPharm.Forms.Receipt
 {
     public partial class frmNewBatch : XtraForm
     {
         private PharmacyDbContext context = new PharmacyDbContext();
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public BatchDto ResultBatch { get; private set; }
 
         public frmNewBatch()

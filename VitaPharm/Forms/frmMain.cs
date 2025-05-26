@@ -123,7 +123,7 @@ namespace VitaPharm.Forms
             foreach (var f in this.MdiChildren) f.Close();
             if (allGoodsReceiptForm == null || allGoodsReceiptForm.IsDisposed)
             {
-                allGoodsReceiptForm = new frmAllGoodsReceipt()
+                allGoodsReceiptForm = new frmAllGoodsReceipt(CurrentUser.Username)
                 {
                     MdiParent = this
                 };

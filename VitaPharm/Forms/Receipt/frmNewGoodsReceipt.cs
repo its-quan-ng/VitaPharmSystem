@@ -16,8 +16,6 @@ namespace VitaPharm.Forms.Receipt
             currentUser = username;
             
             gridControl.DataSource = detailsList;
-            repoBtnDelete.ButtonClick += RepoBtnDelete_ButtonClick;
-            repoSpinQty.EditValueChanged += RepoSpinQty_EditValueChanged;
             InitializeForm();
         }
 
@@ -71,6 +69,8 @@ namespace VitaPharm.Forms.Receipt
 
         private void btnAddBatch_Click(object sender, EventArgs e)
         {
+            repoBtnDelete.ButtonClick += RepoBtnDelete_ButtonClick;
+            repoSpinQty.EditValueChanged += RepoSpinQty_EditValueChanged;
             using var dlg = new frmNewBatch();
             if (dlg.ShowDialog() == DialogResult.OK && dlg.ResultBatch != null)
             {
