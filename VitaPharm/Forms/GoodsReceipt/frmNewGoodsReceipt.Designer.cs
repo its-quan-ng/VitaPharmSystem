@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewGoodsReceipt));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             grpDetails = new DevExpress.XtraEditors.GroupControl();
@@ -62,7 +62,6 @@
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             grpSum = new DevExpress.XtraEditors.GroupControl();
-            simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             labelControl6 = new DevExpress.XtraEditors.LabelControl();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -96,7 +95,7 @@
             panelControl1.Dock = DockStyle.Fill;
             panelControl1.Location = new Point(0, 0);
             panelControl1.Name = "panelControl1";
-            panelControl1.Size = new Size(917, 498);
+            panelControl1.Size = new Size(917, 468);
             panelControl1.TabIndex = 0;
             // 
             // groupControl1
@@ -109,7 +108,7 @@
             groupControl1.Dock = DockStyle.Fill;
             groupControl1.Location = new Point(2, 2);
             groupControl1.Name = "groupControl1";
-            groupControl1.Size = new Size(913, 494);
+            groupControl1.Size = new Size(913, 464);
             groupControl1.TabIndex = 0;
             groupControl1.Text = "New Goods Receipt";
             // 
@@ -125,7 +124,7 @@
             grpDetails.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             grpDetails.Location = new Point(2, 140);
             grpDetails.Name = "grpDetails";
-            grpDetails.Size = new Size(909, 225);
+            grpDetails.Size = new Size(909, 247);
             grpDetails.TabIndex = 0;
             grpDetails.Text = "Goods Receipt Details";
             // 
@@ -136,7 +135,7 @@
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
             gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repoBtnDelete });
-            gridControl.Size = new Size(905, 156);
+            gridControl.Size = new Size(905, 178);
             gridControl.TabIndex = 0;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
@@ -237,9 +236,9 @@
             repoBtnDelete.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             repoBtnDelete.Appearance.Options.UseBackColor = true;
             repoBtnDelete.AutoHeight = false;
-            editorButtonImageOptions2.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("editorButtonImageOptions2.SvgImage");
-            editorButtonImageOptions2.SvgImageSize = new Size(16, 16);
-            repoBtnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
+            editorButtonImageOptions1.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("editorButtonImageOptions1.SvgImage");
+            editorButtonImageOptions1.SvgImageSize = new Size(16, 16);
+            repoBtnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
             repoBtnDelete.Name = "repoBtnDelete";
             repoBtnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -379,31 +378,17 @@
             // 
             grpSum.AppearanceCaption.FontStyleDelta = FontStyle.Bold;
             grpSum.AppearanceCaption.Options.UseFont = true;
-            grpSum.Controls.Add(simpleButton1);
             grpSum.Controls.Add(labelControl6);
             grpSum.Controls.Add(btnCancel);
             grpSum.Controls.Add(btnAdd);
             grpSum.Controls.Add(labelControl8);
             grpSum.Dock = DockStyle.Bottom;
             grpSum.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            grpSum.Location = new Point(2, 365);
+            grpSum.Location = new Point(2, 387);
             grpSum.Name = "grpSum";
-            grpSum.Size = new Size(909, 127);
+            grpSum.Size = new Size(909, 75);
             grpSum.TabIndex = 2;
             grpSum.Text = "Summary";
-            // 
-            // simpleButton1
-            // 
-            simpleButton1.Anchor = AnchorStyles.Bottom;
-            simpleButton1.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Warning;
-            simpleButton1.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            simpleButton1.Appearance.Options.UseBackColor = true;
-            simpleButton1.Appearance.Options.UseFont = true;
-            simpleButton1.Location = new Point(411, 90);
-            simpleButton1.Name = "simpleButton1";
-            simpleButton1.Size = new Size(97, 29);
-            simpleButton1.TabIndex = 2;
-            simpleButton1.Text = "Reset";
             // 
             // labelControl6
             // 
@@ -422,7 +407,7 @@
             btnCancel.Anchor = AnchorStyles.Bottom;
             btnCancel.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnCancel.Appearance.Options.UseFont = true;
-            btnCancel.Location = new Point(514, 90);
+            btnCancel.Location = new Point(460, 38);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(97, 29);
             btnCancel.TabIndex = 3;
@@ -437,7 +422,7 @@
             btnAdd.Appearance.Options.UseBackColor = true;
             btnAdd.Appearance.Options.UseFont = true;
             btnAdd.Appearance.Options.UseForeColor = true;
-            btnAdd.Location = new Point(308, 90);
+            btnAdd.Location = new Point(357, 38);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(97, 29);
             btnAdd.TabIndex = 1;
@@ -457,7 +442,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(917, 498);
+            ClientSize = new Size(917, 468);
             Controls.Add(panelControl1);
             MaximizeBox = false;
             MinimizeBox = false;
@@ -527,7 +512,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraGrid.Columns.GridColumn colMgfDate;
         private DevExpress.XtraGrid.Columns.GridColumn colExpDate;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraGrid.Columns.GridColumn colDelete;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repoBtnDelete;
     }
