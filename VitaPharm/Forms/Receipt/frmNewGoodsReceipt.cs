@@ -17,6 +17,7 @@ namespace VitaPharm.Forms.Receipt
             
             gridControl.DataSource = detailsList;
             repoBtnDelete.ButtonClick += RepoBtnDelete_ButtonClick;
+            repoSpinQty.EditValueChanged += RepoSpinQty_EditValueChanged;
             InitializeForm();
         }
 
@@ -29,6 +30,19 @@ namespace VitaPharm.Forms.Receipt
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
 
             detailsList.Remove(dto);
+            RecalcSummary();
+        }
+
+        private void RepoSpinQty_EditValueChanged(object sender, EventArgs e)
+        {
+            var spinEdit = sender as SpinEdit;
+            if (spinEdit == null) return;
+
+            var dto = gridView.GetFocusedRow() as BatchDto;
+            if (dto == null) return;
+
+
+            dto.Qty = (int)spinEdit.Value;
             RecalcSummary();
         }
 
@@ -60,7 +74,15 @@ namespace VitaPharm.Forms.Receipt
             using var dlg = new frmNewBatch();
             if (dlg.ShowDialog() == DialogResult.OK && dlg.ResultBatch != null)
             {
-                detailsList.Add(dlg.ResultBatch);
+                var existingBatch = detailsList.FirstOrDefault(b => b.BatchID == dlg.ResultBatch.BatchID);
+                if (existingBatch != null)
+                {
+                    existingBatch.Qty += dlg.ResultBatch.Qty;
+                }
+                else
+                {
+                    detailsList.Add(dlg.ResultBatch);
+                }
                 RecalcSummary();
             }
         }
