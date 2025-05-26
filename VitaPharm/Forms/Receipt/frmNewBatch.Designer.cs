@@ -360,6 +360,8 @@
             Controls.Add(btnCancel);
             Controls.Add(btnAdd);
             Controls.Add(panelControl1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "frmNewBatch";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Add Batch";
