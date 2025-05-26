@@ -6,13 +6,15 @@ namespace VitaPharm.Forms
 {
     public partial class frmSignIn : XtraForm
     {
+        private Account loggedInAccount;
+
+        public Account GetLoggedInAccount() => loggedInAccount;
+
         public frmSignIn()
         {
             InitializeComponent();
             txtUsername.Focus();
         }
-
-        public Account LoggedInAccount { get; private set; }
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
@@ -104,7 +106,7 @@ namespace VitaPharm.Forms
 
         private void LoginSuccess(Account account)
         {
-            this.LoggedInAccount = account;
+            loggedInAccount = account;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

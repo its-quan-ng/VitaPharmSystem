@@ -23,27 +23,27 @@ namespace VitaPharm.Forms
 
         private void ShowSignIn()
         {
-            using (var signIn = new frmSignIn())
+            var signIn = new frmSignIn();
+            if (signIn.ShowDialog() == DialogResult.OK)
             {
-                if (signIn.ShowDialog() == DialogResult.OK)
-                {
-                    this.currentAccount = signIn.LoggedInAccount;
-                    XtraMessageBox.Show(
-                        "Login successful!",
-                        "Success",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    ConfigureBasedOnRole();
-                    OpenProfile();
-                    CurrentUser.Username = currentAccount.Username;
-                    CurrentUser.Role = currentAccount.UserRole;
-                    CurrentUser.EmployeeID = currentAccount.Employee.EmployeeID;
-                }
-                else
-                {
-                    this.Close();
-                }
+                var account = signIn.GetLoggedInAccount();
+                this.currentAccount = account;
+                XtraMessageBox.Show(
+                    "Login successful!",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                ConfigureBasedOnRole();
+                OpenProfile();
+                CurrentUser.Username = currentAccount.Username;
+                CurrentUser.Role = currentAccount.UserRole;
+                CurrentUser.EmployeeID = currentAccount.Employee.EmployeeID;
             }
+            else
+            {
+                this.Close();
+            }
+            signIn.Dispose();
         }
 
         private void SignOut()
