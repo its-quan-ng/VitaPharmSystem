@@ -135,7 +135,10 @@ namespace VitaPharm.Forms
                 MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
-                Application.Exit();
+            {
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
         }
 
         private void chkShowPassword_CheckedChanged(object sender, EventArgs e)

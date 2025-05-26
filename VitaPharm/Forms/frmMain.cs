@@ -7,13 +7,12 @@ namespace VitaPharm.Forms
     public partial class frmMain : XtraForm
     {
         #region Global variable
-        private readonly Account currentAccount;
-        private readonly string currentRole;
         private frmProfile? profileForm = null;
         private frmNewUser? newUserForm = null;
         private frmAllGoodsReceipt? allGoodsReceiptForm = null;
         private frmAllUsers? allUsersForm = null;
         private frmAllCustomers? allCustomersForm = null;
+        private frmSignIn? signInForm = null;
         #endregion
 
         public frmMain()
@@ -25,8 +24,12 @@ namespace VitaPharm.Forms
 
         private void ShowSignIn()
         {
-            var signIn = new frmSignIn();
-            if (signIn.ShowDialog() == DialogResult.OK)
+            if (signInForm == null || signInForm.IsDisposed)
+            {
+                signInForm = new frmSignIn();
+            }
+
+            if (signInForm.ShowDialog() == DialogResult.OK)
             {
                 XtraMessageBox.Show(
                     "Login successful!",
@@ -40,7 +43,6 @@ namespace VitaPharm.Forms
             {
                 this.Close();
             }
-            signIn.Dispose();
         }
 
         private void SignOut()
@@ -68,7 +70,7 @@ namespace VitaPharm.Forms
         private void OpenProfile()
         {
             foreach (var f in this.MdiChildren) f.Close();
-            var profileForm = new frmProfile(CurrentUser.EmployeeID)
+            profileForm = new frmProfile(CurrentUser.EmployeeID)
             {
                 MdiParent = this
             };
