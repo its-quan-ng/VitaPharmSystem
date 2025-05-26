@@ -6,8 +6,6 @@ namespace VitaPharm.Forms
 {
     public partial class frmMain : XtraForm
     {
-        private Account currentAccount;
-        private readonly string currentRole;
         private frmProfile? profileForm = null;
         private frmNewUser? newUserForm = null;
         private frmAllGoodsReceipt? allGoodsReceiptForm = null;
@@ -18,7 +16,6 @@ namespace VitaPharm.Forms
             InitializeComponent();
             this.IsMdiContainer = true;
             ShowSignIn();
-            this.currentRole = currentAccount?.UserRole ?? "";
         }
 
         private void ShowSignIn()
@@ -43,7 +40,9 @@ namespace VitaPharm.Forms
 
         private void SignOut()
         {
-            this.currentAccount = null;
+            CurrentUser.Username = null;
+            CurrentUser.Role = null;
+            CurrentUser.EmployeeID = 0;
             foreach (var f in this.MdiChildren) f.Close();
             ShowSignIn();
         }
@@ -51,8 +50,8 @@ namespace VitaPharm.Forms
         #region ConfigureBasedOnRole
         private void ConfigureBasedOnRole()
         {
-            bool isAdmin = currentRole.Equals("Admin", StringComparison.OrdinalIgnoreCase);
-            bool isUser = currentRole.Equals("User", StringComparison.OrdinalIgnoreCase);
+            bool isAdmin = CurrentUser.Role.Equals("Admin", StringComparison.OrdinalIgnoreCase);
+            bool isUser = CurrentUser.Role.Equals("User", StringComparison.OrdinalIgnoreCase);
 
             btnProfile.Enabled = true;
             btnNewUser.Enabled = isAdmin;
@@ -63,7 +62,7 @@ namespace VitaPharm.Forms
         private void OpenProfile()
         {
             foreach (var f in this.MdiChildren) f.Close();
-            var profileForm = new frmProfile(currentAccount)
+            var profileForm = new frmProfile(CurrentUser.EmployeeID)
             {
                 MdiParent = this
             };
@@ -72,7 +71,7 @@ namespace VitaPharm.Forms
 
         private void OpenNewUser()
         {
-            if (!currentRole.Equals("Admin", StringComparison.OrdinalIgnoreCase))
+            if (!CurrentUser.Role.Equals("Admin", StringComparison.OrdinalIgnoreCase))
             {
                 XtraMessageBox.Show("You do not have permission to access this feature!", "Notification",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -108,7 +107,7 @@ namespace VitaPharm.Forms
 
         private void OpenAllUsers()
         {
-            if (!currentRole.Equals("Admin", StringComparison.OrdinalIgnoreCase))
+            if (!CurrentUser.Role.Equals("Admin", StringComparison.OrdinalIgnoreCase))
             {
                 XtraMessageBox.Show("You do not have permission to access this feature!", "Notification",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
