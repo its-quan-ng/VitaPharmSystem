@@ -268,6 +268,7 @@
             btnAddBatch.Size = new Size(99, 29);
             btnAddBatch.TabIndex = 0;
             btnAddBatch.Text = "Add Batch";
+            btnAddBatch.Click += btnAddBatch_Click;
             // 
             // grpInfo
             // 
@@ -412,6 +413,7 @@
             btnCancel.Size = new Size(97, 29);
             btnCancel.TabIndex = 3;
             btnCancel.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnAdd
             // 
@@ -427,6 +429,7 @@
             btnAdd.Size = new Size(97, 29);
             btnAdd.TabIndex = 1;
             btnAdd.Text = "Add";
+            btnAdd.Click += btnSave_Click;
             // 
             // labelControl8
             // 
