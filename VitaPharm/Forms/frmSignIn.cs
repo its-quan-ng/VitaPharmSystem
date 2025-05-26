@@ -12,6 +12,8 @@ namespace VitaPharm.Forms
             txtUsername.Focus();
         }
 
+        public Account LoggedInAccount { get; private set; }
+
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
@@ -102,16 +104,9 @@ namespace VitaPharm.Forms
 
         private void LoginSuccess(Account account)
         {
-            XtraMessageBox.Show(
-                "Login successful!",
-                "Success",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-
-            this.Hide();
-            var mainForm = new frmMain(account);
-            mainForm.FormClosed += (s, args) => this.Close();
-            mainForm.Show();
+            this.LoggedInAccount = account;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
         #endregion
 

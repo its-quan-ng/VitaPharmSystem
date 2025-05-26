@@ -6,24 +6,51 @@ namespace VitaPharm.Forms
 {
     public partial class frmMain : XtraForm
     {
-        private readonly Account currentAccount;
+        private Account currentAccount;
         private readonly string currentRole;
         private frmProfile? profileForm = null;
         private frmNewUser? newUserForm = null;
         private frmAllGoodsReceipt? allGoodsReceiptForm = null;
         private frmAllUsers? allUsersForm = null;
 
-        internal frmMain(Account account)
+        public frmMain()
         {
             InitializeComponent();
-            this.currentAccount = account;
-            this.currentRole = account.UserRole ?? "";
             this.IsMdiContainer = true;
-            ConfigureBasedOnRole();
-            OpenProfile();
-            CurrentUser.Username = account.Username;
-            CurrentUser.Role = account.UserRole;
-            CurrentUser.EmployeeID = account.Employee.EmployeeID;
+            ShowSignIn();
+            this.currentRole = currentAccount?.UserRole ?? "";
+        }
+
+        private void ShowSignIn()
+        {
+            using (var signIn = new frmSignIn())
+            {
+                if (signIn.ShowDialog() == DialogResult.OK)
+                {
+                    this.currentAccount = signIn.LoggedInAccount;
+                    XtraMessageBox.Show(
+                        "Login successful!",
+                        "Success",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    ConfigureBasedOnRole();
+                    OpenProfile();
+                    CurrentUser.Username = currentAccount.Username;
+                    CurrentUser.Role = currentAccount.UserRole;
+                    CurrentUser.EmployeeID = currentAccount.Employee.EmployeeID;
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
+        }
+
+        private void SignOut()
+        {
+            this.currentAccount = null;
+            foreach (var f in this.MdiChildren) f.Close();
+            ShowSignIn();
         }
 
         #region ConfigureBasedOnRole
