@@ -1,5 +1,4 @@
 using VitaPharm.Forms;
-using VitaPharm.Forms.HumanManage;
 namespace VitaPharm
 {
     internal static class Program
