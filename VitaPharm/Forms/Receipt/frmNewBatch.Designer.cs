@@ -96,11 +96,12 @@
             // 
             // labelControl9
             // 
+            labelControl9.Anchor = AnchorStyles.Top;
             labelControl9.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelControl9.Appearance.ForeColor = Color.FromArgb(0, 192, 0);
             labelControl9.Appearance.Options.UseFont = true;
             labelControl9.Appearance.Options.UseForeColor = true;
-            labelControl9.Location = new Point(353, 162);
+            labelControl9.Location = new Point(329, 162);
             labelControl9.Name = "labelControl9";
             labelControl9.Size = new Size(26, 16);
             labelControl9.TabIndex = 0;
@@ -108,6 +109,7 @@
             // 
             // cboBatchCode
             // 
+            cboBatchCode.Anchor = AnchorStyles.Top;
             cboBatchCode.Location = new Point(155, 81);
             cboBatchCode.Name = "cboBatchCode";
             cboBatchCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
@@ -117,6 +119,7 @@
             // 
             // cboCommodity
             // 
+            cboCommodity.Anchor = AnchorStyles.Top;
             cboCommodity.Location = new Point(155, 42);
             cboCommodity.Name = "cboCommodity";
             cboCommodity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
@@ -126,6 +129,7 @@
             // 
             // lblNewBatchCode
             // 
+            lblNewBatchCode.Anchor = AnchorStyles.Top;
             lblNewBatchCode.Appearance.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNewBatchCode.Appearance.ForeColor = Color.Blue;
             lblNewBatchCode.Appearance.Options.UseFont = true;
@@ -138,6 +142,7 @@
             // 
             // txtQtyAvailable
             // 
+            txtQtyAvailable.Anchor = AnchorStyles.Top;
             txtQtyAvailable.Location = new Point(655, 81);
             txtQtyAvailable.Name = "txtQtyAvailable";
             txtQtyAvailable.Size = new Size(72, 22);
@@ -145,6 +150,7 @@
             // 
             // labelControl8
             // 
+            labelControl8.Anchor = AnchorStyles.Top;
             labelControl8.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             labelControl8.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Critical;
             labelControl8.Appearance.Options.UseFont = true;
@@ -157,6 +163,7 @@
             // 
             // txtBatchStatus
             // 
+            txtBatchStatus.Anchor = AnchorStyles.Top;
             txtBatchStatus.Location = new Point(571, 159);
             txtBatchStatus.Name = "txtBatchStatus";
             txtBatchStatus.Properties.Appearance.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
@@ -168,6 +175,7 @@
             // 
             // txtPurchasePrice
             // 
+            txtPurchasePrice.Anchor = AnchorStyles.Top;
             txtPurchasePrice.Location = new Point(155, 159);
             txtPurchasePrice.Name = "txtPurchasePrice";
             txtPurchasePrice.Properties.Appearance.Options.UseTextOptions = true;
@@ -182,8 +190,9 @@
             // 
             // spinQuantity
             // 
+            spinQuantity.Anchor = AnchorStyles.Top;
             spinQuantity.EditValue = new decimal(new int[] { 1, 0, 0, 0 });
-            spinQuantity.Location = new Point(397, 219);
+            spinQuantity.Location = new Point(397, 210);
             spinQuantity.Name = "spinQuantity";
             spinQuantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             spinQuantity.Properties.MaxValue = new decimal(new int[] { 1000, 0, 0, 0 });
@@ -194,6 +203,7 @@
             // 
             // dateExp
             // 
+            dateExp.Anchor = AnchorStyles.Top;
             dateExp.EditValue = null;
             dateExp.Location = new Point(571, 120);
             dateExp.Name = "dateExp";
@@ -210,6 +220,7 @@
             // 
             // dateMfg
             // 
+            dateMfg.Anchor = AnchorStyles.Top;
             dateMfg.EditValue = null;
             dateMfg.Location = new Point(155, 120);
             dateMfg.Name = "dateMfg";
@@ -227,18 +238,20 @@
             // 
             // labelControl7
             // 
-            labelControl7.Appearance.Font = new Font("Inter Extra Bold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl7.Anchor = AnchorStyles.Top;
+            labelControl7.Appearance.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelControl7.Appearance.ForeColor = Color.FromArgb(16, 53, 113);
             labelControl7.Appearance.Options.UseFont = true;
             labelControl7.Appearance.Options.UseForeColor = true;
             labelControl7.Location = new Point(457, 162);
             labelControl7.Name = "labelControl7";
-            labelControl7.Size = new Size(42, 16);
+            labelControl7.Size = new Size(43, 16);
             labelControl7.TabIndex = 0;
             labelControl7.Text = "Status";
             // 
             // labelControl6
             // 
+            labelControl6.Anchor = AnchorStyles.Top;
             labelControl6.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             labelControl6.Appearance.Options.UseFont = true;
             labelControl6.Location = new Point(38, 162);
@@ -249,9 +262,10 @@
             // 
             // labelControl5
             // 
+            labelControl5.Anchor = AnchorStyles.Top;
             labelControl5.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             labelControl5.Appearance.Options.UseFont = true;
-            labelControl5.Location = new Point(330, 222);
+            labelControl5.Location = new Point(330, 213);
             labelControl5.Name = "labelControl5";
             labelControl5.Size = new Size(61, 16);
             labelControl5.TabIndex = 0;
@@ -259,6 +273,7 @@
             // 
             // labelControl4
             // 
+            labelControl4.Anchor = AnchorStyles.Top;
             labelControl4.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             labelControl4.Appearance.Options.UseFont = true;
             labelControl4.Location = new Point(456, 123);
@@ -269,6 +284,7 @@
             // 
             // labelControl3
             // 
+            labelControl3.Anchor = AnchorStyles.Top;
             labelControl3.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             labelControl3.Appearance.Options.UseFont = true;
             labelControl3.Location = new Point(40, 123);
@@ -279,6 +295,7 @@
             // 
             // labelControl2
             // 
+            labelControl2.Anchor = AnchorStyles.Top;
             labelControl2.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             labelControl2.Appearance.Options.UseFont = true;
             labelControl2.Location = new Point(40, 84);
@@ -289,6 +306,7 @@
             // 
             // labelControl1
             // 
+            labelControl1.Anchor = AnchorStyles.Top;
             labelControl1.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             labelControl1.Appearance.Options.UseFont = true;
             labelControl1.Location = new Point(40, 45);
