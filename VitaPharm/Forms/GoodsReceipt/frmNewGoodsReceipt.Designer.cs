@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewGoodsReceipt));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             grpDetails = new DevExpress.XtraEditors.GroupControl();
@@ -35,9 +41,13 @@
             gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             colCommodityName = new DevExpress.XtraGrid.Columns.GridColumn();
             colBatchCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            colMgfDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            colExpDate = new DevExpress.XtraGrid.Columns.GridColumn();
             colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             colPurchasePrice = new DevExpress.XtraGrid.Columns.GridColumn();
             Amount = new DevExpress.XtraGrid.Columns.GridColumn();
+            colDelete = new DevExpress.XtraGrid.Columns.GridColumn();
+            repoBtnDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             panelControl2 = new DevExpress.XtraEditors.PanelControl();
             btnAddBatch = new DevExpress.XtraEditors.SimpleButton();
             grpInfo = new DevExpress.XtraEditors.GroupControl();
@@ -52,6 +62,7 @@
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             grpSum = new DevExpress.XtraEditors.GroupControl();
+            simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             labelControl6 = new DevExpress.XtraEditors.LabelControl();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -64,6 +75,7 @@
             grpDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repoBtnDelete).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl2).BeginInit();
             panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)grpInfo).BeginInit();
@@ -111,9 +123,9 @@
             grpDetails.Controls.Add(panelControl2);
             grpDetails.Dock = DockStyle.Fill;
             grpDetails.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            grpDetails.Location = new Point(2, 164);
+            grpDetails.Location = new Point(2, 140);
             grpDetails.Name = "grpDetails";
-            grpDetails.Size = new Size(909, 231);
+            grpDetails.Size = new Size(909, 225);
             grpDetails.TabIndex = 1;
             grpDetails.Text = "Goods Receipt Details";
             // 
@@ -123,13 +135,14 @@
             gridControl.Location = new Point(2, 67);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.Size = new Size(905, 162);
+            gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repoBtnDelete });
+            gridControl.Size = new Size(905, 156);
             gridControl.TabIndex = 0;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
             // gridView
             // 
-            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colCommodityName, colBatchCode, colQuantity, colPurchasePrice, Amount });
+            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colCommodityName, colBatchCode, colMgfDate, colExpDate, colQuantity, colPurchasePrice, Amount, colDelete });
             gridView.GridControl = gridControl;
             gridView.Name = "gridView";
             // 
@@ -141,7 +154,7 @@
             colCommodityName.Name = "colCommodityName";
             colCommodityName.Visible = true;
             colCommodityName.VisibleIndex = 0;
-            colCommodityName.Width = 94;
+            colCommodityName.Width = 177;
             // 
             // colBatchCode
             // 
@@ -151,17 +164,41 @@
             colBatchCode.Name = "colBatchCode";
             colBatchCode.Visible = true;
             colBatchCode.VisibleIndex = 1;
-            colBatchCode.Width = 94;
+            colBatchCode.Width = 124;
+            // 
+            // colMgfDate
+            // 
+            colMgfDate.Caption = "MGF Date";
+            colMgfDate.DisplayFormat.FormatString = "dd/MM/yyyy";
+            colMgfDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            colMgfDate.FieldName = "MgfDate";
+            colMgfDate.MinWidth = 25;
+            colMgfDate.Name = "colMgfDate";
+            colMgfDate.Visible = true;
+            colMgfDate.VisibleIndex = 2;
+            colMgfDate.Width = 100;
+            // 
+            // colExpDate
+            // 
+            colExpDate.Caption = "EXP Date";
+            colExpDate.DisplayFormat.FormatString = "dd/MM/yyyy";
+            colExpDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            colExpDate.FieldName = "ExpDate";
+            colExpDate.MinWidth = 25;
+            colExpDate.Name = "colExpDate";
+            colExpDate.Visible = true;
+            colExpDate.VisibleIndex = 3;
+            colExpDate.Width = 88;
             // 
             // colQuantity
             // 
-            colQuantity.Caption = "Quantity";
+            colQuantity.Caption = "Qty";
             colQuantity.FieldName = "QtyIn";
             colQuantity.MinWidth = 25;
             colQuantity.Name = "colQuantity";
             colQuantity.Visible = true;
-            colQuantity.VisibleIndex = 2;
-            colQuantity.Width = 94;
+            colQuantity.VisibleIndex = 4;
+            colQuantity.Width = 31;
             // 
             // colPurchasePrice
             // 
@@ -170,8 +207,8 @@
             colPurchasePrice.MinWidth = 25;
             colPurchasePrice.Name = "colPurchasePrice";
             colPurchasePrice.Visible = true;
-            colPurchasePrice.VisibleIndex = 3;
-            colPurchasePrice.Width = 94;
+            colPurchasePrice.VisibleIndex = 5;
+            colPurchasePrice.Width = 120;
             // 
             // Amount
             // 
@@ -180,8 +217,31 @@
             Amount.MinWidth = 25;
             Amount.Name = "Amount";
             Amount.Visible = true;
-            Amount.VisibleIndex = 4;
-            Amount.Width = 94;
+            Amount.VisibleIndex = 6;
+            Amount.Width = 106;
+            // 
+            // colDelete
+            // 
+            colDelete.ColumnEdit = repoBtnDelete;
+            colDelete.FieldName = "DeleteAction";
+            colDelete.MinWidth = 25;
+            colDelete.Name = "colDelete";
+            colDelete.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            colDelete.UnboundDataType = typeof(object);
+            colDelete.Visible = true;
+            colDelete.VisibleIndex = 7;
+            colDelete.Width = 105;
+            // 
+            // repoBtnDelete
+            // 
+            repoBtnDelete.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
+            repoBtnDelete.Appearance.Options.UseBackColor = true;
+            repoBtnDelete.AutoHeight = false;
+            editorButtonImageOptions1.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("editorButtonImageOptions1.SvgImage");
+            editorButtonImageOptions1.SvgImageSize = new Size(16, 16);
+            repoBtnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
+            repoBtnDelete.Name = "repoBtnDelete";
+            repoBtnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // panelControl2
             // 
@@ -232,7 +292,7 @@
             grpInfo.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             grpInfo.Location = new Point(2, 28);
             grpInfo.Name = "grpInfo";
-            grpInfo.Size = new Size(909, 136);
+            grpInfo.Size = new Size(909, 112);
             grpInfo.TabIndex = 0;
             grpInfo.Text = "Receipt Info";
             // 
@@ -247,14 +307,14 @@
             // 
             txtReceiptCode.Location = new Point(126, 30);
             txtReceiptCode.Name = "txtReceiptCode";
-            txtReceiptCode.Size = new Size(134, 22);
+            txtReceiptCode.Size = new Size(168, 22);
             txtReceiptCode.TabIndex = 1;
             // 
             // txtSupplier
             // 
             txtSupplier.Location = new Point(126, 66);
             txtSupplier.Name = "txtSupplier";
-            txtSupplier.Size = new Size(134, 22);
+            txtSupplier.Size = new Size(285, 22);
             txtSupplier.TabIndex = 3;
             // 
             // dateReceiptDate
@@ -269,15 +329,15 @@
             // 
             // meNote
             // 
-            meNote.Location = new Point(427, 67);
+            meNote.Location = new Point(596, 67);
             meNote.Name = "meNote";
             meNote.Properties.ScrollBars = ScrollBars.Horizontal;
-            meNote.Size = new Size(442, 54);
+            meNote.Size = new Size(273, 33);
             meNote.TabIndex = 5;
             // 
             // labelControl3
             // 
-            labelControl3.Location = new Point(339, 69);
+            labelControl3.Location = new Point(531, 72);
             labelControl3.Name = "labelControl3";
             labelControl3.Size = new Size(26, 16);
             labelControl3.TabIndex = 0;
@@ -319,33 +379,50 @@
             // 
             grpSum.AppearanceCaption.FontStyleDelta = FontStyle.Bold;
             grpSum.AppearanceCaption.Options.UseFont = true;
+            grpSum.Controls.Add(simpleButton1);
             grpSum.Controls.Add(labelControl6);
             grpSum.Controls.Add(btnCancel);
             grpSum.Controls.Add(btnAdd);
             grpSum.Controls.Add(labelControl8);
             grpSum.Dock = DockStyle.Bottom;
             grpSum.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            grpSum.Location = new Point(2, 395);
+            grpSum.Location = new Point(2, 365);
             grpSum.Name = "grpSum";
-            grpSum.Size = new Size(909, 97);
+            grpSum.Size = new Size(909, 127);
             grpSum.TabIndex = 2;
             grpSum.Text = "Summary";
             // 
+            // simpleButton1
+            // 
+            simpleButton1.Anchor = AnchorStyles.Bottom;
+            simpleButton1.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Warning;
+            simpleButton1.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            simpleButton1.Appearance.Options.UseBackColor = true;
+            simpleButton1.Appearance.Options.UseFont = true;
+            simpleButton1.Location = new Point(411, 90);
+            simpleButton1.Name = "simpleButton1";
+            simpleButton1.Size = new Size(97, 29);
+            simpleButton1.TabIndex = 3;
+            simpleButton1.Text = "Reset";
+            // 
             // labelControl6
             // 
-            labelControl6.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl6.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl6.Appearance.ForeColor = Color.Green;
             labelControl6.Appearance.Options.UseFont = true;
-            labelControl6.Location = new Point(860, 28);
+            labelControl6.Appearance.Options.UseForeColor = true;
+            labelControl6.Location = new Point(816, 28);
             labelControl6.Name = "labelControl6";
-            labelControl6.Size = new Size(20, 16);
+            labelControl6.Size = new Size(62, 18);
             labelControl6.TabIndex = 2;
-            labelControl6.Text = "0.0";
+            labelControl6.Text = "0.0 VND";
             // 
             // btnCancel
             // 
+            btnCancel.Anchor = AnchorStyles.Bottom;
             btnCancel.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnCancel.Appearance.Options.UseFont = true;
-            btnCancel.Location = new Point(463, 58);
+            btnCancel.Location = new Point(514, 90);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(97, 29);
             btnCancel.TabIndex = 1;
@@ -353,13 +430,14 @@
             // 
             // btnAdd
             // 
+            btnAdd.Anchor = AnchorStyles.Bottom;
             btnAdd.Appearance.BackColor = Color.FromArgb(50, 112, 188);
             btnAdd.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnAdd.Appearance.ForeColor = Color.Black;
             btnAdd.Appearance.Options.UseBackColor = true;
             btnAdd.Appearance.Options.UseFont = true;
             btnAdd.Appearance.Options.UseForeColor = true;
-            btnAdd.Location = new Point(349, 58);
+            btnAdd.Location = new Point(308, 90);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(97, 29);
             btnAdd.TabIndex = 0;
@@ -367,11 +445,11 @@
             // 
             // labelControl8
             // 
-            labelControl8.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl8.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelControl8.Appearance.Options.UseFont = true;
-            labelControl8.Location = new Point(695, 28);
+            labelControl8.Location = new Point(646, 28);
             labelControl8.Name = "labelControl8";
-            labelControl8.Size = new Size(32, 16);
+            labelControl8.Size = new Size(38, 18);
             labelControl8.TabIndex = 0;
             labelControl8.Text = "Total";
             // 
@@ -394,6 +472,7 @@
             grpDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repoBtnDelete).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl2).EndInit();
             panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)grpInfo).EndInit();
@@ -446,5 +525,10 @@
         private DevExpress.XtraEditors.SimpleButton btnAddBatch;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraGrid.Columns.GridColumn colMgfDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colExpDate;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDelete;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repoBtnDelete;
     }
 }
