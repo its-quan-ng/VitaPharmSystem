@@ -158,6 +158,10 @@
             // 
             txtPurchasePrice.Location = new Point(155, 159);
             txtPurchasePrice.Name = "txtPurchasePrice";
+            txtPurchasePrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            txtPurchasePrice.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            txtPurchasePrice.Properties.MaskSettings.Set("mask", "N0");
+            txtPurchasePrice.Properties.UseMaskAsDisplayFormat = true;
             txtPurchasePrice.Size = new Size(156, 22);
             txtPurchasePrice.TabIndex = 6;
             // 
@@ -180,6 +184,11 @@
             dateExp.Name = "dateExp";
             dateExp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             dateExp.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateExp.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            dateExp.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            dateExp.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            dateExp.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            dateExp.Properties.MaskSettings.Set("mask", "dd/MM/yyyy");
             dateExp.Size = new Size(156, 22);
             dateExp.TabIndex = 5;
             // 
@@ -190,6 +199,12 @@
             dateMfg.Name = "dateMfg";
             dateMfg.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             dateMfg.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateMfg.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            dateMfg.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            dateMfg.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            dateMfg.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            dateMfg.Properties.MaskSettings.Set("mask", "dd/MM/yyyy");
+            dateMfg.Properties.UseMaskAsDisplayFormat = true;
             dateMfg.Size = new Size(156, 22);
             dateMfg.TabIndex = 4;
             // 
