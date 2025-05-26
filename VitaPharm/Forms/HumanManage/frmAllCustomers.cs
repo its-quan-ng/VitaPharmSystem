@@ -32,16 +32,18 @@ namespace VitaPharm.Forms.HumanManage
 
         private void frmAllCustomers_Load(object sender, EventArgs e)
         {
+            isInAddMode = false;
             LoadCustomerData();
             ToggleControls(false);
         }
 
         private void LoadCustomerData()
         {
+            var bindingSource = new BindingSource();
+
             context?.Dispose();
             context = new PharmacyDbContext();
-
-            var list = context.Customers
+            var customers = context.Customers
                 .Select(c => new
                 {
                     c.CustomerID,
@@ -49,8 +51,7 @@ namespace VitaPharm.Forms.HumanManage
                     c.Sex,
                     c.Contact,
                     c.CustomerAddress
-                })
-                .AsEnumerable()
+                }).AsEnumerable()
                 .Select((x, idx) => new CustomerView
                 {
                     ID = idx + 1,
@@ -62,8 +63,31 @@ namespace VitaPharm.Forms.HumanManage
                 })
                 .ToList();
 
-            bsCustomers.DataSource = list;
-            gridControl.RefreshDataSource();
+            bindingSource.DataSource = customers;
+
+            txtFullName.DataBindings.Clear();
+            txtFullName.DataBindings.Add(
+                "Text", bindingSource, nameof(Customer.CustomerName),
+                true, DataSourceUpdateMode.Never);
+
+            chkFemale.DataBindings.Clear();
+            var chkSex = new Binding("Checked", bindingSource, nameof(Customer.Sex));
+            chkSex.Format += (s, ev) => ev.Value = (ev.Value as string) == "F";
+            chkSex.Parse += (s, ev) => ev.Value = ((bool)ev.Value) ? "F" : "M";
+            chkFemale.DataBindings.Add(chkSex);
+
+            txtContact.DataBindings.Clear();
+            txtContact.DataBindings.Add(
+                "Text", bindingSource, nameof(Customer.Contact),
+                true, DataSourceUpdateMode.Never);
+
+            txtAddress.DataBindings.Clear();
+            txtAddress.DataBindings.Add(
+                "Text", bindingSource, nameof(Customer.CustomerAddress),
+                true, DataSourceUpdateMode.Never);
+
+            gridControl.DataSource = bindingSource;
+            ToggleControls(false);
         }
 
         private void GridView_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
@@ -91,7 +115,7 @@ namespace VitaPharm.Forms.HumanManage
             btnEdit.Enabled = !enabled;
             btnSave.Enabled = enabled;
             btnReload.Enabled = true;
-            btnDelete.Enabled = enabled;
+            btnDelete.Enabled = true;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
