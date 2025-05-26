@@ -33,10 +33,10 @@
             grpDetails = new DevExpress.XtraEditors.GroupControl();
             gridControl = new DevExpress.XtraGrid.GridControl();
             gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            Commodity = new DevExpress.XtraGrid.Columns.GridColumn();
-            Batch = new DevExpress.XtraGrid.Columns.GridColumn();
-            Quantity = new DevExpress.XtraGrid.Columns.GridColumn();
-            PurchasePrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            colCommodityName = new DevExpress.XtraGrid.Columns.GridColumn();
+            colBatchCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            colPurchasePrice = new DevExpress.XtraGrid.Columns.GridColumn();
             Amount = new DevExpress.XtraGrid.Columns.GridColumn();
             panelControl2 = new DevExpress.XtraEditors.PanelControl();
             btnAddBatch = new DevExpress.XtraEditors.SimpleButton();
@@ -129,49 +129,49 @@
             // 
             // gridView
             // 
-            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { Commodity, Batch, Quantity, PurchasePrice, Amount });
+            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colCommodityName, colBatchCode, colQuantity, colPurchasePrice, Amount });
             gridView.GridControl = gridControl;
             gridView.Name = "gridView";
             // 
-            // Commodity
+            // colCommodityName
             // 
-            Commodity.Caption = "Commodity";
-            Commodity.FieldName = "Commodity";
-            Commodity.MinWidth = 25;
-            Commodity.Name = "Commodity";
-            Commodity.Visible = true;
-            Commodity.VisibleIndex = 0;
-            Commodity.Width = 94;
+            colCommodityName.Caption = "Commodity Name";
+            colCommodityName.FieldName = "CommodityName";
+            colCommodityName.MinWidth = 25;
+            colCommodityName.Name = "colCommodityName";
+            colCommodityName.Visible = true;
+            colCommodityName.VisibleIndex = 0;
+            colCommodityName.Width = 94;
             // 
-            // Batch
+            // colBatchCode
             // 
-            Batch.Caption = "Batch";
-            Batch.FieldName = "Batch";
-            Batch.MinWidth = 25;
-            Batch.Name = "Batch";
-            Batch.Visible = true;
-            Batch.VisibleIndex = 1;
-            Batch.Width = 94;
+            colBatchCode.Caption = "Batch Code";
+            colBatchCode.FieldName = "BatchCode";
+            colBatchCode.MinWidth = 25;
+            colBatchCode.Name = "colBatchCode";
+            colBatchCode.Visible = true;
+            colBatchCode.VisibleIndex = 1;
+            colBatchCode.Width = 94;
             // 
-            // Quantity
+            // colQuantity
             // 
-            Quantity.Caption = "Quantity";
-            Quantity.FieldName = "Quantity";
-            Quantity.MinWidth = 25;
-            Quantity.Name = "Quantity";
-            Quantity.Visible = true;
-            Quantity.VisibleIndex = 2;
-            Quantity.Width = 94;
+            colQuantity.Caption = "Quantity";
+            colQuantity.FieldName = "QtyIn";
+            colQuantity.MinWidth = 25;
+            colQuantity.Name = "colQuantity";
+            colQuantity.Visible = true;
+            colQuantity.VisibleIndex = 2;
+            colQuantity.Width = 94;
             // 
-            // PurchasePrice
+            // colPurchasePrice
             // 
-            PurchasePrice.Caption = "Purchase Price";
-            PurchasePrice.FieldName = "PurchasePrice";
-            PurchasePrice.MinWidth = 25;
-            PurchasePrice.Name = "PurchasePrice";
-            PurchasePrice.Visible = true;
-            PurchasePrice.VisibleIndex = 3;
-            PurchasePrice.Width = 94;
+            colPurchasePrice.Caption = "Purchase Price";
+            colPurchasePrice.FieldName = "PurchasePrice";
+            colPurchasePrice.MinWidth = 25;
+            colPurchasePrice.Name = "colPurchasePrice";
+            colPurchasePrice.Visible = true;
+            colPurchasePrice.VisibleIndex = 3;
+            colPurchasePrice.Width = 94;
             // 
             // Amount
             // 
@@ -432,10 +432,10 @@
         private DevExpress.XtraEditors.MemoEdit meNote;
         private DevExpress.XtraGrid.GridControl gridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
-        private DevExpress.XtraGrid.Columns.GridColumn Commodity;
-        private DevExpress.XtraGrid.Columns.GridColumn Batch;
-        private DevExpress.XtraGrid.Columns.GridColumn Quantity;
-        private DevExpress.XtraGrid.Columns.GridColumn PurchasePrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colCommodityName;
+        private DevExpress.XtraGrid.Columns.GridColumn colBatchCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
+        private DevExpress.XtraGrid.Columns.GridColumn colPurchasePrice;
         private DevExpress.XtraGrid.Columns.GridColumn Amount;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
