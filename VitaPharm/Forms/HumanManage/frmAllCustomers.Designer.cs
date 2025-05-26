@@ -236,6 +236,7 @@
             btnAdd.Size = new Size(102, 30);
             btnAdd.TabIndex = 0;
             btnAdd.Text = "Add";
+            btnAdd.Click += btnAdd_Click;
             // 
             // panelControl3
             // 
@@ -268,6 +269,8 @@
             colID.FieldName = "ID";
             colID.MinWidth = 25;
             colID.Name = "colID";
+            colID.OptionsColumn.AllowEdit = false;
+            colID.OptionsColumn.ReadOnly = true;
             colID.Visible = true;
             colID.VisibleIndex = 0;
             colID.Width = 94;
@@ -278,6 +281,8 @@
             colCustomerName.FieldName = "CustomerName";
             colCustomerName.MinWidth = 25;
             colCustomerName.Name = "colCustomerName";
+            colCustomerName.OptionsColumn.AllowEdit = false;
+            colCustomerName.OptionsColumn.ReadOnly = true;
             colCustomerName.Visible = true;
             colCustomerName.VisibleIndex = 1;
             colCustomerName.Width = 94;
@@ -288,6 +293,8 @@
             colSex.FieldName = "Sex";
             colSex.MinWidth = 25;
             colSex.Name = "colSex";
+            colSex.OptionsColumn.AllowEdit = false;
+            colSex.OptionsColumn.ReadOnly = true;
             colSex.Visible = true;
             colSex.VisibleIndex = 2;
             colSex.Width = 94;
@@ -298,6 +305,8 @@
             colContact.FieldName = "Contact";
             colContact.MinWidth = 25;
             colContact.Name = "colContact";
+            colContact.OptionsColumn.AllowEdit = false;
+            colContact.OptionsColumn.ReadOnly = true;
             colContact.Visible = true;
             colContact.VisibleIndex = 3;
             colContact.Width = 94;
@@ -308,6 +317,8 @@
             colCustomerAddress.FieldName = "CustomerAddress";
             colCustomerAddress.MinWidth = 25;
             colCustomerAddress.Name = "colCustomerAddress";
+            colCustomerAddress.OptionsColumn.AllowEdit = false;
+            colCustomerAddress.OptionsColumn.ReadOnly = true;
             colCustomerAddress.Visible = true;
             colCustomerAddress.VisibleIndex = 4;
             colCustomerAddress.Width = 94;

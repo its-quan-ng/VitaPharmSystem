@@ -10,6 +10,7 @@ namespace VitaPharm.Forms.HumanManage
         private PharmacyDbContext context;
         private BindingSource bsCustomers;
         private int currentCustomerId;
+        private bool isInAddMode = false;
 
         private class CustomerView
         {
@@ -67,6 +68,7 @@ namespace VitaPharm.Forms.HumanManage
 
         private void GridView_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
+            if (isInAddMode) return;
             if (bsCustomers.Current is CustomerView cv)
             {
                 currentCustomerId = cv.CustomerID;
@@ -85,7 +87,7 @@ namespace VitaPharm.Forms.HumanManage
             txtContact.Enabled = enabled;
             txtAddress.Enabled = enabled;
 
-            btnAdd.Enabled = true;
+            btnAdd.Enabled = !enabled;
             btnEdit.Enabled = !enabled;
             btnSave.Enabled = enabled;
             btnReload.Enabled = true;
@@ -118,25 +120,41 @@ namespace VitaPharm.Forms.HumanManage
 
             try
             {
-                using var saveCtx = new PharmacyDbContext();
-                var cust = saveCtx.Customers
-                    .FirstOrDefault(c => c.CustomerID == currentCustomerId);
-                if (cust == null)
+                using var saveContext = new PharmacyDbContext();
+                if (currentCustomerId == 0)
                 {
-                    XtraMessageBox.Show("Customer not found.", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    var c = new Customer
+                    {
+                        CustomerName = txtFullName.Text.Trim(),
+                        Sex = chkFemale.Checked ? "F" : "M",
+                        Contact = txtContact.Text.Trim(),
+                        CustomerAddress = txtAddress.Text.Trim()
+                    };
+                    saveContext.Customers.Add(c);
+                    saveContext.SaveChanges();
+                    XtraMessageBox.Show("Customer added successfully!", "Success",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else {
+                    var cus = saveContext.Customers
+                    .FirstOrDefault(c => c.CustomerID == currentCustomerId);
+                    if (cus == null)
+                    {
+                        XtraMessageBox.Show("Customer not found.", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
 
-                cust.CustomerName = txtFullName.Text.Trim();
-                cust.Sex = chkFemale.Checked ? "F" : "M";
-                cust.Contact = txtContact.Text.Trim();
-                cust.CustomerAddress = txtAddress.Text.Trim();
+                    cus.CustomerName = txtFullName.Text.Trim();
+                    cus.Sex = chkFemale.Checked ? "F" : "M";
+                    cus.Contact = txtContact.Text.Trim();
+                    cus.CustomerAddress = txtAddress.Text.Trim();
 
-                saveCtx.SaveChanges();
+                    saveContext.SaveChanges();
 
-                XtraMessageBox.Show("Customer updated successfully!", "Success",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    XtraMessageBox.Show("Customer updated successfully!", "Success",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
                 frmAllCustomers_Load(sender, e);
             }
@@ -201,6 +219,18 @@ namespace VitaPharm.Forms.HumanManage
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            isInAddMode = true;
+            currentCustomerId = 0;
+            txtFullName.Text = string.Empty;
+            chkFemale.Checked = false;
+            txtContact.Text = string.Empty;
+            txtAddress.Text = string.Empty;
+            ToggleControls(true);
+            txtFullName.Focus();
         }
     }
 }
