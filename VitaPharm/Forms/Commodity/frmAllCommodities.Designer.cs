@@ -45,7 +45,7 @@
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
             textEdit3 = new DevExpress.XtraEditors.TextEdit();
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            txtCommodityName = new DevExpress.XtraEditors.TextEdit();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
@@ -64,7 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)textEdit5.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtCommodityName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtIsTerminated.Properties).BeginInit();
@@ -162,7 +162,7 @@
             groupControl1.Controls.Add(labelControl3);
             groupControl1.Controls.Add(textEdit3);
             groupControl1.Controls.Add(labelControl2);
-            groupControl1.Controls.Add(textEdit1);
+            groupControl1.Controls.Add(txtCommodityName);
             groupControl1.Controls.Add(labelControl1);
             groupControl1.Dock = DockStyle.Top;
             groupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Light;
@@ -185,7 +185,7 @@
             // 
             comboBoxEdit1.Anchor = AnchorStyles.Top;
             comboBoxEdit1.EditValue = "";
-            comboBoxEdit1.Location = new Point(122, 100);
+            comboBoxEdit1.Location = new Point(137, 100);
             comboBoxEdit1.Name = "comboBoxEdit1";
             comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             comboBoxEdit1.Size = new Size(169, 22);
@@ -230,7 +230,7 @@
             // textEdit3
             // 
             textEdit3.Anchor = AnchorStyles.Top;
-            textEdit3.Location = new Point(122, 63);
+            textEdit3.Location = new Point(137, 63);
             textEdit3.Name = "textEdit3";
             textEdit3.Size = new Size(271, 22);
             textEdit3.TabIndex = 5;
@@ -244,23 +244,23 @@
             labelControl2.TabIndex = 4;
             labelControl2.Text = "Manufacturer:";
             // 
-            // textEdit1
+            // txtCommodityName
             // 
-            textEdit1.Anchor = AnchorStyles.Top;
-            textEdit1.EditValue = "";
-            textEdit1.Location = new Point(122, 28);
-            textEdit1.Name = "textEdit1";
-            textEdit1.Size = new Size(271, 22);
-            textEdit1.TabIndex = 1;
+            txtCommodityName.Anchor = AnchorStyles.Top;
+            txtCommodityName.EditValue = "";
+            txtCommodityName.Location = new Point(137, 28);
+            txtCommodityName.Name = "txtCommodityName";
+            txtCommodityName.Size = new Size(271, 22);
+            txtCommodityName.TabIndex = 1;
             // 
             // labelControl1
             // 
             labelControl1.Anchor = AnchorStyles.Top;
             labelControl1.Location = new Point(21, 31);
             labelControl1.Name = "labelControl1";
-            labelControl1.Size = new Size(42, 16);
+            labelControl1.Size = new Size(110, 16);
             labelControl1.TabIndex = 0;
-            labelControl1.Text = "Name: ";
+            labelControl1.Text = "Commodity Name: ";
             // 
             // panelControl1
             // 
@@ -381,7 +381,7 @@
             ((System.ComponentModel.ISupportInitialize)textEdit5.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtCommodityName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)txtIsTerminated.Properties).EndInit();
@@ -395,7 +395,7 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Columns.GridColumn colCommodityName;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtCommodityName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit textEdit3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
