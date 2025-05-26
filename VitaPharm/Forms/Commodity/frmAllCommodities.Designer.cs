@@ -194,7 +194,7 @@
             // textEdit5
             // 
             textEdit5.Anchor = AnchorStyles.Top;
-            textEdit5.Location = new Point(577, 60);
+            textEdit5.Location = new Point(577, 63);
             textEdit5.Name = "textEdit5";
             textEdit5.Size = new Size(156, 22);
             textEdit5.TabIndex = 9;
@@ -204,7 +204,7 @@
             labelControl4.Anchor = AnchorStyles.Top;
             labelControl4.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelControl4.Appearance.Options.UseFont = true;
-            labelControl4.Location = new Point(475, 63);
+            labelControl4.Location = new Point(475, 66);
             labelControl4.Name = "labelControl4";
             labelControl4.Size = new Size(75, 16);
             labelControl4.TabIndex = 8;
