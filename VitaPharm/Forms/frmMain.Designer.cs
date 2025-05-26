@@ -33,7 +33,7 @@
             btnProfile = new DevExpress.XtraBars.BarButtonItem();
             btnNewUser = new DevExpress.XtraBars.BarButtonItem();
             btnAllUsers = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            btnAllCustomers = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -57,7 +57,7 @@
             // 
             ribbonControl1.BackColor = Color.White;
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnProfile, btnNewUser, btnAllUsers, barButtonItem4, barButtonItem5, barButtonItem6, barButtonItem7, btnAllGoodsReceipt, barButtonItem9, barButtonItem10, barButtonItem11 });
+            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnProfile, btnNewUser, btnAllUsers, btnAllCustomers, barButtonItem5, barButtonItem6, barButtonItem7, btnAllGoodsReceipt, barButtonItem9, barButtonItem10, barButtonItem11 });
             ribbonControl1.Location = new Point(0, 0);
             ribbonControl1.MaxItemId = 12;
             ribbonControl1.Name = "ribbonControl1";
@@ -86,18 +86,19 @@
             // 
             btnAllUsers.Caption = "All Users";
             btnAllUsers.Id = 3;
-            btnAllUsers.ImageOptions.LargeImage = (Image)resources.GetObject("barButtonItem3.ImageOptions.LargeImage");
+            btnAllUsers.ImageOptions.LargeImage = (Image)resources.GetObject("btnAllUsers.ImageOptions.LargeImage");
             btnAllUsers.Name = "btnAllUsers";
             btnAllUsers.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             btnAllUsers.ItemClick += btnAllUsers_ItemClick;
             // 
-            // barButtonItem4
+            // btnAllCustomers
             // 
-            barButtonItem4.Caption = "Customer";
-            barButtonItem4.Id = 4;
-            barButtonItem4.ImageOptions.LargeImage = (Image)resources.GetObject("barButtonItem4.ImageOptions.LargeImage");
-            barButtonItem4.Name = "barButtonItem4";
-            barButtonItem4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            btnAllCustomers.Caption = "All Customers";
+            btnAllCustomers.Id = 4;
+            btnAllCustomers.ImageOptions.LargeImage = (Image)resources.GetObject("barButtonItem4.ImageOptions.LargeImage");
+            btnAllCustomers.Name = "btnAllCustomers";
+            btnAllCustomers.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            btnAllCustomers.ItemClick += btnAllCustomers_ItemClick;
             // 
             // barButtonItem5
             // 
@@ -167,7 +168,7 @@
             ribbonPageGroup1.ItemLinks.Add(btnProfile);
             ribbonPageGroup1.ItemLinks.Add(btnNewUser);
             ribbonPageGroup1.ItemLinks.Add(btnAllUsers);
-            ribbonPageGroup1.ItemLinks.Add(barButtonItem4);
+            ribbonPageGroup1.ItemLinks.Add(btnAllCustomers);
             ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPageGroup5
@@ -236,7 +237,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem btnNewUser;
         private DevExpress.XtraBars.BarButtonItem btnAllUsers;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem btnAllCustomers;
         private DevExpress.XtraBars.Ribbon.RibbonPage tabCommodity;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;

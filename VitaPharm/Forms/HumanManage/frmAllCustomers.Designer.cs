@@ -44,8 +44,8 @@
             btnEdit = new DevExpress.XtraEditors.SimpleButton();
             btnAdd = new DevExpress.XtraEditors.SimpleButton();
             panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            gridControl1 = new DevExpress.XtraGrid.GridControl();
-            gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            gridControl = new DevExpress.XtraGrid.GridControl();
+            gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             colID = new DevExpress.XtraGrid.Columns.GridColumn();
             colCustomerName = new DevExpress.XtraGrid.Columns.GridColumn();
             colSex = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,8 +63,8 @@
             panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)panelControl3).BeginInit();
             panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             SuspendLayout();
             // 
             // panelControl1
@@ -99,6 +99,7 @@
             // 
             // txtAddress
             // 
+            txtAddress.Anchor = AnchorStyles.Top;
             txtAddress.Location = new Point(91, 113);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(457, 22);
@@ -106,6 +107,7 @@
             // 
             // chkFemale
             // 
+            chkFemale.Anchor = AnchorStyles.Top;
             chkFemale.Location = new Point(420, 30);
             chkFemale.Name = "chkFemale";
             chkFemale.Properties.Caption = "Female";
@@ -114,6 +116,7 @@
             // 
             // txtFullName
             // 
+            txtFullName.Anchor = AnchorStyles.Top;
             txtFullName.Location = new Point(91, 31);
             txtFullName.Name = "txtFullName";
             txtFullName.Size = new Size(189, 22);
@@ -121,6 +124,7 @@
             // 
             // labelControl4
             // 
+            labelControl4.Anchor = AnchorStyles.Top;
             labelControl4.Location = new Point(22, 116);
             labelControl4.Name = "labelControl4";
             labelControl4.Size = new Size(51, 16);
@@ -129,6 +133,7 @@
             // 
             // labelControl3
             // 
+            labelControl3.Anchor = AnchorStyles.Top;
             labelControl3.Location = new Point(22, 75);
             labelControl3.Name = "labelControl3";
             labelControl3.Size = new Size(52, 16);
@@ -137,6 +142,7 @@
             // 
             // txtContact
             // 
+            txtContact.Anchor = AnchorStyles.Top;
             txtContact.Location = new Point(91, 72);
             txtContact.Name = "txtContact";
             txtContact.Size = new Size(189, 22);
@@ -144,6 +150,7 @@
             // 
             // labelControl2
             // 
+            labelControl2.Anchor = AnchorStyles.Top;
             labelControl2.Location = new Point(22, 34);
             labelControl2.Name = "labelControl2";
             labelControl2.Size = new Size(62, 16);
@@ -165,6 +172,7 @@
             // 
             // btnDelete
             // 
+            btnDelete.Anchor = AnchorStyles.Top;
             btnDelete.Appearance.BackColor = Color.FromArgb(195, 49, 49);
             btnDelete.Appearance.FontStyleDelta = FontStyle.Bold;
             btnDelete.Appearance.Options.UseBackColor = true;
@@ -177,6 +185,7 @@
             // 
             // btnReload
             // 
+            btnReload.Anchor = AnchorStyles.Top;
             btnReload.Appearance.FontStyleDelta = FontStyle.Bold;
             btnReload.Appearance.Options.UseFont = true;
             btnReload.Location = new Point(367, 18);
@@ -187,6 +196,7 @@
             // 
             // btnSave
             // 
+            btnSave.Anchor = AnchorStyles.Top;
             btnSave.Appearance.BackColor = Color.FromArgb(254, 145, 19);
             btnSave.Appearance.FontStyleDelta = FontStyle.Bold;
             btnSave.Appearance.Options.UseBackColor = true;
@@ -199,6 +209,7 @@
             // 
             // btnEdit
             // 
+            btnEdit.Anchor = AnchorStyles.Top;
             btnEdit.Appearance.BackColor = Color.FromArgb(29, 22, 80);
             btnEdit.Appearance.FontStyleDelta = FontStyle.Bold;
             btnEdit.Appearance.Options.UseBackColor = true;
@@ -211,6 +222,7 @@
             // 
             // btnAdd
             // 
+            btnAdd.Anchor = AnchorStyles.Top;
             btnAdd.Appearance.BackColor = Color.FromArgb(100, 165, 80);
             btnAdd.Appearance.FontStyleDelta = FontStyle.Bold;
             btnAdd.Appearance.Options.UseBackColor = true;
@@ -223,28 +235,28 @@
             // 
             // panelControl3
             // 
-            panelControl3.Controls.Add(gridControl1);
+            panelControl3.Controls.Add(gridControl);
             panelControl3.Dock = DockStyle.Fill;
             panelControl3.Location = new Point(0, 162);
             panelControl3.Name = "panelControl3";
             panelControl3.Size = new Size(623, 181);
             panelControl3.TabIndex = 2;
             // 
-            // gridControl1
+            // gridControl
             // 
-            gridControl1.Dock = DockStyle.Fill;
-            gridControl1.Location = new Point(2, 2);
-            gridControl1.MainView = gridView1;
-            gridControl1.Name = "gridControl1";
-            gridControl1.Size = new Size(619, 177);
-            gridControl1.TabIndex = 0;
-            gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
+            gridControl.Dock = DockStyle.Fill;
+            gridControl.Location = new Point(2, 2);
+            gridControl.MainView = gridView;
+            gridControl.Name = "gridControl";
+            gridControl.Size = new Size(619, 177);
+            gridControl.TabIndex = 0;
+            gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
-            // gridView1
+            // gridView
             // 
-            gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, colCustomerName, colSex, colContact, colCustomerAddress });
-            gridView1.GridControl = gridControl1;
-            gridView1.Name = "gridView1";
+            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, colCustomerName, colSex, colContact, colCustomerAddress });
+            gridView.GridControl = gridControl;
+            gridView.Name = "gridView";
             // 
             // colID
             // 
@@ -307,6 +319,7 @@
             Name = "frmAllCustomers";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "All Customers";
+            Load += frmAllCustomers_Load;
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)groupControl).EndInit();
@@ -320,8 +333,8 @@
             panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)panelControl3).EndInit();
             panelControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -338,8 +351,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn colCustomerName;
         private DevExpress.XtraGrid.Columns.GridColumn colSex;
