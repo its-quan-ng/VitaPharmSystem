@@ -49,7 +49,7 @@ namespace VitaPharm.Forms.Commodity
                                      }).AsEnumerable()
                                     .Select((x, idx) => new
                                     {
-                                        ID = idx + 1,                           
+                                        ID = idx + 1,
                                         x.CommodityName,
                                         x.Manufacturer,
                                         x.BaseUnit,
@@ -91,7 +91,26 @@ namespace VitaPharm.Forms.Commodity
             btnSave.Enabled = enable;
             btnCancel.Enabled = enable;
             btnEdit.Enabled = !enable;
-            btnReload.Enabled = !enable;
+            btnReload.Enabled = true;
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            frmAllCommodities_Load(sender, e);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            var result = XtraMessageBox.Show("Are you sure you want to cancel?", "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+                btnReload_Click(sender, e);
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            ToggleControls(true);
         }
     }
 }

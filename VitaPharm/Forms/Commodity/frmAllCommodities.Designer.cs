@@ -365,6 +365,7 @@
             btnCancel.Size = new Size(118, 36);
             btnCancel.TabIndex = 6;
             btnCancel.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnReload
             // 
@@ -377,6 +378,7 @@
             btnReload.Size = new Size(118, 36);
             btnReload.TabIndex = 5;
             btnReload.Text = "Reload";
+            btnReload.Click += btnReload_Click;
             // 
             // btnEdit
             // 
@@ -389,6 +391,7 @@
             btnEdit.Size = new Size(118, 36);
             btnEdit.TabIndex = 3;
             btnEdit.Text = "Edit";
+            btnEdit.Click += btnEdit_Click;
             // 
             // frmAllCommodities
             // 
