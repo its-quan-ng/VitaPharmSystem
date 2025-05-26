@@ -2,6 +2,7 @@
 using VitaPharm.Forms.HumanManage;
 using VitaPharm.Data;
 using VitaPharm.Forms.Receipt;
+using Microsoft.EntityFrameworkCore;
 
 namespace VitaPharm.Forms
 {

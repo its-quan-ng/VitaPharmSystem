@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using DevExpress.XtraEditors;
 using VitaPharm.Data;
+using Microsoft.EntityFrameworkCore; 
 
 namespace VitaPharm.Forms.Receipt
 {
@@ -48,9 +49,13 @@ namespace VitaPharm.Forms.Receipt
         {
             dateReceiptDate.DateTime = DateTime.Now;
             txtReceiptCode.Text = GenerateReceiptCode();
+            txtReceiptCode.Properties.ReadOnly = true;
 
-            var account = context.Accounts.FirstOrDefault(a => a.Username == currentUser);
-            if (account != null)
+            var account = context.Accounts
+                .Include(a => a.Employee)
+                .FirstOrDefault(a => a.Username == currentUser);
+
+            if (account != null && account.Employee != null)
             {
                 txtEmployee.Text = account.Employee.EmployeeName;
                 txtEmployee.Properties.ReadOnly = true;
