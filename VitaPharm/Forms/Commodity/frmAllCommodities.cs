@@ -8,14 +8,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
-namespace VitaPharm.Forms
+namespace VitaPharm.Forms.Commodity
 {
-    public partial class frmAllCommodities : DevExpress.XtraEditors.XtraForm
+    public partial class frmAllCommodities : XtraForm
     {
         public frmAllCommodities()
         {
             InitializeComponent();
+        }
+
+        private void frmAllCommodities_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadCommodities() 
+        {
+        
         }
     }
 }

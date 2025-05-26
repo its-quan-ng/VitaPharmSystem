@@ -1,4 +1,4 @@
-﻿namespace VitaPharm.Forms
+﻿namespace VitaPharm.Forms.Commodity
 {
     partial class frmAllCommodities
     {
@@ -393,6 +393,7 @@
             Name = "frmAllCommodities";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "All Commodities";
+            Load += frmAllCommodities_Load;
             ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
