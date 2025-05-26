@@ -182,6 +182,7 @@
             btnDelete.Size = new Size(102, 30);
             btnDelete.TabIndex = 4;
             btnDelete.Text = "Delete";
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnReload
             // 

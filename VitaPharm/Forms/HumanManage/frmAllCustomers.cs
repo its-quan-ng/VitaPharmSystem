@@ -13,8 +13,8 @@ namespace VitaPharm.Forms.HumanManage
 
         private class CustomerView
         {
-            public int ID { get; set; }              
-            public int CustomerID { get; set; }      
+            public int ID { get; set; }
+            public int CustomerID { get; set; }
             public string CustomerName { get; set; }
             public string Sex { get; set; }
             public string Contact { get; set; }
@@ -49,7 +49,7 @@ namespace VitaPharm.Forms.HumanManage
                     c.Contact,
                     c.CustomerAddress
                 })
-                .AsEnumerable() 
+                .AsEnumerable()
                 .Select((x, idx) => new CustomerView
                 {
                     ID = idx + 1,
@@ -144,6 +144,62 @@ namespace VitaPharm.Forms.HumanManage
             {
                 XtraMessageBox.Show($"Error saving data: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (currentCustomerId == 0)
+            {
+                XtraMessageBox.Show(
+                    "Please select a customer to delete.",
+                    "Delete Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            var confirm = XtraMessageBox.Show(
+                "Are you sure you want to delete this customer?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (confirm != DialogResult.Yes)
+                return;
+
+            try
+            {
+                using var delCtx = new PharmacyDbContext();
+                var cust = delCtx.Customers
+                                 .FirstOrDefault(c => c.CustomerID == currentCustomerId);
+                if (cust == null)
+                {
+                    XtraMessageBox.Show(
+                        "Customer not found in database.",
+                        "Delete Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
+                }
+
+                delCtx.Customers.Remove(cust);
+                delCtx.SaveChanges();
+
+                XtraMessageBox.Show(
+                    "Customer deleted successfully.",
+                    "Deleted",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                frmAllCustomers_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(
+                    $"Error deleting customer: {ex.Message}",
+                    "Delete Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
     }
