@@ -273,7 +273,7 @@
             colID.OptionsColumn.ReadOnly = true;
             colID.Visible = true;
             colID.VisibleIndex = 0;
-            colID.Width = 94;
+            colID.Width = 53;
             // 
             // colCustomerName
             // 
@@ -285,7 +285,7 @@
             colCustomerName.OptionsColumn.ReadOnly = true;
             colCustomerName.Visible = true;
             colCustomerName.VisibleIndex = 1;
-            colCustomerName.Width = 94;
+            colCustomerName.Width = 225;
             // 
             // colSex
             // 
@@ -297,7 +297,7 @@
             colSex.OptionsColumn.ReadOnly = true;
             colSex.Visible = true;
             colSex.VisibleIndex = 2;
-            colSex.Width = 94;
+            colSex.Width = 66;
             // 
             // colContact
             // 
@@ -309,7 +309,7 @@
             colContact.OptionsColumn.ReadOnly = true;
             colContact.Visible = true;
             colContact.VisibleIndex = 3;
-            colContact.Width = 94;
+            colContact.Width = 129;
             // 
             // colCustomerAddress
             // 
@@ -321,7 +321,7 @@
             colCustomerAddress.OptionsColumn.ReadOnly = true;
             colCustomerAddress.Visible = true;
             colCustomerAddress.VisibleIndex = 4;
-            colCustomerAddress.Width = 94;
+            colCustomerAddress.Width = 378;
             // 
             // frmAllCustomers
             // 
