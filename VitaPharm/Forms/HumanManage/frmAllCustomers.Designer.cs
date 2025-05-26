@@ -207,6 +207,7 @@
             btnSave.Size = new Size(102, 30);
             btnSave.TabIndex = 2;
             btnSave.Text = "Save";
+            btnSave.Click += btnSave_Click;
             // 
             // btnEdit
             // 

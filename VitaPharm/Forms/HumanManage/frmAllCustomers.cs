@@ -9,6 +9,18 @@ namespace VitaPharm.Forms.HumanManage
     {
         private PharmacyDbContext context;
         private BindingSource bsCustomers;
+        private int currentCustomerId;
+
+        private class CustomerView
+        {
+            public int ID { get; set; }              
+            public int CustomerID { get; set; }      
+            public string CustomerName { get; set; }
+            public string Sex { get; set; }
+            public string Contact { get; set; }
+            public string CustomerAddress { get; set; }
+        }
+
         public frmAllCustomers()
         {
             InitializeComponent();
@@ -27,35 +39,43 @@ namespace VitaPharm.Forms.HumanManage
         {
             context?.Dispose();
             context = new PharmacyDbContext();
-            var cus = context.Customers.Select(
-                c => new
+
+            var list = context.Customers
+                .Select(c => new
                 {
+                    c.CustomerID,
                     c.CustomerName,
-                    c.CustomerAddress,
-                    c.Contact,
                     c.Sex,
-                }).AsEnumerable()
-                .Select((item, index) => new
-                {
-                    ID = index + 1,
-                    item.CustomerName,
-                    item.Sex,
-                    item.Contact,
-                    item.CustomerAddress
+                    c.Contact,
+                    c.CustomerAddress
                 })
-                .ToList(); ;
-            gridControl.DataSource = cus.ToList();
+                .AsEnumerable() 
+                .Select((x, idx) => new CustomerView
+                {
+                    ID = idx + 1,
+                    CustomerID = x.CustomerID,
+                    CustomerName = x.CustomerName,
+                    Sex = x.Sex,
+                    Contact = x.Contact,
+                    CustomerAddress = x.CustomerAddress
+                })
+                .ToList();
+
+            bsCustomers.DataSource = list;
+            gridControl.RefreshDataSource();
         }
 
         private void GridView_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            var row = gridView.GetRow(e.FocusedRowHandle) as dynamic;
-            if (row == null) return;
+            if (bsCustomers.Current is CustomerView cv)
+            {
+                currentCustomerId = cv.CustomerID;
 
-            txtFullName.Text = row.CustomerName;
-            chkFemale.Checked = (row.Sex == "F");
-            txtContact.Text = row.Contact;
-            txtAddress.Text = row.CustomerAddress;
+                txtFullName.Text = cv.CustomerName;
+                chkFemale.Checked = (cv.Sex == "F");
+                txtContact.Text = cv.Contact;
+                txtAddress.Text = cv.CustomerAddress;
+            }
         }
 
         private void ToggleControls(bool enabled)
@@ -80,6 +100,51 @@ namespace VitaPharm.Forms.HumanManage
         private void btnReload_Click(object sender, EventArgs e)
         {
             frmAllCustomers_Load(sender, e);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtFullName.Text))
+            {
+                XtraMessageBox.Show("Full Name cannot be empty!", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtFullName.Focus();
+                return;
+            }
+
+            if (XtraMessageBox.Show("Save changes to this customer?", "Confirm",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
+
+            try
+            {
+                using var saveCtx = new PharmacyDbContext();
+                var cust = saveCtx.Customers
+                    .FirstOrDefault(c => c.CustomerID == currentCustomerId);
+                if (cust == null)
+                {
+                    XtraMessageBox.Show("Customer not found.", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                cust.CustomerName = txtFullName.Text.Trim();
+                cust.Sex = chkFemale.Checked ? "F" : "M";
+                cust.Contact = txtContact.Text.Trim();
+                cust.CustomerAddress = txtAddress.Text.Trim();
+
+                saveCtx.SaveChanges();
+
+                XtraMessageBox.Show("Customer updated successfully!", "Success",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                frmAllCustomers_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Error saving data: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
