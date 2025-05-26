@@ -111,7 +111,7 @@
             // 
             // txtBatchStatus
             // 
-            txtBatchStatus.Location = new Point(260, 215);
+            txtBatchStatus.Location = new Point(502, 158);
             txtBatchStatus.Name = "txtBatchStatus";
             txtBatchStatus.Properties.Appearance.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             txtBatchStatus.Properties.Appearance.ForeColor = Color.FromArgb(195, 49, 49);
@@ -130,7 +130,7 @@
             // 
             // txtPurchasePrice
             // 
-            txtPurchasePrice.Location = new Point(502, 159);
+            txtPurchasePrice.Location = new Point(155, 161);
             txtPurchasePrice.Name = "txtPurchasePrice";
             txtPurchasePrice.Size = new Size(156, 22);
             txtPurchasePrice.TabIndex = 7;
@@ -138,7 +138,7 @@
             // spinQuantity
             // 
             spinQuantity.EditValue = new decimal(new int[] { 1, 0, 0, 0 });
-            spinQuantity.Location = new Point(155, 161);
+            spinQuantity.Location = new Point(328, 218);
             spinQuantity.Name = "spinQuantity";
             spinQuantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             spinQuantity.Properties.MaxValue = new decimal(new int[] { 1000, 0, 0, 0 });
@@ -180,7 +180,7 @@
             labelControl7.Appearance.ForeColor = Color.FromArgb(16, 53, 113);
             labelControl7.Appearance.Options.UseFont = true;
             labelControl7.Appearance.Options.UseForeColor = true;
-            labelControl7.Location = new Point(314, 193);
+            labelControl7.Location = new Point(388, 164);
             labelControl7.Name = "labelControl7";
             labelControl7.Size = new Size(42, 16);
             labelControl7.TabIndex = 2;
@@ -190,7 +190,7 @@
             // 
             labelControl6.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             labelControl6.Appearance.Options.UseFont = true;
-            labelControl6.Location = new Point(387, 162);
+            labelControl6.Location = new Point(38, 164);
             labelControl6.Name = "labelControl6";
             labelControl6.Size = new Size(101, 16);
             labelControl6.TabIndex = 2;
@@ -200,7 +200,7 @@
             // 
             labelControl5.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             labelControl5.Appearance.Options.UseFont = true;
-            labelControl5.Location = new Point(40, 165);
+            labelControl5.Location = new Point(261, 222);
             labelControl5.Name = "labelControl5";
             labelControl5.Size = new Size(61, 16);
             labelControl5.TabIndex = 2;
@@ -258,6 +258,7 @@
             btnCancel.Size = new Size(109, 31);
             btnCancel.TabIndex = 8;
             btnCancel.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnAdd
             // 
@@ -271,6 +272,7 @@
             btnAdd.Size = new Size(109, 31);
             btnAdd.TabIndex = 8;
             btnAdd.Text = "Add";
+            btnAdd.Click += btnAdd_Click;
             // 
             // panelControl1
             // 
@@ -292,6 +294,7 @@
             Name = "frmNewBatch";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Add Batch";
+            Load += frmNewBatch_Load;
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
