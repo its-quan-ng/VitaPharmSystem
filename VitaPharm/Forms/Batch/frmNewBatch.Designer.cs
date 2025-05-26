@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            labelControl9 = new DevExpress.XtraEditors.LabelControl();
             cboBatchCode = new DevExpress.XtraEditors.LookUpEdit();
             cboCommodity = new DevExpress.XtraEditors.LookUpEdit();
             lblNewBatchCode = new DevExpress.XtraEditors.LabelControl();
@@ -49,7 +50,6 @@
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnAdd = new DevExpress.XtraEditors.SimpleButton();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            labelControl9 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).BeginInit();
@@ -93,6 +93,18 @@
             groupControl1.Size = new Size(784, 249);
             groupControl1.TabIndex = 3;
             groupControl1.Text = "Add Batch";
+            // 
+            // labelControl9
+            // 
+            labelControl9.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl9.Appearance.ForeColor = Color.FromArgb(0, 192, 0);
+            labelControl9.Appearance.Options.UseFont = true;
+            labelControl9.Appearance.Options.UseForeColor = true;
+            labelControl9.Location = new Point(353, 162);
+            labelControl9.Name = "labelControl9";
+            labelControl9.Size = new Size(26, 16);
+            labelControl9.TabIndex = 0;
+            labelControl9.Text = "VND";
             // 
             // cboBatchCode
             // 
@@ -164,6 +176,7 @@
             txtPurchasePrice.Properties.UseMaskAsDisplayFormat = true;
             txtPurchasePrice.Size = new Size(156, 22);
             txtPurchasePrice.TabIndex = 6;
+            txtPurchasePrice.EditValueChanged += txtPurchasePrice_EditValueChanged;
             // 
             // spinQuantity
             // 
@@ -191,6 +204,7 @@
             dateExp.Properties.MaskSettings.Set("mask", "dd/MM/yyyy");
             dateExp.Size = new Size(156, 22);
             dateExp.TabIndex = 5;
+            dateExp.EditValueChanged += dateExp_EditValueChanged;
             // 
             // dateMfg
             // 
@@ -207,6 +221,7 @@
             dateMfg.Properties.UseMaskAsDisplayFormat = true;
             dateMfg.Size = new Size(156, 22);
             dateMfg.TabIndex = 4;
+            dateMfg.EditValueChanged += dateMfg_EditValueChanged;
             // 
             // labelControl7
             // 
@@ -315,18 +330,6 @@
             panelControl1.Name = "panelControl1";
             panelControl1.Size = new Size(784, 67);
             panelControl1.TabIndex = 9;
-            // 
-            // labelControl9
-            // 
-            labelControl9.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelControl9.Appearance.ForeColor = Color.FromArgb(0, 192, 0);
-            labelControl9.Appearance.Options.UseFont = true;
-            labelControl9.Appearance.Options.UseForeColor = true;
-            labelControl9.Location = new Point(353, 162);
-            labelControl9.Name = "labelControl9";
-            labelControl9.Size = new Size(26, 16);
-            labelControl9.TabIndex = 0;
-            labelControl9.Text = "VND";
             // 
             // frmNewBatch
             // 

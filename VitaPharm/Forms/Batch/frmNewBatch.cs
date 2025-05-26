@@ -13,6 +13,8 @@ namespace VitaPharm.Forms
             txtBatchStatus.Properties.ReadOnly = true;
             txtQtyAvailable.Properties.ReadOnly = true;
             lblNewBatchCode.Visible = false;
+            cboCommodity.Properties.NullText = "";
+            cboBatchCode.Properties.NullText = "";
         }
 
         private void frmNewBatch_Load(object sender, EventArgs e)
@@ -64,7 +66,11 @@ namespace VitaPharm.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            var result = XtraMessageBox.Show("Bạn có chắc muốn hủy và làm mới dữ liệu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                ResetForm();
+            }
         }
 
         private void LoadCommodities()
@@ -89,6 +95,21 @@ namespace VitaPharm.Forms
                 cboBatchCode.Properties.ValueMember = "BatchID";
                 cboBatchCode.EditValue = null;
             }
+            if (cboBatchCode.EditValue == null && cboCommodity.EditValue != null)
+            {
+                string commodityName = (context.Commodities.Find((int)cboCommodity.EditValue)).CommodityName;
+                lblNewBatchCode.Text = GenerateNewBatchCode(commodityName);
+                lblNewBatchCode.Visible = true;
+            }
+        }
+
+        private void ToggleControl(bool enabled)
+        {
+            dateMfg.Enabled = enabled;
+            dateExp.Enabled = enabled;
+            txtPurchasePrice.Enabled = enabled;
+            spinQuantity.Enabled = enabled;
+            btnCancel.Enabled = !enabled;
         }
 
         private void cboBatchCode_EditValueChanged(object sender, EventArgs e)
@@ -104,6 +125,7 @@ namespace VitaPharm.Forms
                     txtPurchasePrice.Text = batch.PurchasePrice.ToString();
                     txtBatchStatus.Text = batch.BatchStatus;
                     txtQtyAvailable.Text = batch.QtyAvailable.ToString();
+                    lblNewBatchCode.Visible = false;
                 }
             }
             else
@@ -113,6 +135,13 @@ namespace VitaPharm.Forms
                 txtPurchasePrice.Text = "";
                 txtBatchStatus.Text = "In Stock";
                 txtQtyAvailable.Text = "";
+                if (cboCommodity.EditValue != null)
+                {
+                    string commodityName = (context.Commodities.Find((int)cboCommodity.EditValue)).CommodityName;
+                    lblNewBatchCode.Text = GenerateNewBatchCode(commodityName);
+                    lblNewBatchCode.Visible = true;
+                }
+                cboBatchCode.Enabled = true;
             }
         }
 
@@ -130,5 +159,43 @@ namespace VitaPharm.Forms
             return $"{prefix}-{namePart}-{datePart}-{countPart}";
         }
 
+        private void ResetForm()
+        {
+            cboCommodity.EditValue = null;
+            cboBatchCode.Properties.DataSource = null;
+            cboBatchCode.EditValue = null;
+            dateMfg.EditValue = null;
+            dateExp.EditValue = null;
+            txtPurchasePrice.Text = "";
+            txtBatchStatus.Text = "";
+            txtQtyAvailable.Text = "";
+            spinQuantity.Value = 1;
+            lblNewBatchCode.Visible = false;
+            cboBatchCode.Enabled = true;
+        }
+
+        private void dateMfg_EditValueChanged(object sender, EventArgs e)
+        {
+            ShowNewBatchCodeAndDisableBatchCode();
+        }
+        private void dateExp_EditValueChanged(object sender, EventArgs e)
+        {
+            ShowNewBatchCodeAndDisableBatchCode();
+        }
+        private void txtPurchasePrice_EditValueChanged(object sender, EventArgs e)
+        {
+            ShowNewBatchCodeAndDisableBatchCode();
+        }
+
+        private void ShowNewBatchCodeAndDisableBatchCode()
+        {
+            if (cboCommodity.EditValue != null)
+            {
+                string commodityName = (context.Commodities.Find((int)cboCommodity.EditValue)).CommodityName;
+                lblNewBatchCode.Text = GenerateNewBatchCode(commodityName);
+                lblNewBatchCode.Visible = true;
+                cboBatchCode.Enabled = false;
+            }
+        }
     }
 }
