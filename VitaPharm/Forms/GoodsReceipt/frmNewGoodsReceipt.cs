@@ -11,11 +11,12 @@ using DevExpress.XtraEditors;
 
 namespace VitaPharm.Forms
 {
-	public partial class frmNewGoodsReceipt: DevExpress.XtraEditors.XtraForm
-	{
+    public partial class frmNewGoodsReceipt : DevExpress.XtraEditors.XtraForm
+    {
         public frmNewGoodsReceipt()
-		{
+        {
             InitializeComponent();
-		}
-	}
+        }
+
+    }
 }
