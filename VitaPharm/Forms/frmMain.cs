@@ -1,17 +1,21 @@
 ﻿using DevExpress.XtraEditors;
 using VitaPharm.Forms.HumanManage;
 using VitaPharm.Data;
+using VitaPharm.Forms.Receipt;
 
 namespace VitaPharm.Forms
 {
     public partial class frmMain : XtraForm
     {
+        #region Global variable
         private readonly Account currentAccount;
         private readonly string currentRole;
         private frmProfile? profileForm = null;
         private frmNewUser? newUserForm = null;
         private frmAllGoodsReceipt? allGoodsReceiptForm = null;
         private frmAllUsers? allUsersForm = null;
+        private frmAllCustomers? allCustomersForm = null;
+        #endregion
 
         internal frmMain(Account account)
         {
@@ -36,6 +40,7 @@ namespace VitaPharm.Forms
             btnNewUser.Enabled = isAdmin;
             btnAllUsers.Enabled = isAdmin;
             btnAllGoodsReceipt.Enabled = true;
+            btnAllCustomers.Enabled = true;
         }
 
         private void OpenProfile()
@@ -105,6 +110,20 @@ namespace VitaPharm.Forms
             allUsersForm.Show();
             allUsersForm.BringToFront();
         }
+
+        private void OpenAllCustomers()
+        {
+            foreach (var f in this.MdiChildren) f.Close();
+            if (allCustomersForm == null || allCustomersForm.IsDisposed)
+            {
+                allCustomersForm = new frmAllCustomers()
+                {
+                    MdiParent = this
+                };
+            }
+            allCustomersForm.Show();
+            allCustomersForm.BringToFront();
+        }
         #endregion
 
         private void btnProfile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -125,6 +144,40 @@ namespace VitaPharm.Forms
         private void btnAllUsers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenAllUsers();
+        }
+
+        private void btnAllCustomers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenAllCustomers();
+        }
+
+        private void btnSignOut_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var result = XtraMessageBox.Show("Are you sure you want to sign out?", "Confirmation",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result != DialogResult.Yes)
+                return;
+
+            foreach (var child in this.MdiChildren)
+                child.Close();
+
+            this.Hide();
+
+            using (var signInForm = new frmSignIn())
+            {
+                var dialogResult = signInForm.ShowDialog();
+                /*if (dialogResult == DialogResult.OK &&
+                    !string.IsNullOrEmpty(signInForm.CurrentUser.Username))
+                {
+                    var newMain = new frmMain(signInForm.CurrentUser);
+                    newMain.Show();
+                }
+                else
+                {
+                    Application.Exit();
+                }*/
+            }
+            this.Close();
         }
     }
 }

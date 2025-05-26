@@ -2,9 +2,9 @@
 using DevExpress.XtraEditors;
 using VitaPharm.Data;
 
-namespace VitaPharm.Forms
+namespace VitaPharm.Forms.Receipt
 {
-    public partial class frmAllGoodsReceipt : DevExpress.XtraEditors.XtraForm
+    public partial class frmAllGoodsReceipt : XtraForm
     {
         private PharmacyDbContext context = new PharmacyDbContext();
 

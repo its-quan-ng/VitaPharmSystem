@@ -2,9 +2,9 @@
 using VitaPharm.Data;
 using DevExpress.XtraEditors;
 
-namespace VitaPharm.Forms
+namespace VitaPharm.Forms.Receipt
 {
-    public partial class frmNewBatch : DevExpress.XtraEditors.XtraForm
+    public partial class frmNewBatch : XtraForm
     {
         private PharmacyDbContext context = new PharmacyDbContext();
         public frmNewBatch()
@@ -101,15 +101,6 @@ namespace VitaPharm.Forms
                 lblNewBatchCode.Text = GenerateNewBatchCode(commodityName);
                 lblNewBatchCode.Visible = true;
             }
-        }
-
-        private void ToggleControl(bool enabled)
-        {
-            dateMfg.Enabled = enabled;
-            dateExp.Enabled = enabled;
-            txtPurchasePrice.Enabled = enabled;
-            spinQuantity.Enabled = enabled;
-            btnCancel.Enabled = !enabled;
         }
 
         private void cboBatchCode_EditValueChanged(object sender, EventArgs e)
