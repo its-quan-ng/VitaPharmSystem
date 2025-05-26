@@ -172,6 +172,7 @@
             Controls.Add(txtUsername);
             Controls.Add(txtPassword);
             FormBorderStyle = FormBorderStyle.None;
+            IconOptions.Image = Properties.Resources.vitapharm_transparent;
             Name = "frmSignIn";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sign In";
