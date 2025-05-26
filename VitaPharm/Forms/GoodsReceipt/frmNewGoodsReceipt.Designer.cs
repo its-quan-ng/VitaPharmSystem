@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewGoodsReceipt));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             grpDetails = new DevExpress.XtraEditors.GroupControl();
@@ -126,7 +126,7 @@
             grpDetails.Location = new Point(2, 140);
             grpDetails.Name = "grpDetails";
             grpDetails.Size = new Size(909, 225);
-            grpDetails.TabIndex = 1;
+            grpDetails.TabIndex = 0;
             grpDetails.Text = "Goods Receipt Details";
             // 
             // gridControl
@@ -237,9 +237,9 @@
             repoBtnDelete.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             repoBtnDelete.Appearance.Options.UseBackColor = true;
             repoBtnDelete.AutoHeight = false;
-            editorButtonImageOptions1.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("editorButtonImageOptions1.SvgImage");
-            editorButtonImageOptions1.SvgImageSize = new Size(16, 16);
-            repoBtnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
+            editorButtonImageOptions2.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("editorButtonImageOptions2.SvgImage");
+            editorButtonImageOptions2.SvgImageSize = new Size(16, 16);
+            repoBtnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
             repoBtnDelete.Name = "repoBtnDelete";
             repoBtnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -250,7 +250,7 @@
             panelControl2.Location = new Point(2, 28);
             panelControl2.Name = "panelControl2";
             panelControl2.Size = new Size(905, 39);
-            panelControl2.TabIndex = 2;
+            panelControl2.TabIndex = 1;
             // 
             // btnAddBatch
             // 
@@ -267,7 +267,7 @@
             btnAddBatch.Location = new Point(777, 5);
             btnAddBatch.Name = "btnAddBatch";
             btnAddBatch.Size = new Size(99, 29);
-            btnAddBatch.TabIndex = 1;
+            btnAddBatch.TabIndex = 0;
             btnAddBatch.Text = "Add Batch";
             // 
             // grpInfo
@@ -301,7 +301,7 @@
             txtEmployee.Location = new Point(684, 30);
             txtEmployee.Name = "txtEmployee";
             txtEmployee.Size = new Size(185, 22);
-            txtEmployee.TabIndex = 4;
+            txtEmployee.TabIndex = 3;
             // 
             // txtReceiptCode
             // 
@@ -315,7 +315,7 @@
             txtSupplier.Location = new Point(126, 66);
             txtSupplier.Name = "txtSupplier";
             txtSupplier.Size = new Size(285, 22);
-            txtSupplier.TabIndex = 3;
+            txtSupplier.TabIndex = 4;
             // 
             // dateReceiptDate
             // 
@@ -402,7 +402,7 @@
             simpleButton1.Location = new Point(411, 90);
             simpleButton1.Name = "simpleButton1";
             simpleButton1.Size = new Size(97, 29);
-            simpleButton1.TabIndex = 3;
+            simpleButton1.TabIndex = 2;
             simpleButton1.Text = "Reset";
             // 
             // labelControl6
@@ -425,7 +425,7 @@
             btnCancel.Location = new Point(514, 90);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(97, 29);
-            btnCancel.TabIndex = 1;
+            btnCancel.TabIndex = 3;
             btnCancel.Text = "Cancel";
             // 
             // btnAdd
@@ -440,7 +440,7 @@
             btnAdd.Location = new Point(308, 90);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(97, 29);
-            btnAdd.TabIndex = 0;
+            btnAdd.TabIndex = 1;
             btnAdd.Text = "Add";
             // 
             // labelControl8
