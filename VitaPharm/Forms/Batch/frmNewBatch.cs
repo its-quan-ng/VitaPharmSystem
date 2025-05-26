@@ -66,7 +66,7 @@ namespace VitaPharm.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            var result = XtraMessageBox.Show("Bạn có chắc muốn hủy và làm mới dữ liệu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var result = XtraMessageBox.Show("Do you want to cancel and reset the form?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 ResetForm();

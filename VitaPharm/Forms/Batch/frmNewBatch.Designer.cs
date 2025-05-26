@@ -170,6 +170,8 @@
             // 
             txtPurchasePrice.Location = new Point(155, 159);
             txtPurchasePrice.Name = "txtPurchasePrice";
+            txtPurchasePrice.Properties.Appearance.Options.UseTextOptions = true;
+            txtPurchasePrice.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             txtPurchasePrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             txtPurchasePrice.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             txtPurchasePrice.Properties.MaskSettings.Set("mask", "N0");
