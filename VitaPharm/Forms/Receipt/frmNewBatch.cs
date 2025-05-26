@@ -2,6 +2,8 @@
 using VitaPharm.Data;
 using DevExpress.XtraEditors;
 using System.ComponentModel;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace VitaPharm.Forms.Receipt
 {
@@ -11,6 +13,7 @@ namespace VitaPharm.Forms.Receipt
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public BatchDto ResultBatch { get; private set; }
+        private List<BatchDto> tempBatchList = new List<BatchDto>();
 
         public frmNewBatch()
         {
@@ -52,7 +55,7 @@ namespace VitaPharm.Forms.Receipt
                 MfgDate = dateMfg.DateTime,
                 ExpDate = dateExp.DateTime,
                 PurchasePrice = decimal.Parse(txtPurchasePrice.Text),
-                Qty = (int)txtQuantity.Value
+                Qty = int.TryParse(txtQuantity.Text, out var qty) ? qty : 0
             };
 
             if (cboBatchCode.EditValue != null)
@@ -69,7 +72,7 @@ namespace VitaPharm.Forms.Receipt
             }
 
             DialogResult = DialogResult.OK;
-            frmNewBatch_Load(sender, e);
+            ResetForm();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -92,12 +95,21 @@ namespace VitaPharm.Forms.Receipt
             {
                 int commodityId = (int)cboCommodity.EditValue;
                 var batches = context.Batches
-                    .Where(b => b.Commodity.CommodityID == commodityId && b.QtyAvailable > 0)
+                    .Where(b => b.Commodity.CommodityID == commodityId && b.QtyAvailable > 0 && b.ExpDate > DateTime.Now)
                     .ToList();
                 cboBatchCode.Properties.DataSource = batches;
                 cboBatchCode.Properties.DisplayMember = "BatchCode";
                 cboBatchCode.Properties.ValueMember = "BatchID";
                 cboBatchCode.EditValue = null;
+
+                if (batches.Count == 0)
+                {
+                    cboBatchCode.Properties.NullText = "No batch available!";
+                }
+                else
+                {
+                    cboBatchCode.Properties.NullText = "";
+                }
             }
             if (cboBatchCode.EditValue == null && cboCommodity.EditValue != null)
             {
@@ -148,8 +160,10 @@ namespace VitaPharm.Forms.Receipt
                 .Select(c => c == ' ' ? '-' : c)
                 .ToArray());
             string datePart = DateTime.Now.ToString("ddMMyy");
-            int count = context.Batches
-                .Count(b => b.MfgDate.Date == DateTime.Now.Date && b.Commodity.CommodityName == commodityName) + 1;
+            int countDb = context.Batches
+                .Count(b => b.MfgDate.Date == DateTime.Now.Date && b.Commodity.CommodityName == commodityName);
+            int countTemp = tempBatchList.Count(b => b.MfgDate.Date == DateTime.Now.Date && b.CommodityName == commodityName);
+            int count = countDb + countTemp + 1;
             string countPart = count.ToString("D2");
             return $"{prefix}-{namePart}-{datePart}-{countPart}";
         }
@@ -164,7 +178,7 @@ namespace VitaPharm.Forms.Receipt
             txtPurchasePrice.Text = "";
             txtBatchStatus.Text = "";
             txtQtyAvailable.Text = "";
-            txtQuantity.Value = 1;
+            txtQuantity.Text = "1";
             lblNewBatchCode.Visible = false;
             cboBatchCode.Enabled = true;
         }
