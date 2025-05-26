@@ -18,9 +18,5 @@ namespace VitaPharm.Forms
             InitializeComponent();
         }
 
-        private void groupControl1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
