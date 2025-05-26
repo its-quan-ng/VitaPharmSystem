@@ -102,16 +102,11 @@ namespace VitaPharm.Forms
 
         private void LoginSuccess(Account account)
         {
-            XtraMessageBox.Show(
-                "Login successful!",
-                "Success",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-
-            this.Hide();
-            var mainForm = new frmMain(account);
-            mainForm.FormClosed += (s, args) => this.Close();
-            mainForm.Show();
+            CurrentUser.Username = account.Username;
+            CurrentUser.Role = account.UserRole;
+            CurrentUser.EmployeeID = account.Employee.EmployeeID;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
         #endregion
 
@@ -140,7 +135,10 @@ namespace VitaPharm.Forms
                 MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
-                Application.Exit();
+            {
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
         }
 
         private void chkShowPassword_CheckedChanged(object sender, EventArgs e)

@@ -8,33 +8,76 @@ namespace VitaPharm.Forms
     public partial class frmMain : XtraForm
     {
         #region Global variable
-        private readonly Account currentAccount;
-        private readonly string currentRole;
         private frmProfile? profileForm = null;
         private frmNewUser? newUserForm = null;
         private frmAllGoodsReceipt? allGoodsReceiptForm = null;
         private frmAllUsers? allUsersForm = null;
         private frmAllCustomers? allCustomersForm = null;
+        private frmSignIn? signInForm = null;
+        private bool shouldClose = false;
         #endregion
 
-        internal frmMain(Account account)
+        public frmMain()
         {
             InitializeComponent();
-            this.currentAccount = account;
-            this.currentRole = account.UserRole ?? "";
             this.IsMdiContainer = true;
-            ConfigureBasedOnRole();
-            OpenProfile();
-            CurrentUser.Username = account.Username;
-            CurrentUser.Role = account.UserRole;
-            CurrentUser.EmployeeID = account.Employee.EmployeeID;
+
+            using (var signIn = new frmSignIn())
+            {
+                if (signIn.ShowDialog() != DialogResult.OK)
+                {
+                    shouldClose = true;
+                }
+                else
+                {
+                    XtraMessageBox.Show(
+                        "Login successful!",
+                        "Success",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    ConfigureBasedOnRole();
+                    OpenProfile();
+                }
+            }
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            if (shouldClose)
+            {
+                this.Close();
+            }
+        }
+
+        private void SignOut()
+        {
+            CurrentUser.Username = null;
+            CurrentUser.Role = null;
+            CurrentUser.EmployeeID = 0;
+            foreach (var f in this.MdiChildren) f.Close();
+
+            this.Hide();
+            using (var signIn = new frmSignIn())
+            {
+                if (signIn.ShowDialog() == DialogResult.OK)
+                {
+                    this.Show();
+                    ConfigureBasedOnRole();
+                    OpenProfile();
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
         }
 
         #region ConfigureBasedOnRole
         private void ConfigureBasedOnRole()
         {
-            bool isAdmin = currentRole.Equals("Admin", StringComparison.OrdinalIgnoreCase);
-            bool isUser = currentRole.Equals("User", StringComparison.OrdinalIgnoreCase);
+            bool isAdmin = CurrentUser.Role.Equals("Admin", StringComparison.OrdinalIgnoreCase);
+            bool isUser = CurrentUser.Role.Equals("User", StringComparison.OrdinalIgnoreCase);
 
             btnProfile.Enabled = true;
             btnNewUser.Enabled = isAdmin;
@@ -46,7 +89,7 @@ namespace VitaPharm.Forms
         private void OpenProfile()
         {
             foreach (var f in this.MdiChildren) f.Close();
-            var profileForm = new frmProfile(currentAccount)
+            profileForm = new frmProfile(CurrentUser.EmployeeID)
             {
                 MdiParent = this
             };
@@ -55,7 +98,7 @@ namespace VitaPharm.Forms
 
         private void OpenNewUser()
         {
-            if (!currentRole.Equals("Admin", StringComparison.OrdinalIgnoreCase))
+            if (!CurrentUser.Role.Equals("Admin", StringComparison.OrdinalIgnoreCase))
             {
                 XtraMessageBox.Show("You do not have permission to access this feature!", "Notification",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -91,7 +134,7 @@ namespace VitaPharm.Forms
 
         private void OpenAllUsers()
         {
-            if (!currentRole.Equals("Admin", StringComparison.OrdinalIgnoreCase))
+            if (!CurrentUser.Role.Equals("Admin", StringComparison.OrdinalIgnoreCase))
             {
                 XtraMessageBox.Show("You do not have permission to access this feature!", "Notification",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -155,29 +198,10 @@ namespace VitaPharm.Forms
         {
             var result = XtraMessageBox.Show("Are you sure you want to sign out?", "Confirmation",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result != DialogResult.Yes)
-                return;
-
-            foreach (var child in this.MdiChildren)
-                child.Close();
-
-            this.Hide();
-
-            using (var signInForm = new frmSignIn())
+            if (result == DialogResult.Yes)
             {
-                var dialogResult = signInForm.ShowDialog();
-                /*if (dialogResult == DialogResult.OK &&
-                    !string.IsNullOrEmpty(signInForm.CurrentUser.Username))
-                {
-                    var newMain = new frmMain(signInForm.CurrentUser);
-                    newMain.Show();
-                }
-                else
-                {
-                    Application.Exit();
-                }*/
+                SignOut();
             }
-            this.Close();
         }
     }
 }

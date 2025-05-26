@@ -89,6 +89,7 @@
             txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '●';
+            txtPassword.PlaceholderText = "Password";
             txtPassword.Size = new Size(397, 43);
             txtPassword.TabIndex = 10;
             txtPassword.KeyPress += txtPassword_KeyPress;
@@ -139,13 +140,14 @@
             txtUsername.Location = new Point(90, 145);
             txtUsername.Multiline = true;
             txtUsername.Name = "txtUsername";
+            txtUsername.PlaceholderText = "Username";
             txtUsername.Size = new Size(396, 39);
             txtUsername.TabIndex = 9;
             txtUsername.KeyPress += txtUsername_KeyPress;
             // 
             // chkShowPassword
             // 
-            chkShowPassword.Location = new Point(344, 258);
+            chkShowPassword.Location = new Point(344, 266);
             chkShowPassword.Name = "chkShowPassword";
             chkShowPassword.Properties.Appearance.Font = new Font("Inter Semi Bold", 9F, FontStyle.Bold | FontStyle.Italic);
             chkShowPassword.Properties.Appearance.Options.UseFont = true;
