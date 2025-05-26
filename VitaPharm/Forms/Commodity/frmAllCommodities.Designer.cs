@@ -38,12 +38,11 @@
             gridControl1 = new DevExpress.XtraGrid.GridControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            cboCategoryName = new DevExpress.XtraEditors.ComboBoxEdit();
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            txtBaseUnit = new DevExpress.XtraEditors.TextEdit();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            txtManufacturer = new DevExpress.XtraEditors.TextEdit();
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             txtCommodityName = new DevExpress.XtraEditors.TextEdit();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -56,18 +55,20 @@
             colCategoryName = new DevExpress.XtraGrid.Columns.GridColumn();
             Status = new DevExpress.XtraEditors.LabelControl();
             txtIsTerminated = new DevExpress.XtraEditors.TextEdit();
+            labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            txtSellingPrice = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)comboBoxEdit1.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit5.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cboCategoryName.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtBaseUnit.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtManufacturer.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtCommodityName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtIsTerminated.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtSellingPrice.Properties).BeginInit();
             SuspendLayout();
             // 
             // gridView1
@@ -152,15 +153,16 @@
             groupControl1.AppearanceCaption.ForeColor = Color.FromArgb(16, 53, 113);
             groupControl1.AppearanceCaption.Options.UseFont = true;
             groupControl1.AppearanceCaption.Options.UseForeColor = true;
+            groupControl1.Controls.Add(labelControl9);
+            groupControl1.Controls.Add(txtSellingPrice);
             groupControl1.Controls.Add(txtIsTerminated);
             groupControl1.Controls.Add(Status);
             groupControl1.Controls.Add(labelControl5);
-            groupControl1.Controls.Add(comboBoxEdit1);
-            groupControl1.Controls.Add(textEdit5);
+            groupControl1.Controls.Add(cboCategoryName);
             groupControl1.Controls.Add(labelControl4);
-            groupControl1.Controls.Add(textEdit4);
+            groupControl1.Controls.Add(txtBaseUnit);
             groupControl1.Controls.Add(labelControl3);
-            groupControl1.Controls.Add(textEdit3);
+            groupControl1.Controls.Add(txtManufacturer);
             groupControl1.Controls.Add(labelControl2);
             groupControl1.Controls.Add(txtCommodityName);
             groupControl1.Controls.Add(labelControl1);
@@ -178,26 +180,18 @@
             labelControl5.Location = new Point(20, 103);
             labelControl5.Name = "labelControl5";
             labelControl5.Size = new Size(33, 16);
-            labelControl5.TabIndex = 11;
+            labelControl5.TabIndex = 0;
             labelControl5.Text = "Type:";
             // 
-            // comboBoxEdit1
+            // cboCategoryName
             // 
-            comboBoxEdit1.Anchor = AnchorStyles.Top;
-            comboBoxEdit1.EditValue = "";
-            comboBoxEdit1.Location = new Point(137, 100);
-            comboBoxEdit1.Name = "comboBoxEdit1";
-            comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            comboBoxEdit1.Size = new Size(169, 22);
-            comboBoxEdit1.TabIndex = 10;
-            // 
-            // textEdit5
-            // 
-            textEdit5.Anchor = AnchorStyles.Top;
-            textEdit5.Location = new Point(577, 63);
-            textEdit5.Name = "textEdit5";
-            textEdit5.Size = new Size(156, 22);
-            textEdit5.TabIndex = 9;
+            cboCategoryName.Anchor = AnchorStyles.Top;
+            cboCategoryName.EditValue = "";
+            cboCategoryName.Location = new Point(137, 100);
+            cboCategoryName.Name = "cboCategoryName";
+            cboCategoryName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            cboCategoryName.Size = new Size(169, 22);
+            cboCategoryName.TabIndex = 5;
             // 
             // labelControl4
             // 
@@ -207,16 +201,16 @@
             labelControl4.Location = new Point(475, 66);
             labelControl4.Name = "labelControl4";
             labelControl4.Size = new Size(75, 16);
-            labelControl4.TabIndex = 8;
+            labelControl4.TabIndex = 0;
             labelControl4.Text = "Selling Price:";
             // 
-            // textEdit4
+            // txtBaseUnit
             // 
-            textEdit4.Anchor = AnchorStyles.Top;
-            textEdit4.Location = new Point(577, 25);
-            textEdit4.Name = "textEdit4";
-            textEdit4.Size = new Size(157, 22);
-            textEdit4.TabIndex = 7;
+            txtBaseUnit.Anchor = AnchorStyles.Top;
+            txtBaseUnit.Location = new Point(577, 25);
+            txtBaseUnit.Name = "txtBaseUnit";
+            txtBaseUnit.Size = new Size(157, 22);
+            txtBaseUnit.TabIndex = 2;
             // 
             // labelControl3
             // 
@@ -224,16 +218,16 @@
             labelControl3.Location = new Point(475, 28);
             labelControl3.Name = "labelControl3";
             labelControl3.Size = new Size(58, 16);
-            labelControl3.TabIndex = 6;
+            labelControl3.TabIndex = 0;
             labelControl3.Text = "Base Unit:";
             // 
-            // textEdit3
+            // txtManufacturer
             // 
-            textEdit3.Anchor = AnchorStyles.Top;
-            textEdit3.Location = new Point(137, 63);
-            textEdit3.Name = "textEdit3";
-            textEdit3.Size = new Size(271, 22);
-            textEdit3.TabIndex = 5;
+            txtManufacturer.Anchor = AnchorStyles.Top;
+            txtManufacturer.Location = new Point(137, 63);
+            txtManufacturer.Name = "txtManufacturer";
+            txtManufacturer.Size = new Size(271, 22);
+            txtManufacturer.TabIndex = 3;
             // 
             // labelControl2
             // 
@@ -241,7 +235,7 @@
             labelControl2.Location = new Point(20, 66);
             labelControl2.Name = "labelControl2";
             labelControl2.Size = new Size(81, 16);
-            labelControl2.TabIndex = 4;
+            labelControl2.TabIndex = 0;
             labelControl2.Text = "Manufacturer:";
             // 
             // txtCommodityName
@@ -350,7 +344,7 @@
             Status.Location = new Point(475, 103);
             Status.Name = "Status";
             Status.Size = new Size(41, 16);
-            Status.TabIndex = 12;
+            Status.TabIndex = 0;
             Status.Text = "Status:";
             // 
             // txtIsTerminated
@@ -358,7 +352,34 @@
             txtIsTerminated.Location = new Point(577, 100);
             txtIsTerminated.Name = "txtIsTerminated";
             txtIsTerminated.Size = new Size(156, 22);
-            txtIsTerminated.TabIndex = 13;
+            txtIsTerminated.TabIndex = 6;
+            // 
+            // labelControl9
+            // 
+            labelControl9.Anchor = AnchorStyles.Top;
+            labelControl9.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl9.Appearance.ForeColor = Color.FromArgb(0, 192, 0);
+            labelControl9.Appearance.Options.UseFont = true;
+            labelControl9.Appearance.Options.UseForeColor = true;
+            labelControl9.Location = new Point(751, 66);
+            labelControl9.Name = "labelControl9";
+            labelControl9.Size = new Size(26, 16);
+            labelControl9.TabIndex = 14;
+            labelControl9.Text = "VND";
+            // 
+            // txtSellingPrice
+            // 
+            txtSellingPrice.Anchor = AnchorStyles.Top;
+            txtSellingPrice.Location = new Point(577, 63);
+            txtSellingPrice.Name = "txtSellingPrice";
+            txtSellingPrice.Properties.Appearance.Options.UseTextOptions = true;
+            txtSellingPrice.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            txtSellingPrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            txtSellingPrice.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            txtSellingPrice.Properties.MaskSettings.Set("mask", "N0");
+            txtSellingPrice.Properties.UseMaskAsDisplayFormat = true;
+            txtSellingPrice.Size = new Size(156, 22);
+            txtSellingPrice.TabIndex = 4;
             // 
             // frmAllCommodities
             // 
@@ -377,14 +398,14 @@
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)comboBoxEdit1.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit5.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit4.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit3.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cboCategoryName.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtBaseUnit.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtManufacturer.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtCommodityName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)txtIsTerminated.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtSellingPrice.Properties).EndInit();
             ResumeLayout(false);
         }
 
@@ -397,14 +418,13 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit txtCommodityName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit txtManufacturer;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit txtBaseUnit;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.ComboBoxEdit cboCategoryName;
         private DevExpress.XtraGrid.Columns.GridColumn colBaseUnit;
         private DevExpress.XtraGrid.Columns.GridColumn colManufacturer;
         private DevExpress.XtraGrid.Columns.GridColumn colSellingPrice;
@@ -418,5 +438,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCategoryName;
         private DevExpress.XtraEditors.LabelControl Status;
         private DevExpress.XtraEditors.TextEdit txtIsTerminated;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.TextEdit txtSellingPrice;
     }
 }
