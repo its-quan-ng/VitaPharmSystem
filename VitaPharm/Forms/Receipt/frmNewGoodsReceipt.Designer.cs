@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewGoodsReceipt));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             grpDetails = new DevExpress.XtraEditors.GroupControl();
@@ -153,6 +153,7 @@
             colCommodityName.FieldName = "CommodityName";
             colCommodityName.MinWidth = 25;
             colCommodityName.Name = "colCommodityName";
+            colCommodityName.OptionsColumn.AllowEdit = false;
             colCommodityName.Visible = true;
             colCommodityName.VisibleIndex = 0;
             colCommodityName.Width = 177;
@@ -163,6 +164,7 @@
             colBatchCode.FieldName = "BatchCode";
             colBatchCode.MinWidth = 25;
             colBatchCode.Name = "colBatchCode";
+            colBatchCode.OptionsColumn.AllowEdit = false;
             colBatchCode.Visible = true;
             colBatchCode.VisibleIndex = 1;
             colBatchCode.Width = 124;
@@ -175,6 +177,7 @@
             colMfgDate.FieldName = "MfgDate";
             colMfgDate.MinWidth = 25;
             colMfgDate.Name = "colMfgDate";
+            colMfgDate.OptionsColumn.AllowEdit = false;
             colMfgDate.Visible = true;
             colMfgDate.VisibleIndex = 2;
             colMfgDate.Width = 100;
@@ -187,6 +190,7 @@
             colExpDate.FieldName = "ExpDate";
             colExpDate.MinWidth = 25;
             colExpDate.Name = "colExpDate";
+            colExpDate.OptionsColumn.AllowEdit = false;
             colExpDate.Visible = true;
             colExpDate.VisibleIndex = 3;
             colExpDate.Width = 88;
@@ -218,6 +222,7 @@
             colPurchasePrice.FieldName = "PurchasePrice";
             colPurchasePrice.MinWidth = 25;
             colPurchasePrice.Name = "colPurchasePrice";
+            colPurchasePrice.OptionsColumn.AllowEdit = false;
             colPurchasePrice.Visible = true;
             colPurchasePrice.VisibleIndex = 5;
             colPurchasePrice.Width = 120;
@@ -228,6 +233,7 @@
             Amount.FieldName = "Amount";
             Amount.MinWidth = 25;
             Amount.Name = "Amount";
+            Amount.OptionsColumn.AllowEdit = false;
             Amount.Visible = true;
             Amount.VisibleIndex = 6;
             Amount.Width = 106;
@@ -249,9 +255,9 @@
             repoBtnDelete.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             repoBtnDelete.Appearance.Options.UseBackColor = true;
             repoBtnDelete.AutoHeight = false;
-            editorButtonImageOptions2.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("editorButtonImageOptions2.SvgImage");
-            editorButtonImageOptions2.SvgImageSize = new Size(16, 16);
-            repoBtnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
+            editorButtonImageOptions1.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("editorButtonImageOptions1.SvgImage");
+            editorButtonImageOptions1.SvgImageSize = new Size(16, 16);
+            repoBtnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
             repoBtnDelete.Name = "repoBtnDelete";
             repoBtnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -406,6 +412,7 @@
             // 
             // lblTotal
             // 
+            lblTotal.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lblTotal.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotal.Appearance.ForeColor = Color.Green;
             lblTotal.Appearance.Options.UseFont = true;
@@ -446,6 +453,7 @@
             // 
             // labelControl8
             // 
+            labelControl8.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             labelControl8.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelControl8.Appearance.Options.UseFont = true;
             labelControl8.Location = new Point(646, 28);
