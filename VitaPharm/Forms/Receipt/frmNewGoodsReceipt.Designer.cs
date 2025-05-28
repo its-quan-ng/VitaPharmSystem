@@ -317,7 +317,7 @@
             // 
             // txtEmployee
             // 
-            txtEmployee.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtEmployee.Anchor = AnchorStyles.Top;
             txtEmployee.Location = new Point(684, 30);
             txtEmployee.Name = "txtEmployee";
             txtEmployee.Size = new Size(185, 22);
@@ -325,7 +325,7 @@
             // 
             // txtReceiptCode
             // 
-            txtReceiptCode.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtReceiptCode.Anchor = AnchorStyles.Top;
             txtReceiptCode.Location = new Point(126, 30);
             txtReceiptCode.Name = "txtReceiptCode";
             txtReceiptCode.Size = new Size(168, 22);
@@ -333,7 +333,7 @@
             // 
             // txtSupplier
             // 
-            txtSupplier.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtSupplier.Anchor = AnchorStyles.Top;
             txtSupplier.Location = new Point(126, 66);
             txtSupplier.Name = "txtSupplier";
             txtSupplier.Size = new Size(285, 22);
@@ -341,7 +341,7 @@
             // 
             // dateReceiptDate
             // 
-            dateReceiptDate.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dateReceiptDate.Anchor = AnchorStyles.Top;
             dateReceiptDate.EditValue = null;
             dateReceiptDate.Location = new Point(427, 30);
             dateReceiptDate.Name = "dateReceiptDate";
@@ -352,7 +352,7 @@
             // 
             // meNote
             // 
-            meNote.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            meNote.Anchor = AnchorStyles.Top;
             meNote.Location = new Point(596, 67);
             meNote.Name = "meNote";
             meNote.Properties.ScrollBars = ScrollBars.Horizontal;
@@ -361,7 +361,7 @@
             // 
             // labelControl3
             // 
-            labelControl3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            labelControl3.Anchor = AnchorStyles.Top;
             labelControl3.Location = new Point(531, 72);
             labelControl3.Name = "labelControl3";
             labelControl3.Size = new Size(26, 16);
@@ -370,7 +370,7 @@
             // 
             // labelControl5
             // 
-            labelControl5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            labelControl5.Anchor = AnchorStyles.Top;
             labelControl5.Location = new Point(596, 33);
             labelControl5.Name = "labelControl5";
             labelControl5.Size = new Size(55, 16);
@@ -379,7 +379,7 @@
             // 
             // labelControl2
             // 
-            labelControl2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            labelControl2.Anchor = AnchorStyles.Top;
             labelControl2.Location = new Point(37, 69);
             labelControl2.Name = "labelControl2";
             labelControl2.Size = new Size(47, 16);
@@ -388,7 +388,7 @@
             // 
             // labelControl4
             // 
-            labelControl4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            labelControl4.Anchor = AnchorStyles.Top;
             labelControl4.Location = new Point(339, 33);
             labelControl4.Name = "labelControl4";
             labelControl4.Size = new Size(72, 16);
@@ -397,7 +397,7 @@
             // 
             // labelControl1
             // 
-            labelControl1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            labelControl1.Anchor = AnchorStyles.Top;
             labelControl1.Location = new Point(37, 33);
             labelControl1.Name = "labelControl1";
             labelControl1.Size = new Size(75, 16);
