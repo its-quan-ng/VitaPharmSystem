@@ -218,7 +218,9 @@
             // 
             // colPurchasePrice
             // 
-            colPurchasePrice.Caption = "Purchase Price";
+            colPurchasePrice.Caption = "Price";
+            colPurchasePrice.DisplayFormat.FormatString = "N0";
+            colPurchasePrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             colPurchasePrice.FieldName = "PurchasePrice";
             colPurchasePrice.MinWidth = 25;
             colPurchasePrice.Name = "colPurchasePrice";
@@ -230,6 +232,8 @@
             // Amount
             // 
             Amount.Caption = "Amount";
+            Amount.DisplayFormat.FormatString = "N0";
+            Amount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             Amount.FieldName = "Amount";
             Amount.MinWidth = 25;
             Amount.Name = "Amount";
@@ -245,6 +249,7 @@
             colDelete.FieldName = "DeleteAction";
             colDelete.MinWidth = 25;
             colDelete.Name = "colDelete";
+            colDelete.OptionsColumn.ShowCaption = false;
             colDelete.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             colDelete.UnboundDataType = typeof(object);
             colDelete.Visible = true;
