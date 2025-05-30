@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using VitaPharm.Data;
+using ClosedXML.Excel;
 
 namespace VitaPharm.Forms.Commodities
 {
@@ -48,8 +49,8 @@ namespace VitaPharm.Forms.Commodities
                                .AsEnumerable()
                                .Select((c, idx) => new
                                {
-                                   ID = idx + 1,                 
-                                   c.CommodityID,                          
+                                   ID = idx + 1,
+                                   c.CommodityID,
                                    c.CommodityName,
                                    c.Manufacturer,
                                    c.BaseUnit,
@@ -219,13 +220,23 @@ namespace VitaPharm.Forms.Commodities
                 return;
             }
 
-            frmAllCommodities_Load(sender, e); 
+            frmAllCommodities_Load(sender, e);
         }
 
         protected override void OnFormClosed(FormClosedEventArgs e)
         {
             context?.Dispose();
             base.OnFormClosed(e);
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Import Commodities from Excel",
+                Filter = "Excel Files|*.xlsx;*.xlsm;*.xls",
+                Multiselect = false
+            };
         }
     }
 }

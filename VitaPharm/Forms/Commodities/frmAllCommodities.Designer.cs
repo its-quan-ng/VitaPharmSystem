@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAllCommodities));
             gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             colID = new DevExpress.XtraGrid.Columns.GridColumn();
             colCommodityName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,6 +57,9 @@
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnReload = new DevExpress.XtraEditors.SimpleButton();
             btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            toolStrip1 = new ToolStrip();
+            btnImport = new ToolStripButton();
+            toolStripButton2 = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
@@ -68,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)txtCommodityName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // gridView
@@ -178,10 +183,10 @@
             // gridControl
             // 
             gridControl.Dock = DockStyle.Fill;
-            gridControl.Location = new Point(0, 146);
+            gridControl.Location = new Point(0, 176);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.Size = new Size(828, 250);
+            gridControl.Size = new Size(828, 220);
             gridControl.TabIndex = 0;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
@@ -191,6 +196,7 @@
             groupControl1.AppearanceCaption.ForeColor = Color.FromArgb(16, 53, 113);
             groupControl1.AppearanceCaption.Options.UseFont = true;
             groupControl1.AppearanceCaption.Options.UseForeColor = true;
+            groupControl1.Controls.Add(toolStrip1);
             groupControl1.Controls.Add(cboIsTerminated);
             groupControl1.Controls.Add(labelControl9);
             groupControl1.Controls.Add(txtSellingPrice);
@@ -208,7 +214,7 @@
             groupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             groupControl1.Location = new Point(0, 0);
             groupControl1.Name = "groupControl1";
-            groupControl1.Size = new Size(828, 146);
+            groupControl1.Size = new Size(828, 176);
             groupControl1.TabIndex = 1;
             groupControl1.Text = "Commodity Information";
             // 
@@ -403,6 +409,37 @@
             btnEdit.Text = "Edit";
             btnEdit.Click += btnEdit_Click;
             // 
+            // toolStrip1
+            // 
+            toolStrip1.Dock = DockStyle.Bottom;
+            toolStrip1.ImageScalingSize = new Size(20, 20);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton2, btnImport });
+            toolStrip1.Location = new Point(2, 147);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(824, 27);
+            toolStrip1.TabIndex = 16;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // btnImport
+            // 
+            btnImport.Alignment = ToolStripItemAlignment.Right;
+            btnImport.Image = Properties.Resources.import32;
+            btnImport.ImageTransparentColor = Color.Magenta;
+            btnImport.Name = "btnImport";
+            btnImport.Size = new Size(78, 24);
+            btnImport.Text = "Import";
+            btnImport.Click += btnImport_Click;
+            // 
+            // toolStripButton2
+            // 
+            toolStripButton2.Alignment = ToolStripItemAlignment.Right;
+            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
+            toolStripButton2.ImageTransparentColor = Color.Magenta;
+            toolStripButton2.Name = "toolStripButton2";
+            toolStripButton2.Size = new Size(29, 24);
+            toolStripButton2.Text = "toolStripButton2";
+            // 
             // frmAllCommodities
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -429,6 +466,8 @@
             ((System.ComponentModel.ISupportInitialize)txtCommodityName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -462,5 +501,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit txtSellingPrice;
         private DevExpress.XtraEditors.ComboBoxEdit cboIsTerminated;
+        private ToolStrip toolStrip1;
+        private ToolStripButton btnImport;
+        private ToolStripButton toolStripButton2;
     }
 }
