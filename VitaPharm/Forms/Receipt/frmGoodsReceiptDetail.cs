@@ -11,11 +11,26 @@ using DevExpress.XtraEditors;
 
 namespace VitaPharm.Forms
 {
-	public partial class frmGoodsReceiptDetail: DevExpress.XtraEditors.XtraForm
-	{
+    public partial class frmGoodsReceiptDetail : DevExpress.XtraEditors.XtraForm
+    {
         public frmGoodsReceiptDetail()
-		{
+        {
             InitializeComponent();
-		}
-	}
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
