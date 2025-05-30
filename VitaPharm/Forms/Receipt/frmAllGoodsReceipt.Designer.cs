@@ -48,12 +48,12 @@
             colNote = new DevExpress.XtraGrid.Columns.GridColumn();
             colReceiptStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             colAction = new DevExpress.XtraGrid.Columns.GridColumn();
-            repobtnAction = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            repobtnViewDetail = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)repobtnAction).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repobtnViewDetail).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -139,7 +139,7 @@
             gridControl.Location = new Point(0, 0);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repobtnAction });
+            gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repobtnViewDetail });
             gridControl.Size = new Size(853, 344);
             gridControl.TabIndex = 0;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
@@ -223,7 +223,7 @@
             // colAction
             // 
             colAction.Caption = "Action";
-            colAction.ColumnEdit = repobtnAction;
+            colAction.ColumnEdit = repobtnViewDetail;
             colAction.FieldName = "colAction";
             colAction.MinWidth = 25;
             colAction.Name = "colAction";
@@ -233,18 +233,18 @@
             colAction.VisibleIndex = 6;
             colAction.Width = 115;
             // 
-            // repobtnAction
+            // repobtnViewDetail
             // 
-            repobtnAction.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
-            repobtnAction.Appearance.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            repobtnAction.Appearance.ForeColor = Color.White;
-            repobtnAction.Appearance.Options.UseBackColor = true;
-            repobtnAction.Appearance.Options.UseFont = true;
-            repobtnAction.Appearance.Options.UseForeColor = true;
-            repobtnAction.AutoHeight = false;
-            repobtnAction.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "View detail", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
-            repobtnAction.Name = "repobtnAction";
-            repobtnAction.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            repobtnViewDetail.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
+            repobtnViewDetail.Appearance.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            repobtnViewDetail.Appearance.ForeColor = Color.White;
+            repobtnViewDetail.Appearance.Options.UseBackColor = true;
+            repobtnViewDetail.Appearance.Options.UseFont = true;
+            repobtnViewDetail.Appearance.Options.UseForeColor = true;
+            repobtnViewDetail.AutoHeight = false;
+            repobtnViewDetail.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "View detail", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
+            repobtnViewDetail.Name = "repobtnViewDetail";
+            repobtnViewDetail.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // frmAllGoodsReceipt
             // 
@@ -262,7 +262,7 @@
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)repobtnAction).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repobtnViewDetail).EndInit();
             ResumeLayout(false);
         }
 
@@ -293,6 +293,6 @@
         private DevExpress.XtraEditors.SimpleButton btnReload;
         private DevExpress.XtraEditors.SimpleButton btnDeactive;
         private DevExpress.XtraEditors.SimpleButton btnNewGoodsReceipt;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repobtnAction;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repobtnViewDetail;
     }
 }

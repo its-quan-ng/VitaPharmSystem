@@ -38,7 +38,6 @@
             lblTotalQuantity = new DevExpress.XtraEditors.LabelControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             gridControl = new DevExpress.XtraGrid.GridControl();
-            gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             colID = new DevExpress.XtraGrid.Columns.GridColumn();
             colBatchCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,6 +46,7 @@
             colPurchasePrice = new DevExpress.XtraGrid.Columns.GridColumn();
             colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             txtEmployee = new DevExpress.XtraEditors.TextEdit();
             txtReceiptCode = new DevExpress.XtraEditors.TextEdit();
@@ -61,8 +61,8 @@
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).BeginInit();
@@ -183,12 +183,7 @@
             gridControl.Name = "gridControl";
             gridControl.Size = new Size(907, 139);
             gridControl.TabIndex = 0;
-            gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
-            // 
-            // gridView1
-            // 
-            gridView1.GridControl = gridControl;
-            gridView1.Name = "gridView1";
+            gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView, gridView1 });
             // 
             // gridView
             // 
@@ -221,7 +216,11 @@
             // colMfgDate
             // 
             colMfgDate.Caption = "Mfg Date";
+            colMfgDate.DisplayFormat.FormatString = "dd/MM/yyyy";
+            colMfgDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             colMfgDate.FieldName = "MfgDate";
+            colMfgDate.GroupFormat.FormatString = "dd/MM/yyyy";
+            colMfgDate.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             colMfgDate.MinWidth = 25;
             colMfgDate.Name = "colMfgDate";
             colMfgDate.OptionsColumn.AllowEdit = false;
@@ -232,7 +231,11 @@
             // colExpDate
             // 
             colExpDate.Caption = "Exp Date";
+            colExpDate.DisplayFormat.FormatString = "dd/MM/yyyy";
+            colExpDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             colExpDate.FieldName = "ExpDate";
+            colExpDate.GroupFormat.FormatString = "dd/MM/yyyy";
+            colExpDate.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             colExpDate.MinWidth = 25;
             colExpDate.Name = "colExpDate";
             colExpDate.OptionsColumn.AllowEdit = false;
@@ -243,7 +246,11 @@
             // colPurchasePrice
             // 
             colPurchasePrice.Caption = "Purchase Price";
+            colPurchasePrice.DisplayFormat.FormatString = "N0";
+            colPurchasePrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             colPurchasePrice.FieldName = "PurchasePrice";
+            colPurchasePrice.GroupFormat.FormatString = "N0";
+            colPurchasePrice.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             colPurchasePrice.MinWidth = 25;
             colPurchasePrice.Name = "colPurchasePrice";
             colPurchasePrice.OptionsColumn.AllowEdit = false;
@@ -265,7 +272,11 @@
             // colAmount
             // 
             colAmount.Caption = "Amount";
+            colAmount.DisplayFormat.FormatString = "N0";
+            colAmount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             colAmount.FieldName = "Amount";
+            colAmount.GroupFormat.FormatString = "N0";
+            colAmount.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             colAmount.MinWidth = 25;
             colAmount.Name = "colAmount";
             colAmount.OptionsColumn.AllowEdit = false;
@@ -274,9 +285,15 @@
             colAmount.VisibleIndex = 6;
             colAmount.Width = 125;
             // 
+            // gridView1
+            // 
+            gridView1.GridControl = gridControl;
+            gridView1.Name = "gridView1";
+            // 
             // groupControl1
             // 
             groupControl1.Appearance.BackColor = Color.White;
+            groupControl1.Appearance.Options.UseBackColor = true;
             groupControl1.Appearance.Options.UseBorderColor = true;
             groupControl1.AppearanceCaption.BorderColor = Color.FromArgb(93, 83, 167);
             groupControl1.AppearanceCaption.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -407,8 +424,8 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
