@@ -1,21 +1,22 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
-namespace VitaPharm.Forms
+namespace VitaPharm.Forms.Invoices
 {
-    public partial class frmAllInvoices : DevExpress.XtraEditors.XtraForm
+    public partial class frmNewInvoice : DevExpress.XtraEditors.XtraForm
     {
-        public frmAllInvoices()
+        public frmNewInvoice()
         {
             InitializeComponent();
         }
+
     }
 }

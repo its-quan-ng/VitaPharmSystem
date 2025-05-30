@@ -1,4 +1,4 @@
-﻿namespace VitaPharm.Forms.Invoice
+﻿namespace VitaPharm.Forms.Invoices
 {
     partial class frmInvoiceDetail
     {
