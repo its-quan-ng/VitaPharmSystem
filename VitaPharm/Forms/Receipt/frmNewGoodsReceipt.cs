@@ -40,8 +40,8 @@ namespace VitaPharm.Forms.Receipt
             var dto = gridView.GetFocusedRow() as BatchDto;
             if (dto == null) return;
 
-
             dto.Qty = (int)spinEdit.Value;
+            gridView.RefreshRow(gridView.FocusedRowHandle);
             RecalcSummary();
         }
 

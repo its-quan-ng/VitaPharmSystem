@@ -234,6 +234,7 @@
             Amount.MinWidth = 25;
             Amount.Name = "Amount";
             Amount.OptionsColumn.AllowEdit = false;
+            Amount.UnboundDataType = typeof(decimal);
             Amount.Visible = true;
             Amount.VisibleIndex = 6;
             Amount.Width = 106;
@@ -272,6 +273,7 @@
             // 
             // btnAddBatch
             // 
+            btnAddBatch.Anchor = AnchorStyles.Right;
             btnAddBatch.Appearance.BackColor = Color.White;
             btnAddBatch.Appearance.BorderColor = Color.FromArgb(192, 0, 0);
             btnAddBatch.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);

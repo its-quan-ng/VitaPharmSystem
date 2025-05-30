@@ -12,5 +12,6 @@ namespace VitaPharm.Data
         public DateTime ExpDate { get; set; }
         public decimal PurchasePrice { get; set; }
         public int Qty { get; set; }     // số lượng user nhập
+        public decimal Amount => Qty * PurchasePrice;
     }
 } 
