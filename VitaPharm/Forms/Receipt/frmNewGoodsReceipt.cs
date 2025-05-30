@@ -104,7 +104,6 @@ namespace VitaPharm.Forms.Receipt
                     detailsList.Add(dlg.ResultBatch);
                 }
                 RecalcSummary();
-                ResetForm();
             }
         }
 
@@ -189,7 +188,7 @@ namespace VitaPharm.Forms.Receipt
                 transaction.Commit();
                 XtraMessageBox.Show("Goods receipt saved successfully!");
                 DialogResult = DialogResult.OK;
-                Close();
+                frmNewGoodsReceipt_Load(sender, e);
             }
             catch (Exception ex)
             {
@@ -203,11 +202,7 @@ namespace VitaPharm.Forms.Receipt
             if (XtraMessageBox.Show("Do you want to cancel and reset the form?", "Confirm",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                detailsList.Clear();
-                txtReceiptCode.Text = GenerateReceiptCode();
-                txtSupplier.Text = "";
-                meNote.Text = "";
-                RecalcSummary();
+                frmNewGoodsReceipt_Load(sender, e);
             }
         }
 
