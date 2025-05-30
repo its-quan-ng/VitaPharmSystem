@@ -1,4 +1,4 @@
-﻿namespace VitaPharm.Forms.Commodity
+﻿namespace VitaPharm.Forms.Commodities
 {
     partial class frmAllCommodities
     {

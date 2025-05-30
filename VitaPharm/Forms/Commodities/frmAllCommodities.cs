@@ -4,7 +4,7 @@ using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using VitaPharm.Data;
 
-namespace VitaPharm.Forms.Commodity
+namespace VitaPharm.Forms.Commodities
 {
     public partial class frmAllCommodities : XtraForm
     {
