@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VitaPharm.Data;
 
-namespace VitaPharm.Forms.Commodity
+namespace VitaPharm.Forms.Commodities
 {
     public partial class frmNewCommodity : XtraForm
     {
@@ -47,6 +47,37 @@ namespace VitaPharm.Forms.Commodity
                 txtCommdityName.Focus();
                 return;
             }
+            if (string.IsNullOrWhiteSpace(txtManufacturer.Text))
+            {
+                XtraMessageBox.Show("Please enter the manufacturer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtManufacturer.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtBaseUnit.Text))
+            {
+                XtraMessageBox.Show("Please enter the base unit.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBaseUnit.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtSellingPrice.Text) || !decimal.TryParse(txtSellingPrice.Text, out decimal sellingPrice) || sellingPrice <= 0)
+            {
+                XtraMessageBox.Show("Please enter a valid selling price.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSellingPrice.Focus();
+                return;
+            }
+
+            Commodity newCommodity = new Commodity
+            {
+                CommodityName = txtCommdityName.Text.Trim(),
+                Manufacturer = txtManufacturer.Text.Trim(),
+                BaseUnit = txtBaseUnit.Text.Trim(),
+                SellingPrice = sellingPrice
+            };
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

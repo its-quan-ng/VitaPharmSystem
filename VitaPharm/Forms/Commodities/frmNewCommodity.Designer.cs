@@ -1,4 +1,4 @@
-﻿namespace VitaPharm.Forms.Commodity
+﻿namespace VitaPharm.Forms.Commodities
 {
     partial class frmNewCommodity
     {
@@ -220,6 +220,7 @@
             btnCancel.Size = new Size(84, 28);
             btnCancel.TabIndex = 4;
             btnCancel.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
             // 
             // labelControl9
             // 
