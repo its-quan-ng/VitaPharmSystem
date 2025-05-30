@@ -35,7 +35,7 @@
             btnAllUsers = new DevExpress.XtraBars.BarButtonItem();
             btnAllCustomers = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            btnAllCommodities = new DevExpress.XtraBars.BarButtonItem();
             btnNewReceipt = new DevExpress.XtraBars.BarButtonItem();
             btnAllGoodsReceipt = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
@@ -57,7 +57,7 @@
             // 
             ribbonControl1.BackColor = Color.White;
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnProfile, btnNewUser, btnAllUsers, btnAllCustomers, barButtonItem5, barButtonItem6, btnNewReceipt, btnAllGoodsReceipt, barButtonItem9, barButtonItem10, btnSignOut });
+            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnProfile, btnNewUser, btnAllUsers, btnAllCustomers, barButtonItem5, btnAllCommodities, btnNewReceipt, btnAllGoodsReceipt, barButtonItem9, barButtonItem10, btnSignOut });
             ribbonControl1.Location = new Point(0, 0);
             ribbonControl1.MaxItemId = 12;
             ribbonControl1.Name = "ribbonControl1";
@@ -108,13 +108,14 @@
             barButtonItem5.Name = "barButtonItem5";
             barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // barButtonItem6
+            // btnAllCommodities
             // 
-            barButtonItem6.Caption = "All Commmodities";
-            barButtonItem6.Id = 6;
-            barButtonItem6.ImageOptions.Image = Properties.Resources.medical_equipment_32;
-            barButtonItem6.Name = "barButtonItem6";
-            barButtonItem6.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            btnAllCommodities.Caption = "All Commmodities";
+            btnAllCommodities.Id = 6;
+            btnAllCommodities.ImageOptions.Image = Properties.Resources.medical_equipment_32;
+            btnAllCommodities.Name = "btnAllCommodities";
+            btnAllCommodities.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            btnAllCommodities.ItemClick += btnAllCommodities_ItemClick;
             // 
             // btnNewReceipt
             // 
@@ -187,7 +188,7 @@
             // ribbonPageGroup2
             // 
             ribbonPageGroup2.ItemLinks.Add(barButtonItem5);
-            ribbonPageGroup2.ItemLinks.Add(barButtonItem6);
+            ribbonPageGroup2.ItemLinks.Add(btnAllCommodities);
             ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // tabGoodReceipt
@@ -243,7 +244,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage tabCommodity;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem btnAllCommodities;
         private DevExpress.XtraBars.BarButtonItem btnNewReceipt;
         private DevExpress.XtraBars.Ribbon.RibbonPage tabGoodReceipt;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
