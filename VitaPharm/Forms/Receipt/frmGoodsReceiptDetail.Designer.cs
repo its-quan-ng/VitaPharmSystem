@@ -141,7 +141,9 @@
             lblTotalAmount.Appearance.ForeColor = Color.FromArgb(0, 192, 0);
             lblTotalAmount.Appearance.Options.UseFont = true;
             lblTotalAmount.Appearance.Options.UseForeColor = true;
-            lblTotalAmount.Location = new Point(798, 47);
+            lblTotalAmount.Appearance.Options.UseTextOptions = true;
+            lblTotalAmount.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            lblTotalAmount.Location = new Point(773, 49);
             lblTotalAmount.Name = "lblTotalAmount";
             lblTotalAmount.Size = new Size(28, 16);
             lblTotalAmount.TabIndex = 0;
@@ -163,7 +165,9 @@
             lblTotalQuantity.Appearance.ForeColor = Color.Red;
             lblTotalQuantity.Appearance.Options.UseFont = true;
             lblTotalQuantity.Appearance.Options.UseForeColor = true;
-            lblTotalQuantity.Location = new Point(798, 15);
+            lblTotalQuantity.Appearance.Options.UseTextOptions = true;
+            lblTotalQuantity.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            lblTotalQuantity.Location = new Point(773, 15);
             lblTotalQuantity.Name = "lblTotalQuantity";
             lblTotalQuantity.Size = new Size(28, 16);
             lblTotalQuantity.TabIndex = 0;
