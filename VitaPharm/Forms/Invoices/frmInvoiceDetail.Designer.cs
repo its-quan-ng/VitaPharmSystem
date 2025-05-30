@@ -40,7 +40,7 @@
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             labelControl7 = new DevExpress.XtraEditors.LabelControl();
             btnReload = new DevExpress.XtraEditors.SimpleButton();
-            textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            txtInvoiceCode = new DevExpress.XtraEditors.TextEdit();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             txtEmployee = new DevExpress.XtraEditors.TextEdit();
@@ -51,7 +51,7 @@
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtInvoiceCode.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cboCustomer.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)deCreatedDate.Properties).BeginInit();
@@ -131,10 +131,10 @@
             // gridControl
             // 
             gridControl.Dock = DockStyle.Fill;
-            gridControl.Location = new Point(0, 124);
+            gridControl.Location = new Point(0, 108);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.Size = new Size(813, 192);
+            gridControl.Size = new Size(813, 208);
             gridControl.TabIndex = 5;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
@@ -184,12 +184,12 @@
             btnReload.TabIndex = 2;
             btnReload.Text = "Reload";
             // 
-            // textEdit2
+            // txtInvoiceCode
             // 
-            textEdit2.Location = new Point(152, 37);
-            textEdit2.Name = "textEdit2";
-            textEdit2.Size = new Size(209, 22);
-            textEdit2.TabIndex = 27;
+            txtInvoiceCode.Location = new Point(152, 37);
+            txtInvoiceCode.Name = "txtInvoiceCode";
+            txtInvoiceCode.Size = new Size(209, 22);
+            txtInvoiceCode.TabIndex = 27;
             // 
             // labelControl1
             // 
@@ -265,7 +265,7 @@
             groupControl1.AppearanceCaption.Options.UseBorderColor = true;
             groupControl1.AppearanceCaption.Options.UseFont = true;
             groupControl1.AppearanceCaption.Options.UseForeColor = true;
-            groupControl1.Controls.Add(textEdit2);
+            groupControl1.Controls.Add(txtInvoiceCode);
             groupControl1.Controls.Add(labelControl1);
             groupControl1.Controls.Add(labelControl2);
             groupControl1.Controls.Add(txtEmployee);
@@ -276,7 +276,7 @@
             groupControl1.Dock = DockStyle.Top;
             groupControl1.Location = new Point(0, 0);
             groupControl1.Name = "groupControl1";
-            groupControl1.Size = new Size(813, 124);
+            groupControl1.Size = new Size(813, 108);
             groupControl1.TabIndex = 3;
             groupControl1.Text = "Basic Information";
             // 
@@ -291,9 +291,10 @@
             Name = "frmInvoiceDetail";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Invoice Detail";
+            Load += frmInvoiceDetail_Load;
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtInvoiceCode.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cboCustomer.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)deCreatedDate.Properties.CalendarTimeProperties).EndInit();
@@ -320,7 +321,7 @@
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.SimpleButton btnReload;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txtInvoiceCode;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtEmployee;

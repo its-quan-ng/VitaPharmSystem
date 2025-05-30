@@ -2,9 +2,7 @@
 using System.Data;
 using VitaPharm.Data;
 using DevExpress.XtraEditors;
-using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraSpreadsheet.Model;
 
 namespace VitaPharm.Forms.Invoices
 {
@@ -12,7 +10,7 @@ namespace VitaPharm.Forms.Invoices
     {
         private PharmacyDbContext context;
         private BindingSource bsAllInvoices;
-        bool isAdmin = string.Equals(CurrentUser.Role, "Admin", StringComparison.OrdinalIgnoreCase);
+        bool isAdmin = string.Equals(CurrentUser.Role, "admin", StringComparison.OrdinalIgnoreCase);
 
         public frmAllInvoices()
         {
@@ -46,7 +44,7 @@ namespace VitaPharm.Forms.Invoices
                     {
                         ID = idx + 1,
                         i.InvoiceID,
-                        i.InvoiceCode,
+                        InvoiceCode = i.InvoiceCode,
                         i.CreatedDate,
                         CustomerName = i.Customer?.CustomerName ?? "N/A",
                         EmployeeName = i.Employee?.EmployeeName ?? "N/A",
@@ -100,6 +98,18 @@ namespace VitaPharm.Forms.Invoices
             {
                 this.Close();
             }
+        }
+
+        private void repobtnViewDetail_Click(object sender, EventArgs e)
+        {
+            int rowHandle = gridView.FocusedRowHandle;
+            if (rowHandle < 0) return;
+
+            var invoiceCode = gridView.GetRowCellValue(rowHandle, "InvoiceCode");
+            if (invoiceCode == null) return;
+
+            var detailForm = new frmInvoiceDetail((string)invoiceCode);
+            detailForm.ShowDialog();
         }
     }
 }

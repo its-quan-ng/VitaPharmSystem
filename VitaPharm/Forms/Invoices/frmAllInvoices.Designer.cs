@@ -41,7 +41,7 @@
             btnReload = new DevExpress.XtraEditors.SimpleButton();
             btnDeactive = new DevExpress.XtraEditors.SimpleButton();
             btnNewInvoice = new DevExpress.XtraEditors.SimpleButton();
-            btnView = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            repobtnViewDetail = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             colID = new DevExpress.XtraGrid.Columns.GridColumn();
             colInvoiceCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,7 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)imageCollection).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)btnView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repobtnViewDetail).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             SuspendLayout();
@@ -132,14 +132,15 @@
             btnNewInvoice.Text = "New Invoice";
             btnNewInvoice.Click += btnNewInvoice_Click;
             // 
-            // btnView
+            // repobtnViewDetail
             // 
-            btnView.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
-            btnView.Appearance.Options.UseBackColor = true;
-            btnView.AutoHeight = false;
-            btnView.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "View Detail", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
-            btnView.Name = "btnView";
-            btnView.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            repobtnViewDetail.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
+            repobtnViewDetail.Appearance.Options.UseBackColor = true;
+            repobtnViewDetail.AutoHeight = false;
+            repobtnViewDetail.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "View Detail", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
+            repobtnViewDetail.Name = "repobtnViewDetail";
+            repobtnViewDetail.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            repobtnViewDetail.Click += repobtnViewDetail_Click;
             // 
             // gridView
             // 
@@ -242,7 +243,7 @@
             // 
             // colViewDetail
             // 
-            colViewDetail.ColumnEdit = btnView;
+            colViewDetail.ColumnEdit = repobtnViewDetail;
             colViewDetail.FieldName = "Action";
             colViewDetail.MinWidth = 25;
             colViewDetail.Name = "colViewDetail";
@@ -259,7 +260,7 @@
             gridControl.Location = new Point(0, 0);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { btnView });
+            gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repobtnViewDetail });
             gridControl.Size = new Size(853, 351);
             gridControl.TabIndex = 0;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
@@ -278,7 +279,7 @@
             ((System.ComponentModel.ISupportInitialize)imageCollection).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)btnView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repobtnViewDetail).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
             ResumeLayout(false);
@@ -291,7 +292,7 @@
         private DevExpress.XtraEditors.SimpleButton btnDeactive;
         private DevExpress.XtraEditors.SimpleButton btnNewInvoice;
         private DevExpress.Utils.ImageCollection imageCollection;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnView;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repobtnViewDetail;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn colInvoiceCode;
