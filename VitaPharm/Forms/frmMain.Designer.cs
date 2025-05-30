@@ -38,8 +38,8 @@
             btnAllCommodities = new DevExpress.XtraBars.BarButtonItem();
             btnNewReceipt = new DevExpress.XtraBars.BarButtonItem();
             btnAllGoodsReceipt = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            btnNewInvoice = new DevExpress.XtraBars.BarButtonItem();
+            btnAllInvoices = new DevExpress.XtraBars.BarButtonItem();
             btnSignOut = new DevExpress.XtraBars.BarButtonItem();
             tabHumanManage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -57,7 +57,7 @@
             // 
             ribbonControl1.BackColor = Color.White;
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnProfile, btnNewUser, btnAllUsers, btnAllCustomers, btnNewCommodity, btnAllCommodities, btnNewReceipt, btnAllGoodsReceipt, barButtonItem9, barButtonItem10, btnSignOut });
+            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnProfile, btnNewUser, btnAllUsers, btnAllCustomers, btnNewCommodity, btnAllCommodities, btnNewReceipt, btnAllGoodsReceipt, btnNewInvoice, btnAllInvoices, btnSignOut });
             ribbonControl1.Location = new Point(0, 0);
             ribbonControl1.MaxItemId = 12;
             ribbonControl1.Name = "ribbonControl1";
@@ -136,21 +136,22 @@
             btnAllGoodsReceipt.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             btnAllGoodsReceipt.ItemClick += btnAllGoodsReceipt_ItemClick;
             // 
-            // barButtonItem9
+            // btnNewInvoice
             // 
-            barButtonItem9.Caption = "New Invoice";
-            barButtonItem9.Id = 9;
-            barButtonItem9.ImageOptions.Image = Properties.Resources.new_invoice;
-            barButtonItem9.Name = "barButtonItem9";
-            barButtonItem9.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            btnNewInvoice.Caption = "New Invoice";
+            btnNewInvoice.Id = 9;
+            btnNewInvoice.ImageOptions.Image = Properties.Resources.new_invoice;
+            btnNewInvoice.Name = "btnNewInvoice";
+            btnNewInvoice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // barButtonItem10
+            // btnAllInvoices
             // 
-            barButtonItem10.Caption = "All Invoices";
-            barButtonItem10.Id = 10;
-            barButtonItem10.ImageOptions.Image = Properties.Resources.all_invoices;
-            barButtonItem10.Name = "barButtonItem10";
-            barButtonItem10.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            btnAllInvoices.Caption = "All Invoices";
+            btnAllInvoices.Id = 10;
+            btnAllInvoices.ImageOptions.Image = Properties.Resources.all_invoices;
+            btnAllInvoices.Name = "btnAllInvoices";
+            btnAllInvoices.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            btnAllInvoices.ItemClick += btnAllInvoices_ItemClick;
             // 
             // btnSignOut
             // 
@@ -212,8 +213,8 @@
             // 
             // ribbonPageGroup4
             // 
-            ribbonPageGroup4.ItemLinks.Add(barButtonItem9);
-            ribbonPageGroup4.ItemLinks.Add(barButtonItem10);
+            ribbonPageGroup4.ItemLinks.Add(btnNewInvoice);
+            ribbonPageGroup4.ItemLinks.Add(btnAllInvoices);
             ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // frmMain
@@ -250,10 +251,10 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage tabGoodReceipt;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem btnAllGoodsReceipt;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem btnNewInvoice;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem btnAllInvoices;
         private DevExpress.XtraBars.BarButtonItem btnSignOut;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
     }
