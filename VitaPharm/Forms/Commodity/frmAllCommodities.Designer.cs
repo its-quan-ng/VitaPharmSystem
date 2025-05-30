@@ -73,8 +73,10 @@
             // gridView
             // 
             gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, colCommodityName, colManufacturer, colBaseUnit, colSellingPrice, colIsTerminated, colCategoryName });
+            gridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             gridView.GridControl = gridControl;
             gridView.Name = "gridView";
+            gridView.OptionsSelection.EnableAppearanceFocusedCell = false;
             gridView.OptionsView.RowAutoHeight = true;
             gridView.FocusedRowChanged += gridView_FocusedRowChanged;
             // 
@@ -85,6 +87,7 @@
             colID.MinWidth = 25;
             colID.Name = "colID";
             colID.OptionsColumn.AllowEdit = false;
+            colID.OptionsColumn.AllowFocus = false;
             colID.OptionsColumn.ReadOnly = true;
             colID.Visible = true;
             colID.VisibleIndex = 0;
@@ -97,6 +100,7 @@
             colCommodityName.MinWidth = 25;
             colCommodityName.Name = "colCommodityName";
             colCommodityName.OptionsColumn.AllowEdit = false;
+            colCommodityName.OptionsColumn.AllowFocus = false;
             colCommodityName.OptionsColumn.ReadOnly = true;
             colCommodityName.Visible = true;
             colCommodityName.VisibleIndex = 1;
@@ -109,6 +113,7 @@
             colManufacturer.MinWidth = 25;
             colManufacturer.Name = "colManufacturer";
             colManufacturer.OptionsColumn.AllowEdit = false;
+            colManufacturer.OptionsColumn.AllowFocus = false;
             colManufacturer.OptionsColumn.ReadOnly = true;
             colManufacturer.Visible = true;
             colManufacturer.VisibleIndex = 2;
@@ -121,6 +126,7 @@
             colBaseUnit.MinWidth = 25;
             colBaseUnit.Name = "colBaseUnit";
             colBaseUnit.OptionsColumn.AllowEdit = false;
+            colBaseUnit.OptionsColumn.AllowFocus = false;
             colBaseUnit.OptionsColumn.ReadOnly = true;
             colBaseUnit.Visible = true;
             colBaseUnit.VisibleIndex = 3;
@@ -129,10 +135,15 @@
             // colSellingPrice
             // 
             colSellingPrice.Caption = "Selling Price";
+            colSellingPrice.DisplayFormat.FormatString = "N0";
+            colSellingPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             colSellingPrice.FieldName = "SellingPrice";
+            colSellingPrice.GroupFormat.FormatString = "N0";
+            colSellingPrice.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             colSellingPrice.MinWidth = 25;
             colSellingPrice.Name = "colSellingPrice";
             colSellingPrice.OptionsColumn.AllowEdit = false;
+            colSellingPrice.OptionsColumn.AllowFocus = false;
             colSellingPrice.OptionsColumn.ReadOnly = true;
             colSellingPrice.Visible = true;
             colSellingPrice.VisibleIndex = 4;
@@ -145,6 +156,7 @@
             colIsTerminated.MinWidth = 25;
             colIsTerminated.Name = "colIsTerminated";
             colIsTerminated.OptionsColumn.AllowEdit = false;
+            colIsTerminated.OptionsColumn.AllowFocus = false;
             colIsTerminated.OptionsColumn.ReadOnly = true;
             colIsTerminated.Visible = true;
             colIsTerminated.VisibleIndex = 5;
@@ -157,6 +169,7 @@
             colCategoryName.MinWidth = 25;
             colCategoryName.Name = "colCategoryName";
             colCategoryName.OptionsColumn.AllowEdit = false;
+            colCategoryName.OptionsColumn.AllowFocus = false;
             colCategoryName.OptionsColumn.ReadOnly = true;
             colCategoryName.Visible = true;
             colCategoryName.VisibleIndex = 6;
