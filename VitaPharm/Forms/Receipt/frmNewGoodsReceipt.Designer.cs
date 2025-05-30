@@ -434,7 +434,9 @@
             lblTotal.Appearance.ForeColor = Color.Green;
             lblTotal.Appearance.Options.UseFont = true;
             lblTotal.Appearance.Options.UseForeColor = true;
-            lblTotal.Location = new Point(816, 28);
+            lblTotal.Appearance.Options.UseTextOptions = true;
+            lblTotal.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            lblTotal.Location = new Point(764, 28);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(62, 18);
             lblTotal.TabIndex = 2;
