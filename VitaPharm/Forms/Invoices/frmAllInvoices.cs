@@ -2,6 +2,9 @@
 using System.Data;
 using VitaPharm.Data;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraSpreadsheet.Model;
 
 namespace VitaPharm.Forms.Invoices
 {
@@ -51,18 +54,31 @@ namespace VitaPharm.Forms.Invoices
                         i.Note,
                     })
                     .ToList();
-
                 bsAllInvoices = new BindingSource
                 {
                     DataSource = invoiceData
                 };
-
                 gridControl.DataSource = bsAllInvoices;
+
+                gridView.PopulateColumns();
+                HideColumnSafely(gridView, "InvoiceID");
+                gridView.OptionsBehavior.Editable = false;
+                gridView.OptionsView.ShowGroupPanel = false;
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show($"Error loading invoices: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private static void HideColumnSafely(GridView view, string fieldName)
+        {
+            var col = view.Columns[fieldName];
+            if (col != null)
+            {
+                col.Visible = false;
+                col.OptionsColumn.ShowInCustomizationForm = false;
             }
         }
 
