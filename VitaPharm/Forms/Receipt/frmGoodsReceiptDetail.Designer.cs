@@ -138,7 +138,9 @@
             // lblTotalAmount
             // 
             lblTotalAmount.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            lblTotalAmount.Appearance.ForeColor = Color.FromArgb(0, 192, 0);
             lblTotalAmount.Appearance.Options.UseFont = true;
+            lblTotalAmount.Appearance.Options.UseForeColor = true;
             lblTotalAmount.Location = new Point(798, 47);
             lblTotalAmount.Name = "lblTotalAmount";
             lblTotalAmount.Size = new Size(28, 16);
@@ -158,7 +160,9 @@
             // lblTotalQuantity
             // 
             lblTotalQuantity.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            lblTotalQuantity.Appearance.ForeColor = Color.Red;
             lblTotalQuantity.Appearance.Options.UseFont = true;
+            lblTotalQuantity.Appearance.Options.UseForeColor = true;
             lblTotalQuantity.Location = new Point(798, 15);
             lblTotalQuantity.Name = "lblTotalQuantity";
             lblTotalQuantity.Size = new Size(28, 16);
