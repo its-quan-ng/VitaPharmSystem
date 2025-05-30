@@ -64,6 +64,10 @@ namespace VitaPharm.Forms.Commodity
 
             gridView.PopulateColumns();
             HideColumnSafely(gridView, "CommodityID");
+            gridView.Columns["SellingPrice"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gridView.Columns["SellingPrice"].DisplayFormat.FormatString = "N0";
+            gridView.OptionsBehavior.Editable = false;
+            gridView.OptionsView.ShowGroupPanel = false;
             gridView.BestFitColumns();
         }
 
