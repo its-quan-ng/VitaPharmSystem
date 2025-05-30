@@ -1,4 +1,4 @@
-﻿namespace VitaPharm.Forms
+﻿namespace VitaPharm.Forms.Invoice
 {
     partial class frmAllInvoices
     {
@@ -42,6 +42,7 @@
             imageCollection = new DevExpress.Utils.ImageCollection(components);
             colNote = new DevExpress.XtraGrid.Columns.GridColumn();
             colAction = new DevExpress.XtraGrid.Columns.GridColumn();
+            btnView = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             repobtnAction = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
@@ -52,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repoImageCboStatus).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imageCollection).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repobtnAction).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
@@ -63,7 +65,7 @@
             gridControl.Location = new Point(0, 0);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repoImageCboStatus, repobtnAction });
+            gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repoImageCboStatus, repobtnAction, btnView });
             gridControl.Size = new Size(853, 351);
             gridControl.TabIndex = 0;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
@@ -169,14 +171,19 @@
             // 
             // colAction
             // 
-            colAction.Caption = "Action";
-            colAction.ColumnEdit = repobtnAction;
+            colAction.ColumnEdit = btnView;
             colAction.FieldName = "Action";
             colAction.MinWidth = 25;
             colAction.Name = "colAction";
             colAction.Visible = true;
             colAction.VisibleIndex = 7;
             colAction.Width = 80;
+            // 
+            // btnView
+            // 
+            btnView.AutoHeight = false;
+            btnView.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton() });
+            btnView.Name = "btnView";
             // 
             // repobtnAction
             // 
@@ -254,10 +261,12 @@
             Name = "frmAllInvoices";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "All Invoices";
+            Load += frmAllInvoices_Load;
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)repoImageCboStatus).EndInit();
             ((System.ComponentModel.ISupportInitialize)imageCollection).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnView).EndInit();
             ((System.ComponentModel.ISupportInitialize)repobtnAction).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
@@ -284,5 +293,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAction;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repobtnAction;
         private DevExpress.Utils.ImageCollection imageCollection;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnView;
     }
 }
