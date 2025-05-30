@@ -68,7 +68,12 @@ namespace VitaPharm.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            var result = XtraMessageBox.Show("Are you sure you want to cancel?", "Confirmation",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void LoadReceiptInfo()
