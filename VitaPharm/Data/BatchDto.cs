@@ -4,7 +4,7 @@ namespace VitaPharm.Data
 {
     public class BatchDto
     {
-        public int BatchID { get; set; } 
+        public int BatchID { get; set; };
         public string BatchCode { get; set; } = "";
         public int CommodityID { get; set; }
         public string CommodityName { get; set; } = "";

@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using VitaPharm.Forms.HumanManage;
+using VitaPharm.Forms.Commodity;
 using VitaPharm.Data;
 using VitaPharm.Forms.Receipt;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,7 @@ namespace VitaPharm.Forms
         private frmAllUsers? allUsersForm = null;
         private frmAllCustomers? allCustomersForm = null;
         private frmNewGoodsReceipt? newGoodsReceiptForm = null;
+        private frmAllCommodities? allCommoditiesForm = null;
         private bool shouldClose = false;
         #endregion
 
@@ -85,6 +87,8 @@ namespace VitaPharm.Forms
             btnAllUsers.Enabled = isAdmin;
             btnAllGoodsReceipt.Enabled = true;
             btnAllCustomers.Enabled = true;
+            btnNewReceipt.Enabled = isUser;
+            btnAllCommodities.Enabled = isAdmin;
         }
 
         private void OpenProfile()
@@ -168,6 +172,20 @@ namespace VitaPharm.Forms
             allCustomersForm.Show();
             allCustomersForm.BringToFront();
         }
+
+        private void OpenAllCommodities()
+        {
+            foreach (var f in this.MdiChildren) f.Close();
+            if (allCommoditiesForm == null || allCommoditiesForm.IsDisposed)
+            {
+                allCommoditiesForm = new frmAllCommodities()
+                {
+                    MdiParent = this
+                };
+            }
+            allCommoditiesForm.Show();
+            allCommoditiesForm.BringToFront();
+        }
         #endregion
 
         private void OpenNewReceipt()
@@ -223,6 +241,11 @@ namespace VitaPharm.Forms
         private void btnNewReceipt_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenNewReceipt();
+        }
+
+        private void btnAllCommodities_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenAllCommodities();
         }
     }
 }

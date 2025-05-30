@@ -34,8 +34,8 @@ namespace VitaPharm.Forms.Receipt
 
         private void btnNewGoodsReceipt_Click(object sender, EventArgs e)
         {
-            var frm = new frmNewGoodsReceipt(currentUser);
-            frm.ShowDialog();
+            var newBatchForm = new frmNewGoodsReceipt(currentUser);
+            newBatchForm.ShowDialog();
             LoadReceipts();
         }
 
