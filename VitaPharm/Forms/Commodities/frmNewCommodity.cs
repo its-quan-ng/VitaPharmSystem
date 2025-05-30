@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using System.Data;
 using VitaPharm.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace VitaPharm.Forms.Commodities
 {
@@ -22,67 +23,125 @@ namespace VitaPharm.Forms.Commodities
 
         private void LoadCategories()
         {
-            var types = context.Categories
-                               .Select(ct => ct.CategoryName)
-                               .ToList();
+            try
+            {
+                var categories = context.Categories
+                                       .Select(ct => ct.CategoryName)
+                                       .ToList();
 
-            cboCategoryName.Properties.Items.Clear();
-            cboCategoryName.Properties.Items.AddRange(types);
-            cboCategoryName.SelectedIndex = 0;
+                cboCategoryName.Properties.Items.Clear();
+                cboCategoryName.Properties.Items.AddRange(categories);
+
+                if (cboCategoryName.Properties.Items.Count > 0)
+                    cboCategoryName.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Error loading categories: {ex.Message}", "Database Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void ValidateInputs()
+        private bool ValidateInputs()
         {
             if (string.IsNullOrWhiteSpace(txtCommdityName.Text))
             {
-                XtraMessageBox.Show("Please enter the commodity name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Please enter the commodity name.", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCommdityName.Focus();
-                return;
+                return false;
             }
+
             if (string.IsNullOrWhiteSpace(txtManufacturer.Text))
             {
-                XtraMessageBox.Show("Please enter the manufacturer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Please enter the manufacturer.", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtManufacturer.Focus();
-                return;
+                return false;
             }
+
             if (string.IsNullOrWhiteSpace(txtBaseUnit.Text))
             {
-                XtraMessageBox.Show("Please enter the base unit.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Please enter the base unit.", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtBaseUnit.Focus();
-                return;
+                return false;
             }
-            if (string.IsNullOrWhiteSpace(txtSellingPrice.Text) || !decimal.TryParse(txtSellingPrice.Text, out decimal sellingPrice) || sellingPrice <= 0)
+
+            if (string.IsNullOrWhiteSpace(txtSellingPrice.Text) ||
+                !decimal.TryParse(txtSellingPrice.Text, out decimal sellingPrice) ||
+                sellingPrice <= 0)
             {
-                XtraMessageBox.Show("Please enter a valid selling price.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Please enter a valid selling price greater than 0.", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtSellingPrice.Focus();
-                return;
+                return false;
             }
+
+            if (cboCategoryName.SelectedIndex < 0 || string.IsNullOrWhiteSpace(cboCategoryName.Text))
+            {
+                XtraMessageBox.Show("Please select a category.", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cboCategoryName.Focus();
+                return false;
+            }
+
+            return true;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ValidateInputs();
-
-            string catName = cboCategoryName.Text;
-            var category = context.Categories.FirstOrDefault(c => c.CategoryName == catName);
-            if (category == null)
+            try
             {
-                XtraMessageBox.Show("Selected category not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (!ValidateInputs())
+                    return;
+
+                string selectedCategoryName = cboCategoryName.Text.Trim();
+                var category = context.Categories.FirstOrDefault(c => c.CategoryName == selectedCategoryName);
+
+                if (category == null)
+                {
+                    XtraMessageBox.Show("Selected category not found in database.", "Database Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Commodity newCommodity = new Commodity
+                {
+                    CommodityName = txtCommdityName.Text.Trim(),
+                    Manufacturer = txtManufacturer.Text.Trim(),
+                    BaseUnit = txtBaseUnit.Text.Trim(),
+                    SellingPrice = decimal.Parse(txtSellingPrice.Text.Trim()),
+                    IsTerminated = "active", 
+                    Categories = category
+                };
+
+                context.Commodities.Add(newCommodity);
+                int result = context.SaveChanges();
+
+                if (result > 0)
+                {
+                    XtraMessageBox.Show("Commodity added successfully!", "Success",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearInputs();
+                    txtCommdityName.Focus();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Failed to save commodity to database.", "Save Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-
-            Commodity newCommodity = new Commodity
+            catch (DbUpdateException dbUpdateEx)
             {
-                CommodityName = txtCommdityName.Text.Trim(),
-                Manufacturer = txtManufacturer.Text.Trim(),
-                BaseUnit = txtBaseUnit.Text.Trim(),
-                SellingPrice = txtSellingPrice.Text.Trim() != "" ? decimal.Parse(txtSellingPrice.Text.Trim()) : 0,
-                Categories = category
-            };
-            context.Commodities.Add(newCommodity);
-            context.SaveChanges();
-            XtraMessageBox.Show("Commodity added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ClearInputs();
+                XtraMessageBox.Show($"Database update error: {dbUpdateEx.InnerException?.Message ?? dbUpdateEx.Message}",
+                    "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Error adding commodity: {ex.Message}\n\nDetails: {ex.InnerException?.Message}",
+                    "Unexpected Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ClearInputs()
@@ -91,7 +150,9 @@ namespace VitaPharm.Forms.Commodities
             txtManufacturer.Clear();
             txtBaseUnit.Clear();
             txtSellingPrice.Clear();
-            cboCategoryName.SelectedIndex = 0;
+
+            if (cboCategoryName.Properties.Items.Count > 0)
+                cboCategoryName.SelectedIndex = 0;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -100,6 +161,7 @@ namespace VitaPharm.Forms.Commodities
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 ClearInputs();
+                txtCommdityName.Focus();
             }
         }
     }
