@@ -60,7 +60,6 @@ namespace VitaPharm.Forms.Invoices
                 };
                 gridControl.DataSource = bsAllInvoices;
 
-                gridView.PopulateColumns();
                 HideColumnSafely(gridView, "InvoiceID");
                 gridView.OptionsBehavior.Editable = false;
                 gridView.OptionsView.ShowGroupPanel = false;
