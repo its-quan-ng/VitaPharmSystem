@@ -120,7 +120,7 @@ namespace VitaPharm.Forms.Receipt
         private void RecalcSummary()
         {
             decimal total = detailsList.Sum(d => d.Qty * d.PurchasePrice);
-            lblTotal.Text = total.ToString("N2");
+            lblTotal.Text = total.ToString("N0") + " VND";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -165,6 +165,7 @@ namespace VitaPharm.Forms.Receipt
                             PurchasePrice = dto.PurchasePrice,
                             QtyAvailable = dto.Qty,
                             BatchStatus = "In stock",
+                            BatchDate = DateTime.Now,
                             Commodity = context.Commodities.Find(dto.CommodityID)
                         };
                         context.Batches.Add(batch);

@@ -2,8 +2,9 @@
 using VitaPharm.Data;
 using DevExpress.XtraEditors;
 using System.ComponentModel;
-using System.Linq;
-using System.Collections.Generic;
+using DevExpress.XtraEditors.Controls;
+using System.Globalization;
+using System.Text;
 
 namespace VitaPharm.Forms.Receipt
 {
@@ -77,15 +78,30 @@ namespace VitaPharm.Forms.Receipt
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            ResetForm();
+            var result = XtraMessageBox.Show(
+                "Are you sure you want to reset the form?", 
+                "Confirm Cancel", 
+                MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                ResetForm();
+            }
         }
 
         private void LoadCommodities()
         {
-            var commodities = context.Commodities.ToList();
+           var commodities = context.Commodities
+            .Where(c => c.IsTerminated == "active")
+            .ToList();
             cboCommodity.Properties.DataSource = commodities;
             cboCommodity.Properties.DisplayMember = "CommodityName";
             cboCommodity.Properties.ValueMember = "CommodityID";
+            cboCommodity.Properties.Columns.Clear();
+            
+            cboCommodity.Properties.Columns.Add(new LookUpColumnInfo("CommodityName", "Commodity Name"));
+            cboCommodity.Properties.Columns.Add(new LookUpColumnInfo("Manufacturer", "Manufacturer"));
+            cboCommodity.Properties.Columns.Add(new LookUpColumnInfo("BaseUnit", "Base Unit"));
             cboCommodity.EditValue = null;
         }
 
@@ -100,6 +116,8 @@ namespace VitaPharm.Forms.Receipt
                 cboBatchCode.Properties.DataSource = batches;
                 cboBatchCode.Properties.DisplayMember = "BatchCode";
                 cboBatchCode.Properties.ValueMember = "BatchID";
+                cboBatchCode.Properties.Columns.Clear();
+                cboBatchCode.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("BatchCode", "Batch Code"));
                 cboBatchCode.EditValue = null;
 
                 if (batches.Count == 0)
@@ -155,17 +173,34 @@ namespace VitaPharm.Forms.Receipt
         private string GenerateNewBatchCode(string commodityName)
         {
             string prefix = "BA";
-            string namePart = new string(commodityName
+            string namePart = RemoveDiacriticsAndToUpper(commodityName)
                 .Take(7)
-                .Select(c => c == ' ' ? '-' : c)
-                .ToArray());
+                .Aggregate("", (s, c) => s + c);
             string datePart = DateTime.Now.ToString("ddMMyy");
             int countDb = context.Batches
-                .Count(b => b.MfgDate.Date == DateTime.Now.Date && b.Commodity.CommodityName == commodityName);
+                .Count(b => b.BatchDate.Date == DateTime.Now.Date && b.Commodity.CommodityName == commodityName);
             int countTemp = tempBatchList.Count(b => b.MfgDate.Date == DateTime.Now.Date && b.CommodityName == commodityName);
             int count = countDb + countTemp + 1;
             string countPart = count.ToString("D2");
             return $"{prefix}-{namePart}-{datePart}-{countPart}";
+        }
+
+        private string RemoveDiacriticsAndToUpper(string text)
+        {
+            if (string.IsNullOrEmpty(text)) return text;
+            var normalized = text.Normalize(NormalizationForm.FormD);
+            var sb = new StringBuilder();
+            foreach (var c in normalized)
+            {
+                var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+                if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+                {
+                    sb.Append(c);
+                }
+            }
+            return sb.ToString().Normalize(NormalizationForm.FormC)
+                     .Replace(' ', '-')
+                     .ToUpper();
         }
 
         private void ResetForm()

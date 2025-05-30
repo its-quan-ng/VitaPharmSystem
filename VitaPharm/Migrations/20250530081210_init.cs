@@ -168,6 +168,7 @@ namespace VitaPharm.Migrations
                     BatchCode = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     MfgDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     ExpDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    BatchDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     QtyAvailable = table.Column<int>(type: "int", nullable: false),
                     PurchasePrice = table.Column<decimal>(type: "money", nullable: false),
                     BatchStatus = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),

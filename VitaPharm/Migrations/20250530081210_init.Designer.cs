@@ -12,7 +12,7 @@ using VitaPharm.Data;
 namespace VitaPharm.Migrations
 {
     [DbContext(typeof(PharmacyDbContext))]
-    [Migration("20250525095742_init")]
+    [Migration("20250530081210_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -75,6 +75,9 @@ namespace VitaPharm.Migrations
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
+
+                    b.Property<DateTime>("BatchDate")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("BatchStatus")
                         .IsRequired()

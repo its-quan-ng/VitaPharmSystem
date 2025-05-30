@@ -73,6 +73,9 @@ namespace VitaPharm.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<DateTime>("BatchDate")
+                        .HasColumnType("datetime");
+
                     b.Property<string>("BatchStatus")
                         .IsRequired()
                         .HasMaxLength(10)
