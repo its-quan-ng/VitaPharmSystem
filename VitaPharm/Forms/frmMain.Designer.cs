@@ -36,7 +36,7 @@
             btnAllCustomers = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            btnNewReceipt = new DevExpress.XtraBars.BarButtonItem();
             btnAllGoodsReceipt = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
@@ -57,7 +57,7 @@
             // 
             ribbonControl1.BackColor = Color.White;
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnProfile, btnNewUser, btnAllUsers, btnAllCustomers, barButtonItem5, barButtonItem6, barButtonItem7, btnAllGoodsReceipt, barButtonItem9, barButtonItem10, btnSignOut });
+            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnProfile, btnNewUser, btnAllUsers, btnAllCustomers, barButtonItem5, barButtonItem6, btnNewReceipt, btnAllGoodsReceipt, barButtonItem9, barButtonItem10, btnSignOut });
             ribbonControl1.Location = new Point(0, 0);
             ribbonControl1.MaxItemId = 12;
             ribbonControl1.Name = "ribbonControl1";
@@ -116,13 +116,14 @@
             barButtonItem6.Name = "barButtonItem6";
             barButtonItem6.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // barButtonItem7
+            // btnNewReceipt
             // 
-            barButtonItem7.Caption = "New Good Receipt";
-            barButtonItem7.Id = 7;
-            barButtonItem7.ImageOptions.Image = Properties.Resources.form_blue;
-            barButtonItem7.Name = "barButtonItem7";
-            barButtonItem7.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            btnNewReceipt.Caption = "New Goods Receipt";
+            btnNewReceipt.Id = 7;
+            btnNewReceipt.ImageOptions.Image = Properties.Resources.form_blue;
+            btnNewReceipt.Name = "btnNewReceipt";
+            btnNewReceipt.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            btnNewReceipt.ItemClick += btnNewReceipt_ItemClick;
             // 
             // btnAllGoodsReceipt
             // 
@@ -197,7 +198,7 @@
             // 
             // ribbonPageGroup3
             // 
-            ribbonPageGroup3.ItemLinks.Add(barButtonItem7);
+            ribbonPageGroup3.ItemLinks.Add(btnNewReceipt);
             ribbonPageGroup3.ItemLinks.Add(btnAllGoodsReceipt);
             ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
@@ -243,7 +244,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem btnNewReceipt;
         private DevExpress.XtraBars.Ribbon.RibbonPage tabGoodReceipt;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem btnAllGoodsReceipt;
