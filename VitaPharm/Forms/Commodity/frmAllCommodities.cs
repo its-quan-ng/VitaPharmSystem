@@ -33,14 +33,12 @@ namespace VitaPharm.Forms.Commodity
 
             cboCategoryName.Properties.Items.Clear();
             cboCategoryName.Properties.Items.AddRange(types);
-            cboCategoryName.EditValue = null;
         }
 
         private void LoadStatus()
         {
             cboIsTerminated.Properties.Items.Clear();
             cboIsTerminated.Properties.Items.AddRange(new[] { "active", "inactive" });
-            cboIsTerminated.SelectedIndex = -1;
         }
 
         private void LoadCommodities()
@@ -127,9 +125,10 @@ namespace VitaPharm.Forms.Commodity
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            ToggleControls(false);
             LoadCategories();
+            LoadStatus();
             LoadCommodities();
+            ToggleControls(false);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
