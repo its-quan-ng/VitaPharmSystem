@@ -78,7 +78,15 @@ namespace VitaPharm.Forms.Receipt
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            ResetForm();
+            var result = XtraMessageBox.Show(
+                "Are you sure you want to reset the form?", 
+                "Confirm Cancel", 
+                MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                ResetForm();
+            }
         }
 
         private void LoadCommodities()
