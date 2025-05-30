@@ -34,7 +34,7 @@
             txtManufacturer = new DevExpress.XtraEditors.TextEdit();
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            txtName = new DevExpress.XtraEditors.TextEdit();
+            txtCommdityName = new DevExpress.XtraEditors.TextEdit();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             groupControl2 = new DevExpress.XtraEditors.GroupControl();
             cboCategoryName = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -44,12 +44,13 @@
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
             btnAdd = new DevExpress.XtraEditors.SimpleButton();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            labelControl9 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtBaseUnit.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtManufacturer.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtName.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtCommdityName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl2).BeginInit();
             groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cboCategoryName.Properties).BeginInit();
@@ -67,7 +68,7 @@
             groupControl1.Controls.Add(txtManufacturer);
             groupControl1.Controls.Add(labelControl2);
             groupControl1.Controls.Add(textEdit2);
-            groupControl1.Controls.Add(txtName);
+            groupControl1.Controls.Add(txtCommdityName);
             groupControl1.Controls.Add(labelControl1);
             groupControl1.Location = new Point(12, 12);
             groupControl1.Name = "groupControl1";
@@ -112,12 +113,12 @@
             textEdit2.Size = new Size(156, 22);
             textEdit2.TabIndex = 0;
             // 
-            // txtName
+            // txtCommdityName
             // 
-            txtName.Location = new Point(118, 36);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(271, 22);
-            txtName.TabIndex = 1;
+            txtCommdityName.Location = new Point(118, 36);
+            txtCommdityName.Name = "txtCommdityName";
+            txtCommdityName.Size = new Size(271, 22);
+            txtCommdityName.TabIndex = 1;
             // 
             // labelControl1
             // 
@@ -151,6 +152,7 @@
             // 
             groupControl3.AppearanceCaption.BorderColor = Color.FromArgb(250, 230, 230);
             groupControl3.AppearanceCaption.Options.UseBorderColor = true;
+            groupControl3.Controls.Add(labelControl9);
             groupControl3.Controls.Add(txtSellingPrice);
             groupControl3.Controls.Add(labelControl5);
             groupControl3.Controls.Add(labelControl4);
@@ -162,10 +164,17 @@
             // 
             // txtSellingPrice
             // 
+            txtSellingPrice.Anchor = AnchorStyles.Top;
             txtSellingPrice.Location = new Point(20, 62);
             txtSellingPrice.Name = "txtSellingPrice";
-            txtSellingPrice.Size = new Size(156, 22);
-            txtSellingPrice.TabIndex = 1;
+            txtSellingPrice.Properties.Appearance.Options.UseTextOptions = true;
+            txtSellingPrice.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            txtSellingPrice.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            txtSellingPrice.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            txtSellingPrice.Properties.MaskSettings.Set("mask", "N0");
+            txtSellingPrice.Properties.UseMaskAsDisplayFormat = true;
+            txtSellingPrice.Size = new Size(137, 22);
+            txtSellingPrice.TabIndex = 7;
             // 
             // labelControl5
             // 
@@ -198,6 +207,7 @@
             btnAdd.Size = new Size(81, 28);
             btnAdd.TabIndex = 3;
             btnAdd.Text = "Add";
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnCancel
             // 
@@ -210,6 +220,19 @@
             btnCancel.Size = new Size(84, 28);
             btnCancel.TabIndex = 4;
             btnCancel.Text = "Cancel";
+            // 
+            // labelControl9
+            // 
+            labelControl9.Anchor = AnchorStyles.Top;
+            labelControl9.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl9.Appearance.ForeColor = Color.FromArgb(0, 192, 0);
+            labelControl9.Appearance.Options.UseFont = true;
+            labelControl9.Appearance.Options.UseForeColor = true;
+            labelControl9.Location = new Point(162, 65);
+            labelControl9.Name = "labelControl9";
+            labelControl9.Size = new Size(26, 16);
+            labelControl9.TabIndex = 8;
+            labelControl9.Text = "VND";
             // 
             // frmNewCommodity
             // 
@@ -231,7 +254,7 @@
             ((System.ComponentModel.ISupportInitialize)txtBaseUnit.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtManufacturer.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtName.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtCommdityName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)groupControl2).EndInit();
             groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)cboCategoryName.Properties).EndInit();
@@ -250,15 +273,16 @@
         private DevExpress.XtraEditors.TextEdit txtManufacturer;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit txtName;
+        private DevExpress.XtraEditors.TextEdit txtCommdityName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.ComboBoxEdit cboCategoryName;
         private DevExpress.XtraEditors.GroupControl groupControl3;
-        private DevExpress.XtraEditors.TextEdit txtSellingPrice;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.TextEdit txtSellingPrice;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
     }
 }

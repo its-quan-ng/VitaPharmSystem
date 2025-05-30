@@ -20,7 +20,7 @@ namespace VitaPharm.Forms.Commodity
         public frmNewCommodity()
         {
             InitializeComponent();
-            txtName.Focus();
+            txtCommdityName.Focus();
         }
 
         private void frmNewCommodity_Load(object sender, EventArgs e)
@@ -37,6 +37,16 @@ namespace VitaPharm.Forms.Commodity
             cboCategoryName.Properties.Items.Clear();
             cboCategoryName.Properties.Items.AddRange(types);
             cboCategoryName.SelectedIndex = 0;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCommdityName.Text))
+            {
+                XtraMessageBox.Show("Please enter the commodity name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtCommdityName.Focus();
+                return;
+            }
         }
     }
 }
