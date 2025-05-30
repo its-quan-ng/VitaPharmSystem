@@ -39,12 +39,12 @@
             groupControl2 = new DevExpress.XtraEditors.GroupControl();
             cboCategoryName = new DevExpress.XtraEditors.ComboBoxEdit();
             groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            labelControl9 = new DevExpress.XtraEditors.LabelControl();
             txtSellingPrice = new DevExpress.XtraEditors.TextEdit();
             labelControl5 = new DevExpress.XtraEditors.LabelControl();
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
             btnAdd = new DevExpress.XtraEditors.SimpleButton();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            labelControl9 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtBaseUnit.Properties).BeginInit();
@@ -61,6 +61,7 @@
             // 
             // groupControl1
             // 
+            groupControl1.Anchor = AnchorStyles.Top;
             groupControl1.AppearanceCaption.BorderColor = Color.FromArgb(222, 228, 255);
             groupControl1.AppearanceCaption.Options.UseBorderColor = true;
             groupControl1.Controls.Add(txtBaseUnit);
@@ -130,6 +131,7 @@
             // 
             // groupControl2
             // 
+            groupControl2.Anchor = AnchorStyles.Top;
             groupControl2.AppearanceCaption.BorderColor = Color.FromArgb(226, 251, 219);
             groupControl2.AppearanceCaption.Options.UseBorderColor = true;
             groupControl2.Controls.Add(cboCategoryName);
@@ -150,6 +152,7 @@
             // 
             // groupControl3
             // 
+            groupControl3.Anchor = AnchorStyles.Top;
             groupControl3.AppearanceCaption.BorderColor = Color.FromArgb(250, 230, 230);
             groupControl3.AppearanceCaption.Options.UseBorderColor = true;
             groupControl3.Controls.Add(labelControl9);
@@ -161,6 +164,19 @@
             groupControl3.Size = new Size(193, 103);
             groupControl3.TabIndex = 2;
             groupControl3.Text = "Sale";
+            // 
+            // labelControl9
+            // 
+            labelControl9.Anchor = AnchorStyles.Top;
+            labelControl9.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl9.Appearance.ForeColor = Color.FromArgb(0, 192, 0);
+            labelControl9.Appearance.Options.UseFont = true;
+            labelControl9.Appearance.Options.UseForeColor = true;
+            labelControl9.Location = new Point(162, 65);
+            labelControl9.Name = "labelControl9";
+            labelControl9.Size = new Size(26, 16);
+            labelControl9.TabIndex = 8;
+            labelControl9.Text = "VND";
             // 
             // txtSellingPrice
             // 
@@ -198,6 +214,7 @@
             // 
             // btnAdd
             // 
+            btnAdd.Anchor = AnchorStyles.Top;
             btnAdd.Appearance.BackColor = Color.FromArgb(50, 112, 188);
             btnAdd.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAdd.Appearance.Options.UseBackColor = true;
@@ -211,6 +228,7 @@
             // 
             // btnCancel
             // 
+            btnCancel.Anchor = AnchorStyles.Top;
             btnCancel.Appearance.BackColor = SystemColors.Window;
             btnCancel.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancel.Appearance.Options.UseBackColor = true;
@@ -221,19 +239,6 @@
             btnCancel.TabIndex = 4;
             btnCancel.Text = "Cancel";
             btnCancel.Click += btnCancel_Click;
-            // 
-            // labelControl9
-            // 
-            labelControl9.Anchor = AnchorStyles.Top;
-            labelControl9.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelControl9.Appearance.ForeColor = Color.FromArgb(0, 192, 0);
-            labelControl9.Appearance.Options.UseFont = true;
-            labelControl9.Appearance.Options.UseForeColor = true;
-            labelControl9.Location = new Point(162, 65);
-            labelControl9.Name = "labelControl9";
-            labelControl9.Size = new Size(26, 16);
-            labelControl9.TabIndex = 8;
-            labelControl9.Text = "VND";
             // 
             // frmNewCommodity
             // 
