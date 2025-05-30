@@ -34,7 +34,43 @@ namespace VitaPharm.Forms.Receipt
 
         private void btnNewGoodsReceipt_Click(object sender, EventArgs e)
         {
-            var frm = new frmNewGoodsReceipt(currentUser);
+            var newBatchystem.Data;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using VitaPharm.Data;
+
+namespace VitaPharm.Forms.Receipt
+{
+    public partial class frmAllGoodsReceipt : XtraForm
+    {
+        private PharmacyDbContext context = new PharmacyDbContext();
+        private string currentUser;
+
+        public frmAllGoodsReceipt(string username)
+        {
+            InitializeComponent();
+            currentUser = username;
+            LoadReceipts();
+        }
+
+        private void frmAllGoodsReceipt_Load(object sender, EventArgs e)
+        {
+            LoadReceipts();
+
+            if (!string.IsNullOrEmpty(CurrentUser.Role) && 
+                CurrentUser.Role.Trim().Equals("Admin", StringComparison.OrdinalIgnoreCase))
+            {
+                btnDeactive.Enabled = false;
+            }
+            else
+            {
+                btnDeactive.Enabled = true;
+            }
+        }
+
+        private void btnNewGoodsReceipt_Click(object sender, EventArgs e)
+        {
+            var newBatchForm = new frmNewGoodsReceipt(currentUser);
             frm.ShowDialog();
             LoadReceipts();
         }
