@@ -104,7 +104,18 @@ namespace VitaPharm.Forms.Receipt
                     detailsList.Add(dlg.ResultBatch);
                 }
                 RecalcSummary();
+                ResetForm();
             }
+        }
+
+        private void ResetForm()
+        {
+            txtReceiptCode.Text = GenerateReceiptCode();
+            txtSupplier.Text = "";
+            meNote.Text = "";
+            dateReceiptDate.DateTime = DateTime.Now;
+            detailsList.Clear();
+            RecalcSummary();
         }
 
         private void RecalcSummary()
@@ -202,7 +213,7 @@ namespace VitaPharm.Forms.Receipt
 
         private void frmNewGoodsReceipt_Load(object sender, EventArgs e)
         {
-
+            ResetForm();
         }
     }
 }
