@@ -1,5 +1,5 @@
 using VitaPharm.Forms;
-using VitaPharm.Forms.Commodity;
+using VitaPharm.Forms.Commodities;
 namespace VitaPharm
 {
     internal static class Program

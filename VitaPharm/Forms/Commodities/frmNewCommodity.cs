@@ -1,13 +1,5 @@
 ﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using VitaPharm.Data;
 
 namespace VitaPharm.Forms.Commodities
@@ -39,7 +31,7 @@ namespace VitaPharm.Forms.Commodities
             cboCategoryName.SelectedIndex = 0;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void ValidateInputs()
         {
             if (string.IsNullOrWhiteSpace(txtCommdityName.Text))
             {
@@ -65,19 +57,50 @@ namespace VitaPharm.Forms.Commodities
                 txtSellingPrice.Focus();
                 return;
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ValidateInputs();
+
+            string catName = cboCategoryName.Text;
+            var category = context.Categories.FirstOrDefault(c => c.CategoryName == catName);
+            if (category == null)
+            {
+                XtraMessageBox.Show("Selected category not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             Commodity newCommodity = new Commodity
             {
                 CommodityName = txtCommdityName.Text.Trim(),
                 Manufacturer = txtManufacturer.Text.Trim(),
                 BaseUnit = txtBaseUnit.Text.Trim(),
-                SellingPrice = sellingPrice
+                SellingPrice = txtSellingPrice.Text.Trim() != "" ? decimal.Parse(txtSellingPrice.Text.Trim()) : 0,
+                Categories = category
             };
+            context.Commodities.Add(newCommodity);
+            context.SaveChanges();
+            XtraMessageBox.Show("Commodity added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ClearInputs();
+        }
+
+        private void ClearInputs()
+        {
+            txtCommdityName.Clear();
+            txtManufacturer.Clear();
+            txtBaseUnit.Clear();
+            txtSellingPrice.Clear();
+            cboCategoryName.SelectedIndex = 0;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            if (XtraMessageBox.Show("Do you want to cancel and reset the form?", "Confirm",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                ClearInputs();
+            }
         }
     }
 }
