@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using VitaPharm.Data;
 
@@ -7,10 +8,13 @@ namespace VitaPharm.Forms.Receipt
     public partial class frmAllGoodsReceipt : XtraForm
     {
         private PharmacyDbContext context = new PharmacyDbContext();
+        private string currentUser;
 
-        public frmAllGoodsReceipt()
+        public frmAllGoodsReceipt(string username)
         {
             InitializeComponent();
+            currentUser = username;
+            LoadReceipts();
         }
 
         private void frmAllGoodsReceipt_Load(object sender, EventArgs e)
@@ -30,8 +34,8 @@ namespace VitaPharm.Forms.Receipt
 
         private void btnNewGoodsReceipt_Click(object sender, EventArgs e)
         {
-            var frm = new frmNewGoodsReceipt();
-            frm.ShowDialog();
+            var newBatchForm = new frmNewGoodsReceipt(currentUser);
+            newBatchForm.ShowDialog();
             LoadReceipts();
         }
 

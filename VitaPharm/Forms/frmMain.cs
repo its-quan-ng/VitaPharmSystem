@@ -2,6 +2,7 @@
 using VitaPharm.Forms.HumanManage;
 using VitaPharm.Data;
 using VitaPharm.Forms.Receipt;
+using Microsoft.EntityFrameworkCore;
 
 namespace VitaPharm.Forms
 {
@@ -13,7 +14,7 @@ namespace VitaPharm.Forms
         private frmAllGoodsReceipt? allGoodsReceiptForm = null;
         private frmAllUsers? allUsersForm = null;
         private frmAllCustomers? allCustomersForm = null;
-        private frmSignIn? signInForm = null;
+        private frmNewGoodsReceipt? newGoodsReceiptForm = null;
         private bool shouldClose = false;
         #endregion
 
@@ -84,6 +85,7 @@ namespace VitaPharm.Forms
             btnAllUsers.Enabled = isAdmin;
             btnAllGoodsReceipt.Enabled = true;
             btnAllCustomers.Enabled = true;
+            btnNewReceipt.Enabled = isUser;
         }
 
         private void OpenProfile()
@@ -123,7 +125,7 @@ namespace VitaPharm.Forms
             foreach (var f in this.MdiChildren) f.Close();
             if (allGoodsReceiptForm == null || allGoodsReceiptForm.IsDisposed)
             {
-                allGoodsReceiptForm = new frmAllGoodsReceipt()
+                allGoodsReceiptForm = new frmAllGoodsReceipt(CurrentUser.Username)
                 {
                     MdiParent = this
                 };
@@ -169,6 +171,21 @@ namespace VitaPharm.Forms
         }
         #endregion
 
+        private void OpenNewReceipt()
+        {
+            foreach (var f in this.MdiChildren) f.Close();
+
+            if (newGoodsReceiptForm == null || newGoodsReceiptForm.IsDisposed)
+            {
+                newGoodsReceiptForm = new frmNewGoodsReceipt(CurrentUser.Username)
+                {
+                    MdiParent = this
+                };
+            }
+            newGoodsReceiptForm.Show();
+            newGoodsReceiptForm.BringToFront();
+        }
+
         private void btnProfile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenProfile();
@@ -202,6 +219,11 @@ namespace VitaPharm.Forms
             {
                 SignOut();
             }
+        }
+
+        private void btnNewReceipt_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenNewReceipt();
         }
     }
 }
