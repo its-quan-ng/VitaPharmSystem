@@ -42,6 +42,12 @@ namespace VitaPharm.Forms
                     .ToList();
 
                 gridControl.DataSource = receiptDetails;
+
+                var totalQuantity = receiptDetails.Sum(d => d.Quantity);
+                var totalAmount = receiptDetails.Sum(d => d.Amount);
+
+                lblTotalQuantity.Text = totalQuantity.ToString("N0");
+                lblTotalAmount.Text = totalAmount.ToString("N0") + " VND";
             }
             catch (Exception ex)
             {
