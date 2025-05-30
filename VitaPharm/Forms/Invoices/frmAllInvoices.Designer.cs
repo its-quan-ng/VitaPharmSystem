@@ -30,14 +30,14 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAllInvoices));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             imageCollection = new DevExpress.Utils.ImageCollection(components);
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            btnClose = new DevExpress.XtraEditors.SimpleButton();
             btnReload = new DevExpress.XtraEditors.SimpleButton();
             btnDeactive = new DevExpress.XtraEditors.SimpleButton();
             btnNewInvoice = new DevExpress.XtraEditors.SimpleButton();
@@ -72,7 +72,7 @@
             // 
             // panelControl1
             // 
-            panelControl1.Controls.Add(btnCancel);
+            panelControl1.Controls.Add(btnClose);
             panelControl1.Controls.Add(btnReload);
             panelControl1.Controls.Add(btnDeactive);
             panelControl1.Controls.Add(btnNewInvoice);
@@ -82,18 +82,19 @@
             panelControl1.Size = new Size(853, 64);
             panelControl1.TabIndex = 1;
             // 
-            // btnCancel
+            // btnClose
             // 
-            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCancel.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
-            btnCancel.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            btnCancel.Appearance.Options.UseBackColor = true;
-            btnCancel.Appearance.Options.UseFont = true;
-            btnCancel.Location = new Point(723, 16);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(118, 36);
-            btnCancel.TabIndex = 14;
-            btnCancel.Text = "Cancel";
+            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClose.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
+            btnClose.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            btnClose.Appearance.Options.UseBackColor = true;
+            btnClose.Appearance.Options.UseFont = true;
+            btnClose.Location = new Point(723, 16);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(118, 36);
+            btnClose.TabIndex = 14;
+            btnClose.Text = "Close";
+            btnClose.Click += btnClose_Click;
             // 
             // btnReload
             // 
@@ -107,6 +108,7 @@
             btnReload.Size = new Size(118, 36);
             btnReload.TabIndex = 13;
             btnReload.Text = "Reload";
+            btnReload.Click += btnReload_Click;
             // 
             // btnDeactive
             // 
@@ -151,7 +153,7 @@
             // btnView
             // 
             btnView.AutoHeight = false;
-            btnView.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "View Detail", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
+            btnView.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "View Detail", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
             btnView.Name = "btnView";
             btnView.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -286,7 +288,7 @@
 
         #endregion
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.SimpleButton btnReload;
         private DevExpress.XtraEditors.SimpleButton btnDeactive;
         private DevExpress.XtraEditors.SimpleButton btnNewInvoice;

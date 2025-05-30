@@ -9,6 +9,7 @@ namespace VitaPharm.Forms.Invoices
     {
         private PharmacyDbContext context;
         private BindingSource bsAllInvoices;
+        bool isAdmin = string.Equals(CurrentUser.Role, "Admin", StringComparison.OrdinalIgnoreCase);
 
         public frmAllInvoices()
         {
@@ -18,6 +19,7 @@ namespace VitaPharm.Forms.Invoices
         private void frmAllInvoices_Load(object sender, EventArgs e)
         {
             LoadInvoices();
+            btnNewInvoice.Enabled = !isAdmin;
         }
 
         private void LoadInvoices()
@@ -30,7 +32,6 @@ namespace VitaPharm.Forms.Invoices
                     .Include(i => i.Customer)
                     .Include(i => i.Employee);
 
-                bool isAdmin = string.Equals(CurrentUser.Role, "Admin", StringComparison.OrdinalIgnoreCase);
                 if (!isAdmin)
                 {
                     query = query.Where(i => i.Employee.EmployeeID == CurrentUser.EmployeeID);
@@ -67,7 +68,23 @@ namespace VitaPharm.Forms.Invoices
 
         private void btnNewInvoice_Click(object sender, EventArgs e)
         {
+            var newInvoiceForm = new frmNewInvoice();
+            newInvoiceForm.ShowDialog();
+            LoadInvoices();
+        }
 
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            frmAllInvoices_Load(sender, e);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            var result = XtraMessageBox.Show("Are you sure you want to close this form?", "Confirm Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
