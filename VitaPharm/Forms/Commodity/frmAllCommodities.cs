@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using Microsoft.EntityFrameworkCore;
 using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
 using VitaPharm.Data;
 
 namespace VitaPharm.Forms.Commodity
@@ -19,6 +20,7 @@ namespace VitaPharm.Forms.Commodity
         private void frmAllCommodities_Load(object sender, EventArgs e)
         {
             LoadCategories();
+            LoadStatus();
             LoadCommodities();
             ToggleControls(false);
         }
@@ -34,6 +36,13 @@ namespace VitaPharm.Forms.Commodity
             cboCategoryName.EditValue = null;
         }
 
+        private void LoadStatus()
+        {
+            cboIsTerminated.Properties.Items.Clear();
+            cboIsTerminated.Properties.Items.AddRange(new[] { "active", "inactive" });
+            cboIsTerminated.SelectedIndex = -1;
+        }
+
         private void LoadCommodities()
         {
             var items = context.Commodities
@@ -41,8 +50,8 @@ namespace VitaPharm.Forms.Commodity
                                .AsEnumerable()
                                .Select((c, idx) => new
                                {
-                                   ID = idx + 1,
-                                   c.CommodityID,
+                                   ID = idx + 1,                 
+                                   c.CommodityID,                          
                                    c.CommodityName,
                                    c.Manufacturer,
                                    c.BaseUnit,
@@ -56,7 +65,18 @@ namespace VitaPharm.Forms.Commodity
             gridControl.DataSource = bsCommodities;
 
             gridView.PopulateColumns();
+            HideColumnSafely(gridView, "CommodityID");
             gridView.BestFitColumns();
+        }
+
+        private static void HideColumnSafely(GridView view, string fieldName)
+        {
+            var col = view.Columns[fieldName];
+            if (col != null)
+            {
+                col.Visible = false;
+                col.OptionsColumn.ShowInCustomizationForm = false;
+            }
         }
 
         private void ToggleControls(bool enable)

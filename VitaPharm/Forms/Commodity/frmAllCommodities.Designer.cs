@@ -38,6 +38,7 @@
             colCategoryName = new DevExpress.XtraGrid.Columns.GridColumn();
             gridControl = new DevExpress.XtraGrid.GridControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            cboIsTerminated = new DevExpress.XtraEditors.ComboBoxEdit();
             labelControl9 = new DevExpress.XtraEditors.LabelControl();
             txtSellingPrice = new DevExpress.XtraEditors.TextEdit();
             Status = new DevExpress.XtraEditors.LabelControl();
@@ -55,11 +56,11 @@
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnReload = new DevExpress.XtraEditors.SimpleButton();
             btnEdit = new DevExpress.XtraEditors.SimpleButton();
-            cboIsTerminated = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cboIsTerminated.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtSellingPrice.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cboCategoryName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtBaseUnit.Properties).BeginInit();
@@ -67,7 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)txtCommodityName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)cboIsTerminated.Properties).BeginInit();
             SuspendLayout();
             // 
             // gridView
@@ -75,6 +75,7 @@
             gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, colCommodityName, colManufacturer, colBaseUnit, colSellingPrice, colIsTerminated, colCategoryName });
             gridView.GridControl = gridControl;
             gridView.Name = "gridView";
+            gridView.OptionsView.RowAutoHeight = true;
             gridView.FocusedRowChanged += gridView_FocusedRowChanged;
             // 
             // colID
@@ -197,6 +198,14 @@
             groupControl1.Size = new Size(828, 146);
             groupControl1.TabIndex = 1;
             groupControl1.Text = "Commodity Information";
+            // 
+            // cboIsTerminated
+            // 
+            cboIsTerminated.Location = new Point(578, 100);
+            cboIsTerminated.Name = "cboIsTerminated";
+            cboIsTerminated.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            cboIsTerminated.Size = new Size(156, 22);
+            cboIsTerminated.TabIndex = 15;
             // 
             // labelControl9
             // 
@@ -381,14 +390,6 @@
             btnEdit.Text = "Edit";
             btnEdit.Click += btnEdit_Click;
             // 
-            // cboIsTerminated
-            // 
-            cboIsTerminated.Location = new Point(578, 100);
-            cboIsTerminated.Name = "cboIsTerminated";
-            cboIsTerminated.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboIsTerminated.Size = new Size(156, 22);
-            cboIsTerminated.TabIndex = 15;
-            // 
             // frmAllCommodities
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -407,6 +408,7 @@
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cboIsTerminated.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtSellingPrice.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cboCategoryName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtBaseUnit.Properties).EndInit();
@@ -414,7 +416,6 @@
             ((System.ComponentModel.ISupportInitialize)txtCommodityName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)cboIsTerminated.Properties).EndInit();
             ResumeLayout(false);
         }
 
