@@ -1,4 +1,4 @@
-﻿namespace VitaPharm.Forms
+﻿namespace VitaPharm.Forms.Commodity
 {
     partial class frmNewCommodity
     {
@@ -37,7 +37,7 @@
             txtName = new DevExpress.XtraEditors.TextEdit();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            cboType = new DevExpress.XtraEditors.ComboBoxEdit();
+            cboCategoryName = new DevExpress.XtraEditors.ComboBoxEdit();
             groupControl3 = new DevExpress.XtraEditors.GroupControl();
             txtSellingPrice = new DevExpress.XtraEditors.TextEdit();
             labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -52,7 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)txtName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl2).BeginInit();
             groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)cboType.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cboCategoryName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl3).BeginInit();
             groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtSellingPrice.Properties).BeginInit();
@@ -131,21 +131,21 @@
             // 
             groupControl2.AppearanceCaption.BorderColor = Color.FromArgb(226, 251, 219);
             groupControl2.AppearanceCaption.Options.UseBorderColor = true;
-            groupControl2.Controls.Add(cboType);
+            groupControl2.Controls.Add(cboCategoryName);
             groupControl2.Location = new Point(436, 12);
             groupControl2.Name = "groupControl2";
             groupControl2.Size = new Size(193, 78);
             groupControl2.TabIndex = 1;
             groupControl2.Text = "Type of commodity";
             // 
-            // cboType
+            // cboCategoryName
             // 
-            cboType.EditValue = "Type";
-            cboType.Location = new Point(7, 36);
-            cboType.Name = "cboType";
-            cboType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboType.Size = new Size(169, 22);
-            cboType.TabIndex = 0;
+            cboCategoryName.EditValue = "Type";
+            cboCategoryName.Location = new Point(7, 36);
+            cboCategoryName.Name = "cboCategoryName";
+            cboCategoryName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            cboCategoryName.Size = new Size(169, 22);
+            cboCategoryName.TabIndex = 0;
             // 
             // groupControl3
             // 
@@ -224,6 +224,7 @@
             Name = "frmNewCommodity";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "New Commodity";
+            Load += frmNewCommodity_Load;
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
@@ -233,7 +234,7 @@
             ((System.ComponentModel.ISupportInitialize)txtName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)groupControl2).EndInit();
             groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)cboType.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cboCategoryName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)groupControl3).EndInit();
             groupControl3.ResumeLayout(false);
             groupControl3.PerformLayout();
@@ -252,7 +253,7 @@
         private DevExpress.XtraEditors.TextEdit txtName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.ComboBoxEdit cboType;
+        private DevExpress.XtraEditors.ComboBoxEdit cboCategoryName;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.TextEdit txtSellingPrice;
         private DevExpress.XtraEditors.LabelControl labelControl5;
