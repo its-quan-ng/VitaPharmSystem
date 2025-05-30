@@ -2,8 +2,7 @@
 using VitaPharm.Data;
 using DevExpress.XtraEditors;
 using System.ComponentModel;
-using System.Linq;
-using System.Collections.Generic;
+using DevExpress.XtraEditors.Controls;
 
 namespace VitaPharm.Forms.Receipt
 {
@@ -84,8 +83,10 @@ namespace VitaPharm.Forms.Receipt
         {
             var commodities = context.Commodities.ToList();
             cboCommodity.Properties.DataSource = commodities;
-            cboCommodity.Properties.DisplayMember = "CommodityName";
-            cboCommodity.Properties.ValueMember = "CommodityID";
+            cboCommodity.Properties.Columns.Clear();
+            cboCommodity.Properties.Columns.Add(new LookUpColumnInfo("CommodityName", "Tên hàng"));
+            cboCommodity.Properties.Columns.Add(new LookUpColumnInfo("Manufacturer", "Hãng SX"));
+            cboCommodity.Properties.Columns.Add(new LookUpColumnInfo("BaseUnit", "Đơn vị"));
             cboCommodity.EditValue = null;
         }
 
@@ -98,8 +99,8 @@ namespace VitaPharm.Forms.Receipt
                     .Where(b => b.Commodity.CommodityID == commodityId && b.QtyAvailable > 0 && b.ExpDate > DateTime.Now)
                     .ToList();
                 cboBatchCode.Properties.DataSource = batches;
-                cboBatchCode.Properties.DisplayMember = "BatchCode";
-                cboBatchCode.Properties.ValueMember = "BatchID";
+                cboBatchCode.Properties.Columns.Clear();
+                cboBatchCode.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("BatchCode", "Batch Code"));
                 cboBatchCode.EditValue = null;
 
                 if (batches.Count == 0)
@@ -161,7 +162,7 @@ namespace VitaPharm.Forms.Receipt
                 .ToArray());
             string datePart = DateTime.Now.ToString("ddMMyy");
             int countDb = context.Batches
-                .Count(b => b.MfgDate.Date == DateTime.Now.Date && b.Commodity.CommodityName == commodityName);
+                .Count(b => b.CreatedDate.Date == DateTime.Now.Date && b.Commodity.CommodityName == commodityName);
             int countTemp = tempBatchList.Count(b => b.MfgDate.Date == DateTime.Now.Date && b.CommodityName == commodityName);
             int count = countDb + countTemp + 1;
             string countPart = count.ToString("D2");

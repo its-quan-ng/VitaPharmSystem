@@ -19,6 +19,9 @@ namespace VitaPharm.Data
         [Column(TypeName = "datetime")]
         public DateTime ExpDate { get; set; }
 
+        [Column(TypeName = "datetime")]
+        public DateTime CreatedDate { get; set; }
+
         public int QtyAvailable { get; set; }
 
         [Column(TypeName = "money")]

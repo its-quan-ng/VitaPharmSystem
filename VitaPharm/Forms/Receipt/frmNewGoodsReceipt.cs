@@ -165,6 +165,7 @@ namespace VitaPharm.Forms.Receipt
                             PurchasePrice = dto.PurchasePrice,
                             QtyAvailable = dto.Qty,
                             BatchStatus = "In stock",
+                            CreatedDate = DateTime.Now,
                             Commodity = context.Commodities.Find(dto.CommodityID)
                         };
                         context.Batches.Add(batch);
