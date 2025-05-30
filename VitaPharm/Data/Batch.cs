@@ -20,7 +20,7 @@ namespace VitaPharm.Data
         public DateTime ExpDate { get; set; }
 
         [Column(TypeName = "datetime")]
-        public DateTime CreatedDate { get; set; }
+        public DateTime BatchDate { get; set; }
 
         public int QtyAvailable { get; set; }
 

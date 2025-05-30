@@ -81,9 +81,14 @@ namespace VitaPharm.Forms.Receipt
 
         private void LoadCommodities()
         {
-            var commodities = context.Commodities.ToList();
+           var commodities = context.Commodities
+            .Where(c => c.IsTerminated == "active")
+            .ToList();
             cboCommodity.Properties.DataSource = commodities;
+            cboCommodity.Properties.DisplayMember = "CommodityName";
+            cboCommodity.Properties.ValueMember = "CommodityID";
             cboCommodity.Properties.Columns.Clear();
+            
             cboCommodity.Properties.Columns.Add(new LookUpColumnInfo("CommodityName", "Tên hàng"));
             cboCommodity.Properties.Columns.Add(new LookUpColumnInfo("Manufacturer", "Hãng SX"));
             cboCommodity.Properties.Columns.Add(new LookUpColumnInfo("BaseUnit", "Đơn vị"));
