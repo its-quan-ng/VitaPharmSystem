@@ -151,7 +151,6 @@
             gridView.Name = "gridView";
             gridView.OptionsFilter.AllowAutoFilterConditionChange = DevExpress.Utils.DefaultBoolean.True;
             gridView.OptionsView.ShowAutoFilterRow = true;
-            gridView.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             // 
             // colReceiptID
             // 
