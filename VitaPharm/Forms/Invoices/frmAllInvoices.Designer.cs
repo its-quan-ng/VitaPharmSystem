@@ -167,7 +167,6 @@
             gridView.OptionsEditForm.EditFormColumnCount = 5;
             gridView.OptionsPrint.PrintFilterInfo = true;
             gridView.OptionsView.ShowAutoFilterRow = true;
-            gridView.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             gridView.OptionsView.ShowGroupedColumns = true;
             // 
             // colID
@@ -176,6 +175,8 @@
             colID.FieldName = "InvoiceID";
             colID.MinWidth = 25;
             colID.Name = "colID";
+            colID.OptionsColumn.AllowEdit = false;
+            colID.OptionsColumn.AllowFocus = false;
             colID.Visible = true;
             colID.VisibleIndex = 0;
             colID.Width = 48;
@@ -186,6 +187,8 @@
             colInvoiceCode.FieldName = "InvoiceCode";
             colInvoiceCode.MinWidth = 25;
             colInvoiceCode.Name = "colInvoiceCode";
+            colInvoiceCode.OptionsColumn.AllowEdit = false;
+            colInvoiceCode.OptionsColumn.AllowFocus = false;
             colInvoiceCode.Visible = true;
             colInvoiceCode.VisibleIndex = 1;
             colInvoiceCode.Width = 98;
@@ -198,6 +201,8 @@
             colDate.FieldName = "CreatedDate";
             colDate.MinWidth = 25;
             colDate.Name = "colDate";
+            colDate.OptionsColumn.AllowEdit = false;
+            colDate.OptionsColumn.AllowFocus = false;
             colDate.Visible = true;
             colDate.VisibleIndex = 2;
             colDate.Width = 120;
@@ -208,6 +213,8 @@
             colCustomerName.FieldName = "CustomerName";
             colCustomerName.MinWidth = 25;
             colCustomerName.Name = "colCustomerName";
+            colCustomerName.OptionsColumn.AllowEdit = false;
+            colCustomerName.OptionsColumn.AllowFocus = false;
             colCustomerName.Visible = true;
             colCustomerName.VisibleIndex = 3;
             colCustomerName.Width = 145;
@@ -218,6 +225,8 @@
             colEmployeeName.FieldName = "EmployeeName";
             colEmployeeName.MinWidth = 25;
             colEmployeeName.Name = "colEmployeeName";
+            colEmployeeName.OptionsColumn.AllowEdit = false;
+            colEmployeeName.OptionsColumn.AllowFocus = false;
             colEmployeeName.Visible = true;
             colEmployeeName.VisibleIndex = 4;
             colEmployeeName.Width = 160;
@@ -228,6 +237,8 @@
             colStatus.FieldName = "InvoiceStatus";
             colStatus.MinWidth = 25;
             colStatus.Name = "colStatus";
+            colStatus.OptionsColumn.AllowEdit = false;
+            colStatus.OptionsColumn.AllowFocus = false;
             colStatus.Visible = true;
             colStatus.VisibleIndex = 5;
             colStatus.Width = 94;
@@ -238,6 +249,8 @@
             colNote.FieldName = "Note";
             colNote.MinWidth = 25;
             colNote.Name = "colNote";
+            colNote.OptionsColumn.AllowEdit = false;
+            colNote.OptionsColumn.AllowFocus = false;
             colNote.Visible = true;
             colNote.VisibleIndex = 6;
             colNote.Width = 136;
