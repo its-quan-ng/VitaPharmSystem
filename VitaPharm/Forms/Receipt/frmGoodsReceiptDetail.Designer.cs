@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            gridControl1 = new DevExpress.XtraGrid.GridControl();
-            gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            gridControl = new DevExpress.XtraGrid.GridControl();
+            gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             colReceiptCode = new DevExpress.XtraGrid.Columns.GridColumn();
             colBatchCode = new DevExpress.XtraGrid.Columns.GridColumn();
             colMfgDate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -39,6 +39,7 @@
             colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             panel1 = new Panel();
+            btnPrint = new DevExpress.XtraEditors.SimpleButton();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnReload = new DevExpress.XtraEditors.SimpleButton();
             panel2 = new Panel();
@@ -46,39 +47,38 @@
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             lblTotalQuantity = new DevExpress.XtraEditors.LabelControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            btnPrint = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panelControl1
             // 
-            panelControl1.Controls.Add(gridControl1);
+            panelControl1.Controls.Add(gridControl);
             panelControl1.Dock = DockStyle.Top;
             panelControl1.Location = new Point(0, 0);
             panelControl1.Name = "panelControl1";
             panelControl1.Size = new Size(813, 243);
             panelControl1.TabIndex = 0;
             // 
-            // gridControl1
+            // gridControl
             // 
-            gridControl1.Dock = DockStyle.Fill;
-            gridControl1.Location = new Point(2, 2);
-            gridControl1.MainView = gridView1;
-            gridControl1.Name = "gridControl1";
-            gridControl1.Size = new Size(809, 239);
-            gridControl1.TabIndex = 0;
-            gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
+            gridControl.Dock = DockStyle.Fill;
+            gridControl.Location = new Point(2, 2);
+            gridControl.MainView = gridView;
+            gridControl.Name = "gridControl";
+            gridControl.Size = new Size(809, 239);
+            gridControl.TabIndex = 0;
+            gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
-            // gridView1
+            // gridView
             // 
-            gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colReceiptCode, colBatchCode, colMfgDate, colExpDate, colPurchasePrice, colQuantity, colAmount });
-            gridView1.GridControl = gridControl1;
-            gridView1.Name = "gridView1";
+            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colReceiptCode, colBatchCode, colMfgDate, colExpDate, colPurchasePrice, colQuantity, colAmount });
+            gridView.GridControl = gridControl;
+            gridView.Name = "gridView";
             // 
             // colReceiptCode
             // 
@@ -161,6 +161,18 @@
             panel1.Size = new Size(813, 63);
             panel1.TabIndex = 1;
             // 
+            // btnPrint
+            // 
+            btnPrint.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
+            btnPrint.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            btnPrint.Appearance.Options.UseBackColor = true;
+            btnPrint.Appearance.Options.UseFont = true;
+            btnPrint.Location = new Point(490, 19);
+            btnPrint.Name = "btnPrint";
+            btnPrint.Size = new Size(106, 32);
+            btnPrint.TabIndex = 12;
+            btnPrint.Text = "Print";
+            // 
             // btnCancel
             // 
             btnCancel.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
@@ -237,18 +249,6 @@
             labelControl1.TabIndex = 0;
             labelControl1.Text = "Total Quantity:";
             // 
-            // btnPrint
-            // 
-            btnPrint.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
-            btnPrint.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            btnPrint.Appearance.Options.UseBackColor = true;
-            btnPrint.Appearance.Options.UseFont = true;
-            btnPrint.Location = new Point(490, 19);
-            btnPrint.Name = "btnPrint";
-            btnPrint.Size = new Size(106, 32);
-            btnPrint.TabIndex = 12;
-            btnPrint.Text = "Print";
-            // 
             // frmGoodsReceiptDetail
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -262,8 +262,8 @@
             Text = "Goods Receipt Detail";
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -273,8 +273,8 @@
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraGrid.Columns.GridColumn colBatchCode;
         private DevExpress.XtraGrid.Columns.GridColumn colMfgDate;
         private DevExpress.XtraGrid.Columns.GridColumn colExpDate;
