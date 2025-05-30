@@ -167,7 +167,7 @@ namespace VitaPharm.Forms.Receipt
                 .ToArray());
             string datePart = DateTime.Now.ToString("ddMMyy");
             int countDb = context.Batches
-                .Count(b => b.CreatedDate.Date == DateTime.Now.Date && b.Commodity.CommodityName == commodityName);
+                .Count(b => b.BatchDate.Date == DateTime.Now.Date && b.Commodity.CommodityName == commodityName);
             int countTemp = tempBatchList.Count(b => b.MfgDate.Date == DateTime.Now.Date && b.CommodityName == commodityName);
             int count = countDb + countTemp + 1;
             string countPart = count.ToString("D2");
