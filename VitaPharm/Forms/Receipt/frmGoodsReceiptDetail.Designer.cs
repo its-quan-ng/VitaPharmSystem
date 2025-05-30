@@ -202,9 +202,10 @@
             colID.FieldName = "ID";
             colID.MinWidth = 25;
             colID.Name = "colID";
+            colID.OptionsColumn.AllowEdit = false;
             colID.Visible = true;
             colID.VisibleIndex = 0;
-            colID.Width = 94;
+            colID.Width = 47;
             // 
             // colBatchCode
             // 
@@ -212,9 +213,10 @@
             colBatchCode.FieldName = "BatchCode";
             colBatchCode.MinWidth = 25;
             colBatchCode.Name = "colBatchCode";
+            colBatchCode.OptionsColumn.AllowEdit = false;
             colBatchCode.Visible = true;
             colBatchCode.VisibleIndex = 1;
-            colBatchCode.Width = 94;
+            colBatchCode.Width = 272;
             // 
             // colMfgDate
             // 
@@ -222,9 +224,10 @@
             colMfgDate.FieldName = "MfgDate";
             colMfgDate.MinWidth = 25;
             colMfgDate.Name = "colMfgDate";
+            colMfgDate.OptionsColumn.AllowEdit = false;
             colMfgDate.Visible = true;
             colMfgDate.VisibleIndex = 2;
-            colMfgDate.Width = 94;
+            colMfgDate.Width = 126;
             // 
             // colExpDate
             // 
@@ -232,9 +235,10 @@
             colExpDate.FieldName = "ExpDate";
             colExpDate.MinWidth = 25;
             colExpDate.Name = "colExpDate";
+            colExpDate.OptionsColumn.AllowEdit = false;
             colExpDate.Visible = true;
             colExpDate.VisibleIndex = 3;
-            colExpDate.Width = 94;
+            colExpDate.Width = 124;
             // 
             // colPurchasePrice
             // 
@@ -242,9 +246,10 @@
             colPurchasePrice.FieldName = "PurchasePrice";
             colPurchasePrice.MinWidth = 25;
             colPurchasePrice.Name = "colPurchasePrice";
+            colPurchasePrice.OptionsColumn.AllowEdit = false;
             colPurchasePrice.Visible = true;
             colPurchasePrice.VisibleIndex = 4;
-            colPurchasePrice.Width = 94;
+            colPurchasePrice.Width = 109;
             // 
             // colQuantity
             // 
@@ -252,9 +257,10 @@
             colQuantity.FieldName = "Quantity";
             colQuantity.MinWidth = 25;
             colQuantity.Name = "colQuantity";
+            colQuantity.OptionsColumn.AllowEdit = false;
             colQuantity.Visible = true;
             colQuantity.VisibleIndex = 5;
-            colQuantity.Width = 94;
+            colQuantity.Width = 48;
             // 
             // colAmount
             // 
@@ -262,10 +268,11 @@
             colAmount.FieldName = "Amount";
             colAmount.MinWidth = 25;
             colAmount.Name = "colAmount";
+            colAmount.OptionsColumn.AllowEdit = false;
             colAmount.UnboundDataType = typeof(decimal);
             colAmount.Visible = true;
             colAmount.VisibleIndex = 6;
-            colAmount.Width = 94;
+            colAmount.Width = 125;
             // 
             // groupControl1
             // 
