@@ -132,7 +132,7 @@ namespace VitaPharm.Forms.Invoices
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            var result = XtraMessageBox.Show("Are you sure you want to cancel?", "Confirmation",
+            var result = XtraMessageBox.Show("Are you sure you want to close this form?", "Confirmation",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
