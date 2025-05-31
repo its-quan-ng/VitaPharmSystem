@@ -195,6 +195,7 @@
             cboCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             cboCustomer.Size = new Size(242, 22);
             cboCustomer.TabIndex = 21;
+            cboCustomer.EditValueChanged += cboCustomer_EditValueChanged;
             // 
             // dateCreatedDate
             // 
@@ -454,6 +455,7 @@
             cboBatchCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             cboBatchCode.Size = new Size(190, 22);
             cboBatchCode.TabIndex = 25;
+            cboBatchCode.EditValueChanged += cboBatchCode_EditValueChanged;
             // 
             // cboCommodity
             // 
@@ -463,6 +465,7 @@
             cboCommodity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             cboCommodity.Size = new Size(303, 22);
             cboCommodity.TabIndex = 24;
+            cboCommodity.EditValueChanged += cboCommodity_EditValueChanged;
             // 
             // txtQuantity
             // 

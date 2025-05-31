@@ -21,6 +21,7 @@ namespace VitaPharm.Forms.Invoices
 
         private void frmNewInvoice_Load(object sender, EventArgs e)
         {
+
             txtInvoiceCode.Text = GenerateNewInvoiceCode();
 
             dateCreatedDate.DateTime = DateTime.Now;
@@ -41,7 +42,7 @@ namespace VitaPharm.Forms.Invoices
             cboCustomer.Properties.DisplayMember = "CustomerName";
             cboCustomer.Properties.ValueMember = "CustomerID";
             cboCustomer.EditValue = null;
-
+            LoadCommodities();
             ToggleControls();
             gridControl.DataSource = detailsList;
         }
@@ -157,7 +158,6 @@ namespace VitaPharm.Forms.Invoices
             using var transaction = context.Database.BeginTransaction();
             try
             {
-                // Create new invoice
                 var invoice = new Invoice
                 {
                     InvoiceCode = txtInvoiceCode.Text,
@@ -171,7 +171,6 @@ namespace VitaPharm.Forms.Invoices
                 context.Invoices.Add(invoice);
                 context.SaveChanges();
 
-                // Add invoice details
                 foreach (var line in detailsList)
                 {
                     var detail = new InvoiceDetail
@@ -255,12 +254,13 @@ namespace VitaPharm.Forms.Invoices
                 txtBaseUnit.Text = string.Empty;
                 txtPrice.Text = string.Empty;
                 cboBatchCode.Properties.DataSource = null;
+                cboBatchCode.Properties.Columns.Clear();
+                cboBatchCode.Properties.NullText = "Please select a batch!";
                 return;
             }
 
-            var commodityId = (int)cboCommodity.EditValue;
-            var commodity = context.Commodities
-                .FirstOrDefault(c => c.CommodityID == commodityId);
+            int commodityId = (int)cboCommodity.EditValue;
+            var commodity = context.Commodities.FirstOrDefault(c => c.CommodityID == commodityId);
 
             if (commodity != null)
             {
@@ -272,14 +272,15 @@ namespace VitaPharm.Forms.Invoices
                     .Select(b => new
                     {
                         b.BatchID,
-                        b.BatchCode,
-                        b.QtyAvailable
+                        b.BatchCode
                     })
                     .ToList();
 
                 cboBatchCode.Properties.DataSource = batches;
                 cboBatchCode.Properties.DisplayMember = "BatchCode";
                 cboBatchCode.Properties.ValueMember = "BatchID";
+                cboBatchCode.Properties.Columns.Clear();
+                cboBatchCode.Properties.Columns.Add(new LookUpColumnInfo("BatchCode", "Batch Code"));
                 cboBatchCode.EditValue = null;
 
                 if (batches.Count == 0)
@@ -298,9 +299,8 @@ namespace VitaPharm.Forms.Invoices
                 return;
             }
 
-            var batchId = (int)cboBatchCode.EditValue;
-            var batch = context.Batches
-                .FirstOrDefault(b => b.BatchID == batchId);
+            int batchId = (int)cboBatchCode.EditValue;
+            var batch = context.Batches.FirstOrDefault(b => b.BatchID == batchId);
 
             if (batch != null)
             {
