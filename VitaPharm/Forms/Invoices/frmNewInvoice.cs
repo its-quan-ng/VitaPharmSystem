@@ -3,6 +3,7 @@ using VitaPharm.Data;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
+using DevExpress.XtraEditors.Controls;
 
 namespace VitaPharm.Forms.Invoices
 {
@@ -239,7 +240,7 @@ namespace VitaPharm.Forms.Invoices
             var customerId = (int)cboCustomer.EditValue;
             var customer = context.Customers
                 .FirstOrDefault(c => c.CustomerID == customerId);
-            
+
             if (customer != null)
             {
                 txtContact.Text = customer.Contact;
@@ -280,6 +281,11 @@ namespace VitaPharm.Forms.Invoices
                 cboBatchCode.Properties.DisplayMember = "BatchCode";
                 cboBatchCode.Properties.ValueMember = "BatchID";
                 cboBatchCode.EditValue = null;
+
+                if (batches.Count == 0)
+                    cboBatchCode.Properties.NullText = "No batch available!";
+                else
+                    cboBatchCode.Properties.NullText = "Please select a batch!";
             }
             cboBatchCode.Enabled = true;
         }
@@ -316,23 +322,24 @@ namespace VitaPharm.Forms.Invoices
             btnAddToCart.Enabled = false;
             btnRemove.Enabled = false;
             btnAdd.Enabled = true;
+            cboCustomer.Enabled = true;
+            cboCommodity.Enabled = true;
+            cboBatchCode.Enabled = true;
         }
 
         private void LoadCommodities()
         {
             var commodities = context.Commodities
-                .Select(c => new
-                {
-                    c.CommodityID,
-                    c.CommodityName,
-                    c.Manufacturer,
-                    c.BaseUnit,
-                    c.SellingPrice
-                })
+                .Where(c => c.IsTerminated == "active")
                 .ToList();
             cboCommodity.Properties.DataSource = commodities;
             cboCommodity.Properties.DisplayMember = "CommodityName";
             cboCommodity.Properties.ValueMember = "CommodityID";
+            cboCommodity.Properties.Columns.Clear();
+            cboCommodity.Properties.Columns.Add(new LookUpColumnInfo("CommodityName", "Commodity Name"));
+            cboCommodity.Properties.Columns.Add(new LookUpColumnInfo("Manufacturer", "Manufacturer"));
+            cboCommodity.Properties.Columns.Add(new LookUpColumnInfo("BaseUnit", "Base Unit"));
+            cboCommodity.Properties.NullText = "Please select a commodity!";
             cboCommodity.EditValue = null;
         }
     }

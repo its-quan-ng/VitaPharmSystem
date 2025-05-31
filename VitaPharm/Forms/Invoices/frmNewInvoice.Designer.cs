@@ -330,7 +330,7 @@
             groupControl2.Controls.Add(gridControl);
             groupControl2.Location = new Point(28, 165);
             groupControl2.Name = "groupControl2";
-            groupControl2.Size = new Size(552, 224);
+            groupControl2.Size = new Size(552, 182);
             groupControl2.TabIndex = 27;
             groupControl2.Text = "Cart";
             // 
@@ -340,7 +340,7 @@
             gridControl.Location = new Point(2, 28);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.Size = new Size(548, 194);
+            gridControl.Size = new Size(548, 152);
             gridControl.TabIndex = 0;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
@@ -442,7 +442,7 @@
             groupControl3.Controls.Add(labelControl3);
             groupControl3.Location = new Point(586, 165);
             groupControl3.Name = "groupControl3";
-            groupControl3.Size = new Size(340, 266);
+            groupControl3.Size = new Size(340, 248);
             groupControl3.TabIndex = 28;
             groupControl3.Text = "Commodities";
             // 
@@ -452,7 +452,7 @@
             cboBatchCode.Location = new Point(52, 92);
             cboBatchCode.Name = "cboBatchCode";
             cboBatchCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboBatchCode.Size = new Size(178, 22);
+            cboBatchCode.Size = new Size(190, 22);
             cboBatchCode.TabIndex = 25;
             // 
             // cboCommodity
@@ -466,7 +466,7 @@
             // 
             // txtQuantity
             // 
-            txtQuantity.Location = new Point(250, 185);
+            txtQuantity.Location = new Point(269, 171);
             txtQuantity.Name = "txtQuantity";
             txtQuantity.Size = new Size(50, 22);
             txtQuantity.TabIndex = 23;
@@ -477,7 +477,7 @@
             btnRemove.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRemove.Appearance.Options.UseBackColor = true;
             btnRemove.Appearance.Options.UseFont = true;
-            btnRemove.Location = new Point(201, 230);
+            btnRemove.Location = new Point(207, 209);
             btnRemove.Name = "btnRemove";
             btnRemove.Size = new Size(71, 28);
             btnRemove.TabIndex = 22;
@@ -490,7 +490,7 @@
             btnAddToCart.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAddToCart.Appearance.Options.UseBackColor = true;
             btnAddToCart.Appearance.Options.UseFont = true;
-            btnAddToCart.Location = new Point(75, 230);
+            btnAddToCart.Location = new Point(81, 209);
             btnAddToCart.Name = "btnAddToCart";
             btnAddToCart.Size = new Size(92, 28);
             btnAddToCart.TabIndex = 21;
@@ -503,7 +503,7 @@
             labelControl13.Appearance.ForeColor = Color.Crimson;
             labelControl13.Appearance.Options.UseFont = true;
             labelControl13.Appearance.Options.UseForeColor = true;
-            labelControl13.Location = new Point(247, 163);
+            labelControl13.Location = new Point(266, 149);
             labelControl13.Name = "labelControl13";
             labelControl13.Size = new Size(56, 16);
             labelControl13.TabIndex = 19;
@@ -511,7 +511,7 @@
             // 
             // txtPrice
             // 
-            txtPrice.Location = new Point(98, 186);
+            txtPrice.Location = new Point(98, 160);
             txtPrice.Name = "txtPrice";
             txtPrice.Properties.Appearance.Options.UseTextOptions = true;
             txtPrice.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -529,7 +529,7 @@
             labelControl11.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             labelControl11.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("labelControl11.ImageOptions.SvgImage");
             labelControl11.ImageOptions.SvgImageSize = new Size(16, 16);
-            labelControl11.Location = new Point(14, 184);
+            labelControl11.Location = new Point(14, 158);
             labelControl11.Name = "labelControl11";
             labelControl11.Size = new Size(58, 24);
             labelControl11.TabIndex = 17;
@@ -537,7 +537,7 @@
             // 
             // txtBaseUnit
             // 
-            txtBaseUnit.Location = new Point(98, 145);
+            txtBaseUnit.Location = new Point(98, 129);
             txtBaseUnit.Name = "txtBaseUnit";
             txtBaseUnit.Properties.Appearance.Options.UseTextOptions = true;
             txtBaseUnit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -552,7 +552,7 @@
             labelControl12.Appearance.ForeColor = Color.Black;
             labelControl12.Appearance.Options.UseFont = true;
             labelControl12.Appearance.Options.UseForeColor = true;
-            labelControl12.Location = new Point(16, 148);
+            labelControl12.Location = new Point(16, 132);
             labelControl12.Name = "labelControl12";
             labelControl12.Size = new Size(60, 16);
             labelControl12.TabIndex = 15;
@@ -564,7 +564,7 @@
             labelControl10.Appearance.ForeColor = Color.Blue;
             labelControl10.Appearance.Options.UseFont = true;
             labelControl10.Appearance.Options.UseForeColor = true;
-            labelControl10.Location = new Point(244, 106);
+            labelControl10.Location = new Point(260, 95);
             labelControl10.Name = "labelControl10";
             labelControl10.Size = new Size(59, 16);
             labelControl10.TabIndex = 13;
@@ -572,7 +572,7 @@
             // 
             // txtQtyAvailable
             // 
-            txtQtyAvailable.Location = new Point(250, 128);
+            txtQtyAvailable.Location = new Point(266, 117);
             txtQtyAvailable.Name = "txtQtyAvailable";
             txtQtyAvailable.Properties.Appearance.Options.UseTextOptions = true;
             txtQtyAvailable.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -608,7 +608,7 @@
             btnAdd.Appearance.Options.UseBorderColor = true;
             btnAdd.Appearance.Options.UseFont = true;
             btnAdd.Appearance.Options.UseForeColor = true;
-            btnAdd.Location = new Point(495, 395);
+            btnAdd.Location = new Point(493, 376);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(85, 36);
             btnAdd.TabIndex = 29;
@@ -622,7 +622,7 @@
             labelControl15.Appearance.ForeColor = Color.Blue;
             labelControl15.Appearance.Options.UseFont = true;
             labelControl15.Appearance.Options.UseForeColor = true;
-            labelControl15.Location = new Point(28, 395);
+            labelControl15.Location = new Point(31, 361);
             labelControl15.Name = "labelControl15";
             labelControl15.Size = new Size(98, 16);
             labelControl15.TabIndex = 30;
@@ -632,7 +632,7 @@
             // 
             labelControl16.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelControl16.Appearance.Options.UseFont = true;
-            labelControl16.Location = new Point(28, 428);
+            labelControl16.Location = new Point(31, 386);
             labelControl16.Name = "labelControl16";
             labelControl16.Size = new Size(22, 16);
             labelControl16.TabIndex = 31;
@@ -644,7 +644,7 @@
             lblTotal.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Information;
             lblTotal.Appearance.Options.UseFont = true;
             lblTotal.Appearance.Options.UseForeColor = true;
-            lblTotal.Location = new Point(346, 397);
+            lblTotal.Location = new Point(346, 361);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(50, 16);
             lblTotal.TabIndex = 32;
@@ -655,7 +655,7 @@
             lblTax.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTax.Appearance.FontStyleDelta = FontStyle.Bold;
             lblTax.Appearance.Options.UseFont = true;
-            lblTax.Location = new Point(346, 428);
+            lblTax.Location = new Point(346, 386);
             lblTax.Name = "lblTax";
             lblTax.Size = new Size(50, 16);
             lblTax.TabIndex = 33;
@@ -665,7 +665,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(953, 467);
+            ClientSize = new Size(953, 425);
             Controls.Add(lblTax);
             Controls.Add(lblTotal);
             Controls.Add(labelControl16);
