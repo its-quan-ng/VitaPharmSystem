@@ -5,7 +5,6 @@ using DevExpress.XtraGrid.Views.Grid;
 using VitaPharm.Data;
 using ClosedXML.Excel;
 using System.Data;
-using System.Linq;
 
 namespace VitaPharm.Forms.Commodities
 {
@@ -221,25 +220,120 @@ namespace VitaPharm.Forms.Commodities
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog
-            {
-                Title = "Import Commodities from Excel",
-                Filter = "Excel Files|*.xlsx;*.xlsm;*.xls",
-                Multiselect = false
-            };
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Import data from Excel file";
+            openFileDialog.Filter = "Excel Files|*.xls;*.xlsx";
+            openFileDialog.Multiselect = false;
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    using (var workbook = new XLWorkbook(openFileDialog.FileName))
+                    using (XLWorkbook workbook = new XLWorkbook(openFileDialog.FileName))
                     {
+                        IXLWorksheet worksheet = workbook.Worksheet(1);
+                        bool firstRow = true;
+                        string readRange = "1:1";
+                        DataTable table = new DataTable();
+
+                        foreach (IXLRow row in worksheet.RowsUsed())
+                        {
+                            if (firstRow)
+                            {
+                                readRange = string.Format("{0}:{1}", 1, row.LastCellUsed().Address.ColumnNumber);
+                                foreach (IXLCell cell in row.Cells(readRange))
+                                    table.Columns.Add(cell.Value.ToString());
+                                firstRow = false;
+                            }
+                            else 
+                            {
+                                table.Rows.Add();
+                                int cellIndex = 0;
+                                foreach (IXLCell cell in row.Cells(readRange))
+                                {
+                                    table.Rows[table.Rows.Count - 1][cellIndex] = cell.Value.ToString();
+                                    cellIndex++;
+                                }
+                            }
+                        }
+
+                        if (table.Rows.Count > 0)
+                        {
+                            int successCount = 0;
+                            int errorCount = 0;
+
+                            foreach (DataRow r in table.Rows)
+                            {
+                                try
+                                {
+                                    string commodityName = r["CommodityName"]?.ToString()?.Trim();
+                                    string manufacturer = r["Manufacturer"]?.ToString()?.Trim() ?? "";
+                                    string baseUnit = r["BaseUnit"]?.ToString()?.Trim() ?? "";
+                                    string sellingPriceStr = r["SellingPrice"]?.ToString()?.Trim();
+                                    string status = r["Status"]?.ToString()?.Trim() ?? "active";
+                                    string categoryName = r["CategoryName"]?.ToString()?.Trim();
+
+                                    if (string.IsNullOrEmpty(commodityName) || string.IsNullOrEmpty(categoryName))
+                                    {
+                                        errorCount++;
+                                        continue;
+                                    }
+
+                                    if (!decimal.TryParse(sellingPriceStr, out decimal sellingPrice))
+                                    {
+                                        errorCount++;
+                                        continue;
+                                    }
+
+                                    var category = context.Categories.FirstOrDefault(c => c.CategoryName == categoryName);
+                                    if (category == null)
+                                    {
+                                        errorCount++;
+                                        continue;
+                                    }
+
+                                    var existingCommodity = context.Commodities
+                                        .FirstOrDefault(c => c.CommodityName == commodityName);
+
+                                    if (existingCommodity != null)
+                                    {
+                                        errorCount++;
+                                        continue;
+                                    }
+
+                                    var newCommodity = new Commodity
+                                    {
+                                        CommodityName = commodityName,
+                                        Manufacturer = manufacturer,
+                                        BaseUnit = baseUnit,
+                                        SellingPrice = sellingPrice,
+                                        IsTerminated = status,
+                                        Categories = category
+                                    };
+                                    context.Commodities.Add(newCommodity);
+
+                                    successCount++;
+                                }
+                                catch
+                                {
+                                    errorCount++;
+                                }
+                            }
+
+                            context.SaveChanges();
+                            XtraMessageBox.Show($"Successfully imported {successCount} rows. Errors: {errorCount} rows.",
+                                "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            frmAllCommodities_Load(sender, e);
+                        }
+
+                        if (firstRow)
+                            XtraMessageBox.Show("Excel file is empty.", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
                 catch (Exception ex)
                 {
-                    XtraMessageBox.Show($"Error importing file: {ex.Message}", "Import Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }
