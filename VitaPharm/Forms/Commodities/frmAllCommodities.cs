@@ -5,6 +5,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using VitaPharm.Data;
 using ClosedXML.Excel;
 using System.Data;
+using System.Linq;
 
 namespace VitaPharm.Forms.Commodities
 {
@@ -226,6 +227,21 @@ namespace VitaPharm.Forms.Commodities
                 Filter = "Excel Files|*.xlsx;*.xlsm;*.xls",
                 Multiselect = false
             };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    using (var workbook = new XLWorkbook(openFileDialog.FileName))
+                    {
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"Error importing file: {ex.Message}", "Import Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnExport_Click(object sender, EventArgs e)
