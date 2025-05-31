@@ -80,6 +80,7 @@
             labelControl16 = new DevExpress.XtraEditors.LabelControl();
             lblTotal = new DevExpress.XtraEditors.LabelControl();
             lblTax = new DevExpress.XtraEditors.LabelControl();
+            btnClear = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)seTaxRate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)meNote.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).BeginInit();
@@ -611,7 +612,7 @@
             btnAdd.Appearance.Options.UseBorderColor = true;
             btnAdd.Appearance.Options.UseFont = true;
             btnAdd.Appearance.Options.UseForeColor = true;
-            btnAdd.Location = new Point(493, 376);
+            btnAdd.Location = new Point(390, 370);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(85, 36);
             btnAdd.TabIndex = 29;
@@ -620,7 +621,7 @@
             // 
             // labelControl15
             // 
-            labelControl15.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            labelControl15.Anchor = AnchorStyles.Top;
             labelControl15.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelControl15.Appearance.ForeColor = Color.Blue;
             labelControl15.Appearance.Options.UseFont = true;
@@ -633,6 +634,7 @@
             // 
             // labelControl16
             // 
+            labelControl16.Anchor = AnchorStyles.Top;
             labelControl16.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelControl16.Appearance.Options.UseFont = true;
             labelControl16.Location = new Point(31, 386);
@@ -643,11 +645,12 @@
             // 
             // lblTotal
             // 
+            lblTotal.Anchor = AnchorStyles.Top;
             lblTotal.Appearance.FontStyleDelta = FontStyle.Bold;
             lblTotal.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Information;
             lblTotal.Appearance.Options.UseFont = true;
             lblTotal.Appearance.Options.UseForeColor = true;
-            lblTotal.Location = new Point(346, 361);
+            lblTotal.Location = new Point(190, 361);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(50, 16);
             lblTotal.TabIndex = 32;
@@ -655,20 +658,39 @@
             // 
             // lblTax
             // 
+            lblTax.Anchor = AnchorStyles.Top;
             lblTax.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTax.Appearance.FontStyleDelta = FontStyle.Bold;
             lblTax.Appearance.Options.UseFont = true;
-            lblTax.Location = new Point(346, 386);
+            lblTax.Location = new Point(190, 386);
             lblTax.Name = "lblTax";
             lblTax.Size = new Size(50, 16);
             lblTax.TabIndex = 33;
             lblTax.Text = "0.0 VND";
+            // 
+            // btnClear
+            // 
+            btnClear.Anchor = AnchorStyles.Top;
+            btnClear.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Warning;
+            btnClear.Appearance.BorderColor = Color.Red;
+            btnClear.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClear.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Critical;
+            btnClear.Appearance.Options.UseBackColor = true;
+            btnClear.Appearance.Options.UseBorderColor = true;
+            btnClear.Appearance.Options.UseFont = true;
+            btnClear.Appearance.Options.UseForeColor = true;
+            btnClear.Location = new Point(481, 370);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(87, 36);
+            btnClear.TabIndex = 34;
+            btnClear.Text = "Clear";
             // 
             // frmNewInvoice
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(953, 425);
+            Controls.Add(btnClear);
             Controls.Add(lblTax);
             Controls.Add(lblTotal);
             Controls.Add(labelControl16);
@@ -761,5 +783,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraEditors.LookUpEdit cboCommodity;
         private DevExpress.XtraEditors.LookUpEdit cboBatchCode;
+        private DevExpress.XtraEditors.SimpleButton btnClear;
     }
 }
