@@ -5,7 +5,7 @@ using DevExpress.XtraEditors;
 
 namespace VitaPharm.Forms
 {
-    public partial class frmGoodsReceiptDetail : DevExpress.XtraEditors.XtraForm
+    public partial class frmGoodsReceiptDetail : XtraForm
     {
         private PharmacyDbContext context = new PharmacyDbContext();
         private int receiptId;

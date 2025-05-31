@@ -183,8 +183,8 @@ namespace VitaPharm.Forms.Receipt
                                     gr.ReceiptDate = Convert.ToDateTime(r["ReceiptDate"].ToString());
                                     gr.SupplierName = r["SupplierName"].ToString();
                                     gr.Note = r["Note"]?.ToString() ?? "";
-                                    gr.ReceiptStatus = r["ReceiptStatus"]?.ToString() ?? "Active";
-                                    gr.Employee = employee; // Set navigation property
+                                    gr.ReceiptStatus = r["ReceiptStatus"]?.ToString() ?? "active";
+                                    gr.Employee = employee; 
 
                                     context.GoodsReceipts.Add(gr);
                                 }
@@ -322,7 +322,7 @@ namespace VitaPharm.Forms.Receipt
                     tableGoodsReceipts.Columns.AddRange(new DataColumn[] {
                         new DataColumn("ID", typeof(int)),             
                         new DataColumn("ReceiptCode", typeof(string)),
-                        new DataColumn("ReceiptDate", typeof(DateTime)),
+                        new DataColumn("ReceiptDate", typeof(string)),
                         new DataColumn("SupplierName", typeof(string)),
                         new DataColumn("EmployeeName", typeof(string)),
                         new DataColumn("Note", typeof(string)),
@@ -347,7 +347,7 @@ namespace VitaPharm.Forms.Receipt
                             tableGoodsReceipts.Rows.Add(
                                 index++,                            
                                 r.ReceiptCode,
-                                r.ReceiptDate,
+                                r.ReceiptDate.ToString("dd/MM/yyyy"),
                                 r.SupplierName,
                                 r.Employee?.EmployeeName ?? "",
                                 r.Note ?? "",
@@ -363,8 +363,8 @@ namespace VitaPharm.Forms.Receipt
                         new DataColumn("CommodityName", typeof(string)),
                         new DataColumn("Manufacturer", typeof(string)),
                         new DataColumn("BaseUnit", typeof(string)),
-                        new DataColumn("MfgDate", typeof(DateTime)),
-                        new DataColumn("ExpDate", typeof(DateTime)),
+                        new DataColumn("MfgDate", typeof(string)),
+                        new DataColumn("ExpDate", typeof(string)),
                         new DataColumn("PurchasePrice", typeof(decimal)),
                         new DataColumn("Quantity", typeof(int)),
                         new DataColumn("Amount", typeof(decimal))
@@ -388,8 +388,8 @@ namespace VitaPharm.Forms.Receipt
                                 d.Batch?.Commodity?.CommodityName ?? "",
                                 d.Batch?.Commodity?.Manufacturer ?? "",
                                 d.Batch?.Commodity?.BaseUnit ?? "",
-                                d.Batch?.MfgDate,
-                                d.Batch?.ExpDate,
+                                d.Batch?.MfgDate.ToString("dd/MM/yyyy"),
+                                d.Batch?.ExpDate.ToString("dd/MM/yyyy"),
                                 d.Batch?.PurchasePrice ?? 0,
                                 d.QtyIn,
                                 d.QtyIn * (d.Batch?.PurchasePrice ?? 0)
