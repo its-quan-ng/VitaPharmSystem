@@ -81,7 +81,7 @@ namespace VitaPharm.Forms.Invoices
 
         private void btnNewInvoice_Click(object sender, EventArgs e)
         {
-            var newInvoiceForm = new frmNewInvoice();
+            var newInvoiceForm = new frmNewInvoice(CurrentUser.Username);
             newInvoiceForm.ShowDialog();
             LoadInvoices();
         }

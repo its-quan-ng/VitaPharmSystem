@@ -143,6 +143,7 @@
             btnNewInvoice.ImageOptions.Image = Properties.Resources.new_invoice;
             btnNewInvoice.Name = "btnNewInvoice";
             btnNewInvoice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            btnNewInvoice.ItemClick += btnNewInvoice_ItemClick;
             // 
             // btnAllInvoices
             // 

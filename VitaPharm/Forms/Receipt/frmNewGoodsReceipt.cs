@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace VitaPharm.Forms.Receipt
 {
-    public partial class frmNewGoodsReceipt : DevExpress.XtraEditors.XtraForm
+    public partial class frmNewGoodsReceipt : XtraForm
     {
         private PharmacyDbContext context = new PharmacyDbContext();
         private BindingList<BatchDto> detailsList = new();
@@ -15,7 +15,6 @@ namespace VitaPharm.Forms.Receipt
         {
             InitializeComponent();
             currentUser = username;
-            
             gridControl.DataSource = detailsList;
             InitializeForm();
         }
@@ -82,13 +81,14 @@ namespace VitaPharm.Forms.Receipt
                 BatchDto existingBatch = null;
                 if (dlg.ResultBatch.BatchID == 0)
                 {
-                    existingBatch = detailsList.FirstOrDefault(b =>
+                    BatchDto? batchDto = detailsList.FirstOrDefault(b =>
                         b.BatchID == 0 &&
                         b.CommodityID == dlg.ResultBatch.CommodityID &&
                         b.MfgDate == dlg.ResultBatch.MfgDate &&
                         b.ExpDate == dlg.ResultBatch.ExpDate &&
                         b.PurchasePrice == dlg.ResultBatch.PurchasePrice
                     );
+                    existingBatch = batchDto;
                 }
                 else
                 {

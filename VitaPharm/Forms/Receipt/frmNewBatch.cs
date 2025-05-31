@@ -37,7 +37,7 @@ namespace VitaPharm.Forms.Receipt
         {
             if (cboCommodity.EditValue == null)
             {
-                XtraMessageBox.Show("Please select a commodity!");
+                XtraMessageBox.Show("Please select a commodity!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (dateExp.DateTime <= dateMfg.DateTime)
