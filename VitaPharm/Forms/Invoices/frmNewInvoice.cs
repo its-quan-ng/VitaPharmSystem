@@ -36,11 +36,13 @@ namespace VitaPharm.Forms.Invoices
 
 
             var customers = context.Customers
-                .Select(c => new { c.CustomerID, c.CustomerName, c.Contact })
+                .Select(c => new { c.CustomerID, c.CustomerName })
                 .ToList();
             cboCustomer.Properties.DataSource = customers;
             cboCustomer.Properties.DisplayMember = "CustomerName";
             cboCustomer.Properties.ValueMember = "CustomerID";
+            cboCustomer.Properties.Columns.Clear();
+            cboCustomer.Properties.Columns.Add(new LookUpColumnInfo("CustomerName", "Customer Name"));
             cboCustomer.Properties.NullText = "Please select a customer!";
             cboCustomer.EditValue = null;
             LoadCommodities();
