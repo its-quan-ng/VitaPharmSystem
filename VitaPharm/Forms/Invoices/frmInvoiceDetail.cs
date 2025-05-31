@@ -69,10 +69,9 @@ namespace VitaPharm.Forms.Invoices
                 gridControl.DataSource = bsInvoiceDetails;
 
                 decimal totalAmount = invoiceDetailData.Sum(x => x.Amount);
-                lblTotal.Text = totalAmount.ToString("N2");
+                lblTotal.Text = totalAmount.ToString("#,##0") + " VND";
 
                 SetFormReadOnly();
-
                 ConfigureGridView();
             }
             catch (Exception ex)
@@ -105,14 +104,20 @@ namespace VitaPharm.Forms.Invoices
             if (unitPriceColumn != null)
             {
                 unitPriceColumn.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-                unitPriceColumn.DisplayFormat.FormatString = "N2";
+                unitPriceColumn.DisplayFormat.FormatString = "#,##0";
             }
 
             var amountColumn = gridView.Columns["Amount"];
             if (amountColumn != null)
             {
                 amountColumn.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-                amountColumn.DisplayFormat.FormatString = "N2";
+                amountColumn.DisplayFormat.FormatString = "#,##0";
+            }
+
+            var onHandColumn = gridView.Columns["OnHand"];
+            if (onHandColumn != null)
+            {
+                onHandColumn.Visible = false;
             }
 
             gridView.OptionsView.ShowGroupPanel = false;
@@ -121,7 +126,17 @@ namespace VitaPharm.Forms.Invoices
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            frmInvoiceDetail_Load(sender, e);
+            LoadInvoiceDetails();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -50,8 +50,8 @@
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             txtCustomer = new DevExpress.XtraEditors.TextEdit();
             panel2 = new Panel();
-            labelControl3 = new DevExpress.XtraEditors.LabelControl();
             lblTotal = new DevExpress.XtraEditors.LabelControl();
+            labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtInvoiceCode.Properties).BeginInit();
@@ -153,6 +153,7 @@
             btnPrint.Size = new Size(106, 32);
             btnPrint.TabIndex = 11;
             btnPrint.Text = "Print";
+            btnPrint.Click += btnPrint_Click;
             // 
             // btnCancel
             // 
@@ -165,6 +166,7 @@
             btnCancel.Size = new Size(97, 32);
             btnCancel.TabIndex = 1;
             btnCancel.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
             // 
             // labelControl7
             // 
@@ -187,6 +189,7 @@
             btnReload.Size = new Size(97, 32);
             btnReload.TabIndex = 2;
             btnReload.Text = "Reload";
+            btnReload.Click += btnReload_Click;
             // 
             // txtInvoiceCode
             // 
@@ -293,16 +296,6 @@
             panel2.Size = new Size(813, 48);
             panel2.TabIndex = 6;
             // 
-            // labelControl3
-            // 
-            labelControl3.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelControl3.Appearance.Options.UseFont = true;
-            labelControl3.Location = new Point(22, 15);
-            labelControl3.Name = "labelControl3";
-            labelControl3.Size = new Size(43, 18);
-            labelControl3.TabIndex = 0;
-            labelControl3.Text = "Total:";
-            // 
             // lblTotal
             // 
             lblTotal.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -317,6 +310,16 @@
             lblTotal.Size = new Size(62, 18);
             lblTotal.TabIndex = 3;
             lblTotal.Text = "0.0 VND";
+            // 
+            // labelControl3
+            // 
+            labelControl3.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl3.Appearance.Options.UseFont = true;
+            labelControl3.Location = new Point(22, 15);
+            labelControl3.Name = "labelControl3";
+            labelControl3.Size = new Size(43, 18);
+            labelControl3.TabIndex = 0;
+            labelControl3.Text = "Total:";
             // 
             // frmInvoiceDetail
             // 
