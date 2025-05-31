@@ -120,7 +120,189 @@ namespace VitaPharm.Forms.Receipt
 
         private void btnImport_Click(object sender, EventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Import data from Excel file";
+            openFileDialog.Filter = "Excel Files|*.xls;*.xlsx";
+            openFileDialog.Multiselect = false;
 
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    using (XLWorkbook workbook = new XLWorkbook(openFileDialog.FileName))
+                    {
+                        #region Process Goods Receipt Sheet (Sheet 1)
+                        IXLWorksheet sheet1 = workbook.Worksheet(1);
+                        bool firstRowGoodsReceipt = true;
+                        string readRangeGoodsReceipt = "1:1";
+                        DataTable tableGoodsReceipt = new DataTable();
+
+                        foreach (IXLRow row in sheet1.RowsUsed())
+                        {
+                            if (firstRowGoodsReceipt)
+                            {
+                                readRangeGoodsReceipt = string.Format("{0}:{1}", 1, row.LastCellUsed().Address.ColumnNumber);
+                                foreach (IXLCell cell in row.Cells(readRangeGoodsReceipt))
+                                    tableGoodsReceipt.Columns.Add(cell.Value.ToString());
+                                firstRowGoodsReceipt = false;
+                            }
+                            else 
+                            {
+                                tableGoodsReceipt.Rows.Add();
+                                int cellIndex = 0;
+                                foreach (IXLCell cell in row.Cells(readRangeGoodsReceipt))
+                                {
+                                    tableGoodsReceipt.Rows[tableGoodsReceipt.Rows.Count - 1][cellIndex] = cell.Value.ToString();
+                                    cellIndex++;
+                                }
+                            }
+                        }
+
+                        if (tableGoodsReceipt.Rows.Count > 0)
+                        {
+                            using (var transaction = context.Database.BeginTransaction())
+                            {
+                                foreach (DataRow r in tableGoodsReceipt.Rows)
+                                {
+                                    string receiptCode = r["ReceiptCode"].ToString();
+                                    if (context.GoodsReceipts.Any(gr => gr.ReceiptCode == receiptCode))
+                                    {
+                                        continue; 
+                                    }
+
+                                    var employee = context.Employees.FirstOrDefault(e => e.EmployeeID == CurrentUser.EmployeeID);
+                                    if (employee == null)
+                                    {
+                                        XtraMessageBox.Show("Employee not found.", 
+                                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        return;
+                                    }
+
+                                    GoodsReceipt gr = new GoodsReceipt();
+                                    gr.ReceiptCode = receiptCode;
+                                    gr.ReceiptDate = Convert.ToDateTime(r["ReceiptDate"].ToString());
+                                    gr.SupplierName = r["SupplierName"].ToString();
+                                    gr.Note = r["Note"]?.ToString() ?? "";
+                                    gr.ReceiptStatus = r["ReceiptStatus"]?.ToString() ?? "Active";
+                                    gr.Employee = employee; // Set navigation property
+
+                                    context.GoodsReceipts.Add(gr);
+                                }
+                                context.SaveChanges();
+                                transaction.Commit();
+                            }
+                        }
+                        #endregion
+
+                        #region Process Goods Receipt Details Sheet (Sheet 2)
+                        if (workbook.Worksheets.Count > 1)
+                        {
+                            IXLWorksheet sheet2 = workbook.Worksheet(2);
+                            bool firstRowGoodsReceiptDetail = true;
+                            string readRangeGoodsReceiptDetail = "1:1";
+                            DataTable tableGoodsReceiptDetail = new DataTable();
+
+                            foreach (IXLRow row in sheet2.RowsUsed())
+                            {
+                                if (firstRowGoodsReceiptDetail)
+                                {
+                                    readRangeGoodsReceiptDetail = string.Format("{0}:{1}", 1, row.LastCellUsed().Address.ColumnNumber);
+                                    foreach (IXLCell cell in row.Cells(readRangeGoodsReceiptDetail))
+                                        tableGoodsReceiptDetail.Columns.Add(cell.Value.ToString());
+                                    firstRowGoodsReceiptDetail = false;
+                                }
+                                else 
+                                {
+                                    tableGoodsReceiptDetail.Rows.Add();
+                                    int cellIndex = 0;
+                                    foreach (IXLCell cell in row.Cells(readRangeGoodsReceiptDetail))
+                                    {
+                                        tableGoodsReceiptDetail.Rows[tableGoodsReceiptDetail.Rows.Count - 1][cellIndex] = cell.Value.ToString();
+                                        cellIndex++;
+                                    }
+                                }
+                            }
+
+                            if (tableGoodsReceiptDetail.Rows.Count > 0)
+                            {
+                                using (var transaction = context.Database.BeginTransaction())
+                                {
+                                    foreach (DataRow r in tableGoodsReceiptDetail.Rows)
+                                    {
+                                        string receiptCode = r["ReceiptCode"].ToString();
+                                        string batchCode = r["BatchCode"].ToString();
+
+                                        var goodsReceipt = context.GoodsReceipts.FirstOrDefault(gr => gr.ReceiptCode == receiptCode);
+                                        if (goodsReceipt == null) continue;
+
+                                        string commodityName = r["CommodityName"].ToString();
+                                        string manufacturer = r["Manufacturer"]?.ToString() ?? "";
+                                        var commodity = context.Commodities.FirstOrDefault(c =>
+                                            c.CommodityName == commodityName &&
+                                            (string.IsNullOrEmpty(manufacturer) || c.Manufacturer == manufacturer));
+                                        if (commodity == null) continue; 
+
+                                        var batch = context.Batches.FirstOrDefault(b => b.BatchCode == batchCode);
+                                        if (batch == null)
+                                        {
+                                            batch = new Batch();
+                                            batch.BatchCode = batchCode;
+                                            batch.MfgDate = Convert.ToDateTime(r["MfgDate"].ToString());
+                                            batch.ExpDate = Convert.ToDateTime(r["ExpDate"].ToString());
+                                            batch.BatchDate = DateTime.Now; 
+                                            batch.QtyAvailable = 0; 
+                                            batch.PurchasePrice = Convert.ToDecimal(r["PurchasePrice"].ToString());
+                                            batch.BatchStatus = "Active"; 
+                                            batch.Commodity = commodity; 
+
+                                            context.Batches.Add(batch);
+                                            context.SaveChanges(); 
+                                        }
+
+                                        if (context.GoodsReceiptDetails.Any(grd =>
+                                            grd.GoodsReceipt.ReceiptID == goodsReceipt.ReceiptID &&
+                                            grd.Batch.BatchID == batch.BatchID))
+                                        {
+                                            continue; 
+                                        }
+
+                                        int qtyIn = Convert.ToInt32(r["Quantity"].ToString());
+
+                                        GoodsReceiptDetail grd = new GoodsReceiptDetail();
+                                        grd.QtyIn = qtyIn;
+                                        grd.GoodsReceipt = goodsReceipt;
+                                        grd.Batch = batch; 
+
+                                        context.GoodsReceiptDetails.Add(grd);
+
+                                        batch.QtyAvailable += qtyIn;
+                                    }
+                                    context.SaveChanges();
+                                    transaction.Commit();
+                                }
+                            }
+                        }
+                        #endregion
+
+                        if (firstRowGoodsReceipt && workbook.Worksheets.Count == 1)
+                        {
+                            XtraMessageBox.Show("Excel file is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            int totalRows = tableGoodsReceipt.Rows.Count;
+                            XtraMessageBox.Show($"Successfully imported {totalRows} goods receipt(s).", "Success",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadReceipts();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"Error importing data: {ex.Message}\n\nStack Trace: {ex.StackTrace}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -200,7 +382,6 @@ namespace VitaPharm.Forms.Receipt
                     {
                         foreach (var d in receiptDetails)
                         {
-                            decimal amount = d.QtyIn * (d.Batch?.PurchasePrice ?? 0);
                             tableGoodsReceiptDetails.Rows.Add(
                                 d.GoodsReceipt.ReceiptCode,     
                                 d.Batch?.BatchCode ?? "",
@@ -211,7 +392,7 @@ namespace VitaPharm.Forms.Receipt
                                 d.Batch?.ExpDate,
                                 d.Batch?.PurchasePrice ?? 0,
                                 d.QtyIn,
-                                amount
+                                d.QtyIn * (d.Batch?.PurchasePrice ?? 0)
                             );
                         }
                     }
