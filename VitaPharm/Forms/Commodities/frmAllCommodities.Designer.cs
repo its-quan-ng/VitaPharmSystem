@@ -255,6 +255,7 @@
             // 
             // cboIsTerminated
             // 
+            cboIsTerminated.Anchor = AnchorStyles.Top;
             cboIsTerminated.Location = new Point(578, 100);
             cboIsTerminated.Name = "cboIsTerminated";
             cboIsTerminated.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
@@ -290,6 +291,7 @@
             // 
             // Status
             // 
+            Status.Anchor = AnchorStyles.Top;
             Status.Location = new Point(475, 103);
             Status.Name = "Status";
             Status.Size = new Size(41, 16);
@@ -394,6 +396,7 @@
             // 
             // btnSave
             // 
+            btnSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSave.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
             btnSave.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnSave.Appearance.Options.UseBackColor = true;
@@ -407,6 +410,7 @@
             // 
             // btnCancel
             // 
+            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCancel.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             btnCancel.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnCancel.Appearance.Options.UseBackColor = true;
@@ -420,6 +424,7 @@
             // 
             // btnReload
             // 
+            btnReload.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnReload.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Warning;
             btnReload.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnReload.Appearance.Options.UseBackColor = true;
@@ -433,6 +438,7 @@
             // 
             // btnEdit
             // 
+            btnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnEdit.Appearance.BackColor = Color.FromArgb(100, 165, 80);
             btnEdit.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnEdit.Appearance.Options.UseBackColor = true;
