@@ -242,7 +242,7 @@
             // 
             labelControl4.Appearance.Font = new Font("Tahoma", 8F);
             labelControl4.Appearance.Options.UseFont = true;
-            labelControl4.Location = new Point(24, 132);
+            labelControl4.Location = new Point(28, 132);
             labelControl4.Name = "labelControl4";
             labelControl4.Size = new Size(51, 16);
             labelControl4.TabIndex = 12;
