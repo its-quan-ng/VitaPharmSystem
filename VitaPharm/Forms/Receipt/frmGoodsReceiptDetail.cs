@@ -113,8 +113,17 @@ namespace VitaPharm.Forms
             report.DataSource = ds;
             report.DataMember = "GoodsReceipt";
 
-           ReportPrintTool printTool = new ReportPrintTool(report); 
-           printTool.ShowPreviewDialog();
+            report.Parameters["pReceiptCode"].Value = receipt.ReceiptCode;
+            report.Parameters["pReceiptDate"].Value = receipt.ReceiptDate;
+            report.Parameters["pSupplierName"].Value = receipt.SupplierName;
+            report.Parameters["pEmployeeName"].Value = receipt.Employee?.EmployeeName ?? "";
+            report.Parameters["pNote"].Value = receipt.Note;
+
+            foreach (var param in report.Parameters)
+                param.Visible = false;
+
+            ReportPrintTool printTool = new ReportPrintTool(report); 
+            printTool.ShowPreviewDialog();
         }
 
         private void btnReload_Click(object sender, EventArgs e)
