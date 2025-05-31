@@ -49,6 +49,7 @@
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            labelControl14 = new DevExpress.XtraEditors.LabelControl();
             groupControl2 = new DevExpress.XtraEditors.GroupControl();
             gridControl = new DevExpress.XtraGrid.GridControl();
             gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -59,8 +60,8 @@
             colUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.btnRemove = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAddToCart = new DevExpress.XtraEditors.SimpleButton();
+            btnRemove = new DevExpress.XtraEditors.SimpleButton();
+            btnAddToCart = new DevExpress.XtraEditors.SimpleButton();
             labelControl13 = new DevExpress.XtraEditors.LabelControl();
             txtPrice = new DevExpress.XtraEditors.TextEdit();
             labelControl11 = new DevExpress.XtraEditors.LabelControl();
@@ -73,12 +74,11 @@
             cboCommodity = new DevExpress.XtraEditors.ComboBoxEdit();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
             btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            labelControl14 = new DevExpress.XtraEditors.LabelControl();
             labelControl15 = new DevExpress.XtraEditors.LabelControl();
             labelControl16 = new DevExpress.XtraEditors.LabelControl();
             lblTotal = new DevExpress.XtraEditors.LabelControl();
             labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            spinQuantity = new DevExpress.XtraEditors.TextEdit();
+            txtQuantity = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)seTaxRate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)meNote.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).BeginInit();
@@ -100,7 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)txtQtyAvailable.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)spinQuantity.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).BeginInit();
             SuspendLayout();
             // 
             // Commodity
@@ -311,6 +311,16 @@
             groupControl1.TabIndex = 26;
             groupControl1.Text = "Invoice Information";
             // 
+            // labelControl14
+            // 
+            labelControl14.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl14.Appearance.Options.UseFont = true;
+            labelControl14.Location = new Point(184, 132);
+            labelControl14.Name = "labelControl14";
+            labelControl14.Size = new Size(14, 16);
+            labelControl14.TabIndex = 26;
+            labelControl14.Text = "%";
+            // 
             // groupControl2
             // 
             groupControl2.Anchor = AnchorStyles.Top;
@@ -404,8 +414,9 @@
             groupControl3.Anchor = AnchorStyles.Top;
             groupControl3.AppearanceCaption.BorderColor = Color.FromArgb(226, 251, 219);
             groupControl3.AppearanceCaption.Options.UseBorderColor = true;
-            groupControl3.Controls.Add(this.btnRemove);
-            groupControl3.Controls.Add(this.btnAddToCart);
+            groupControl3.Controls.Add(txtQuantity);
+            groupControl3.Controls.Add(btnRemove);
+            groupControl3.Controls.Add(btnAddToCart);
             groupControl3.Controls.Add(labelControl13);
             groupControl3.Controls.Add(txtPrice);
             groupControl3.Controls.Add(labelControl11);
@@ -417,7 +428,6 @@
             groupControl3.Controls.Add(labelControl9);
             groupControl3.Controls.Add(cboCommodity);
             groupControl3.Controls.Add(labelControl3);
-            groupControl3.Controls.Add(spinQuantity);
             groupControl3.Location = new Point(557, 165);
             groupControl3.Name = "groupControl3";
             groupControl3.Size = new Size(308, 266);
@@ -426,27 +436,27 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
-            this.btnRemove.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            this.btnRemove.Appearance.Options.UseBackColor = true;
-            this.btnRemove.Appearance.Options.UseFont = true;
-            this.btnRemove.Location = new Point(173, 208);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new Size(118, 36);
-            this.btnRemove.TabIndex = 22;
-            this.btnRemove.Text = "Remove";
+            btnRemove.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
+            btnRemove.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRemove.Appearance.Options.UseBackColor = true;
+            btnRemove.Appearance.Options.UseFont = true;
+            btnRemove.Location = new Point(173, 208);
+            btnRemove.Name = "btnRemove";
+            btnRemove.Size = new Size(118, 36);
+            btnRemove.TabIndex = 22;
+            btnRemove.Text = "Remove";
             // 
             // btnAddToCart
             // 
-            this.btnAddToCart.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
-            this.btnAddToCart.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            this.btnAddToCart.Appearance.Options.UseBackColor = true;
-            this.btnAddToCart.Appearance.Options.UseFont = true;
-            this.btnAddToCart.Location = new Point(16, 208);
-            this.btnAddToCart.Name = "btnAddToCart";
-            this.btnAddToCart.Size = new Size(118, 36);
-            this.btnAddToCart.TabIndex = 21;
-            this.btnAddToCart.Text = "Add to cart";
+            btnAddToCart.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
+            btnAddToCart.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddToCart.Appearance.Options.UseBackColor = true;
+            btnAddToCart.Appearance.Options.UseFont = true;
+            btnAddToCart.Location = new Point(16, 208);
+            btnAddToCart.Name = "btnAddToCart";
+            btnAddToCart.Size = new Size(118, 36);
+            btnAddToCart.TabIndex = 21;
+            btnAddToCart.Text = "Add to cart";
             // 
             // labelControl13
             // 
@@ -577,16 +587,6 @@
             btnAdd.TabIndex = 29;
             btnAdd.Text = "Add";
             // 
-            // labelControl14
-            // 
-            labelControl14.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelControl14.Appearance.Options.UseFont = true;
-            labelControl14.Location = new Point(184, 132);
-            labelControl14.Name = "labelControl14";
-            labelControl14.Size = new Size(14, 16);
-            labelControl14.TabIndex = 26;
-            labelControl14.Text = "%";
-            // 
             // labelControl15
             // 
             labelControl15.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
@@ -633,17 +633,12 @@
             labelControl17.TabIndex = 33;
             labelControl17.Text = "0.0 VND";
             // 
-            // spinQuantity
+            // txtQuantity
             // 
-            spinQuantity.EditValue = new decimal(new int[] { 0, 0, 0, 0 });
-            spinQuantity.Location = new Point(235, 158);
-            spinQuantity.Name = "spinQuantity";
-            spinQuantity.Properties.Appearance.Options.UseTextOptions = true;
-            spinQuantity.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            spinQuantity.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
-            spinQuantity.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            spinQuantity.Size = new Size(56, 22);
-            spinQuantity.TabIndex = 20;
+            txtQuantity.Location = new Point(241, 161);
+            txtQuantity.Name = "txtQuantity";
+            txtQuantity.Size = new Size(50, 22);
+            txtQuantity.TabIndex = 23;
             // 
             // frmNewInvoice
             // 
@@ -686,7 +681,7 @@
             ((System.ComponentModel.ISupportInitialize)txtQtyAvailable.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)spinQuantity.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -725,9 +720,8 @@
         private DevExpress.XtraEditors.TextEdit txtPrice;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.TextEdit txtBaseUnit;
-        private DevExpress.XtraEditors.SpinEdit spinQuantity;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnRemove;
+        private DevExpress.XtraEditors.SimpleButton btnAddToCart;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraGrid.GridControl gridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
@@ -742,6 +736,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.LabelControl lblTotal;
         private DevExpress.XtraEditors.LabelControl labelControl17;
-        private DevExpress.XtraEditors.TextEdit spinQuantity;
+        private DevExpress.XtraEditors.TextEdit txtQuantity;
     }
 }
