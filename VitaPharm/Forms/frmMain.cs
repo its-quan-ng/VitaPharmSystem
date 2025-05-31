@@ -19,6 +19,7 @@ namespace VitaPharm.Forms
         private frmAllCommodities? allCommoditiesForm = null;
         private frmNewCommodity? newCommodityForm = null;
         private frmAllInvoices? allInvoicesForm = null;
+        private frmNewInvoice? newInvoicesForm = null;
         private bool shouldClose = false;
         #endregion
 
@@ -219,7 +220,6 @@ namespace VitaPharm.Forms
             allInvoicesForm.Show();
             allInvoicesForm.BringToFront();
         }
-        #endregion
 
         private void OpenNewReceipt()
         {
@@ -235,6 +235,24 @@ namespace VitaPharm.Forms
             newGoodsReceiptForm.Show();
             newGoodsReceiptForm.BringToFront();
         }
+
+        private void OpenNewInvoice()
+        {
+            foreach (var f in this.MdiChildren) f.Close();
+
+            if (newInvoicesForm == null || newInvoicesForm.IsDisposed)
+            {
+                newInvoicesForm = new frmNewInvoice(CurrentUser.Username)
+                {
+                    MdiParent = this
+                };
+            }
+            newInvoicesForm.Show();
+            newInvoicesForm.BringToFront();
+        }
+        #endregion
+
+
 
         private void btnProfile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -289,6 +307,11 @@ namespace VitaPharm.Forms
         private void btnAllInvoices_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenAllInvoices();
+        }
+
+        private void btnNewInvoice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenNewInvoice();
         }
     }
 }

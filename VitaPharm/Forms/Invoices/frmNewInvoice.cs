@@ -41,7 +41,7 @@ namespace VitaPharm.Forms.Invoices
             cboCustomer.Properties.ValueMember = "CustomerID";
             cboCustomer.EditValue = null;
 
-            ToggleControls(false);
+            ToggleControls();
             gridControl.DataSource = detailsList;
         }
 
@@ -244,41 +244,7 @@ namespace VitaPharm.Forms.Invoices
             {
                 txtContact.Text = customer.Contact;
             }
-        }
-
-        #endregion
-
-        private void ToggleControls(bool enableEditable)
-        {
-            txtInvoiceCode.Enabled = false;
-            dateCreatedDate.Enabled = false; 
-            txtEmployee.Enabled = false; 
-            cboCustomer.Enabled = false;
-            txtContact.Enabled = false;
-            txtQtyAvailable.Enabled = false;
-            txtPrice.Enabled = false;       
-            txtBaseUnit.Enabled = false;    
-            btnAddToCart.Enabled = false;
-            btnRemove.Enabled = !false;
-            btnAdd.Enabled = !false;
-        }
-
-        private void LoadCommodities()
-        {
-            var commodities = context.Commodities
-                .Select(c => new
-                {
-                    c.CommodityID,
-                    c.CommodityName,
-                    c.Manufacturer,
-                    c.BaseUnit,
-                    c.SellingPrice
-                })
-                .ToList();
-            cboCommodity.Properties.DataSource = commodities;
-            cboCommodity.Properties.DisplayMember = "CommodityName";
-            cboCommodity.Properties.ValueMember = "CommodityID";
-            cboCommodity.EditValue = null;
+            cboCommodity.Enabled = true;
         }
 
         private void cboCommodity_EditValueChanged(object sender, EventArgs e)
@@ -315,6 +281,7 @@ namespace VitaPharm.Forms.Invoices
                 cboBatchCode.Properties.ValueMember = "BatchID";
                 cboBatchCode.EditValue = null;
             }
+            cboBatchCode.Enabled = true;
         }
 
         private void cboBatchCode_EditValueChanged(object sender, EventArgs e)
@@ -334,6 +301,39 @@ namespace VitaPharm.Forms.Invoices
                 txtQtyAvailable.Text = batch.QtyAvailable.ToString();
                 btnAddToCart.Enabled = true;
             }
+        }
+        #endregion
+
+        private void ToggleControls()
+        {
+            txtInvoiceCode.Enabled = false;
+            dateCreatedDate.Enabled = false;
+            txtEmployee.Enabled = false;
+            txtContact.Enabled = false;
+            txtQtyAvailable.Enabled = false;
+            txtPrice.Enabled = false;
+            txtBaseUnit.Enabled = false;
+            btnAddToCart.Enabled = false;
+            btnRemove.Enabled = false;
+            btnAdd.Enabled = true;
+        }
+
+        private void LoadCommodities()
+        {
+            var commodities = context.Commodities
+                .Select(c => new
+                {
+                    c.CommodityID,
+                    c.CommodityName,
+                    c.Manufacturer,
+                    c.BaseUnit,
+                    c.SellingPrice
+                })
+                .ToList();
+            cboCommodity.Properties.DataSource = commodities;
+            cboCommodity.Properties.DisplayMember = "CommodityName";
+            cboCommodity.Properties.ValueMember = "CommodityID";
+            cboCommodity.EditValue = null;
         }
     }
 }

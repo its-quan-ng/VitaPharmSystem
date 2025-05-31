@@ -349,6 +349,7 @@
             gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, colCommodityName, colBatchCode, colQty, colBaseUnit, colUnitPrice, colAmount });
             gridView.GridControl = gridControl;
             gridView.Name = "gridView";
+            gridView.OptionsView.ShowGroupPanel = false;
             // 
             // colID
             // 
@@ -673,8 +674,6 @@
             Controls.Add(groupControl3);
             Controls.Add(groupControl2);
             Controls.Add(groupControl1);
-            MaximizeBox = false;
-            MinimizeBox = false;
             Name = "frmNewInvoice";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "New Invoice";
