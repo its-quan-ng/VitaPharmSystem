@@ -163,7 +163,6 @@
             seTaxRate.Name = "seTaxRate";
             seTaxRate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             seTaxRate.Properties.MaxValue = new decimal(new int[] { 100, 0, 0, 0 });
-            seTaxRate.Properties.MinValue = new decimal(new int[] { 1, 0, 0, 0 });
             seTaxRate.Size = new Size(55, 24);
             seTaxRate.TabIndex = 25;
             seTaxRate.EditValueChanged += seTaxRate_EditValueChanged;
