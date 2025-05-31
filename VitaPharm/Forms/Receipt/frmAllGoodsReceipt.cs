@@ -146,7 +146,7 @@ namespace VitaPharm.Forms.Receipt
                                     tableGoodsReceipt.Columns.Add(cell.Value.ToString());
                                 firstRowGoodsReceipt = false;
                             }
-                            else 
+                            else
                             {
                                 tableGoodsReceipt.Rows.Add();
                                 int cellIndex = 0;
@@ -167,24 +167,26 @@ namespace VitaPharm.Forms.Receipt
                                     string receiptCode = r["ReceiptCode"].ToString();
                                     if (context.GoodsReceipts.Any(gr => gr.ReceiptCode == receiptCode))
                                     {
-                                        continue; 
+                                        continue;
                                     }
 
                                     var employee = context.Employees.FirstOrDefault(e => e.EmployeeID == CurrentUser.EmployeeID);
                                     if (employee == null)
                                     {
-                                        XtraMessageBox.Show("Employee not found.", 
+                                        XtraMessageBox.Show("Employee not found.",
                                             "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         return;
                                     }
 
                                     GoodsReceipt gr = new GoodsReceipt();
                                     gr.ReceiptCode = receiptCode;
-                                    gr.ReceiptDate = Convert.ToDateTime(r["ReceiptDate"].ToString());
+
+                                    gr.ReceiptDate = ParseDateTime(r["ReceiptDate"].ToString());
+
                                     gr.SupplierName = r["SupplierName"].ToString();
                                     gr.Note = r["Note"]?.ToString() ?? "";
                                     gr.ReceiptStatus = r["ReceiptStatus"]?.ToString() ?? "active";
-                                    gr.Employee = employee; 
+                                    gr.Employee = employee;
 
                                     context.GoodsReceipts.Add(gr);
                                 }
@@ -211,7 +213,7 @@ namespace VitaPharm.Forms.Receipt
                                         tableGoodsReceiptDetail.Columns.Add(cell.Value.ToString());
                                     firstRowGoodsReceiptDetail = false;
                                 }
-                                else 
+                                else
                                 {
                                     tableGoodsReceiptDetail.Rows.Add();
                                     int cellIndex = 0;
@@ -240,30 +242,32 @@ namespace VitaPharm.Forms.Receipt
                                         var commodity = context.Commodities.FirstOrDefault(c =>
                                             c.CommodityName == commodityName &&
                                             (string.IsNullOrEmpty(manufacturer) || c.Manufacturer == manufacturer));
-                                        if (commodity == null) continue; 
+                                        if (commodity == null) continue;
 
                                         var batch = context.Batches.FirstOrDefault(b => b.BatchCode == batchCode);
                                         if (batch == null)
                                         {
                                             batch = new Batch();
                                             batch.BatchCode = batchCode;
-                                            batch.MfgDate = Convert.ToDateTime(r["MfgDate"].ToString());
-                                            batch.ExpDate = Convert.ToDateTime(r["ExpDate"].ToString());
-                                            batch.BatchDate = DateTime.Now; 
-                                            batch.QtyAvailable = 0; 
+
+                                            batch.MfgDate = ParseDateTime(r["MfgDate"].ToString());
+                                            batch.ExpDate = ParseDateTime(r["ExpDate"].ToString());
+
+                                            batch.BatchDate = DateTime.Now;
+                                            batch.QtyAvailable = 0;
                                             batch.PurchasePrice = Convert.ToDecimal(r["PurchasePrice"].ToString());
-                                            batch.BatchStatus = "Active"; 
-                                            batch.Commodity = commodity; 
+                                            batch.BatchStatus = "Active";
+                                            batch.Commodity = commodity;
 
                                             context.Batches.Add(batch);
-                                            context.SaveChanges(); 
+                                            context.SaveChanges();
                                         }
 
                                         if (context.GoodsReceiptDetails.Any(grd =>
                                             grd.GoodsReceipt.ReceiptID == goodsReceipt.ReceiptID &&
                                             grd.Batch.BatchID == batch.BatchID))
                                         {
-                                            continue; 
+                                            continue;
                                         }
 
                                         int qtyIn = Convert.ToInt32(r["Quantity"].ToString());
@@ -271,7 +275,7 @@ namespace VitaPharm.Forms.Receipt
                                         GoodsReceiptDetail grd = new GoodsReceiptDetail();
                                         grd.QtyIn = qtyIn;
                                         grd.GoodsReceipt = goodsReceipt;
-                                        grd.Batch = batch; 
+                                        grd.Batch = batch;
 
                                         context.GoodsReceiptDetails.Add(grd);
 
@@ -303,6 +307,46 @@ namespace VitaPharm.Forms.Receipt
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private DateTime ParseDateTime(string dateString)
+        {
+            if (string.IsNullOrEmpty(dateString))
+                return DateTime.Now;
+
+            string[] dateFormats = {
+                "dd/MM/yyyy",
+                "dd-MM-yyyy",
+                "MM/dd/yyyy",
+                "yyyy-MM-dd",
+                "dd/MM/yyyy HH:mm:ss",
+                "dd-MM-yyyy HH:mm:ss",
+                "MM/dd/yyyy HH:mm:ss",
+                "yyyy-MM-dd HH:mm:ss",
+                "dd/MM/yyyy HH:mm",
+                "dd-MM-yyyy HH:mm",
+                "MM/dd/yyyy HH:mm",
+                "yyyy-MM-dd HH:mm"
+            };
+
+            DateTime result;
+
+            foreach (string format in dateFormats)
+            {
+                if (DateTime.TryParseExact(dateString, format,
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.DateTimeStyles.None, out result))
+                {
+                    return result;
+                }
+            }
+
+            if (DateTime.TryParse(dateString, out result))
+            {
+                return result;
+            }
+
+            return DateTime.Now;
         }
 
         private void btnExport_Click(object sender, EventArgs e)
