@@ -232,6 +232,8 @@
             deCreatedDate.Name = "deCreatedDate";
             deCreatedDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             deCreatedDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            deCreatedDate.Properties.DisplayFormat.FormatString = "dd/MM/yyyyy";
+            deCreatedDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             deCreatedDate.Size = new Size(201, 22);
             deCreatedDate.TabIndex = 30;
             // 
