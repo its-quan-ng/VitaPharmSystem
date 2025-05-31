@@ -5,7 +5,7 @@ using DevExpress.XtraEditors;
 
 namespace VitaPharm.Forms
 {
-    public partial class frmGoodsReceiptDetail : DevExpress.XtraEditors.XtraForm
+    public partial class frmGoodsReceiptDetail : XtraForm
     {
         private PharmacyDbContext context = new PharmacyDbContext();
         private int receiptId;
@@ -39,6 +39,18 @@ namespace VitaPharm.Forms
                         d.Batch.PurchasePrice,
                         Quantity = d.QtyIn,
                         Amount = d.QtyIn * d.Batch.PurchasePrice
+                    })
+                    .ToList()
+                    .Select((item, index) => new
+                    {
+                        ID = index + 1,
+                        item.BatchCode,
+                        item.CommodityName,
+                        item.MfgDate,
+                        item.ExpDate,
+                        item.PurchasePrice,
+                        item.Quantity,
+                        item.Amount
                     })
                     .ToList();
 
