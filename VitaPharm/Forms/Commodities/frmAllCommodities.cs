@@ -12,11 +12,13 @@ namespace VitaPharm.Forms.Commodities
     {
         private PharmacyDbContext context;
         private BindingSource bsCommodities = new BindingSource();
+        private getCommodities data;
 
         public frmAllCommodities()
         {
             InitializeComponent();
             context = new PharmacyDbContext();
+            data = new getCommodities(context);
         }
 
         private void frmAllCommodities_Load(object sender, EventArgs e)
@@ -45,21 +47,7 @@ namespace VitaPharm.Forms.Commodities
 
         private void LoadCommodities()
         {
-            var items = context.Commodities
-                               .Include(c => c.Categories)
-                               .AsEnumerable()
-                               .Select((c, idx) => new
-                               {
-                                   ID = idx + 1,
-                                   c.CommodityID,
-                                   c.CommodityName,
-                                   c.Manufacturer,
-                                   c.BaseUnit,
-                                   c.SellingPrice,
-                                   Status = c.IsTerminated,
-                                   CategoryName = c.Categories?.CategoryName
-                               })
-                               .ToList();
+            var items = data.GetCommoditiesData();
 
             bsCommodities.DataSource = items;
             gridControl.DataSource = bsCommodities;
@@ -266,20 +254,7 @@ namespace VitaPharm.Forms.Commodities
                         new DataColumn("CategoryName", typeof(string))
                     });
 
-                    var commodities = context.Commodities
-                                             .Include(c => c.Categories)
-                                             .AsEnumerable()
-                                             .Select((c, idx) => new
-                                             {
-                                                 ID = idx + 1,
-                                                 c.CommodityName,
-                                                 c.Manufacturer,
-                                                 c.BaseUnit,
-                                                 c.SellingPrice,
-                                                 Status = c.IsTerminated,
-                                                 CategoryName = c.Categories?.CategoryName
-                                             })
-                                             .ToList();
+                    var commodities = data.GetCommoditiesData();
 
                     foreach (var commodity in commodities)
                     {
