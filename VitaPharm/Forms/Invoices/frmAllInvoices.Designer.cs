@@ -53,12 +53,19 @@
             colViewDetail = new DevExpress.XtraGrid.Columns.GridColumn();
             gridControl = new DevExpress.XtraGrid.GridControl();
             toolTip1 = new ToolTip(components);
+            panel1 = new Panel();
+            toolStrip1 = new ToolStrip();
+            btnExport = new ToolStripButton();
+            btnImport = new ToolStripButton();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)imageCollection).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)repobtnViewDetail).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
+            panel1.SuspendLayout();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // imageCollection
@@ -256,13 +263,65 @@
             // gridControl
             // 
             gridControl.Dock = DockStyle.Fill;
-            gridControl.Location = new Point(0, 0);
+            gridControl.Location = new Point(0, 41);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
             gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repobtnViewDetail });
-            gridControl.Size = new Size(853, 351);
+            gridControl.Size = new Size(853, 310);
             gridControl.TabIndex = 0;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(toolStrip1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(853, 41);
+            panel1.TabIndex = 2;
+            // 
+            // toolStrip1
+            // 
+            toolStrip1.Dock = DockStyle.Fill;
+            toolStrip1.ImageScalingSize = new Size(20, 20);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { btnExport, btnImport });
+            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.RenderMode = ToolStripRenderMode.Professional;
+            toolStrip1.Size = new Size(853, 41);
+            toolStrip1.TabIndex = 18;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // btnExport
+            // 
+            btnExport.Alignment = ToolStripItemAlignment.Right;
+            btnExport.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExport.ForeColor = Color.Brown;
+            btnExport.Image = Properties.Resources.export2;
+            btnExport.ImageTransparentColor = Color.Magenta;
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(78, 38);
+            btnExport.Text = "Export";
+            btnExport.Click += btnExport_Click;
+            // 
+            // btnImport
+            // 
+            btnImport.Alignment = ToolStripItemAlignment.Right;
+            btnImport.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnImport.ForeColor = Color.DarkSlateGray;
+            btnImport.Image = Properties.Resources.import1;
+            btnImport.ImageTransparentColor = Color.Magenta;
+            btnImport.Name = "btnImport";
+            btnImport.Size = new Size(79, 38);
+            btnImport.Text = "Import";
+            // 
+            // panel2
+            // 
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 41);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(853, 310);
+            panel2.TabIndex = 3;
             // 
             // frmAllInvoices
             // 
@@ -270,6 +329,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(853, 415);
             Controls.Add(gridControl);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(panelControl1);
             Name = "frmAllInvoices";
             StartPosition = FormStartPosition.CenterScreen;
@@ -281,6 +342,10 @@
             ((System.ComponentModel.ISupportInitialize)repobtnViewDetail).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -303,5 +368,10 @@
         private DevExpress.XtraGrid.GridControl gridControl;
         private ToolTip toolTip1;
         private DevExpress.XtraGrid.Columns.GridColumn colViewDetail;
+        private Panel panel1;
+        private Panel panel2;
+        private ToolStrip toolStrip1;
+        private ToolStripButton btnExport;
+        private ToolStripButton btnImport;
     }
 }

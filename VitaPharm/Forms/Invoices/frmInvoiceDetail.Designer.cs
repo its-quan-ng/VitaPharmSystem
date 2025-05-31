@@ -50,8 +50,10 @@
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             txtCustomer = new DevExpress.XtraEditors.TextEdit();
             panel2 = new Panel();
+            lblTax = new DevExpress.XtraEditors.LabelControl();
+            labelControl15 = new DevExpress.XtraEditors.LabelControl();
             lblTotal = new DevExpress.XtraEditors.LabelControl();
-            labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            labelControl16 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtInvoiceCode.Properties).BeginInit();
@@ -138,7 +140,7 @@
             gridControl.Location = new Point(0, 108);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.Size = new Size(813, 160);
+            gridControl.Size = new Size(813, 151);
             gridControl.TabIndex = 5;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
@@ -253,9 +255,9 @@
             panelControl1.Controls.Add(btnCancel);
             panelControl1.Controls.Add(btnReload);
             panelControl1.Dock = DockStyle.Bottom;
-            panelControl1.Location = new Point(0, 316);
+            panelControl1.Location = new Point(0, 322);
             panelControl1.Name = "panelControl1";
-            panelControl1.Size = new Size(813, 64);
+            panelControl1.Size = new Size(813, 58);
             panelControl1.TabIndex = 4;
             // 
             // groupControl1
@@ -290,38 +292,64 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(lblTax);
+            panel2.Controls.Add(labelControl15);
             panel2.Controls.Add(lblTotal);
-            panel2.Controls.Add(labelControl3);
+            panel2.Controls.Add(labelControl16);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 268);
+            panel2.Location = new Point(0, 259);
             panel2.Name = "panel2";
-            panel2.Size = new Size(813, 48);
+            panel2.Size = new Size(813, 63);
             panel2.TabIndex = 6;
+            // 
+            // lblTax
+            // 
+            lblTax.Anchor = AnchorStyles.Top;
+            lblTax.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTax.Appearance.FontStyleDelta = FontStyle.Bold;
+            lblTax.Appearance.Options.UseFont = true;
+            lblTax.Location = new Point(725, 33);
+            lblTax.Name = "lblTax";
+            lblTax.Size = new Size(34, 16);
+            lblTax.TabIndex = 37;
+            lblTax.Text = "0.0%";
+            // 
+            // labelControl15
+            // 
+            labelControl15.Anchor = AnchorStyles.Top;
+            labelControl15.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl15.Appearance.ForeColor = Color.Blue;
+            labelControl15.Appearance.Options.UseFont = true;
+            labelControl15.Appearance.Options.UseForeColor = true;
+            labelControl15.Location = new Point(562, 11);
+            labelControl15.Name = "labelControl15";
+            labelControl15.Size = new Size(98, 16);
+            labelControl15.TabIndex = 34;
+            labelControl15.Text = "Total (tax incl.)";
             // 
             // lblTotal
             // 
-            lblTotal.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            lblTotal.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTotal.Appearance.ForeColor = Color.Green;
+            lblTotal.Anchor = AnchorStyles.Top;
+            lblTotal.Appearance.FontStyleDelta = FontStyle.Bold;
+            lblTotal.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Information;
             lblTotal.Appearance.Options.UseFont = true;
             lblTotal.Appearance.Options.UseForeColor = true;
-            lblTotal.Appearance.Options.UseTextOptions = true;
-            lblTotal.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            lblTotal.Location = new Point(704, 15);
+            lblTotal.Location = new Point(725, 11);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(62, 18);
-            lblTotal.TabIndex = 3;
+            lblTotal.Size = new Size(50, 16);
+            lblTotal.TabIndex = 36;
             lblTotal.Text = "0.0 VND";
             // 
-            // labelControl3
+            // labelControl16
             // 
-            labelControl3.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelControl3.Appearance.Options.UseFont = true;
-            labelControl3.Location = new Point(22, 15);
-            labelControl3.Name = "labelControl3";
-            labelControl3.Size = new Size(43, 18);
-            labelControl3.TabIndex = 0;
-            labelControl3.Text = "Total:";
+            labelControl16.Anchor = AnchorStyles.Top;
+            labelControl16.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl16.Appearance.Options.UseFont = true;
+            labelControl16.Location = new Point(562, 36);
+            labelControl16.Name = "labelControl16";
+            labelControl16.Size = new Size(22, 16);
+            labelControl16.TabIndex = 35;
+            labelControl16.Text = "Tax";
             // 
             // frmInvoiceDetail
             // 
@@ -376,8 +404,10 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private Panel panel2;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtCustomer;
+        private DevExpress.XtraEditors.LabelControl lblTax;
+        private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.LabelControl lblTotal;
+        private DevExpress.XtraEditors.LabelControl labelControl16;
     }
 }
