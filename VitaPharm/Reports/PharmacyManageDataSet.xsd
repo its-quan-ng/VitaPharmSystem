@@ -50,4 +50,9 @@
       <xs:field xpath="mstns:ReceiptID" />
     </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="ReceiptList_ReceiptDetailList" msdata:parent="ReceiptList" msdata:child="ReceiptDetailList" msdata:parentkey="ReceiptID" msdata:childkey="ReceiptID" msprop:Generator_UserParentTable="ReceiptList" msprop:Generator_UserChildTable="ReceiptDetailList" msprop:Generator_RelationVarName="relationReceiptList_ReceiptDetailList" msprop:Generator_UserRelationName="ReceiptList_ReceiptDetailList" msprop:Generator_ChildPropName="GetReceiptDetailListRows" msprop:Generator_ParentPropName="ReceiptListRow" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

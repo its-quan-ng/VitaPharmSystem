@@ -28,6 +28,8 @@ namespace VitaPharm.Reports {
         
         private ReceiptListDataTable tableReceiptList;
         
+        private global::System.Data.DataRelation relationReceiptList_ReceiptDetailList;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -220,6 +222,7 @@ namespace VitaPharm.Reports {
                     this.tableReceiptList.InitVars();
                 }
             }
+            this.relationReceiptList_ReceiptDetailList = this.Relations["ReceiptList_ReceiptDetailList"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -234,6 +237,10 @@ namespace VitaPharm.Reports {
             base.Tables.Add(this.tableReceiptDetailList);
             this.tableReceiptList = new ReceiptListDataTable();
             base.Tables.Add(this.tableReceiptList);
+            this.relationReceiptList_ReceiptDetailList = new global::System.Data.DataRelation("ReceiptList_ReceiptDetailList", new global::System.Data.DataColumn[] {
+                        this.tableReceiptList.ReceiptIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableReceiptDetailList.ReceiptIDColumn}, false);
+            this.Relations.Add(this.relationReceiptList_ReceiptDetailList);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -478,11 +485,11 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ReceiptDetailListRow AddReceiptDetailListRow(int GoodsReceiptDetailID_, int ReceiptID, string BatchCode, string CommodityName, System.DateTime MfgDate, System.DateTime ExpDate, decimal PurchasePrice, int Quantity, decimal Amount) {
+            public ReceiptDetailListRow AddReceiptDetailListRow(int GoodsReceiptDetailID_, ReceiptListRow parentReceiptListRowByReceiptList_ReceiptDetailList, string BatchCode, string CommodityName, System.DateTime MfgDate, System.DateTime ExpDate, decimal PurchasePrice, int Quantity, decimal Amount) {
                 ReceiptDetailListRow rowReceiptDetailListRow = ((ReceiptDetailListRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         GoodsReceiptDetailID_,
-                        ReceiptID,
+                        null,
                         BatchCode,
                         CommodityName,
                         MfgDate,
@@ -490,6 +497,9 @@ namespace VitaPharm.Reports {
                         PurchasePrice,
                         Quantity,
                         Amount};
+                if ((parentReceiptListRowByReceiptList_ReceiptDetailList != null)) {
+                    columnValuesArray[1] = parentReceiptListRowByReceiptList_ReceiptDetailList[0];
+                }
                 rowReceiptDetailListRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowReceiptDetailListRow);
                 return rowReceiptDetailListRow;
@@ -1158,6 +1168,17 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ReceiptListRow ReceiptListRow {
+                get {
+                    return ((ReceiptListRow)(this.GetParentRow(this.Table.ParentRelations["ReceiptList_ReceiptDetailList"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["ReceiptList_ReceiptDetailList"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsReceiptIDNull() {
                 return this.IsNull(this.tableReceiptDetailList.ReceiptIDColumn);
             }
@@ -1433,6 +1454,17 @@ namespace VitaPharm.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetNoteNull() {
                 this[this.tableReceiptList.NoteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ReceiptDetailListRow[] GetReceiptDetailListRows() {
+                if ((this.Table.ChildRelations["ReceiptList_ReceiptDetailList"] == null)) {
+                    return new ReceiptDetailListRow[0];
+                }
+                else {
+                    return ((ReceiptDetailListRow[])(base.GetChildRows(this.Table.ChildRelations["ReceiptList_ReceiptDetailList"])));
+                }
             }
         }
         
