@@ -576,7 +576,7 @@
             txtQtyAvailable.Name = "txtQtyAvailable";
             txtQtyAvailable.Properties.Appearance.Options.UseTextOptions = true;
             txtQtyAvailable.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            txtQtyAvailable.Size = new Size(41, 22);
+            txtQtyAvailable.Size = new Size(50, 22);
             txtQtyAvailable.TabIndex = 12;
             // 
             // labelControl9
