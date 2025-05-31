@@ -352,6 +352,7 @@
             gridView.GridControl = gridControl;
             gridView.Name = "gridView";
             gridView.OptionsView.ShowGroupPanel = false;
+            gridView.FocusedRowChanged += gridView_FocusedRowChanged_1;
             // 
             // colID
             // 
@@ -359,9 +360,10 @@
             colID.FieldName = "ID";
             colID.MinWidth = 25;
             colID.Name = "colID";
+            colID.OptionsColumn.AllowEdit = false;
             colID.Visible = true;
             colID.VisibleIndex = 0;
-            colID.Width = 94;
+            colID.Width = 38;
             // 
             // colCommodityName
             // 
@@ -369,9 +371,10 @@
             colCommodityName.FieldName = "CommodityName";
             colCommodityName.MinWidth = 25;
             colCommodityName.Name = "colCommodityName";
+            colCommodityName.OptionsColumn.AllowEdit = false;
             colCommodityName.Visible = true;
             colCommodityName.VisibleIndex = 1;
-            colCommodityName.Width = 282;
+            colCommodityName.Width = 211;
             // 
             // colBatchCode
             // 
@@ -379,16 +382,18 @@
             colBatchCode.FieldName = "BatchCode";
             colBatchCode.MinWidth = 25;
             colBatchCode.Name = "colBatchCode";
+            colBatchCode.OptionsColumn.AllowEdit = false;
             colBatchCode.Visible = true;
             colBatchCode.VisibleIndex = 2;
-            colBatchCode.Width = 118;
+            colBatchCode.Width = 166;
             // 
             // colQty
             // 
             colQty.Caption = "Qty";
-            colQty.FieldName = "Quantity";
+            colQty.FieldName = "Qty";
             colQty.MinWidth = 25;
             colQty.Name = "colQty";
+            colQty.OptionsColumn.AllowEdit = false;
             colQty.Visible = true;
             colQty.VisibleIndex = 3;
             colQty.Width = 57;
@@ -399,29 +404,40 @@
             colBaseUnit.FieldName = "BaseUnit";
             colBaseUnit.MinWidth = 25;
             colBaseUnit.Name = "colBaseUnit";
+            colBaseUnit.OptionsColumn.AllowEdit = false;
             colBaseUnit.Visible = true;
             colBaseUnit.VisibleIndex = 4;
-            colBaseUnit.Width = 89;
+            colBaseUnit.Width = 110;
             // 
             // colUnitPrice
             // 
             colUnitPrice.Caption = "Unit Price";
+            colUnitPrice.DisplayFormat.FormatString = "N0";
+            colUnitPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             colUnitPrice.FieldName = "SellingPrice";
+            colUnitPrice.GroupFormat.FormatString = "N0";
+            colUnitPrice.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             colUnitPrice.MinWidth = 25;
             colUnitPrice.Name = "colUnitPrice";
+            colUnitPrice.OptionsColumn.AllowEdit = false;
             colUnitPrice.Visible = true;
             colUnitPrice.VisibleIndex = 5;
-            colUnitPrice.Width = 158;
+            colUnitPrice.Width = 120;
             // 
             // colAmount
             // 
             colAmount.Caption = "Amount";
+            colAmount.DisplayFormat.FormatString = "N0";
+            colAmount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             colAmount.FieldName = "Amount";
+            colAmount.GroupFormat.FormatString = "N0";
+            colAmount.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             colAmount.MinWidth = 25;
             colAmount.Name = "colAmount";
+            colAmount.OptionsColumn.AllowEdit = false;
             colAmount.Visible = true;
             colAmount.VisibleIndex = 6;
-            colAmount.Width = 147;
+            colAmount.Width = 135;
             // 
             // groupControl3
             // 
@@ -684,6 +700,7 @@
             btnClear.Size = new Size(87, 36);
             btnClear.TabIndex = 34;
             btnClear.Text = "Clear";
+            btnClear.Click += btnClear_Click;
             // 
             // frmNewInvoice
             // 

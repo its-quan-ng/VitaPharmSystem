@@ -41,6 +41,7 @@ namespace VitaPharm.Forms.Invoices
             cboCustomer.Properties.DataSource = customers;
             cboCustomer.Properties.DisplayMember = "CustomerName";
             cboCustomer.Properties.ValueMember = "CustomerID";
+            cboCustomer.Properties.NullText = "Please select a customer!";
             cboCustomer.EditValue = null;
             LoadCommodities();
             ToggleControls();
@@ -117,8 +118,8 @@ namespace VitaPharm.Forms.Invoices
             decimal tax = subtotal * (decimal)(seTaxRate.Value / 100);
             decimal total = subtotal + tax;
 
-            lblTax.Text = tax.ToString("N0");
-            lblTotal.Text = total.ToString("N0");
+            lblTax.Text = tax.ToString("N0") + " VND";
+            lblTotal.Text = total.ToString("N0") + " VND";
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -320,7 +321,7 @@ namespace VitaPharm.Forms.Invoices
             txtPrice.Enabled = false;
             txtBaseUnit.Enabled = false;
             btnAddToCart.Enabled = false;
-            btnRemove.Enabled = false;
+            btnRemove.Enabled = !false;
             btnAdd.Enabled = true;
             cboCustomer.Enabled = true;
             cboCommodity.Enabled = true;
@@ -341,6 +342,37 @@ namespace VitaPharm.Forms.Invoices
             cboCommodity.Properties.Columns.Add(new LookUpColumnInfo("BaseUnit", "Base Unit"));
             cboCommodity.Properties.NullText = "Please select a commodity!";
             cboCommodity.EditValue = null;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Are you sure you want to clear the form?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                ResetFormFields();
+            }
+        }
+
+        private void ResetFormFields()
+        {
+            cboCustomer.EditValue = null;
+            txtContact.Text = "";
+            meNote.Text = "";
+            detailsList.Clear();
+            cboCommodity.EditValue = null;
+            cboBatchCode.Properties.DataSource = null;
+            cboBatchCode.Properties.Columns.Clear();
+            cboBatchCode.Properties.NullText = "Please select a batch!";
+            txtBaseUnit.Text = "";
+            txtPrice.Text = "";
+            txtQtyAvailable.Text = "";
+            btnAddToCart.Enabled = false;
+            btnRemove.Enabled = false;
+            RecalculateTotals();
+        }
+
+        private void gridView_FocusedRowChanged_1(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            btnRemove.Enabled = gridView.FocusedRowHandle >= 0 && detailsList.Count > 0;
         }
     }
 }
