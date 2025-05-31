@@ -362,6 +362,7 @@ namespace VitaPharm.Forms.Receipt
             {
                 try
                 {
+                    #region Export DataTables for All Goods Receipts
                     DataTable tableGoodsReceipts = new DataTable();
                     tableGoodsReceipts.Columns.AddRange(new DataColumn[] {
                         new DataColumn("ID", typeof(int)),             
@@ -399,7 +400,9 @@ namespace VitaPharm.Forms.Receipt
                             );
                         }
                     }
+                    #endregion
 
+                    #region Export DataTables for Goods Receipts Details
                     DataTable tableGoodsReceiptDetails = new DataTable();
                     tableGoodsReceiptDetails.Columns.AddRange(new DataColumn[] {
                         new DataColumn("ReceiptCode", typeof(string)),      
@@ -459,6 +462,7 @@ namespace VitaPharm.Forms.Receipt
                     XtraMessageBox.Show($"Error exporting data: {ex.Message}\n\nStack Trace: {ex.StackTrace}", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                #endregion
             }
         }
     }
