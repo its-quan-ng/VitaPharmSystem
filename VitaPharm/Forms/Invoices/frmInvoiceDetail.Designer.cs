@@ -44,25 +44,25 @@
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             txtEmployee = new DevExpress.XtraEditors.TextEdit();
-            cboCustomer = new DevExpress.XtraEditors.LookUpEdit();
             deCreatedDate = new DevExpress.XtraEditors.DateEdit();
             labelControl8 = new DevExpress.XtraEditors.LabelControl();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            txtCustomer = new DevExpress.XtraEditors.TextEdit();
             panel2 = new Panel();
-            lblTotal = new DevExpress.XtraEditors.LabelControl();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            lblTotal = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtInvoiceCode.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cboCustomer.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)deCreatedDate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)deCreatedDate.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)txtCustomer.Properties).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -138,7 +138,7 @@
             gridControl.Location = new Point(0, 108);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.Size = new Size(813, 144);
+            gridControl.Size = new Size(813, 160);
             gridControl.TabIndex = 5;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
@@ -222,14 +222,6 @@
             txtEmployee.Size = new Size(209, 22);
             txtEmployee.TabIndex = 28;
             // 
-            // cboCustomer
-            // 
-            cboCustomer.Location = new Point(555, 65);
-            cboCustomer.Name = "cboCustomer";
-            cboCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboCustomer.Size = new Size(201, 22);
-            cboCustomer.TabIndex = 29;
-            // 
             // deCreatedDate
             // 
             deCreatedDate.EditValue = null;
@@ -269,11 +261,11 @@
             groupControl1.AppearanceCaption.Options.UseBorderColor = true;
             groupControl1.AppearanceCaption.Options.UseFont = true;
             groupControl1.AppearanceCaption.Options.UseForeColor = true;
+            groupControl1.Controls.Add(txtCustomer);
             groupControl1.Controls.Add(txtInvoiceCode);
             groupControl1.Controls.Add(labelControl1);
             groupControl1.Controls.Add(labelControl2);
             groupControl1.Controls.Add(txtEmployee);
-            groupControl1.Controls.Add(cboCustomer);
             groupControl1.Controls.Add(deCreatedDate);
             groupControl1.Controls.Add(labelControl8);
             groupControl1.Controls.Add(labelControl7);
@@ -283,6 +275,13 @@
             groupControl1.Size = new Size(813, 108);
             groupControl1.TabIndex = 3;
             groupControl1.Text = "Basic Information";
+            // 
+            // txtCustomer
+            // 
+            txtCustomer.Location = new Point(555, 65);
+            txtCustomer.Name = "txtCustomer";
+            txtCustomer.Size = new Size(202, 22);
+            txtCustomer.TabIndex = 31;
             // 
             // panel2
             // 
@@ -294,27 +293,30 @@
             panel2.Size = new Size(813, 48);
             panel2.TabIndex = 6;
             // 
-            // lblTotal
-            // 
-            lblTotal.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            lblTotal.Appearance.Options.UseFont = true;
-            lblTotal.Appearance.Options.UseTextOptions = true;
-            lblTotal.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            lblTotal.Location = new Point(704, 18);
-            lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(28, 16);
-            lblTotal.TabIndex = 0;
-            lblTotal.Text = "0.00";
-            // 
             // labelControl3
             // 
-            labelControl3.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            labelControl3.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelControl3.Appearance.Options.UseFont = true;
-            labelControl3.Location = new Point(22, 18);
+            labelControl3.Location = new Point(22, 15);
             labelControl3.Name = "labelControl3";
-            labelControl3.Size = new Size(37, 16);
+            labelControl3.Size = new Size(43, 18);
             labelControl3.TabIndex = 0;
             labelControl3.Text = "Total:";
+            // 
+            // lblTotal
+            // 
+            lblTotal.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            lblTotal.Appearance.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotal.Appearance.ForeColor = Color.Green;
+            lblTotal.Appearance.Options.UseFont = true;
+            lblTotal.Appearance.Options.UseForeColor = true;
+            lblTotal.Appearance.Options.UseTextOptions = true;
+            lblTotal.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            lblTotal.Location = new Point(704, 15);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(62, 18);
+            lblTotal.TabIndex = 3;
+            lblTotal.Text = "0.0 VND";
             // 
             // frmInvoiceDetail
             // 
@@ -333,7 +335,6 @@
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtInvoiceCode.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cboCustomer.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)deCreatedDate.Properties.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)deCreatedDate.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
@@ -341,6 +342,7 @@
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)txtCustomer.Properties).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -364,13 +366,13 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtEmployee;
-        private DevExpress.XtraEditors.LookUpEdit cboCustomer;
         private DevExpress.XtraEditors.DateEdit deCreatedDate;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private Panel panel2;
-        private DevExpress.XtraEditors.LabelControl lblTotal;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit txtCustomer;
+        private DevExpress.XtraEditors.LabelControl lblTotal;
     }
 }
