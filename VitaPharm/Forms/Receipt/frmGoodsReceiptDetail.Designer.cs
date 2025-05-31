@@ -52,7 +52,7 @@
             txtReceiptCode = new DevExpress.XtraEditors.TextEdit();
             txtSupplier = new DevExpress.XtraEditors.TextEdit();
             dateReceiptDate = new DevExpress.XtraEditors.DateEdit();
-            meNote = new DevExpress.XtraEditors.MemoEdit();
+            txtNote = new DevExpress.XtraEditors.MemoEdit();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
             labelControl5 = new DevExpress.XtraEditors.LabelControl();
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -70,7 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)txtSupplier.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateReceiptDate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateReceiptDate.Properties.CalendarTimeProperties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)meNote.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtNote.Properties).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -314,7 +314,7 @@
             groupControl1.Controls.Add(txtReceiptCode);
             groupControl1.Controls.Add(txtSupplier);
             groupControl1.Controls.Add(dateReceiptDate);
-            groupControl1.Controls.Add(meNote);
+            groupControl1.Controls.Add(txtNote);
             groupControl1.Controls.Add(labelControl3);
             groupControl1.Controls.Add(labelControl5);
             groupControl1.Controls.Add(labelControl4);
@@ -362,14 +362,14 @@
             dateReceiptDate.Size = new Size(130, 22);
             dateReceiptDate.TabIndex = 12;
             // 
-            // meNote
+            // txtNote
             // 
-            meNote.Anchor = AnchorStyles.Top;
-            meNote.Location = new Point(595, 80);
-            meNote.Name = "meNote";
-            meNote.Properties.ScrollBars = ScrollBars.Horizontal;
-            meNote.Size = new Size(273, 33);
-            meNote.TabIndex = 15;
+            txtNote.Anchor = AnchorStyles.Top;
+            txtNote.Location = new Point(595, 80);
+            txtNote.Name = "txtNote";
+            txtNote.Properties.ScrollBars = ScrollBars.Horizontal;
+            txtNote.Size = new Size(273, 33);
+            txtNote.TabIndex = 15;
             // 
             // labelControl3
             // 
@@ -442,7 +442,7 @@
             ((System.ComponentModel.ISupportInitialize)txtSupplier.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateReceiptDate.Properties.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateReceiptDate.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)meNote.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtNote.Properties).EndInit();
             ResumeLayout(false);
         }
 
@@ -471,7 +471,7 @@
         private DevExpress.XtraEditors.TextEdit txtReceiptCode;
         private DevExpress.XtraEditors.TextEdit txtSupplier;
         private DevExpress.XtraEditors.DateEdit dateReceiptDate;
-        private DevExpress.XtraEditors.MemoEdit meNote;
+        private DevExpress.XtraEditors.MemoEdit txtNote;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;

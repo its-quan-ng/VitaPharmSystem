@@ -16,6 +16,7 @@ namespace VitaPharm.Forms
             this.receiptId = receiptId;
             LoadReceiptInfo();
             LoadReceiptDetails();
+            ToggleControls();
         }
 
         private void LoadReceiptDetails()
@@ -56,6 +57,15 @@ namespace VitaPharm.Forms
             }
         }
 
+        private void ToggleControls()
+        {
+            txtReceiptCode.Enabled = false;
+            txtEmployee.Enabled = false;
+            dateReceiptDate.Enabled = false;
+            txtSupplier.Enabled = false;
+            txtNote.Enabled = false;
+        }
+
         private void btnPrint_Click(object sender, EventArgs e)
         {
 
@@ -87,7 +97,7 @@ namespace VitaPharm.Forms
                 txtReceiptCode.Text = receipt.ReceiptCode;
                 dateReceiptDate.DateTime = receipt.ReceiptDate;
                 txtSupplier.Text = receipt.SupplierName;
-                meNote.Text = receipt.Note;
+                txtNote.Text = receipt.Note;
                 txtEmployee.Text = receipt.Employee?.EmployeeName ?? "";
             }
         }
