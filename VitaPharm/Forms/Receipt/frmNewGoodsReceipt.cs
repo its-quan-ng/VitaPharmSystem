@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace VitaPharm.Forms.Receipt
 {
-    public partial class frmNewGoodsReceipt : DevExpress.XtraEditors.XtraForm
+    public partial class frmNewGoodsReceipt : XtraForm
     {
         private PharmacyDbContext context = new PharmacyDbContext();
         private BindingList<BatchDto> detailsList = new();
@@ -15,7 +15,6 @@ namespace VitaPharm.Forms.Receipt
         {
             InitializeComponent();
             currentUser = username;
-            
             gridControl.DataSource = detailsList;
             InitializeForm();
         }
