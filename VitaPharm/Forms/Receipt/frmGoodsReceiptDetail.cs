@@ -1,7 +1,9 @@
-﻿using System.Data;
-using VitaPharm.Data;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 using Microsoft.EntityFrameworkCore;
-using DevExpress.XtraEditors;
+using System.Data;
+using VitaPharm.Data;
+using VitaPharm.Reports;
 
 namespace VitaPharm.Forms
 {
@@ -68,7 +70,51 @@ namespace VitaPharm.Forms
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            var ds = new PharmacyManageDataSet();
 
+            var dtMaster = ds.ReceiptList;
+            var dtDetail = ds.ReceiptDetailList;
+
+            var receipt = context.GoodsReceipts
+                .Include(r => r.Employee)
+                .FirstOrDefault(r => r.ReceiptID == receiptId);
+
+            var details = context.GoodsReceiptDetails
+                .Include(d => d.Batch)
+                .ThenInclude(b => b.Commodity)
+                .Where(d => d.GoodsReceipt.ReceiptID == receiptId)
+                .ToList();
+
+            dtMaster.Rows.Add(
+                receipt.ReceiptID,
+                receipt.ReceiptCode,
+                receipt.ReceiptDate,
+                receipt.SupplierName,
+                receipt.Employee?.EmployeeName ?? "",
+                receipt.Note
+            );
+
+            foreach (var d in details)
+            {
+                dtDetail.Rows.Add(
+                    d.GoodsReceiptDetailID,
+                    d.GoodsReceipt.ReceiptID,
+                    d.Batch.BatchCode,
+                    d.Batch.Commodity.CommodityName,
+                    d.Batch.MfgDate,
+                    d.Batch.ExpDate,
+                    d.Batch.PurchasePrice,
+                    d.QtyIn,
+                    d.QtyIn * d.Batch.PurchasePrice
+                );
+            }
+
+            var report = new rptReceiptDetail();
+            report.DataSource = ds;
+            report.DataMember = "GoodsReceipt";
+
+           ReportPrintTool printTool = new ReportPrintTool(report); 
+           printTool.ShowPreviewDialog();
         }
 
         private void btnReload_Click(object sender, EventArgs e)
@@ -101,26 +147,5 @@ namespace VitaPharm.Forms
                 txtEmployee.Text = receipt.Employee?.EmployeeName ?? "";
             }
         }
-    }
-
-    public class GoodsReceiptReportModel
-    {
-        public string ReceiptCode { get; set; }
-        public DateTime ReceiptDate { get; set; }
-        public string SupplierName { get; set; }
-        public string EmployeeName { get; set; }
-        public string Note { get; set; }
-        public List<GoodsReceiptDetailReportModel> Details { get; set; }
-    }
-
-    public class GoodsReceiptDetailReportModel
-    {
-        public string BatchCode { get; set; }
-        public string CommodityName { get; set; }
-        public DateTime MfgDate { get; set; }
-        public DateTime ExpDate { get; set; }
-        public decimal PurchasePrice { get; set; }
-        public int Quantity { get; set; }
-        public decimal Amount { get; set; }
     }
 }
