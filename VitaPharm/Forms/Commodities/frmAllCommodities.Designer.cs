@@ -87,7 +87,7 @@
             // colID
             // 
             colID.Caption = "ID";
-            colID.FieldName = "CommodityID";
+            colID.FieldName = "ID";
             colID.MinWidth = 25;
             colID.Name = "colID";
             colID.OptionsColumn.AllowEdit = false;
@@ -231,22 +231,26 @@
             // btnExport
             // 
             btnExport.Alignment = ToolStripItemAlignment.Right;
+            btnExport.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExport.ForeColor = Color.Brown;
             btnExport.Image = Properties.Resources.export2;
             btnExport.ImageScaling = ToolStripItemImageScaling.None;
             btnExport.ImageTransparentColor = Color.Magenta;
             btnExport.Name = "btnExport";
-            btnExport.Size = new Size(88, 36);
+            btnExport.Size = new Size(90, 36);
             btnExport.Text = "Export";
+            btnExport.Click += btnExport_Click;
             // 
             // btnImport
             // 
             btnImport.Alignment = ToolStripItemAlignment.Right;
-            btnImport.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnImport.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnImport.ForeColor = Color.DarkSlateGray;
             btnImport.Image = Properties.Resources.import1;
             btnImport.ImageScaling = ToolStripItemImageScaling.None;
             btnImport.ImageTransparentColor = Color.Magenta;
             btnImport.Name = "btnImport";
-            btnImport.Size = new Size(90, 36);
+            btnImport.Size = new Size(91, 36);
             btnImport.Text = "Import";
             btnImport.Click += btnImport_Click;
             // 

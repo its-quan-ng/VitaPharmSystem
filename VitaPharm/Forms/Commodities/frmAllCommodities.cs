@@ -4,6 +4,7 @@ using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using VitaPharm.Data;
 using ClosedXML.Excel;
+using System.Data;
 
 namespace VitaPharm.Forms.Commodities
 {
@@ -237,6 +238,88 @@ namespace VitaPharm.Forms.Commodities
                 Filter = "Excel Files|*.xlsx;*.xlsm;*.xls",
                 Multiselect = false
             };
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Title = "Export Commodities to Excel",
+                Filter = "Excel Files|*.xlsx",
+                FileName = "Commodities_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xlsx"
+            };
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    DataTable table = new DataTable();
+
+                    table.Columns.AddRange(new DataColumn[]
+                    {
+                        new DataColumn("ID", typeof(int)),
+                        new DataColumn("CommodityName", typeof(string)),
+                        new DataColumn("Manufacturer", typeof(string)),
+                        new DataColumn("BaseUnit", typeof(string)),
+                        new DataColumn("SellingPrice", typeof(decimal)),
+                        new DataColumn("Status", typeof(string)),
+                        new DataColumn("CategoryName", typeof(string))
+                    });
+
+                    var commodities = context.Commodities
+                                             .Include(c => c.Categories)
+                                             .AsEnumerable()
+                                             .Select((c, idx) => new
+                                             {
+                                                 ID = idx + 1,
+                                                 c.CommodityName,
+                                                 c.Manufacturer,
+                                                 c.BaseUnit,
+                                                 c.SellingPrice,
+                                                 Status = c.IsTerminated,
+                                                 CategoryName = c.Categories?.CategoryName
+                                             })
+                                             .ToList();
+
+                    foreach (var commodity in commodities)
+                    {
+                        table.Rows.Add(
+                            commodity.ID,
+                            commodity.CommodityName,
+                            commodity.Manufacturer,
+                            commodity.BaseUnit,
+                            commodity.SellingPrice,
+                            commodity.Status,
+                            commodity.CategoryName
+                        );
+                    }
+
+                    using (var workbook = new XLWorkbook())
+                    {
+                        var worksheet = workbook.Worksheets.Add("Commodities");
+                        worksheet.Cell(1, 1).InsertTable(table);
+
+                        var headerRange = worksheet.Range(1, 1, 1, table.Columns.Count);
+                        headerRange.Style.Font.Bold = true;
+                        headerRange.Style.Fill.BackgroundColor = XLColor.LightBlue;
+
+                        worksheet.ColumnsUsed().AdjustToContents();
+
+                        var priceColumn = worksheet.Column(5);
+                        priceColumn.Style.NumberFormat.Format = "#,##0";
+
+                        workbook.SaveAs(saveFileDialog.FileName);
+                    }
+
+                    XtraMessageBox.Show($"Export completed successfully!",
+                        "Export Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"Error exporting commodities: {ex.Message}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
