@@ -74,6 +74,7 @@
             cboCommodity = new DevExpress.XtraEditors.ComboBoxEdit();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
             simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            labelControl14 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)seTaxRate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)meNote.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).BeginInit();
@@ -151,10 +152,12 @@
             // 
             // seTaxRate
             // 
-            seTaxRate.EditValue = new decimal(new int[] { 0, 0, 0, 0 });
-            seTaxRate.Location = new Point(414, 99);
+            seTaxRate.EditValue = new decimal(new int[] { 5, 0, 0, 0 });
+            seTaxRate.Location = new Point(123, 128);
             seTaxRate.Name = "seTaxRate";
             seTaxRate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            seTaxRate.Properties.MaxValue = new decimal(new int[] { 100, 0, 0, 0 });
+            seTaxRate.Properties.MinValue = new decimal(new int[] { 1, 0, 0, 0 });
             seTaxRate.Size = new Size(55, 24);
             seTaxRate.TabIndex = 25;
             // 
@@ -229,7 +232,7 @@
             // 
             labelControl4.Appearance.Font = new Font("Tahoma", 8F);
             labelControl4.Appearance.Options.UseFont = true;
-            labelControl4.Location = new Point(348, 103);
+            labelControl4.Location = new Point(24, 132);
             labelControl4.Name = "labelControl4";
             labelControl4.Size = new Size(51, 16);
             labelControl4.TabIndex = 12;
@@ -280,6 +283,7 @@
             groupControl1.AppearanceCaption.BorderColor = Color.FromArgb(222, 228, 255);
             groupControl1.AppearanceCaption.Options.UseBorderColor = true;
             groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            groupControl1.Controls.Add(labelControl14);
             groupControl1.Controls.Add(textEdit2);
             groupControl1.Controls.Add(seTaxRate);
             groupControl1.Controls.Add(labelControl1);
@@ -566,6 +570,16 @@
             simpleButton3.TabIndex = 29;
             simpleButton3.Text = "Add";
             // 
+            // labelControl14
+            // 
+            labelControl14.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl14.Appearance.Options.UseFont = true;
+            labelControl14.Location = new Point(184, 132);
+            labelControl14.Name = "labelControl14";
+            labelControl14.Size = new Size(14, 16);
+            labelControl14.TabIndex = 26;
+            labelControl14.Text = "%";
+            // 
             // frmNewInvoice
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -653,5 +667,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colUnitPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colBaseUnit;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
     }
 }
