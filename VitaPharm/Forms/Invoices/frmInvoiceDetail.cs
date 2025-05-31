@@ -27,6 +27,9 @@ namespace VitaPharm.Forms.Invoices
         {
             try
             {
+                context?.Dispose();
+                context = new PharmacyDbContext();
+
                 currentInvoice = context.Invoices
                     .Include(i => i.Customer)
                     .Include(i => i.Employee)
@@ -45,7 +48,7 @@ namespace VitaPharm.Forms.Invoices
                 txtInvoiceCode.Text = currentInvoice.InvoiceCode;
                 txtEmployee.Text = currentInvoice.Employee?.EmployeeName ?? "N/A";
                 deCreatedDate.DateTime = currentInvoice.CreatedDate;
-                txtCustomer.EditValue = currentInvoice.Customer.CustomerName;
+                txtCustomer.Text = currentInvoice.Customer.CustomerName;
 
                 var invoiceDetailData = currentInvoice.InvoiceDetail
                     .Select(id => new
@@ -131,7 +134,12 @@ namespace VitaPharm.Forms.Invoices
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            var result = XtraMessageBox.Show("Are you sure you want to cancel?", "Confirmation",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
