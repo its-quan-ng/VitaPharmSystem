@@ -182,10 +182,10 @@
             // gridControl
             // 
             gridControl.Dock = DockStyle.Fill;
-            gridControl.Location = new Point(0, 176);
+            gridControl.Location = new Point(0, 171);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.Size = new Size(828, 220);
+            gridControl.Size = new Size(828, 225);
             gridControl.TabIndex = 0;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
@@ -213,7 +213,7 @@
             groupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             groupControl1.Location = new Point(0, 0);
             groupControl1.Name = "groupControl1";
-            groupControl1.Size = new Size(828, 176);
+            groupControl1.Size = new Size(828, 171);
             groupControl1.TabIndex = 1;
             groupControl1.Text = "Commodity Information";
             // 
@@ -222,9 +222,10 @@
             toolStrip1.Dock = DockStyle.Bottom;
             toolStrip1.ImageScalingSize = new Size(20, 20);
             toolStrip1.Items.AddRange(new ToolStripItem[] { btnExport, btnImport });
-            toolStrip1.Location = new Point(2, 135);
+            toolStrip1.Location = new Point(2, 142);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(824, 39);
+            toolStrip1.RenderMode = ToolStripRenderMode.Professional;
+            toolStrip1.Size = new Size(824, 27);
             toolStrip1.TabIndex = 16;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -234,10 +235,9 @@
             btnExport.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExport.ForeColor = Color.Brown;
             btnExport.Image = Properties.Resources.export2;
-            btnExport.ImageScaling = ToolStripItemImageScaling.None;
             btnExport.ImageTransparentColor = Color.Magenta;
             btnExport.Name = "btnExport";
-            btnExport.Size = new Size(90, 36);
+            btnExport.Size = new Size(78, 24);
             btnExport.Text = "Export";
             btnExport.Click += btnExport_Click;
             // 
@@ -247,10 +247,9 @@
             btnImport.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnImport.ForeColor = Color.DarkSlateGray;
             btnImport.Image = Properties.Resources.import1;
-            btnImport.ImageScaling = ToolStripItemImageScaling.None;
             btnImport.ImageTransparentColor = Color.Magenta;
             btnImport.Name = "btnImport";
-            btnImport.Size = new Size(91, 36);
+            btnImport.Size = new Size(79, 24);
             btnImport.Text = "Import";
             btnImport.Click += btnImport_Click;
             // 
