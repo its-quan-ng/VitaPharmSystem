@@ -40,6 +40,18 @@ namespace VitaPharm.Forms
                         Quantity = d.QtyIn,
                         Amount = d.QtyIn * d.Batch.PurchasePrice
                     })
+                    .ToList()
+                    .Select((item, index) => new
+                    {
+                        ID = index + 1,
+                        item.BatchCode,
+                        item.CommodityName,
+                        item.MfgDate,
+                        item.ExpDate,
+                        item.PurchasePrice,
+                        item.Quantity,
+                        item.Amount
+                    })
                     .ToList();
 
                 gridControl.DataSource = receiptDetails;
