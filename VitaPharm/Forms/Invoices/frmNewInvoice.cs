@@ -182,7 +182,6 @@ namespace VitaPharm.Forms.Invoices
                     };
                     context.InvoiceDetails.Add(detail);
 
-
                     var batch = context.Batches.First(b => b.BatchID == line.BatchID);
                     batch.QtyAvailable -= line.Qty;
                 }
