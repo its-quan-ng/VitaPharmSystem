@@ -1,6 +1,7 @@
-﻿using System.Data;
-using System.Windows.Forms;
+﻿using ClosedXML.Excel;
 using DevExpress.XtraEditors;
+using Microsoft.EntityFrameworkCore;
+using System.Data;
 using VitaPharm.Data;
 
 namespace VitaPharm.Forms.Receipt
@@ -124,7 +125,116 @@ namespace VitaPharm.Forms.Receipt
 
         private void btnExport_Click(object sender, EventArgs e)
         {
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "Excel Files|*.xlsx;*.xls",
+                Title = "Export Receipts to Excel",
+                FileName = "GoodsReceipts_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xlsx"
+            };
 
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    DataTable tableGoodsReceipts = new DataTable();
+                    tableGoodsReceipts.Columns.AddRange(new DataColumn[] {
+                        new DataColumn("ID", typeof(int)),             
+                        new DataColumn("ReceiptCode", typeof(string)),
+                        new DataColumn("ReceiptDate", typeof(DateTime)),
+                        new DataColumn("SupplierName", typeof(string)),
+                        new DataColumn("EmployeeName", typeof(string)),
+                        new DataColumn("Note", typeof(string)),
+                        new DataColumn("ReceiptStatus", typeof(string))
+                    });
+
+                 
+                    IQueryable<GoodsReceipt> receiptQuery = context.GoodsReceipts
+                        .Include(r => r.Employee);
+
+                    if (CurrentUser.Role.Trim().Equals("user", StringComparison.OrdinalIgnoreCase))
+                    {
+                        receiptQuery = receiptQuery.Where(r => r.Employee.EmployeeID == CurrentUser.EmployeeID);
+                    }
+
+                    var receipts = receiptQuery.ToList();
+                    if (receipts != null && receipts.Count > 0)
+                    {
+                        int index = 1;
+                        foreach (var r in receipts)
+                        {
+                            tableGoodsReceipts.Rows.Add(
+                                index++,                            
+                                r.ReceiptCode,
+                                r.ReceiptDate,
+                                r.SupplierName,
+                                r.Employee?.EmployeeName ?? "",
+                                r.Note ?? "",
+                                r.ReceiptStatus
+                            );
+                        }
+                    }
+
+                    DataTable tableGoodsReceiptDetails = new DataTable();
+                    tableGoodsReceiptDetails.Columns.AddRange(new DataColumn[] {
+                        new DataColumn("ReceiptCode", typeof(string)),      
+                        new DataColumn("BatchCode", typeof(string)),
+                        new DataColumn("CommodityName", typeof(string)),
+                        new DataColumn("Manufacturer", typeof(string)),
+                        new DataColumn("BaseUnit", typeof(string)),
+                        new DataColumn("MfgDate", typeof(DateTime)),
+                        new DataColumn("ExpDate", typeof(DateTime)),
+                        new DataColumn("PurchasePrice", typeof(decimal)),
+                        new DataColumn("Quantity", typeof(int)),
+                        new DataColumn("Amount", typeof(decimal))
+                    });
+
+                    var receiptIds = receipts.Select(r => r.ReceiptID).ToList();
+                    var receiptDetails = context.GoodsReceiptDetails
+                        .Include(d => d.GoodsReceipt)
+                        .Include(d => d.Batch)
+                        .Include(d => d.Batch.Commodity)
+                        .Where(d => receiptIds.Contains(d.GoodsReceipt.ReceiptID))
+                        .ToList();
+
+                    if (receiptDetails != null && receiptDetails.Count > 0)
+                    {
+                        foreach (var d in receiptDetails)
+                        {
+                            decimal amount = d.QtyIn * (d.Batch?.PurchasePrice ?? 0);
+                            tableGoodsReceiptDetails.Rows.Add(
+                                d.GoodsReceipt.ReceiptCode,     
+                                d.Batch?.BatchCode ?? "",
+                                d.Batch?.Commodity?.CommodityName ?? "",
+                                d.Batch?.Commodity?.Manufacturer ?? "",
+                                d.Batch?.Commodity?.BaseUnit ?? "",
+                                d.Batch?.MfgDate,
+                                d.Batch?.ExpDate,
+                                d.Batch?.PurchasePrice ?? 0,
+                                d.QtyIn,
+                                amount
+                            );
+                        }
+                    }
+
+                    using (XLWorkbook wb = new XLWorkbook())
+                    {
+                        var sheet1 = wb.Worksheets.Add(tableGoodsReceipts, "GoodsReceipts");
+                        sheet1.Columns().AdjustToContents();
+
+                        var sheet2 = wb.Worksheets.Add(tableGoodsReceiptDetails, "GoodsReceiptDetails");
+                        sheet2.Columns().AdjustToContents();
+
+                        wb.SaveAs(saveFileDialog.FileName);
+                        XtraMessageBox.Show($"Export completed successfully!",
+                            "Export Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"Error exporting data: {ex.Message}\n\nStack Trace: {ex.StackTrace}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
