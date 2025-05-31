@@ -14,6 +14,7 @@ namespace VitaPharm.Forms.Receipt
         {
             InitializeComponent();
             currentUser = username;
+            repobtnViewDetail.ButtonClick += repobtnViewDetail_ButtonClick;
             LoadReceipts();
         }
 
@@ -81,16 +82,18 @@ namespace VitaPharm.Forms.Receipt
 
         private void LoadReceipts()
         {
-            IQueryable<GoodsReceipt> query = context.GoodsReceipts;
+            IQueryable<GoodsReceipt> receiptQuery = context.GoodsReceipts;
 
             if (CurrentUser.Role.Trim().Equals("user", StringComparison.OrdinalIgnoreCase))
             {
-                query = query.Where(r => r.Employee.EmployeeID == CurrentUser.EmployeeID);
+                receiptQuery = receiptQuery.Where(r => r.Employee.EmployeeID == CurrentUser.EmployeeID);
             }
-            
-            var receipts = query
-                .Select(r => new
+
+            var receipts = receiptQuery
+                .AsEnumerable()
+                .Select((r, idx) => new
                 {
+                    ID = idx + 1,
                     r.ReceiptID,
                     r.ReceiptCode,
                     r.ReceiptDate,
@@ -100,6 +103,18 @@ namespace VitaPharm.Forms.Receipt
                 })
                 .ToList();
             gridControl.DataSource = receipts;
+        }
+
+        private void repobtnViewDetail_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            int rowHandle = gridView.FocusedRowHandle;
+            if (rowHandle < 0) return;
+
+            var receiptID = gridView.GetRowCellValue(rowHandle, "ReceiptID");
+            if (receiptID == null) return;
+
+            var detailForm = new frmGoodsReceiptDetail((int)receiptID);
+            detailForm.ShowDialog();
         }
     }
 }
