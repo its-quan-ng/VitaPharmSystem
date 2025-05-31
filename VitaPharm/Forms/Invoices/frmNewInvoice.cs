@@ -86,30 +86,60 @@ namespace VitaPharm.Forms.Invoices
                 return;
             }
 
+            int qty;
+            if (!int.TryParse(txtQuantity.Text, out qty))
+            {
+                XtraMessageBox.Show("Invalid quantity!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (qty <= 0)
+            {
+                XtraMessageBox.Show("Quantity must be greater than 0!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             var existingLine = detailsList.FirstOrDefault(l => l.BatchID == batchId);
 
             if (existingLine != null)
             {
-                XtraMessageBox.Show("This batch is already in the cart!", "Warning",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (existingLine.Qty + qty > batch.QtyAvailable)
+                {
+                    XtraMessageBox.Show("Total quantity in cart exceeds available stock!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                existingLine.Qty += qty;
+                existingLine.Amount = existingLine.SellingPrice * existingLine.Qty;
+                gridView.RefreshData();
+                RecalculateTotals();
+            }
+            else
+            {
+                if (qty > batch.QtyAvailable)
+                {
+                    XtraMessageBox.Show("Quantity exceeds available stock!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var newLine = new InvoiceLineDto
+                {
+                    ID = detailsList.Count + 1,
+                    CommodityID = commodityId,
+                    CommodityName = commodity.CommodityName,
+                    BatchID = batchId,
+                    BatchCode = batch.BatchCode,
+                    BaseUnit = commodity.BaseUnit,
+                    SellingPrice = commodity.SellingPrice,
+                    Qty = qty,
+                    Amount = commodity.SellingPrice * qty
+                };
+                detailsList.Add(newLine);
+                RecalculateTotals();
             }
 
-            var newLine = new InvoiceLineDto
-            {
-                ID = detailsList.Count + 1,
-                CommodityID = commodityId,
-                CommodityName = commodity.CommodityName,
-                BatchID = batchId,
-                BatchCode = batch.BatchCode,
-                BaseUnit = commodity.BaseUnit,
-                SellingPrice = commodity.SellingPrice,
-                Qty = 1,
-                Amount = commodity.SellingPrice
-            };
+            batch.QtyAvailable -= qty;
+            txtQtyAvailable.Text = batch.QtyAvailable.ToString();
 
-            detailsList.Add(newLine);
-            RecalculateTotals();
+            ResetCommodityControls();
         }
 
         private void RecalculateTotals()
@@ -138,6 +168,13 @@ namespace VitaPharm.Forms.Invoices
             }
 
             RecalculateTotals();
+
+            var batch = context.Batches.FirstOrDefault(b => b.BatchID == focusedRow.BatchID);
+            if (batch != null)
+            {
+                batch.QtyAvailable += focusedRow.Qty;
+            }
+            txtQtyAvailable.Text = batch != null ? batch.QtyAvailable.ToString() : "";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -192,7 +229,7 @@ namespace VitaPharm.Forms.Invoices
 
                 XtraMessageBox.Show("Invoice saved successfully!", "Success",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                ResetFormFields();
             }
             catch (Exception ex)
             {
@@ -313,15 +350,15 @@ namespace VitaPharm.Forms.Invoices
 
         private void ToggleControls()
         {
-            txtInvoiceCode.Enabled = false;
-            dateCreatedDate.Enabled = false;
-            txtEmployee.Enabled = false;
-            txtContact.Enabled = false;
-            txtQtyAvailable.Enabled = false;
-            txtPrice.Enabled = false;
-            txtBaseUnit.Enabled = false;
+            txtInvoiceCode.Properties.ReadOnly = true;
+            dateCreatedDate.Properties.ReadOnly = true;
+            txtEmployee.Properties.ReadOnly = true;
+            txtContact.Properties.ReadOnly = true;
+            txtQtyAvailable.Properties.ReadOnly = true;
+            txtPrice.Properties.ReadOnly = true;
+            txtBaseUnit.Properties.ReadOnly = true;
             btnAddToCart.Enabled = false;
-            btnRemove.Enabled = !false;
+            btnRemove.Enabled = false;
             btnAdd.Enabled = true;
             cboCustomer.Enabled = true;
             cboCommodity.Enabled = true;
@@ -358,13 +395,7 @@ namespace VitaPharm.Forms.Invoices
             txtContact.Text = "";
             meNote.Text = "";
             detailsList.Clear();
-            cboCommodity.EditValue = null;
-            cboBatchCode.Properties.DataSource = null;
-            cboBatchCode.Properties.Columns.Clear();
-            cboBatchCode.Properties.NullText = "Please select a batch!";
-            txtBaseUnit.Text = "";
-            txtPrice.Text = "";
-            txtQtyAvailable.Text = "";
+            ResetCommodityControls();
             btnAddToCart.Enabled = false;
             btnRemove.Enabled = false;
             RecalculateTotals();
@@ -373,6 +404,18 @@ namespace VitaPharm.Forms.Invoices
         private void gridView_FocusedRowChanged_1(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             btnRemove.Enabled = gridView.FocusedRowHandle >= 0 && detailsList.Count > 0;
+        }
+
+        private void ResetCommodityControls()
+        {
+            cboCommodity.EditValue = null;
+            cboBatchCode.Properties.DataSource = null;
+            cboBatchCode.Properties.Columns.Clear();
+            cboBatchCode.Properties.NullText = "Please select a batch!";
+            txtQtyAvailable.Text = "";
+            txtBaseUnit.Text = "";
+            txtPrice.Text = "";
+            txtQuantity.Text = "1";
         }
     }
 }
