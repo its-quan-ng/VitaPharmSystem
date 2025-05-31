@@ -38,6 +38,9 @@
             colCategoryName = new DevExpress.XtraGrid.Columns.GridColumn();
             gridControl = new DevExpress.XtraGrid.GridControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            toolStrip1 = new ToolStrip();
+            btnExport = new ToolStripButton();
+            btnImport = new ToolStripButton();
             cboIsTerminated = new DevExpress.XtraEditors.ComboBoxEdit();
             labelControl9 = new DevExpress.XtraEditors.LabelControl();
             txtSellingPrice = new DevExpress.XtraEditors.TextEdit();
@@ -60,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
+            toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cboIsTerminated.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtSellingPrice.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cboCategoryName.Properties).BeginInit();
@@ -83,7 +87,7 @@
             // colID
             // 
             colID.Caption = "ID";
-            colID.FieldName = "CommodityID";
+            colID.FieldName = "ID";
             colID.MinWidth = 25;
             colID.Name = "colID";
             colID.OptionsColumn.AllowEdit = false;
@@ -178,10 +182,10 @@
             // gridControl
             // 
             gridControl.Dock = DockStyle.Fill;
-            gridControl.Location = new Point(0, 146);
+            gridControl.Location = new Point(0, 171);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.Size = new Size(828, 250);
+            gridControl.Size = new Size(828, 225);
             gridControl.TabIndex = 0;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
@@ -191,6 +195,7 @@
             groupControl1.AppearanceCaption.ForeColor = Color.FromArgb(16, 53, 113);
             groupControl1.AppearanceCaption.Options.UseFont = true;
             groupControl1.AppearanceCaption.Options.UseForeColor = true;
+            groupControl1.Controls.Add(toolStrip1);
             groupControl1.Controls.Add(cboIsTerminated);
             groupControl1.Controls.Add(labelControl9);
             groupControl1.Controls.Add(txtSellingPrice);
@@ -208,12 +213,49 @@
             groupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             groupControl1.Location = new Point(0, 0);
             groupControl1.Name = "groupControl1";
-            groupControl1.Size = new Size(828, 146);
+            groupControl1.Size = new Size(828, 171);
             groupControl1.TabIndex = 1;
             groupControl1.Text = "Commodity Information";
             // 
+            // toolStrip1
+            // 
+            toolStrip1.Dock = DockStyle.Bottom;
+            toolStrip1.ImageScalingSize = new Size(20, 20);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { btnExport, btnImport });
+            toolStrip1.Location = new Point(2, 142);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.RenderMode = ToolStripRenderMode.Professional;
+            toolStrip1.Size = new Size(824, 27);
+            toolStrip1.TabIndex = 16;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // btnExport
+            // 
+            btnExport.Alignment = ToolStripItemAlignment.Right;
+            btnExport.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExport.ForeColor = Color.Brown;
+            btnExport.Image = Properties.Resources.export2;
+            btnExport.ImageTransparentColor = Color.Magenta;
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(78, 24);
+            btnExport.Text = "Export";
+            btnExport.Click += btnExport_Click;
+            // 
+            // btnImport
+            // 
+            btnImport.Alignment = ToolStripItemAlignment.Right;
+            btnImport.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnImport.ForeColor = Color.DarkSlateGray;
+            btnImport.Image = Properties.Resources.import1;
+            btnImport.ImageTransparentColor = Color.Magenta;
+            btnImport.Name = "btnImport";
+            btnImport.Size = new Size(79, 24);
+            btnImport.Text = "Import";
+            btnImport.Click += btnImport_Click;
+            // 
             // cboIsTerminated
             // 
+            cboIsTerminated.Anchor = AnchorStyles.Top;
             cboIsTerminated.Location = new Point(578, 100);
             cboIsTerminated.Name = "cboIsTerminated";
             cboIsTerminated.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
@@ -249,6 +291,7 @@
             // 
             // Status
             // 
+            Status.Anchor = AnchorStyles.Top;
             Status.Location = new Point(475, 103);
             Status.Name = "Status";
             Status.Size = new Size(41, 16);
@@ -353,6 +396,7 @@
             // 
             // btnSave
             // 
+            btnSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSave.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
             btnSave.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnSave.Appearance.Options.UseBackColor = true;
@@ -366,6 +410,7 @@
             // 
             // btnCancel
             // 
+            btnCancel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCancel.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             btnCancel.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnCancel.Appearance.Options.UseBackColor = true;
@@ -379,6 +424,7 @@
             // 
             // btnReload
             // 
+            btnReload.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnReload.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Warning;
             btnReload.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnReload.Appearance.Options.UseBackColor = true;
@@ -392,6 +438,7 @@
             // 
             // btnEdit
             // 
+            btnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnEdit.Appearance.BackColor = Color.FromArgb(100, 165, 80);
             btnEdit.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
             btnEdit.Appearance.Options.UseBackColor = true;
@@ -421,6 +468,8 @@
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)cboIsTerminated.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtSellingPrice.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cboCategoryName.Properties).EndInit();
@@ -462,5 +511,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit txtSellingPrice;
         private DevExpress.XtraEditors.ComboBoxEdit cboIsTerminated;
+        private ToolStrip toolStrip1;
+        private ToolStripButton btnImport;
+        private ToolStripButton btnExport;
     }
 }

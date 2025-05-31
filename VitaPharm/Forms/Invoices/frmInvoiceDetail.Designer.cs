@@ -49,6 +49,9 @@
             labelControl8 = new DevExpress.XtraEditors.LabelControl();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            panel2 = new Panel();
+            lblTotal = new DevExpress.XtraEditors.LabelControl();
+            labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtInvoiceCode.Properties).BeginInit();
@@ -60,6 +63,7 @@
             panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // colAmount
@@ -134,7 +138,7 @@
             gridControl.Location = new Point(0, 108);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.Size = new Size(813, 208);
+            gridControl.Size = new Size(813, 144);
             gridControl.TabIndex = 5;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
@@ -280,12 +284,45 @@
             groupControl1.TabIndex = 3;
             groupControl1.Text = "Basic Information";
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(lblTotal);
+            panel2.Controls.Add(labelControl3);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 268);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(813, 48);
+            panel2.TabIndex = 6;
+            // 
+            // lblTotal
+            // 
+            lblTotal.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            lblTotal.Appearance.Options.UseFont = true;
+            lblTotal.Appearance.Options.UseTextOptions = true;
+            lblTotal.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            lblTotal.Location = new Point(704, 18);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(28, 16);
+            lblTotal.TabIndex = 0;
+            lblTotal.Text = "0.00";
+            // 
+            // labelControl3
+            // 
+            labelControl3.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            labelControl3.Appearance.Options.UseFont = true;
+            labelControl3.Location = new Point(22, 18);
+            labelControl3.Name = "labelControl3";
+            labelControl3.Size = new Size(37, 16);
+            labelControl3.TabIndex = 0;
+            labelControl3.Text = "Total:";
+            // 
             // frmInvoiceDetail
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(813, 380);
             Controls.Add(gridControl);
+            Controls.Add(panel2);
             Controls.Add(panelControl1);
             Controls.Add(groupControl1);
             Name = "frmInvoiceDetail";
@@ -304,6 +341,8 @@
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -330,5 +369,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
+        private Panel panel2;
+        private DevExpress.XtraEditors.LabelControl lblTotal;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
     }
 }
