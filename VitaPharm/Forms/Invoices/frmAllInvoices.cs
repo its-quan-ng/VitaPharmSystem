@@ -2,9 +2,7 @@
 using System.Data;
 using VitaPharm.Data;
 using DevExpress.XtraEditors;
-using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraSpreadsheet.Model;
 
 namespace VitaPharm.Forms.Invoices
 {
@@ -12,11 +10,12 @@ namespace VitaPharm.Forms.Invoices
     {
         private PharmacyDbContext context;
         private BindingSource bsAllInvoices;
-        bool isAdmin = string.Equals(CurrentUser.Role, "Admin", StringComparison.OrdinalIgnoreCase);
+        bool isAdmin = string.Equals(CurrentUser.Role, "admin", StringComparison.OrdinalIgnoreCase);
 
         public frmAllInvoices()
         {
             InitializeComponent();
+            repobtnViewDetail.ButtonClick += repobtnViewDetail_ButtonClick;
         }
 
         private void frmAllInvoices_Load(object sender, EventArgs e)
@@ -60,9 +59,7 @@ namespace VitaPharm.Forms.Invoices
                 };
                 gridControl.DataSource = bsAllInvoices;
 
-                gridView.PopulateColumns();
                 HideColumnSafely(gridView, "InvoiceID");
-                gridView.OptionsBehavior.Editable = false;
                 gridView.OptionsView.ShowGroupPanel = false;
             }
             catch (Exception ex)
@@ -101,6 +98,18 @@ namespace VitaPharm.Forms.Invoices
             {
                 this.Close();
             }
+        }
+
+        private void repobtnViewDetail_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            int rowHandle = gridView.FocusedRowHandle;
+            if (rowHandle < 0) return;
+
+            var invoiceCode = gridView.GetRowCellValue(rowHandle, "InvoiceCode");
+            if (invoiceCode == null) return;
+
+            var detailForm = new frmInvoiceDetail((string)invoiceCode);
+            detailForm.ShowDialog();
         }
     }
 }
