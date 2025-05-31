@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             panel2 = new Panel();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnReload = new DevExpress.XtraEditors.SimpleButton();
@@ -49,11 +49,17 @@
             colReceiptStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             colAction = new DevExpress.XtraGrid.Columns.GridColumn();
             repobtnViewDetail = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            panel4 = new Panel();
+            toolStrip1 = new ToolStrip();
+            btnExport = new ToolStripButton();
+            btnImport = new ToolStripButton();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repobtnViewDetail).BeginInit();
+            panel4.SuspendLayout();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -128,9 +134,9 @@
             // 
             panel3.Controls.Add(gridControl);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 0);
+            panel3.Location = new Point(0, 41);
             panel3.Name = "panel3";
-            panel3.Size = new Size(853, 344);
+            panel3.Size = new Size(853, 303);
             panel3.TabIndex = 2;
             // 
             // gridControl
@@ -140,7 +146,7 @@
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
             gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repobtnViewDetail });
-            gridControl.Size = new Size(853, 344);
+            gridControl.Size = new Size(853, 303);
             gridControl.TabIndex = 0;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
@@ -242,9 +248,54 @@
             repobtnViewDetail.Appearance.Options.UseFont = true;
             repobtnViewDetail.Appearance.Options.UseForeColor = true;
             repobtnViewDetail.AutoHeight = false;
-            repobtnViewDetail.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "View detail", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
+            repobtnViewDetail.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "View detail", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
             repobtnViewDetail.Name = "repobtnViewDetail";
             repobtnViewDetail.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(toolStrip1);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(853, 41);
+            panel4.TabIndex = 3;
+            // 
+            // toolStrip1
+            // 
+            toolStrip1.Dock = DockStyle.Fill;
+            toolStrip1.ImageScalingSize = new Size(20, 20);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { btnExport, btnImport });
+            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.RenderMode = ToolStripRenderMode.Professional;
+            toolStrip1.Size = new Size(853, 41);
+            toolStrip1.TabIndex = 17;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // btnExport
+            // 
+            btnExport.Alignment = ToolStripItemAlignment.Right;
+            btnExport.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExport.ForeColor = Color.Brown;
+            btnExport.Image = Properties.Resources.export2;
+            btnExport.ImageTransparentColor = Color.Magenta;
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(78, 38);
+            btnExport.Text = "Export";
+            btnExport.Click += btnExport_Click;
+            // 
+            // btnImport
+            // 
+            btnImport.Alignment = ToolStripItemAlignment.Right;
+            btnImport.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnImport.ForeColor = Color.DarkSlateGray;
+            btnImport.Image = Properties.Resources.import1;
+            btnImport.ImageTransparentColor = Color.Magenta;
+            btnImport.Name = "btnImport";
+            btnImport.Size = new Size(79, 38);
+            btnImport.Text = "Import";
+            btnImport.Click += btnImport_Click;
             // 
             // frmAllGoodsReceipt
             // 
@@ -253,6 +304,7 @@
             ClientSize = new Size(853, 415);
             Controls.Add(panel3);
             Controls.Add(panel2);
+            Controls.Add(panel4);
             Name = "frmAllGoodsReceipt";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "All Goods Receipt";
@@ -263,6 +315,10 @@
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)repobtnViewDetail).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -294,5 +350,9 @@
         private DevExpress.XtraEditors.SimpleButton btnDeactive;
         private DevExpress.XtraEditors.SimpleButton btnNewGoodsReceipt;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repobtnViewDetail;
+        private Panel panel4;
+        private ToolStrip toolStrip1;
+        private ToolStripButton btnExport;
+        private ToolStripButton btnImport;
     }
 }

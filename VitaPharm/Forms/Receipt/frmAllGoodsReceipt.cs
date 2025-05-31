@@ -22,7 +22,7 @@ namespace VitaPharm.Forms.Receipt
         {
             LoadReceipts();
 
-            if (!string.IsNullOrEmpty(CurrentUser.Role) && 
+            if (!string.IsNullOrEmpty(CurrentUser.Role) &&
                 CurrentUser.Role.Trim().Equals("Admin", StringComparison.OrdinalIgnoreCase))
             {
                 btnDeactive.Enabled = false;
@@ -115,6 +115,16 @@ namespace VitaPharm.Forms.Receipt
 
             var detailForm = new frmGoodsReceiptDetail((int)receiptID);
             detailForm.ShowDialog();
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
