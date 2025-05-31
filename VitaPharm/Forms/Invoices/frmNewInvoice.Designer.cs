@@ -39,8 +39,8 @@
             txtEmployee = new DevExpress.XtraEditors.TextEdit();
             txtContact = new DevExpress.XtraEditors.TextEdit();
             cboCustomer = new DevExpress.XtraEditors.LookUpEdit();
-            deCreatedDate = new DevExpress.XtraEditors.DateEdit();
-            textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            dateCreatedDate = new DevExpress.XtraEditors.DateEdit();
+            txtInvoiceCode = new DevExpress.XtraEditors.TextEdit();
             labelControl7 = new DevExpress.XtraEditors.LabelControl();
             labelControl8 = new DevExpress.XtraEditors.LabelControl();
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -84,9 +84,9 @@
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtContact.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cboCustomer.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)deCreatedDate.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)deCreatedDate.Properties.CalendarTimeProperties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dateCreatedDate.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dateCreatedDate.Properties.CalendarTimeProperties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtInvoiceCode.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)groupControl2).BeginInit();
@@ -195,24 +195,24 @@
             cboCustomer.Size = new Size(201, 22);
             cboCustomer.TabIndex = 21;
             // 
-            // deCreatedDate
+            // dateCreatedDate
             // 
-            deCreatedDate.EditValue = null;
-            deCreatedDate.Location = new Point(607, 43);
-            deCreatedDate.Name = "deCreatedDate";
-            deCreatedDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            deCreatedDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            deCreatedDate.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
-            deCreatedDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            deCreatedDate.Size = new Size(201, 22);
-            deCreatedDate.TabIndex = 22;
+            dateCreatedDate.EditValue = null;
+            dateCreatedDate.Location = new Point(607, 43);
+            dateCreatedDate.Name = "dateCreatedDate";
+            dateCreatedDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateCreatedDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateCreatedDate.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            dateCreatedDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            dateCreatedDate.Size = new Size(201, 22);
+            dateCreatedDate.TabIndex = 22;
             // 
-            // textEdit2
+            // txtInvoiceCode
             // 
-            textEdit2.Location = new Point(123, 43);
-            textEdit2.Name = "textEdit2";
-            textEdit2.Size = new Size(209, 22);
-            textEdit2.TabIndex = 19;
+            txtInvoiceCode.Location = new Point(123, 43);
+            txtInvoiceCode.Name = "txtInvoiceCode";
+            txtInvoiceCode.Size = new Size(209, 22);
+            txtInvoiceCode.TabIndex = 19;
             // 
             // labelControl7
             // 
@@ -291,7 +291,7 @@
             groupControl1.AppearanceCaption.Options.UseBorderColor = true;
             groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             groupControl1.Controls.Add(labelControl14);
-            groupControl1.Controls.Add(textEdit2);
+            groupControl1.Controls.Add(txtInvoiceCode);
             groupControl1.Controls.Add(seTaxRate);
             groupControl1.Controls.Add(labelControl1);
             groupControl1.Controls.Add(meNote);
@@ -302,7 +302,7 @@
             groupControl1.Controls.Add(labelControl5);
             groupControl1.Controls.Add(cboCustomer);
             groupControl1.Controls.Add(labelControl4);
-            groupControl1.Controls.Add(deCreatedDate);
+            groupControl1.Controls.Add(dateCreatedDate);
             groupControl1.Controls.Add(labelControl8);
             groupControl1.Controls.Add(labelControl7);
             groupControl1.Location = new Point(26, 0);
@@ -668,9 +668,9 @@
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtContact.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cboCustomer.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)deCreatedDate.Properties.CalendarTimeProperties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)deCreatedDate.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dateCreatedDate.Properties.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dateCreatedDate.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtInvoiceCode.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
@@ -702,8 +702,8 @@
         private DevExpress.XtraEditors.TextEdit txtEmployee;
         private DevExpress.XtraEditors.TextEdit txtContact;
         private DevExpress.XtraEditors.LookUpEdit cboCustomer;
-        private DevExpress.XtraEditors.DateEdit deCreatedDate;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.DateEdit dateCreatedDate;
+        private DevExpress.XtraEditors.TextEdit txtInvoiceCode;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl4;
