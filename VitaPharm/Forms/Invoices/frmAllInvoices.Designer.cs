@@ -30,11 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAllInvoices));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             imageCollection = new DevExpress.Utils.ImageCollection(components);
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             btnClose = new DevExpress.XtraEditors.SimpleButton();
@@ -54,10 +54,10 @@
             gridControl = new DevExpress.XtraGrid.GridControl();
             toolTip1 = new ToolTip(components);
             panel1 = new Panel();
-            panel2 = new Panel();
             toolStrip1 = new ToolStrip();
             btnExport = new ToolStripButton();
             btnImport = new ToolStripButton();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)imageCollection).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
@@ -144,7 +144,7 @@
             repobtnViewDetail.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
             repobtnViewDetail.Appearance.Options.UseBackColor = true;
             repobtnViewDetail.AutoHeight = false;
-            repobtnViewDetail.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "View Detail", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
+            repobtnViewDetail.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "View Detail", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default) });
             repobtnViewDetail.Name = "repobtnViewDetail";
             repobtnViewDetail.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -267,7 +267,7 @@
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
             gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repobtnViewDetail });
-            gridControl.Size = new Size(853, 374);
+            gridControl.Size = new Size(853, 310);
             gridControl.TabIndex = 0;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
@@ -279,14 +279,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(853, 41);
             panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 41);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(853, 374);
-            panel2.TabIndex = 3;
             // 
             // toolStrip1
             // 
@@ -322,16 +314,25 @@
             btnImport.Name = "btnImport";
             btnImport.Size = new Size(79, 38);
             btnImport.Text = "Import";
+            btnImport.Click += btnImport_Click;
+            // 
+            // panel2
+            // 
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 41);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(853, 310);
+            panel2.TabIndex = 3;
             // 
             // frmAllInvoices
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(853, 415);
-            Controls.Add(panelControl1);
             Controls.Add(gridControl);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panelControl1);
             Name = "frmAllInvoices";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "All Invoices";

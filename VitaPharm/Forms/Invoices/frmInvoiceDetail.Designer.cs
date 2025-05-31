@@ -51,9 +51,9 @@
             txtCustomer = new DevExpress.XtraEditors.TextEdit();
             panel2 = new Panel();
             lblTax = new DevExpress.XtraEditors.LabelControl();
+            labelControl15 = new DevExpress.XtraEditors.LabelControl();
             lblTotal = new DevExpress.XtraEditors.LabelControl();
             labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            labelControl15 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtInvoiceCode.Properties).BeginInit();
@@ -308,11 +308,24 @@
             lblTax.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTax.Appearance.FontStyleDelta = FontStyle.Bold;
             lblTax.Appearance.Options.UseFont = true;
-            lblTax.Location = new Point(722, 36);
+            lblTax.Location = new Point(725, 33);
             lblTax.Name = "lblTax";
-            lblTax.Size = new Size(50, 16);
+            lblTax.Size = new Size(34, 16);
             lblTax.TabIndex = 37;
-            lblTax.Text = "0.0 VND";
+            lblTax.Text = "0.0%";
+            // 
+            // labelControl15
+            // 
+            labelControl15.Anchor = AnchorStyles.Top;
+            labelControl15.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelControl15.Appearance.ForeColor = Color.Blue;
+            labelControl15.Appearance.Options.UseFont = true;
+            labelControl15.Appearance.Options.UseForeColor = true;
+            labelControl15.Location = new Point(562, 11);
+            labelControl15.Name = "labelControl15";
+            labelControl15.Size = new Size(98, 16);
+            labelControl15.TabIndex = 34;
+            labelControl15.Text = "Total (tax incl.)";
             // 
             // lblTotal
             // 
@@ -321,7 +334,7 @@
             lblTotal.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Information;
             lblTotal.Appearance.Options.UseFont = true;
             lblTotal.Appearance.Options.UseForeColor = true;
-            lblTotal.Location = new Point(722, 11);
+            lblTotal.Location = new Point(725, 11);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(50, 16);
             lblTotal.TabIndex = 36;
@@ -332,24 +345,11 @@
             labelControl16.Anchor = AnchorStyles.Top;
             labelControl16.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelControl16.Appearance.Options.UseFont = true;
-            labelControl16.Location = new Point(32, 36);
+            labelControl16.Location = new Point(562, 36);
             labelControl16.Name = "labelControl16";
             labelControl16.Size = new Size(22, 16);
             labelControl16.TabIndex = 35;
             labelControl16.Text = "Tax";
-            // 
-            // labelControl15
-            // 
-            labelControl15.Anchor = AnchorStyles.Top;
-            labelControl15.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelControl15.Appearance.ForeColor = Color.Blue;
-            labelControl15.Appearance.Options.UseFont = true;
-            labelControl15.Appearance.Options.UseForeColor = true;
-            labelControl15.Location = new Point(32, 11);
-            labelControl15.Name = "labelControl15";
-            labelControl15.Size = new Size(98, 16);
-            labelControl15.TabIndex = 34;
-            labelControl15.Text = "Total (tax incl.)";
             // 
             // frmInvoiceDetail
             // 

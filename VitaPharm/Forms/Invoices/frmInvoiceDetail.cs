@@ -119,13 +119,6 @@ namespace VitaPharm.Forms.Invoices
                 amountColumn.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
                 amountColumn.DisplayFormat.FormatString = "#,##0";
             }
-
-            var onHandColumn = gridView.Columns["OnHand"];
-            if (onHandColumn != null)
-            {
-                onHandColumn.Visible = false;
-            }
-
             gridView.BestFitColumns();
         }
 

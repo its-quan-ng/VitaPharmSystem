@@ -3,6 +3,8 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
+using System.Globalization;
+using System.Text;
 using VitaPharm.Data;
 
 namespace VitaPharm.Forms.Invoices
@@ -254,7 +256,7 @@ namespace VitaPharm.Forms.Invoices
                     XtraMessageBox.Show($"Error exporting data: {ex.Message}\n\nStack Trace: {ex.StackTrace}", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                }
             }
-        }
     }
 }
