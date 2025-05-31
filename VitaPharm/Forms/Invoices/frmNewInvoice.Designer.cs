@@ -79,6 +79,7 @@
             lblTotal = new DevExpress.XtraEditors.LabelControl();
             labelControl17 = new DevExpress.XtraEditors.LabelControl();
             txtQuantity = new DevExpress.XtraEditors.TextEdit();
+            colID = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)seTaxRate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)meNote.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).BeginInit();
@@ -345,18 +346,18 @@
             // 
             // gridView
             // 
-            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colCommodityName, colBatchCode, colQty, colBaseUnit, colUnitPrice, colAmount });
+            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, colCommodityName, colBatchCode, colQty, colBaseUnit, colUnitPrice, colAmount });
             gridView.GridControl = gridControl;
             gridView.Name = "gridView";
             // 
             // colCommodityName
             // 
-            colCommodityName.Caption = "Product Name";
+            colCommodityName.Caption = "Commodity Name";
             colCommodityName.FieldName = "CommodityName";
             colCommodityName.MinWidth = 25;
             colCommodityName.Name = "colCommodityName";
             colCommodityName.Visible = true;
-            colCommodityName.VisibleIndex = 0;
+            colCommodityName.VisibleIndex = 1;
             colCommodityName.Width = 282;
             // 
             // colBatchCode
@@ -366,7 +367,7 @@
             colBatchCode.MinWidth = 25;
             colBatchCode.Name = "colBatchCode";
             colBatchCode.Visible = true;
-            colBatchCode.VisibleIndex = 1;
+            colBatchCode.VisibleIndex = 2;
             colBatchCode.Width = 118;
             // 
             // colQty
@@ -376,7 +377,7 @@
             colQty.MinWidth = 25;
             colQty.Name = "colQty";
             colQty.Visible = true;
-            colQty.VisibleIndex = 2;
+            colQty.VisibleIndex = 3;
             colQty.Width = 57;
             // 
             // colBaseUnit
@@ -386,17 +387,17 @@
             colBaseUnit.MinWidth = 25;
             colBaseUnit.Name = "colBaseUnit";
             colBaseUnit.Visible = true;
-            colBaseUnit.VisibleIndex = 3;
+            colBaseUnit.VisibleIndex = 4;
             colBaseUnit.Width = 89;
             // 
             // colUnitPrice
             // 
             colUnitPrice.Caption = "Unit Price";
-            colUnitPrice.FieldName = "UnitPrice";
+            colUnitPrice.FieldName = "SellingPrice";
             colUnitPrice.MinWidth = 25;
             colUnitPrice.Name = "colUnitPrice";
             colUnitPrice.Visible = true;
-            colUnitPrice.VisibleIndex = 4;
+            colUnitPrice.VisibleIndex = 5;
             colUnitPrice.Width = 158;
             // 
             // colAmount
@@ -406,7 +407,7 @@
             colAmount.MinWidth = 25;
             colAmount.Name = "colAmount";
             colAmount.Visible = true;
-            colAmount.VisibleIndex = 5;
+            colAmount.VisibleIndex = 6;
             colAmount.Width = 147;
             // 
             // groupControl3
@@ -445,6 +446,7 @@
             btnRemove.Size = new Size(118, 36);
             btnRemove.TabIndex = 22;
             btnRemove.Text = "Remove";
+            btnRemove.Click += btnRemove_Click;
             // 
             // btnAddToCart
             // 
@@ -457,6 +459,7 @@
             btnAddToCart.Size = new Size(118, 36);
             btnAddToCart.TabIndex = 21;
             btnAddToCart.Text = "Add to cart";
+            btnAddToCart.Click += btnAddToCart_Click;
             // 
             // labelControl13
             // 
@@ -586,6 +589,7 @@
             btnAdd.Size = new Size(85, 36);
             btnAdd.TabIndex = 29;
             btnAdd.Text = "Add";
+            btnAdd.Click += btnAdd_Click;
             // 
             // labelControl15
             // 
@@ -640,6 +644,16 @@
             txtQuantity.Size = new Size(50, 22);
             txtQuantity.TabIndex = 23;
             // 
+            // colID
+            // 
+            colID.Caption = "ID";
+            colID.FieldName = "ID";
+            colID.MinWidth = 25;
+            colID.Name = "colID";
+            colID.Visible = true;
+            colID.VisibleIndex = 0;
+            colID.Width = 94;
+            // 
             // frmNewInvoice
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -658,6 +672,7 @@
             Name = "frmNewInvoice";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "New Invoice";
+            Load += frmNewInvoice_Load;
             ((System.ComponentModel.ISupportInitialize)seTaxRate.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)meNote.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).EndInit();
@@ -737,5 +752,6 @@
         private DevExpress.XtraEditors.LabelControl lblTotal;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.TextEdit txtQuantity;
+        private DevExpress.XtraGrid.Columns.GridColumn colID;
     }
 }
