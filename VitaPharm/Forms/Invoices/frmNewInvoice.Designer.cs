@@ -166,6 +166,7 @@
             seTaxRate.Properties.MinValue = new decimal(new int[] { 1, 0, 0, 0 });
             seTaxRate.Size = new Size(55, 24);
             seTaxRate.TabIndex = 25;
+            seTaxRate.EditValueChanged += seTaxRate_EditValueChanged;
             // 
             // meNote
             // 

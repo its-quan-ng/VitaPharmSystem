@@ -309,24 +309,42 @@ namespace VitaPharm.Forms.Invoices
 
                 var batches = context.Batches
                     .Where(b => b.Commodity.CommodityID == commodityId && b.QtyAvailable > 0)
+                    .OrderBy(b => b.ExpDate)
                     .Select(b => new
                     {
                         b.BatchID,
-                        b.BatchCode
+                        b.BatchCode,
+                        b.ExpDate
                     })
                     .ToList();
 
+                var colBatchCode = new LookUpColumnInfo("BatchCode", "Batch Code");
+                var colExpDate = new LookUpColumnInfo("ExpDate", "Exp Date")
+                {
+                    Width = 100,
+                    FormatType = DevExpress.Utils.FormatType.DateTime,
+                    FormatString = "dd/MM/yyyy"
+                };
+
+                cboBatchCode.Properties.Columns.Clear();
+                cboBatchCode.Properties.Columns.Add(colBatchCode);
+                cboBatchCode.Properties.Columns.Add(colExpDate);
                 cboBatchCode.Properties.DataSource = batches;
                 cboBatchCode.Properties.DisplayMember = "BatchCode";
                 cboBatchCode.Properties.ValueMember = "BatchID";
-                cboBatchCode.Properties.Columns.Clear();
-                cboBatchCode.Properties.Columns.Add(new LookUpColumnInfo("BatchCode", "Batch Code"));
+                cboBatchCode.Properties.NullText = "Please select a batch!";
                 cboBatchCode.EditValue = null;
 
                 if (batches.Count == 0)
+                {
                     cboBatchCode.Properties.NullText = "No batch available!";
+                    txtQuantity.Enabled = false;
+                }
                 else
+                {
                     cboBatchCode.Properties.NullText = "Please select a batch!";
+                    txtQuantity.Enabled = true;
+                }
             }
             cboBatchCode.Enabled = true;
         }
