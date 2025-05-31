@@ -129,7 +129,7 @@ namespace VitaPharm.Forms.Receipt
             {
                 Filter = "Excel Files|*.xlsx;*.xls",
                 Title = "Export Receipts to Excel",
-                FileName = "GoodsReceipts_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xlsx"
+                FileName = "GR_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xlsx"
             };
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -218,10 +218,10 @@ namespace VitaPharm.Forms.Receipt
 
                     using (XLWorkbook wb = new XLWorkbook())
                     {
-                        var sheet1 = wb.Worksheets.Add(tableGoodsReceipts, "GoodsReceipts");
+                        var sheet1 = wb.Worksheets.Add(tableGoodsReceipts, "GR_" + DateTime.Now.ToString("yyyyMMdd_HHmmss"));
                         sheet1.Columns().AdjustToContents();
 
-                        var sheet2 = wb.Worksheets.Add(tableGoodsReceiptDetails, "GoodsReceiptDetails");
+                        var sheet2 = wb.Worksheets.Add(tableGoodsReceiptDetails, "GRD_" + DateTime.Now.ToString("yyyyMMdd_HHmmss"));
                         sheet2.Columns().AdjustToContents();
 
                         wb.SaveAs(saveFileDialog.FileName);

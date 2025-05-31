@@ -344,7 +344,7 @@ namespace VitaPharm.Forms.Commodities
             {
                 Title = "Export Commodities to Excel",
                 Filter = "Excel Files|*.xlsx",
-                FileName = "Commodities_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xlsx"
+                FileName = "CMD_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xlsx"
             };
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -381,7 +381,7 @@ namespace VitaPharm.Forms.Commodities
 
                     using (var workbook = new XLWorkbook())
                     {
-                        var worksheet = workbook.Worksheets.Add("Commodities");
+                        var worksheet = workbook.Worksheets.Add("CMD_" + DateTime.Now.ToString("yyyyMMdd_HHmmss"));
                         worksheet.Cell(1, 1).InsertTable(table);
 
                         var headerRange = worksheet.Range(1, 1, 1, table.Columns.Count);
