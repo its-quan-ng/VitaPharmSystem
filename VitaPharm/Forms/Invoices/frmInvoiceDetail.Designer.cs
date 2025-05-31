@@ -165,7 +165,7 @@
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(97, 32);
             btnCancel.TabIndex = 1;
-            btnCancel.Text = "Cancel";
+            btnCancel.Text = "Close";
             btnCancel.Click += btnCancel_Click;
             // 
             // labelControl7
