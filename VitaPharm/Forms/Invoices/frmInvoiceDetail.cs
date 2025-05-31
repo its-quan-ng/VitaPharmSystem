@@ -9,13 +9,12 @@ namespace VitaPharm.Forms.Invoices
     {
         private PharmacyDbContext context = new PharmacyDbContext();
         private string invoiceCode;
-        private Invoice currentInvoice;
         private BindingSource bsInvoiceDetails;
 
         public frmInvoiceDetail(string invoiceCode)
         {
-            this.invoiceCode = invoiceCode;
             InitializeComponent();
+            this.invoiceCode = invoiceCode;
         }
 
         private void frmInvoiceDetail_Load(object sender, EventArgs e)
@@ -30,7 +29,7 @@ namespace VitaPharm.Forms.Invoices
                 context?.Dispose();
                 context = new PharmacyDbContext();
 
-                currentInvoice = context.Invoices
+                var currentInvoice = context.Invoices
                     .Include(i => i.Customer)
                     .Include(i => i.Employee)
                     .Include(i => i.InvoiceDetail)
@@ -123,7 +122,6 @@ namespace VitaPharm.Forms.Invoices
                 onHandColumn.Visible = false;
             }
 
-            gridView.OptionsView.ShowGroupPanel = false;
             gridView.BestFitColumns();
         }
 
