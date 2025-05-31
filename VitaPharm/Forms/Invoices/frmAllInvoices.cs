@@ -15,6 +15,7 @@ namespace VitaPharm.Forms.Invoices
         public frmAllInvoices()
         {
             InitializeComponent();
+            repobtnViewDetail.ButtonClick += repobtnViewDetail_ButtonClick;
         }
 
         private void frmAllInvoices_Load(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace VitaPharm.Forms.Invoices
                     {
                         ID = idx + 1,
                         i.InvoiceID,
-                        InvoiceCode = i.InvoiceCode,
+                        i.InvoiceCode,
                         i.CreatedDate,
                         CustomerName = i.Customer?.CustomerName ?? "N/A",
                         EmployeeName = i.Employee?.EmployeeName ?? "N/A",
@@ -100,7 +101,7 @@ namespace VitaPharm.Forms.Invoices
             }
         }
 
-        private void repobtnViewDetail_Click(object sender, EventArgs e)
+        private void repobtnViewDetail_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             int rowHandle = gridView.FocusedRowHandle;
             if (rowHandle < 0) return;
