@@ -19,8 +19,17 @@ namespace VitaPharm.Forms.Invoices
         private void frmNewInvoice_Load(object sender, EventArgs e)
         {
             txtInvoiceCode.Text = GenerateNewInvoiceCode();
+
+            var customers = context.Customers
+                            .Select(c => new { c.CustomerID, c.CustomerName, c.Contact })
+                            .ToList();
+            cboCustomer.Properties.DataSource = customers;
+            cboCustomer.Properties.DisplayMember = "CustomerName";
+            cboCustomer.Properties.ValueMember = "CustomerID";
+            cboCustomer.EditValue = null;
         }
 
+        #region Generate new invoice code
         private string GenerateNewInvoiceCode()
         {
             string prefix = "INV";
@@ -31,6 +40,9 @@ namespace VitaPharm.Forms.Invoices
 
             return $"{prefix}{datePart}{seqPart}";
         }
+        #endregion
+
+        #region Handle form events
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
 
@@ -47,6 +59,8 @@ namespace VitaPharm.Forms.Invoices
 
         }
 
+        #endregion
+
         private void ToggleControls(bool enableEditable)
         {
             txtInvoiceCode.Enabled = false;
@@ -61,5 +75,21 @@ namespace VitaPharm.Forms.Invoices
             btnRemove.Enabled = !false;
             btnAdd.Enabled = !false;
         }
-    }
+
+        private void LoadCommodities()
+        {
+            var commodities = context.Commodities
+                .Select(c => new
+                {
+                    c.CommodityID,
+                    c.CommodityName,
+                    c.SellingPrice,
+                    c.BaseUnit
+                })
+                .ToList();
+            cboCommodity.Properties.DataSource = commodities;
+            cboCommodity.Properties.DisplayMember = "CommodityName";
+            cboCommodity.Properties.ValueMember = "CommodityID";
+            cboCommodity.EditValue = null;
+        }
 }

@@ -53,6 +53,7 @@
             groupControl2 = new DevExpress.XtraEditors.GroupControl();
             gridControl = new DevExpress.XtraGrid.GridControl();
             gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            colID = new DevExpress.XtraGrid.Columns.GridColumn();
             colCommodityName = new DevExpress.XtraGrid.Columns.GridColumn();
             colBatchCode = new DevExpress.XtraGrid.Columns.GridColumn();
             colQty = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,6 +61,7 @@
             colUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            txtQuantity = new DevExpress.XtraEditors.TextEdit();
             btnRemove = new DevExpress.XtraEditors.SimpleButton();
             btnAddToCart = new DevExpress.XtraEditors.SimpleButton();
             labelControl13 = new DevExpress.XtraEditors.LabelControl();
@@ -69,17 +71,15 @@
             labelControl12 = new DevExpress.XtraEditors.LabelControl();
             labelControl10 = new DevExpress.XtraEditors.LabelControl();
             txtQtyAvailable = new DevExpress.XtraEditors.TextEdit();
-            cboBatchCode = new DevExpress.XtraEditors.ComboBoxEdit();
             labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            cboCommodity = new DevExpress.XtraEditors.ComboBoxEdit();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
             btnAdd = new DevExpress.XtraEditors.SimpleButton();
             labelControl15 = new DevExpress.XtraEditors.LabelControl();
             labelControl16 = new DevExpress.XtraEditors.LabelControl();
             lblTotal = new DevExpress.XtraEditors.LabelControl();
             labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            txtQuantity = new DevExpress.XtraEditors.TextEdit();
-            colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            cboCommodity = new DevExpress.XtraEditors.LookUpEdit();
+            cboBatchCode = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)seTaxRate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)meNote.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).BeginInit();
@@ -96,12 +96,12 @@
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl3).BeginInit();
             groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtPrice.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtBaseUnit.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtQtyAvailable.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).BeginInit();
             SuspendLayout();
             // 
             // Commodity
@@ -171,21 +171,21 @@
             meNote.Location = new Point(607, 102);
             meNote.Name = "meNote";
             meNote.Properties.ScrollBars = ScrollBars.Horizontal;
-            meNote.Size = new Size(201, 44);
+            meNote.Size = new Size(242, 44);
             meNote.TabIndex = 24;
             // 
             // txtEmployee
             // 
             txtEmployee.Location = new Point(123, 71);
             txtEmployee.Name = "txtEmployee";
-            txtEmployee.Size = new Size(209, 22);
+            txtEmployee.Size = new Size(257, 22);
             txtEmployee.TabIndex = 20;
             // 
             // txtContact
             // 
             txtContact.Location = new Point(123, 100);
             txtContact.Name = "txtContact";
-            txtContact.Size = new Size(127, 22);
+            txtContact.Size = new Size(148, 22);
             txtContact.TabIndex = 23;
             // 
             // cboCustomer
@@ -193,7 +193,7 @@
             cboCustomer.Location = new Point(607, 71);
             cboCustomer.Name = "cboCustomer";
             cboCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboCustomer.Size = new Size(201, 22);
+            cboCustomer.Size = new Size(242, 22);
             cboCustomer.TabIndex = 21;
             // 
             // dateCreatedDate
@@ -205,14 +205,14 @@
             dateCreatedDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             dateCreatedDate.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
             dateCreatedDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            dateCreatedDate.Size = new Size(201, 22);
+            dateCreatedDate.Size = new Size(181, 22);
             dateCreatedDate.TabIndex = 22;
             // 
             // txtInvoiceCode
             // 
             txtInvoiceCode.Location = new Point(123, 43);
             txtInvoiceCode.Name = "txtInvoiceCode";
-            txtInvoiceCode.Size = new Size(209, 22);
+            txtInvoiceCode.Size = new Size(257, 22);
             txtInvoiceCode.TabIndex = 19;
             // 
             // labelControl7
@@ -306,9 +306,9 @@
             groupControl1.Controls.Add(dateCreatedDate);
             groupControl1.Controls.Add(labelControl8);
             groupControl1.Controls.Add(labelControl7);
-            groupControl1.Location = new Point(26, 0);
+            groupControl1.Location = new Point(28, 0);
             groupControl1.Name = "groupControl1";
-            groupControl1.Size = new Size(839, 159);
+            groupControl1.Size = new Size(898, 159);
             groupControl1.TabIndex = 26;
             groupControl1.Text = "Invoice Information";
             // 
@@ -328,9 +328,9 @@
             groupControl2.AppearanceCaption.BorderColor = Color.FromArgb(250, 230, 230);
             groupControl2.AppearanceCaption.Options.UseBorderColor = true;
             groupControl2.Controls.Add(gridControl);
-            groupControl2.Location = new Point(26, 165);
+            groupControl2.Location = new Point(28, 165);
             groupControl2.Name = "groupControl2";
-            groupControl2.Size = new Size(525, 224);
+            groupControl2.Size = new Size(552, 224);
             groupControl2.TabIndex = 27;
             groupControl2.Text = "Cart";
             // 
@@ -340,7 +340,7 @@
             gridControl.Location = new Point(2, 28);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.Size = new Size(521, 194);
+            gridControl.Size = new Size(548, 194);
             gridControl.TabIndex = 0;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
             // 
@@ -349,6 +349,16 @@
             gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, colCommodityName, colBatchCode, colQty, colBaseUnit, colUnitPrice, colAmount });
             gridView.GridControl = gridControl;
             gridView.Name = "gridView";
+            // 
+            // colID
+            // 
+            colID.Caption = "ID";
+            colID.FieldName = "ID";
+            colID.MinWidth = 25;
+            colID.Name = "colID";
+            colID.Visible = true;
+            colID.VisibleIndex = 0;
+            colID.Width = 94;
             // 
             // colCommodityName
             // 
@@ -415,6 +425,8 @@
             groupControl3.Anchor = AnchorStyles.Top;
             groupControl3.AppearanceCaption.BorderColor = Color.FromArgb(226, 251, 219);
             groupControl3.AppearanceCaption.Options.UseBorderColor = true;
+            groupControl3.Controls.Add(cboBatchCode);
+            groupControl3.Controls.Add(cboCommodity);
             groupControl3.Controls.Add(txtQuantity);
             groupControl3.Controls.Add(btnRemove);
             groupControl3.Controls.Add(btnAddToCart);
@@ -425,15 +437,20 @@
             groupControl3.Controls.Add(labelControl12);
             groupControl3.Controls.Add(labelControl10);
             groupControl3.Controls.Add(txtQtyAvailable);
-            groupControl3.Controls.Add(cboBatchCode);
             groupControl3.Controls.Add(labelControl9);
-            groupControl3.Controls.Add(cboCommodity);
             groupControl3.Controls.Add(labelControl3);
-            groupControl3.Location = new Point(557, 165);
+            groupControl3.Location = new Point(586, 165);
             groupControl3.Name = "groupControl3";
-            groupControl3.Size = new Size(308, 266);
+            groupControl3.Size = new Size(340, 266);
             groupControl3.TabIndex = 28;
             groupControl3.Text = "Commodities";
+            // 
+            // txtQuantity
+            // 
+            txtQuantity.Location = new Point(250, 185);
+            txtQuantity.Name = "txtQuantity";
+            txtQuantity.Size = new Size(50, 22);
+            txtQuantity.TabIndex = 23;
             // 
             // btnRemove
             // 
@@ -441,9 +458,9 @@
             btnRemove.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRemove.Appearance.Options.UseBackColor = true;
             btnRemove.Appearance.Options.UseFont = true;
-            btnRemove.Location = new Point(173, 208);
+            btnRemove.Location = new Point(201, 230);
             btnRemove.Name = "btnRemove";
-            btnRemove.Size = new Size(118, 36);
+            btnRemove.Size = new Size(71, 28);
             btnRemove.TabIndex = 22;
             btnRemove.Text = "Remove";
             btnRemove.Click += btnRemove_Click;
@@ -454,9 +471,9 @@
             btnAddToCart.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAddToCart.Appearance.Options.UseBackColor = true;
             btnAddToCart.Appearance.Options.UseFont = true;
-            btnAddToCart.Location = new Point(16, 208);
+            btnAddToCart.Location = new Point(75, 230);
             btnAddToCart.Name = "btnAddToCart";
-            btnAddToCart.Size = new Size(118, 36);
+            btnAddToCart.Size = new Size(92, 28);
             btnAddToCart.TabIndex = 21;
             btnAddToCart.Text = "Add to cart";
             btnAddToCart.Click += btnAddToCart_Click;
@@ -467,7 +484,7 @@
             labelControl13.Appearance.ForeColor = Color.Crimson;
             labelControl13.Appearance.Options.UseFont = true;
             labelControl13.Appearance.Options.UseForeColor = true;
-            labelControl13.Location = new Point(235, 131);
+            labelControl13.Location = new Point(247, 163);
             labelControl13.Name = "labelControl13";
             labelControl13.Size = new Size(56, 16);
             labelControl13.TabIndex = 19;
@@ -475,11 +492,13 @@
             // 
             // txtPrice
             // 
-            txtPrice.Location = new Point(98, 160);
+            txtPrice.Location = new Point(98, 186);
             txtPrice.Name = "txtPrice";
             txtPrice.Properties.Appearance.Options.UseTextOptions = true;
             txtPrice.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            txtPrice.Size = new Size(96, 22);
+            txtPrice.Properties.DisplayFormat.FormatString = "N0";
+            txtPrice.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            txtPrice.Size = new Size(114, 22);
             txtPrice.TabIndex = 18;
             // 
             // labelControl11
@@ -491,7 +510,7 @@
             labelControl11.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             labelControl11.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("labelControl11.ImageOptions.SvgImage");
             labelControl11.ImageOptions.SvgImageSize = new Size(16, 16);
-            labelControl11.Location = new Point(14, 159);
+            labelControl11.Location = new Point(14, 184);
             labelControl11.Name = "labelControl11";
             labelControl11.Size = new Size(58, 24);
             labelControl11.TabIndex = 17;
@@ -499,11 +518,13 @@
             // 
             // txtBaseUnit
             // 
-            txtBaseUnit.Location = new Point(98, 128);
+            txtBaseUnit.Location = new Point(98, 145);
             txtBaseUnit.Name = "txtBaseUnit";
             txtBaseUnit.Properties.Appearance.Options.UseTextOptions = true;
             txtBaseUnit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            txtBaseUnit.Size = new Size(96, 22);
+            txtBaseUnit.Properties.DisplayFormat.FormatString = "N0";
+            txtBaseUnit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            txtBaseUnit.Size = new Size(114, 22);
             txtBaseUnit.TabIndex = 16;
             // 
             // labelControl12
@@ -512,7 +533,7 @@
             labelControl12.Appearance.ForeColor = Color.Black;
             labelControl12.Appearance.Options.UseFont = true;
             labelControl12.Appearance.Options.UseForeColor = true;
-            labelControl12.Location = new Point(16, 131);
+            labelControl12.Location = new Point(16, 148);
             labelControl12.Name = "labelControl12";
             labelControl12.Size = new Size(60, 16);
             labelControl12.TabIndex = 15;
@@ -524,7 +545,7 @@
             labelControl10.Appearance.ForeColor = Color.Blue;
             labelControl10.Appearance.Options.UseFont = true;
             labelControl10.Appearance.Options.UseForeColor = true;
-            labelControl10.Location = new Point(171, 95);
+            labelControl10.Location = new Point(244, 106);
             labelControl10.Name = "labelControl10";
             labelControl10.Size = new Size(59, 16);
             labelControl10.TabIndex = 13;
@@ -532,20 +553,12 @@
             // 
             // txtQtyAvailable
             // 
-            txtQtyAvailable.Location = new Point(241, 92);
+            txtQtyAvailable.Location = new Point(250, 128);
             txtQtyAvailable.Name = "txtQtyAvailable";
             txtQtyAvailable.Properties.Appearance.Options.UseTextOptions = true;
             txtQtyAvailable.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            txtQtyAvailable.Size = new Size(50, 22);
+            txtQtyAvailable.Size = new Size(41, 22);
             txtQtyAvailable.TabIndex = 12;
-            // 
-            // cboBatchCode
-            // 
-            cboBatchCode.Location = new Point(63, 92);
-            cboBatchCode.Name = "cboBatchCode";
-            cboBatchCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboBatchCode.Size = new Size(89, 22);
-            cboBatchCode.TabIndex = 11;
             // 
             // labelControl9
             // 
@@ -556,14 +569,6 @@
             labelControl9.Size = new Size(31, 16);
             labelControl9.TabIndex = 10;
             labelControl9.Text = "Batch";
-            // 
-            // cboCommodity
-            // 
-            cboCommodity.Location = new Point(14, 53);
-            cboCommodity.Name = "cboCommodity";
-            cboCommodity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboCommodity.Size = new Size(277, 22);
-            cboCommodity.TabIndex = 4;
             // 
             // labelControl3
             // 
@@ -584,7 +589,7 @@
             btnAdd.Appearance.Options.UseBorderColor = true;
             btnAdd.Appearance.Options.UseFont = true;
             btnAdd.Appearance.Options.UseForeColor = true;
-            btnAdd.Location = new Point(466, 395);
+            btnAdd.Location = new Point(495, 395);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(85, 36);
             btnAdd.TabIndex = 29;
@@ -637,28 +642,29 @@
             labelControl17.TabIndex = 33;
             labelControl17.Text = "0.0 VND";
             // 
-            // txtQuantity
+            // cboCommodity
             // 
-            txtQuantity.Location = new Point(241, 161);
-            txtQuantity.Name = "txtQuantity";
-            txtQuantity.Size = new Size(50, 22);
-            txtQuantity.TabIndex = 23;
+            cboCommodity.Anchor = AnchorStyles.Top;
+            cboCommodity.Location = new Point(16, 53);
+            cboCommodity.Name = "cboCommodity";
+            cboCommodity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            cboCommodity.Size = new Size(303, 22);
+            cboCommodity.TabIndex = 24;
             // 
-            // colID
+            // cboBatchCode
             // 
-            colID.Caption = "ID";
-            colID.FieldName = "ID";
-            colID.MinWidth = 25;
-            colID.Name = "colID";
-            colID.Visible = true;
-            colID.VisibleIndex = 0;
-            colID.Width = 94;
+            cboBatchCode.Anchor = AnchorStyles.Top;
+            cboBatchCode.Location = new Point(52, 92);
+            cboBatchCode.Name = "cboBatchCode";
+            cboBatchCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            cboBatchCode.Size = new Size(178, 22);
+            cboBatchCode.TabIndex = 25;
             // 
             // frmNewInvoice
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(894, 467);
+            ClientSize = new Size(953, 467);
             Controls.Add(labelControl17);
             Controls.Add(lblTotal);
             Controls.Add(labelControl16);
@@ -691,12 +697,12 @@
             ((System.ComponentModel.ISupportInitialize)groupControl3).EndInit();
             groupControl3.ResumeLayout(false);
             groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtPrice.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtBaseUnit.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtQtyAvailable.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -725,8 +731,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.ComboBoxEdit cboCommodity;
-        private DevExpress.XtraEditors.ComboBoxEdit cboBatchCode;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit txtQtyAvailable;
         private DevExpress.XtraEditors.LabelControl labelControl10;
@@ -753,5 +757,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.TextEdit txtQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
+        private DevExpress.XtraEditors.LookUpEdit cboCommodity;
+        private DevExpress.XtraEditors.LookUpEdit cboBatchCode;
     }
 }
