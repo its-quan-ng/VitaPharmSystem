@@ -182,9 +182,9 @@ namespace VitaPharm.Forms.Invoices
                     };
                     context.InvoiceDetails.Add(detail);
 
-                    // Update batch quantity
+
                     var batch = context.Batches.First(b => b.BatchID == line.BatchID);
-                    batch.OnHand -= line.Qty;
+                    batch.QtyAvailable -= line.Qty;
                 }
 
                 context.SaveChanges();
@@ -302,12 +302,12 @@ namespace VitaPharm.Forms.Invoices
                 txtPrice.Text = commodity.SellingPrice.ToString("N0");
 
                 var batches = context.Batches
-                    .Where(b => b.CommodityID == commodityId && b.OnHand > 0)
+                    .Where(b => b.Commodity.CommodityID == commodityId && b.QtyAvailable > 0)
                     .Select(b => new
                     {
                         b.BatchID,
                         b.BatchCode,
-                        b.OnHand
+                        b.QtyAvailable
                     })
                     .ToList();
 
@@ -332,7 +332,7 @@ namespace VitaPharm.Forms.Invoices
 
             if (batch != null)
             {
-                txtQtyAvailable.Text = batch.OnHand.ToString();
+                txtQtyAvailable.Text = batch.QtyAvailable.ToString();
                 btnAddToCart.Enabled = true;
             }
         }
