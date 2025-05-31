@@ -61,6 +61,8 @@
             colUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            cboBatchCode = new DevExpress.XtraEditors.LookUpEdit();
+            cboCommodity = new DevExpress.XtraEditors.LookUpEdit();
             txtQuantity = new DevExpress.XtraEditors.TextEdit();
             btnRemove = new DevExpress.XtraEditors.SimpleButton();
             btnAddToCart = new DevExpress.XtraEditors.SimpleButton();
@@ -77,9 +79,7 @@
             labelControl15 = new DevExpress.XtraEditors.LabelControl();
             labelControl16 = new DevExpress.XtraEditors.LabelControl();
             lblTotal = new DevExpress.XtraEditors.LabelControl();
-            labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            cboCommodity = new DevExpress.XtraEditors.LookUpEdit();
-            cboBatchCode = new DevExpress.XtraEditors.LookUpEdit();
+            lblTax = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)seTaxRate.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)meNote.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtEmployee.Properties).BeginInit();
@@ -96,12 +96,12 @@
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl3).BeginInit();
             groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtPrice.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtBaseUnit.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtQtyAvailable.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).BeginInit();
             SuspendLayout();
             // 
             // Commodity
@@ -445,6 +445,24 @@
             groupControl3.TabIndex = 28;
             groupControl3.Text = "Commodities";
             // 
+            // cboBatchCode
+            // 
+            cboBatchCode.Anchor = AnchorStyles.Top;
+            cboBatchCode.Location = new Point(52, 92);
+            cboBatchCode.Name = "cboBatchCode";
+            cboBatchCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            cboBatchCode.Size = new Size(178, 22);
+            cboBatchCode.TabIndex = 25;
+            // 
+            // cboCommodity
+            // 
+            cboCommodity.Anchor = AnchorStyles.Top;
+            cboCommodity.Location = new Point(16, 53);
+            cboCommodity.Name = "cboCommodity";
+            cboCommodity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            cboCommodity.Size = new Size(303, 22);
+            cboCommodity.TabIndex = 24;
+            // 
             // txtQuantity
             // 
             txtQuantity.Location = new Point(250, 185);
@@ -631,41 +649,23 @@
             lblTotal.TabIndex = 32;
             lblTotal.Text = "0.0 VND";
             // 
-            // labelControl17
+            // lblTax
             // 
-            labelControl17.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelControl17.Appearance.FontStyleDelta = FontStyle.Bold;
-            labelControl17.Appearance.Options.UseFont = true;
-            labelControl17.Location = new Point(346, 428);
-            labelControl17.Name = "labelControl17";
-            labelControl17.Size = new Size(50, 16);
-            labelControl17.TabIndex = 33;
-            labelControl17.Text = "0.0 VND";
-            // 
-            // cboCommodity
-            // 
-            cboCommodity.Anchor = AnchorStyles.Top;
-            cboCommodity.Location = new Point(16, 53);
-            cboCommodity.Name = "cboCommodity";
-            cboCommodity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboCommodity.Size = new Size(303, 22);
-            cboCommodity.TabIndex = 24;
-            // 
-            // cboBatchCode
-            // 
-            cboBatchCode.Anchor = AnchorStyles.Top;
-            cboBatchCode.Location = new Point(52, 92);
-            cboBatchCode.Name = "cboBatchCode";
-            cboBatchCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cboBatchCode.Size = new Size(178, 22);
-            cboBatchCode.TabIndex = 25;
+            lblTax.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTax.Appearance.FontStyleDelta = FontStyle.Bold;
+            lblTax.Appearance.Options.UseFont = true;
+            lblTax.Location = new Point(346, 428);
+            lblTax.Name = "lblTax";
+            lblTax.Size = new Size(50, 16);
+            lblTax.TabIndex = 33;
+            lblTax.Text = "0.0 VND";
             // 
             // frmNewInvoice
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(953, 467);
-            Controls.Add(labelControl17);
+            Controls.Add(lblTax);
             Controls.Add(lblTotal);
             Controls.Add(labelControl16);
             Controls.Add(labelControl15);
@@ -697,12 +697,12 @@
             ((System.ComponentModel.ISupportInitialize)groupControl3).EndInit();
             groupControl3.ResumeLayout(false);
             groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtPrice.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtBaseUnit.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtQtyAvailable.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cboCommodity.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -754,7 +754,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.LabelControl lblTotal;
-        private DevExpress.XtraEditors.LabelControl labelControl17;
+        private DevExpress.XtraEditors.LabelControl lblTax;
         private DevExpress.XtraEditors.TextEdit txtQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraEditors.LookUpEdit cboCommodity;
