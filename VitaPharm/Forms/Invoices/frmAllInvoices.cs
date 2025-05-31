@@ -128,6 +128,7 @@ namespace VitaPharm.Forms.Invoices
                 {
                     using (var exportContext = new PharmacyDbContext())
                     {
+                        #region Export All Invoices
                         DataTable tableInvoices = new DataTable();
                         tableInvoices.Columns.AddRange(new DataColumn[] {
                             new DataColumn("ID", typeof(int)),
@@ -169,7 +170,9 @@ namespace VitaPharm.Forms.Invoices
                                 );
                             }
                         }
+                        #endregion
 
+                        #region Export Invoice Details
                         DataTable tableInvoiceDetails = new DataTable();
                         tableInvoiceDetails.Columns.AddRange(new DataColumn[] {
                             new DataColumn("InvoiceCode", typeof(string)),
@@ -243,6 +246,7 @@ namespace VitaPharm.Forms.Invoices
                             XtraMessageBox.Show($"Export completed successfully!",
                                 "Export Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
+                        #endregion
                     }
                 }
                 catch (Exception ex)
