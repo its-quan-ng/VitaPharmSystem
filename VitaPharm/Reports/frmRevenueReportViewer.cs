@@ -38,6 +38,7 @@ namespace VitaPharm.Reports
 
             documentViewer.DocumentSource = report;
             report.CreateDocument();
+
         }
 
         private void PreviewDefaultReport()
