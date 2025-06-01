@@ -93,7 +93,7 @@ namespace VitaPharm.Forms
             btnAllGoodsReceipt.Enabled = true;
             btnAllCustomers.Enabled = true;
             btnNewReceipt.Enabled = isUser;
-            btnAllCommodities.Enabled = isAdmin;
+            btnAllCommodities.Enabled = true;
             btnNewCommodity.Enabled = true;
             btnAllInvoices.Enabled = true;
             btnNewInvoice.Enabled = isUser;

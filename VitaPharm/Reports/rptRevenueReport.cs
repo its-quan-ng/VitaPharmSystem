@@ -22,8 +22,6 @@ namespace VitaPharm.Reports
                     .Where(i => i.CreatedDate >= fromDate && i.CreatedDate <= toDate)
                     .ToList();
 
-                XtraMessageBox.Show($"Found {invoices.Count} invoices");
-
                 var ds = new PharmacyManageDataSet();
                 var dtInvoice = ds.Invoice;
 
@@ -40,8 +38,6 @@ namespace VitaPharm.Reports
                         i.InvoiceDetail.Sum(d => d.Quantity * d.UnitPrice)
                     );
                 }
-
-                XtraMessageBox.Show($"Rows in DataTable: {dtInvoice.Rows.Count}");
 
                 this.DataSource = ds;
                 this.DataMember = "Invoice";
