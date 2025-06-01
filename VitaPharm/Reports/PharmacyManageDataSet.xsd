@@ -48,12 +48,20 @@
               <xs:element name="EmployeeName" msprop:Generator_ColumnPropNameInRow="EmployeeName" msprop:Generator_ColumnPropNameInTable="EmployeeNameColumn" msprop:Generator_ColumnVarNameInTable="columnEmployeeName" msprop:Generator_UserColumnName="EmployeeName" type="xs:string" minOccurs="0" />
               <xs:element name="CustomerName" msprop:Generator_ColumnPropNameInRow="CustomerName" msprop:Generator_ColumnPropNameInTable="CustomerNameColumn" msprop:Generator_ColumnVarNameInTable="columnCustomerName" msprop:Generator_UserColumnName="CustomerName" type="xs:string" minOccurs="0" />
               <xs:element name="Note" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_ColumnVarNameInTable="columnNote" msprop:Generator_UserColumnName="Note" type="xs:string" minOccurs="0" />
-              <xs:element name="TotalAmount" msprop:Generator_ColumnPropNameInRow="TotalAmount" msprop:Generator_ColumnPropNameInTable="TotalAmountColumn" msprop:Generator_ColumnVarNameInTable="columnTotalAmount" msprop:Generator_UserColumnName="TotalAmount" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalAmount" msprop:Generator_ColumnPropNameInRow="TotalAmount" msprop:Generator_ColumnPropNameInTable="TotalAmountColumn" msprop:Generator_ColumnVarNameInTable="columnTotalAmount" msprop:Generator_UserColumnName="TotalAmount" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
+        <xs:element name="InvoiceDetail" msprop:Generator_RowEvHandlerName="InvoiceDetailRowChangeEventHandler" msprop:Generator_RowDeletedName="InvoiceDetailRowDeleted" msprop:Generator_RowDeletingName="InvoiceDetailRowDeleting" msprop:Generator_RowEvArgName="InvoiceDetailRowChangeEvent" msprop:Generator_TablePropName="InvoiceDetail" msprop:Generator_RowChangedName="InvoiceDetailRowChanged" msprop:Generator_RowChangingName="InvoiceDetailRowChanging" msprop:Generator_TableClassName="InvoiceDetailDataTable" msprop:Generator_RowClassName="InvoiceDetailRow" msprop:Generator_TableVarName="tableInvoiceDetail" msprop:Generator_UserTableName="InvoiceDetail">
           <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InvoiceDetailID" msprop:Generator_ColumnPropNameInRow="InvoiceDetailID" msprop:Generator_ColumnPropNameInTable="InvoiceDetailIDColumn" msprop:Generator_ColumnVarNameInTable="columnInvoiceDetailID" msprop:Generator_UserColumnName="InvoiceDetailID" type="xs:int" />
+              <xs:element name="InvoiceID" msprop:Generator_ColumnPropNameInRow="InvoiceID" msprop:Generator_ColumnPropNameInTable="InvoiceIDColumn" msprop:Generator_ColumnVarNameInTable="columnInvoiceID" msprop:Generator_UserColumnName="InvoiceID" type="xs:int" minOccurs="0" />
+              <xs:element name="CommodityName" msprop:Generator_ColumnPropNameInRow="CommodityName" msprop:Generator_ColumnPropNameInTable="CommodityNameColumn" msprop:Generator_ColumnVarNameInTable="columnCommodityName" msprop:Generator_UserColumnName="CommodityName" type="xs:string" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_UserColumnName="Quantity" type="xs:int" minOccurs="0" />
+              <xs:element name="UnitPrice" msprop:Generator_ColumnPropNameInRow="UnitPrice" msprop:Generator_ColumnPropNameInTable="UnitPriceColumn" msprop:Generator_ColumnVarNameInTable="columnUnitPrice" msprop:Generator_UserColumnName="UnitPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_UserColumnName="Amount" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
@@ -70,10 +78,15 @@
       <xs:selector xpath=".//mstns:Invoice" />
       <xs:field xpath="mstns:InvoiceID" />
     </xs:unique>
+    <xs:unique name="InvoiceDetail_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:InvoiceDetail" />
+      <xs:field xpath="mstns:InvoiceDetailID" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
       <msdata:Relationship name="ReceiptList_ReceiptDetailList" msdata:parent="ReceiptList" msdata:child="ReceiptDetailList" msdata:parentkey="ReceiptID" msdata:childkey="ReceiptID" msprop:Generator_UserParentTable="ReceiptList" msprop:Generator_UserChildTable="ReceiptDetailList" msprop:Generator_RelationVarName="relationReceiptList_ReceiptDetailList" msprop:Generator_ChildPropName="GetReceiptDetailListRows" msprop:Generator_UserRelationName="ReceiptList_ReceiptDetailList" msprop:Generator_ParentPropName="ReceiptListRow" />
+      <msdata:Relationship name="Invoice_InvoiceDetail" msdata:parent="Invoice" msdata:child="InvoiceDetail" msdata:parentkey="InvoiceID" msdata:childkey="InvoiceID" msprop:Generator_UserParentTable="Invoice" msprop:Generator_UserChildTable="InvoiceDetail" msprop:Generator_RelationVarName="relationInvoice_InvoiceDetail" msprop:Generator_ChildPropName="GetInvoiceDetailRows" msprop:Generator_ParentPropName="InvoiceRow" msprop:Generator_UserRelationName="Invoice_InvoiceDetail" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
