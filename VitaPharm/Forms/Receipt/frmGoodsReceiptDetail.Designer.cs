@@ -359,6 +359,8 @@
             dateReceiptDate.Name = "dateReceiptDate";
             dateReceiptDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             dateReceiptDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dateReceiptDate.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            dateReceiptDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             dateReceiptDate.Size = new Size(130, 22);
             dateReceiptDate.TabIndex = 12;
             // 
