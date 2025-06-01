@@ -446,7 +446,7 @@
             this.xrLabel7,
             this.xrLabel6,
             this.xrLabel5});
-            this.SubBand1.HeightF = 80.7286F;
+            this.SubBand1.HeightF = 85.81597F;
             this.SubBand1.Name = "SubBand1";
             // 
             // xrLabel12
@@ -649,7 +649,7 @@
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable1});
-            this.PageHeader.HeightF = 25.90183F;
+            this.PageHeader.HeightF = 25F;
             this.PageHeader.Name = "PageHeader";
             // 
             // xrTable1
@@ -665,7 +665,7 @@
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(747F, 25F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(749.0001F, 25F);
             this.xrTable1.StylePriority.UseBorderWidth = false;
             this.xrTable1.StylePriority.UseFont = false;
             // 
