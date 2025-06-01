@@ -118,6 +118,8 @@ namespace VitaPharm.Forms
             report.Parameters["pSupplierName"].Value = receipt.SupplierName;
             report.Parameters["pEmployeeName"].Value = receipt.Employee?.EmployeeName ?? "";
             report.Parameters["pNote"].Value = receipt.Note;
+            report.Parameters["pCompanyAddress"].Value = "123 Dau Lac, Long Xuyen, An Giang";
+            report.Parameters["pCompanyTaxCode"].Value = "123456789";
 
             foreach (var param in report.Parameters)
                 param.Visible = false;
