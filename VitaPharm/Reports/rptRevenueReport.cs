@@ -1,8 +1,5 @@
-﻿using DevExpress.XtraReports.UI;
-using System;
-using System.Collections;
-using System.ComponentModel;
-using System.Drawing;
+﻿using VitaPharm.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace VitaPharm.Reports
 {
@@ -11,6 +8,45 @@ namespace VitaPharm.Reports
         public rptRevenueReport()
         {
             InitializeComponent();
+        }
+
+        public void LoadData(DateTime fromDate, DateTime toDate, string describeResultFilter)
+        {
+            using (var context = new PharmacyDbContext())
+            {
+                var invoices = context.Invoices
+                    .Include(i => i.Employee)
+                    .Include(i => i.Customer)
+                    .Include(i => i.InvoiceDetail)
+                    .Where(i => i.CreatedDate >= fromDate && i.CreatedDate <= toDate)
+                    .ToList();
+
+                var ds = new PharmacyManageDataSet();
+                var dtInvoice = ds.InvoiceList;
+
+                foreach (var i in invoices)
+                {
+                    dtInvoice.Rows.Add(
+                        i.InvoiceID,
+                        i.InvoiceCode,
+                        i.CreatedDate,
+                        i.Customer?.CustomerName ?? "",
+                        i.Employee?.EmployeeName ?? "",
+                        i.Note,
+                        i.InvoiceStatus,
+                        i.InvoiceDetail.Sum(d => d.Quantity * d.UnitPrice)
+                    );
+                }
+
+                this.DataSource = ds;
+                this.DataMember = "InvoiceList";
+
+                this.Parameters["pDescribeResultFilter"].Value = describeResultFilter;
+                this.Parameters["pDescribeResultFilter"].Visible = false;
+
+                foreach (var param in this.Parameters)
+                    param.Visible = false;
+            }
         }
     }
 }

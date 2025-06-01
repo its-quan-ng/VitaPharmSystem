@@ -1,11 +1,4 @@
-﻿using DevExpress.XtraReports.UI;
-using System;
-using System.Collections;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Collections.Generic;
-using VitaPharm.Data;
+﻿using VitaPharm.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace VitaPharm.Reports
