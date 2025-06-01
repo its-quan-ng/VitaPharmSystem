@@ -1107,6 +1107,8 @@ namespace VitaPharm.Reports {
             
             private global::System.Data.DataColumn columnCustomerName;
             
+            private global::System.Data.DataColumn columnInvoiceStatus;
+            
             private global::System.Data.DataColumn columnNote;
             
             private global::System.Data.DataColumn columnTotalAmount;
@@ -1188,6 +1190,14 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn InvoiceStatusColumn {
+                get {
+                    return this.columnInvoiceStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn NoteColumn {
                 get {
                     return this.columnNote;
@@ -1239,7 +1249,7 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public InvoiceRow AddInvoiceRow(int InvoiceID, string InvoiceCode, System.DateTime CreatedDate, string EmployeeName, string CustomerName, string Note, decimal TotalAmount) {
+            public InvoiceRow AddInvoiceRow(int InvoiceID, string InvoiceCode, System.DateTime CreatedDate, string EmployeeName, string CustomerName, string InvoiceStatus, string Note, decimal TotalAmount) {
                 InvoiceRow rowInvoiceRow = ((InvoiceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         InvoiceID,
@@ -1247,6 +1257,7 @@ namespace VitaPharm.Reports {
                         CreatedDate,
                         EmployeeName,
                         CustomerName,
+                        InvoiceStatus,
                         Note,
                         TotalAmount};
                 rowInvoiceRow.ItemArray = columnValuesArray;
@@ -1283,6 +1294,7 @@ namespace VitaPharm.Reports {
                 this.columnCreatedDate = base.Columns["CreatedDate"];
                 this.columnEmployeeName = base.Columns["EmployeeName"];
                 this.columnCustomerName = base.Columns["CustomerName"];
+                this.columnInvoiceStatus = base.Columns["InvoiceStatus"];
                 this.columnNote = base.Columns["Note"];
                 this.columnTotalAmount = base.Columns["TotalAmount"];
             }
@@ -1300,6 +1312,8 @@ namespace VitaPharm.Reports {
                 base.Columns.Add(this.columnEmployeeName);
                 this.columnCustomerName = new global::System.Data.DataColumn("CustomerName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCustomerName);
+                this.columnInvoiceStatus = new global::System.Data.DataColumn("InvoiceStatus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInvoiceStatus);
                 this.columnNote = new global::System.Data.DataColumn("Note", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNote);
                 this.columnTotalAmount = new global::System.Data.DataColumn("TotalAmount", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -2313,6 +2327,22 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string InvoiceStatus {
+                get {
+                    try {
+                        return ((string)(this[this.tableInvoice.InvoiceStatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'InvoiceStatus\' in table \'Invoice\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInvoice.InvoiceStatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Note {
                 get {
                     try {
@@ -2389,6 +2419,18 @@ namespace VitaPharm.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetCustomerNameNull() {
                 this[this.tableInvoice.CustomerNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsInvoiceStatusNull() {
+                return this.IsNull(this.tableInvoice.InvoiceStatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetInvoiceStatusNull() {
+                this[this.tableInvoice.InvoiceStatusColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

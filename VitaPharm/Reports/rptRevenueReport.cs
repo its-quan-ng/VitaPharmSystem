@@ -1,5 +1,6 @@
 ﻿using VitaPharm.Data;
 using Microsoft.EntityFrameworkCore;
+using DevExpress.XtraEditors;
 
 namespace VitaPharm.Reports
 {
@@ -21,6 +22,8 @@ namespace VitaPharm.Reports
                     .Where(i => i.CreatedDate >= fromDate && i.CreatedDate <= toDate)
                     .ToList();
 
+                XtraMessageBox.Show($"Found {invoices.Count} invoices");
+
                 var ds = new PharmacyManageDataSet();
                 var dtInvoice = ds.Invoice;
 
@@ -32,21 +35,22 @@ namespace VitaPharm.Reports
                         i.CreatedDate,
                         i.Customer?.CustomerName ?? "",
                         i.Employee?.EmployeeName ?? "",
-                        i.Note,
                         i.InvoiceStatus,
+                        i.Note,
                         i.InvoiceDetail.Sum(d => d.Quantity * d.UnitPrice)
                     );
                 }
 
+                XtraMessageBox.Show($"Rows in DataTable: {dtInvoice.Rows.Count}");
+
                 this.DataSource = ds;
-                this.DataMember = "InvoiceList";
+                this.DataMember = "Invoice";
 
                 this.Parameters["pDescribeResultFilter"].Value = describeResultFilter;
                 this.Parameters["pDescribeResultFilter"].Visible = false;
 
                 this.Parameters["pCurrentUser"].Value = currentUser;
                 this.Parameters["pCurrentUser"].Visible = false;
-
                 foreach (var param in this.Parameters)
                     param.Visible = false;
             }

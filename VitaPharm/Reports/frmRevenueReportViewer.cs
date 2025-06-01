@@ -26,7 +26,12 @@ namespace VitaPharm.Reports
             string filterDesc = $"From {fromDate:dd/MM/yyyy} to {toDate:dd/MM/yyyy}";
 
             var report = new rptRevenueReport();
-            string currentUser = CurrentUser.EmployeeName;
+            string currentUser;
+            using (var context = new PharmacyDbContext())
+            {
+                var emp = context.Employees.FirstOrDefault(e => e.EmployeeID == CurrentUser.EmployeeID);
+                currentUser = emp?.EmployeeName ?? "Unknown";
+            }
             report.LoadData(fromDate, toDate, filterDesc, currentUser);
 
             documentViewer.DocumentSource = report;

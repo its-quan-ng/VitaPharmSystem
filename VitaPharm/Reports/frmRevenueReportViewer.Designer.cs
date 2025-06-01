@@ -118,6 +118,7 @@
             btnViewReport.Size = new Size(119, 34);
             btnViewReport.TabIndex = 25;
             btnViewReport.Text = "View Report";
+            btnViewReport.Click += btnViewReport_Click;
             // 
             // documentViewer
             // 
