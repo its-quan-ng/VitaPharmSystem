@@ -34,6 +34,7 @@
             colBatchCode = new DevExpress.XtraGrid.Columns.GridColumn();
             colCommodityName = new DevExpress.XtraGrid.Columns.GridColumn();
             gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            colID = new DevExpress.XtraGrid.Columns.GridColumn();
             colUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             gridControl = new DevExpress.XtraGrid.GridControl();
             btnPrint = new DevExpress.XtraEditors.SimpleButton();
@@ -52,7 +53,6 @@
             panel2 = new Panel();
             lblTotal = new DevExpress.XtraEditors.LabelControl();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            colID = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtInvoiceCode.Properties).BeginInit();
@@ -122,6 +122,16 @@
             gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, colCommodityName, colBatchCode, colQuantity, colBaseUnit, colUnitPrice, colAmount });
             gridView.GridControl = gridControl;
             gridView.Name = "gridView";
+            // 
+            // colID
+            // 
+            colID.Caption = "ID";
+            colID.FieldName = "ID";
+            colID.MinWidth = 25;
+            colID.Name = "colID";
+            colID.Visible = true;
+            colID.VisibleIndex = 0;
+            colID.Width = 94;
             // 
             // colUnitPrice
             // 
@@ -323,16 +333,6 @@
             labelControl3.Size = new Size(43, 18);
             labelControl3.TabIndex = 0;
             labelControl3.Text = "Total:";
-            // 
-            // colID
-            // 
-            colID.Caption = "gridColumn1";
-            colID.FieldName = "ID";
-            colID.MinWidth = 25;
-            colID.Name = "colID";
-            colID.Visible = true;
-            colID.VisibleIndex = 0;
-            colID.Width = 94;
             // 
             // frmInvoiceDetail
             // 
