@@ -72,61 +72,10 @@ namespace VitaPharm.Forms
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            var ds = new PharmacyManageDataSet();
-
-            var dtMaster = ds.ReceiptList;
-            var dtDetail = ds.ReceiptDetailList;
-
-            var receipt = context.GoodsReceipts
-                .Include(r => r.Employee)
-                .FirstOrDefault(r => r.ReceiptID == receiptId);
-
-            var details = context.GoodsReceiptDetails
-                .Include(d => d.Batch)
-                .ThenInclude(b => b.Commodity)
-                .Where(d => d.GoodsReceipt.ReceiptID == receiptId)
-                .ToList();
-
-            dtMaster.Rows.Add(
-                receipt.ReceiptID,
-                receipt.ReceiptCode,
-                receipt.ReceiptDate,
-                receipt.SupplierName,
-                receipt.Employee?.EmployeeName ?? "",
-                receipt.Note
-            );
-
-            foreach (var d in details)
-            {
-                dtDetail.Rows.Add(
-                    d.GoodsReceiptDetailID,
-                    d.GoodsReceipt.ReceiptID,
-                    d.Batch.BatchCode,
-                    d.Batch.Commodity.CommodityName,
-                    d.Batch.MfgDate,
-                    d.Batch.ExpDate,
-                    d.Batch.PurchasePrice,
-                    d.QtyIn,
-                    d.QtyIn * d.Batch.PurchasePrice
-                );
-            }
-
             var report = new rptReceiptDetail();
-            report.DataSource = ds;
-            report.DataMember = "ReceiptDetailList";
-
-            report.Parameters["pReceiptCode"].Value = receipt.ReceiptCode;
-            report.Parameters["pReceiptDate"].Value = receipt.ReceiptDate;
-            report.Parameters["pSupplierName"].Value = receipt.SupplierName;
-            report.Parameters["pEmployeeName"].Value = receipt.Employee?.EmployeeName ?? "";
-            report.Parameters["pNote"].Value = receipt.Note;
-            report.Parameters["pCompanyAddress"].Value = "123 Dau Lac, Long Xuyen, An Giang";
-            report.Parameters["pCompanyTaxCode"].Value = "123456789";
-
-            foreach (var param in report.Parameters)
-                param.Visible = false;
-
-            ReportPrintTool printTool = new ReportPrintTool(report); 
+            report.LoadData(receiptId);
+            
+            ReportPrintTool printTool = new ReportPrintTool(report);
             printTool.ShowPreviewDialog();
         }
 
