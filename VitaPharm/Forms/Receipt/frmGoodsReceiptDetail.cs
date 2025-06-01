@@ -75,6 +75,8 @@ namespace VitaPharm.Forms
             var dtMaster = ds.ReceiptList;
             var dtDetail = ds.ReceiptDetailList;
 
+            dtDetail.Columns.Add("No", typeof(int));
+
             var receipt = context.GoodsReceipts
                 .Include(r => r.Employee)
                 .FirstOrDefault(r => r.ReceiptID == receiptId);
@@ -94,9 +96,11 @@ namespace VitaPharm.Forms
                 receipt.Note
             );
 
+            int no = 1;
             foreach (var d in details)
             {
                 dtDetail.Rows.Add(
+                    no++,
                     d.GoodsReceiptDetailID,
                     d.GoodsReceipt.ReceiptID,
                     d.Batch.BatchCode,
