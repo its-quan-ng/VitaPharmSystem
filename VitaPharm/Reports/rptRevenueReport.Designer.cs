@@ -83,7 +83,7 @@
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable2});
-            this.Detail.HeightF = 25.32288F;
+            this.Detail.HeightF = 25F;
             this.Detail.Name = "Detail";
             // 
             // xrTable2
@@ -365,13 +365,13 @@
             this.xrLabel7,
             this.xrLabel6,
             this.xrTable3});
-            this.ReportFooter.HeightF = 86.11112F;
+            this.ReportFooter.HeightF = 76.66666F;
             this.ReportFooter.Name = "ReportFooter";
             // 
             // xrLabel6
             // 
             this.xrLabel6.Font = new DevExpress.Drawing.DXFont("Times New Roman", 10F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 61.43396F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(12.77779F, 42.91546F);
             this.xrLabel6.Multiline = true;
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -442,7 +442,7 @@
             this.xrLabel7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?pCurrentUser")});
             this.xrLabel7.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(110F, 61.43401F);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(112.7778F, 42.91549F);
             this.xrLabel7.Multiline = true;
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
