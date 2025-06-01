@@ -32,8 +32,10 @@ namespace VitaPharm.Forms
                     .Include(d => d.Batch)
                     .Include(d => d.Batch.Commodity)
                     .Where(d => d.GoodsReceipt.ReceiptID == receiptId)
-                    .Select(d => new
+                    .ToList()
+                    .Select((d, index) => new
                     {
+                        ID = index + 1,
                         d.Batch.BatchCode,
                         d.Batch.Commodity.CommodityName,
                         d.Batch.MfgDate,
