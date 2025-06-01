@@ -72,7 +72,7 @@ namespace VitaPharm.Reports
                 this.Parameters["pEmployeeName"].Value = receipt.Employee?.EmployeeName ?? "";
                 this.Parameters["pNote"].Value = receipt.Note;
                 this.Parameters["pCompanyAddress"].Value = "123 Dau Lac, Long Xuyen, An Giang";
-                this.Parameters["pCompanyTaxCode"].Value = "123456789";
+                this.Parameters["pCompanyTaxCode"].Value = "1900020407";
 
                 // Hide parameters
                 foreach (var param in this.Parameters)
