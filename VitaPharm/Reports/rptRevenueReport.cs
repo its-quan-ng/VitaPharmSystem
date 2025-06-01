@@ -22,7 +22,7 @@ namespace VitaPharm.Reports
                     .ToList();
 
                 var ds = new PharmacyManageDataSet();
-                var dtInvoice = ds.InvoiceList;
+                var dtInvoice = ds.Invoice;
 
                 foreach (var i in invoices)
                 {
