@@ -74,6 +74,8 @@
             dateEditFrom.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             dateEditFrom.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             dateEditFrom.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            dateEditFrom.Properties.MaskSettings.Set("mask", "dd/MM/yyyy");
+            dateEditFrom.Properties.UseMaskAsDisplayFormat = true;
             dateEditFrom.Size = new Size(145, 22);
             dateEditFrom.TabIndex = 23;
             // 
@@ -88,6 +90,8 @@
             dateEditTo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             dateEditTo.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             dateEditTo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            dateEditTo.Properties.MaskSettings.Set("mask", "dd/MM/yyyy");
+            dateEditTo.Properties.UseMaskAsDisplayFormat = true;
             dateEditTo.Size = new Size(145, 22);
             dateEditTo.TabIndex = 24;
             // 
