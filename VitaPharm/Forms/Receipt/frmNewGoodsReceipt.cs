@@ -63,7 +63,7 @@ namespace VitaPharm.Forms.Receipt
 
         private string GenerateReceiptCode()
         {
-            string prefix = "PN";
+            string prefix = "GR";
             string datePart = DateTime.Now.ToString("yyMMdd");
             int count = context.GoodsReceipts
                 .Count(r => r.ReceiptDate.Date == DateTime.Now.Date) + 1;
