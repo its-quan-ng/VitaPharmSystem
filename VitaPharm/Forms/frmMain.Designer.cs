@@ -41,6 +41,7 @@
             btnNewInvoice = new DevExpress.XtraBars.BarButtonItem();
             btnAllInvoices = new DevExpress.XtraBars.BarButtonItem();
             btnSignOut = new DevExpress.XtraBars.BarButtonItem();
+            btnRevenueReport = new DevExpress.XtraBars.BarButtonItem();
             tabHumanManage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -52,7 +53,6 @@
             ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            btnRevenueReport = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).BeginInit();
             SuspendLayout();
             // 
@@ -166,6 +166,14 @@
             btnSignOut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             btnSignOut.ItemClick += btnSignOut_ItemClick;
             // 
+            // btnRevenueReport
+            // 
+            btnRevenueReport.Caption = "Revenue Report";
+            btnRevenueReport.Id = 12;
+            btnRevenueReport.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnRevenueReport.ImageOptions.SvgImage");
+            btnRevenueReport.Name = "btnRevenueReport";
+            btnRevenueReport.ItemClick += btnRevenueReport_ItemClick;
+            // 
             // tabHumanManage
             // 
             tabHumanManage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] { ribbonPageGroup1, ribbonPageGroup5 });
@@ -231,13 +239,6 @@
             // 
             ribbonPageGroup6.ItemLinks.Add(btnRevenueReport);
             ribbonPageGroup6.Name = "ribbonPageGroup6";
-            // 
-            // btnRevenueReport
-            // 
-            btnRevenueReport.Caption = "Revenue Report";
-            btnRevenueReport.Id = 12;
-            btnRevenueReport.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("barButtonItem1.ImageOptions.SvgImage");
-            btnRevenueReport.Name = "btnRevenueReport";
             // 
             // frmMain
             // 

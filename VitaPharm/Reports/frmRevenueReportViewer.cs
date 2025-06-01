@@ -1,13 +1,5 @@
 ﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using VitaPharm.Data;
 
 namespace VitaPharm.Reports
 {
@@ -16,6 +8,29 @@ namespace VitaPharm.Reports
         public frmRevenueReportViewer()
         {
             InitializeComponent();
+            dateEditFrom.DateTime = DateTime.Today.AddDays(-7);
+            dateEditTo.DateTime = DateTime.Today;
+        }
+
+        private void btnViewReport_Click(object sender, EventArgs e)
+        {
+            DateTime fromDate = dateEditFrom.DateTime.Date;
+            DateTime toDate = dateEditTo.DateTime.Date;
+
+            if (fromDate > toDate)
+            {
+                XtraMessageBox.Show("From date must be less than or equal to To date!", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string filterDesc = $"From {fromDate:dd/MM/yyyy} to {toDate:dd/MM/yyyy}";
+
+            var report = new rptRevenueReport();
+            string currentUser = CurrentUser.EmployeeName;
+            report.LoadData(fromDate, toDate, filterDesc, currentUser);
+
+            documentViewer.DocumentSource = report;
+            report.CreateDocument();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace VitaPharm.Reports
             InitializeComponent();
         }
 
-        public void LoadData(DateTime fromDate, DateTime toDate, string describeResultFilter)
+        public void LoadData(DateTime fromDate, DateTime toDate, string describeResultFilter, string currentUser)
         {
             using (var context = new PharmacyDbContext())
             {
@@ -43,6 +43,9 @@ namespace VitaPharm.Reports
 
                 this.Parameters["pDescribeResultFilter"].Value = describeResultFilter;
                 this.Parameters["pDescribeResultFilter"].Visible = false;
+
+                this.Parameters["pCurrentUser"].Value = currentUser;
+                this.Parameters["pCurrentUser"].Visible = false;
 
                 foreach (var param in this.Parameters)
                     param.Visible = false;
