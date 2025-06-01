@@ -1,7 +1,9 @@
-﻿using System.Data;
-using VitaPharm.Data;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 using Microsoft.EntityFrameworkCore;
-using DevExpress.XtraEditors;
+using System.Data;
+using VitaPharm.Data;
+using VitaPharm.Reports;
 
 namespace VitaPharm.Forms
 {
@@ -30,8 +32,10 @@ namespace VitaPharm.Forms
                     .Include(d => d.Batch)
                     .Include(d => d.Batch.Commodity)
                     .Where(d => d.GoodsReceipt.ReceiptID == receiptId)
-                    .Select(d => new
+                    .ToList()
+                    .Select((d, index) => new
                     {
+                        ID = index + 1,
                         d.Batch.BatchCode,
                         d.Batch.Commodity.CommodityName,
                         d.Batch.MfgDate,
@@ -80,7 +84,11 @@ namespace VitaPharm.Forms
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+            var report = new rptReceiptDetail();
+            report.LoadData(receiptId);
+            
+            ReportPrintTool printTool = new ReportPrintTool(report);
+            printTool.ShowPreviewDialog();
         }
 
         private void btnReload_Click(object sender, EventArgs e)
