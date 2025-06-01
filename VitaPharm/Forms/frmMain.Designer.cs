@@ -50,6 +50,9 @@
             ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            btnRevenueReport = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)ribbonControl1).BeginInit();
             SuspendLayout();
             // 
@@ -57,11 +60,11 @@
             // 
             ribbonControl1.BackColor = Color.White;
             ribbonControl1.ExpandCollapseItem.Id = 0;
-            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnProfile, btnNewUser, btnAllUsers, btnAllCustomers, btnNewCommodity, btnAllCommodities, btnNewReceipt, btnAllGoodsReceipt, btnNewInvoice, btnAllInvoices, btnSignOut });
+            ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbonControl1.ExpandCollapseItem, btnProfile, btnNewUser, btnAllUsers, btnAllCustomers, btnNewCommodity, btnAllCommodities, btnNewReceipt, btnAllGoodsReceipt, btnNewInvoice, btnAllInvoices, btnSignOut, btnRevenueReport });
             ribbonControl1.Location = new Point(0, 0);
-            ribbonControl1.MaxItemId = 12;
+            ribbonControl1.MaxItemId = 13;
             ribbonControl1.Name = "ribbonControl1";
-            ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { tabHumanManage, tabCommodity, tabGoodReceipt, ribbonPage1 });
+            ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { tabHumanManage, tabCommodity, tabGoodReceipt, ribbonPage1, ribbonPage2 });
             ribbonControl1.Size = new Size(1278, 183);
             // 
             // btnProfile
@@ -218,6 +221,24 @@
             ribbonPageGroup4.ItemLinks.Add(btnAllInvoices);
             ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
+            // ribbonPage2
+            // 
+            ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] { ribbonPageGroup6 });
+            ribbonPage2.Name = "ribbonPage2";
+            ribbonPage2.Text = "Report";
+            // 
+            // ribbonPageGroup6
+            // 
+            ribbonPageGroup6.ItemLinks.Add(btnRevenueReport);
+            ribbonPageGroup6.Name = "ribbonPageGroup6";
+            // 
+            // btnRevenueReport
+            // 
+            btnRevenueReport.Caption = "Revenue Report";
+            btnRevenueReport.Id = 12;
+            btnRevenueReport.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("barButtonItem1.ImageOptions.SvgImage");
+            btnRevenueReport.Name = "btnRevenueReport";
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -258,5 +279,8 @@
         private DevExpress.XtraBars.BarButtonItem btnAllInvoices;
         private DevExpress.XtraBars.BarButtonItem btnSignOut;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem btnRevenueReport;
     }
 }
