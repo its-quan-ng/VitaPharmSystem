@@ -111,7 +111,7 @@ namespace VitaPharm.Forms
 
             var report = new rptReceiptDetail();
             report.DataSource = ds;
-            report.DataMember = "GoodsReceipt";
+            report.DataMember = "ReceiptDetailList";
 
             report.Parameters["pReceiptCode"].Value = receipt.ReceiptCode;
             report.Parameters["pReceiptDate"].Value = receipt.ReceiptDate;
