@@ -92,12 +92,12 @@
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 33.33333F;
+            this.TopMargin.HeightF = 42.15686F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 117.9999F;
+            this.BottomMargin.HeightF = 141.212F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // xrLabel16
@@ -825,7 +825,7 @@
             this.PageHeader});
             this.DefaultPrinterSettingsUsing.UsePaperKind = true;
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
-            this.Margins = new DevExpress.Drawing.DXMargins(38F, 40F, 33.33333F, 117.9999F);
+            this.Margins = new DevExpress.Drawing.DXMargins(38F, 40F, 42.15686F, 141.212F);
             this.PageHeight = 1169;
             this.PageWidth = 827;
             this.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.A4;
