@@ -172,35 +172,14 @@ namespace VitaPharm.Forms.Receipt
 
         private string GenerateNewBatchCode(string commodityName)
         {
-            string prefix = "BA";
-            string namePart = RemoveDiacriticsAndToUpper(commodityName)
-                .Take(7)
-                .Aggregate("", (s, c) => s + c);
-            string datePart = DateTime.Now.ToString("ddMMyy");
+            DateTime mfgDate = dateMfg.DateTime == DateTime.MinValue ? DateTime.Now : dateMfg.DateTime;
+            string datePart = mfgDate.ToString("yyMMdd");
             int countDb = context.Batches
-                .Count(b => b.BatchDate.Date == DateTime.Now.Date && b.Commodity.CommodityName == commodityName);
-            int countTemp = tempBatchList.Count(b => b.MfgDate.Date == DateTime.Now.Date && b.CommodityName == commodityName);
+                .Count(b => b.MfgDate.Date == mfgDate.Date && b.Commodity.CommodityName == commodityName);
+            int countTemp = tempBatchList.Count(b => b.MfgDate.Date == mfgDate.Date && b.CommodityName == commodityName);
             int count = countDb + countTemp + 1;
-            string countPart = count.ToString("D2");
-            return $"{prefix}-{namePart}-{datePart}-{countPart}";
-        }
-
-        private string RemoveDiacriticsAndToUpper(string text)
-        {
-            if (string.IsNullOrEmpty(text)) return text;
-            var normalized = text.Normalize(NormalizationForm.FormD);
-            var sb = new StringBuilder();
-            foreach (var c in normalized)
-            {
-                var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
-                if (unicodeCategory != UnicodeCategory.NonSpacingMark)
-                {
-                    sb.Append(c);
-                }
-            }
-            return sb.ToString().Normalize(NormalizationForm.FormC)
-                     .Replace(' ', '-')
-                     .ToUpper();
+            string countPart = count.ToString("D3");
+            return $"{datePart}-{countPart}";
         }
 
         private void ResetForm()
