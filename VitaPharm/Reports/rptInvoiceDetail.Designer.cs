@@ -175,14 +175,18 @@
             // 
             // xrLabel6
             // 
-            this.xrLabel6.Font = new DevExpress.Drawing.DXFont("Times New Roman", 16F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(219.6359F, 138.9264F);
+            this.xrLabel6.Font = new DevExpress.Drawing.DXFont("Times New Roman", 18F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(271.5822F, 162.4558F);
             this.xrLabel6.Multiline = true;
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(273.6232F, 23F);
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(221.6624F, 26.92157F);
             this.xrLabel6.StylePriority.UseFont = false;
-            this.xrLabel6.Text = "GOODS RECEIPT NOTE";
+            this.xrLabel6.StylePriority.UseForeColor = false;
+            this.xrLabel6.StylePriority.UseTextAlignment = false;
+            this.xrLabel6.Text = "SALES INVOICE";
+            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // rptInvoiceDetail
             // 
