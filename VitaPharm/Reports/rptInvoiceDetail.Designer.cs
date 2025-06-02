@@ -177,7 +177,7 @@
             this.xrTableCell16.StylePriority.UseTextAlignment = false;
             this.xrTableCell16.Text = "Product Name";
             this.xrTableCell16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell16.Weight = 1.9675363281647211D;
+            this.xrTableCell16.Weight = 1.8164249911251953D;
             // 
             // xrTableCell17
             // 
@@ -188,7 +188,7 @@
             this.xrTableCell17.StylePriority.UseTextAlignment = false;
             this.xrTableCell17.Text = "Batch Code";
             this.xrTableCell17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell17.Weight = 1.644637364081337D;
+            this.xrTableCell17.Weight = 1.9201938582018514D;
             // 
             // xrTableCell18
             // 
@@ -199,7 +199,7 @@
             this.xrTableCell18.StylePriority.UseTextAlignment = false;
             this.xrTableCell18.Text = "Unit";
             this.xrTableCell18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell18.Weight = 0.92244531156556375D;
+            this.xrTableCell18.Weight = 0.99201697094324892D;
             // 
             // xrTableCell19
             // 
@@ -210,7 +210,7 @@
             this.xrTableCell19.StylePriority.UseTextAlignment = false;
             this.xrTableCell19.Text = "Qty";
             this.xrTableCell19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrTableCell19.Weight = 0.45313506269845977D;
+            this.xrTableCell19.Weight = 0.428007823260397D;
             // 
             // xrTableCell20
             // 
@@ -222,7 +222,7 @@
             this.xrTableCell20.Text = "Unit Price";
             this.xrTableCell20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.xrTableCell20.TextFormatString = "{0:N0} VND";
-            this.xrTableCell20.Weight = 1.1897665566240694D;
+            this.xrTableCell20.Weight = 1.0208769796034585D;
             // 
             // xrTableCell21
             // 
@@ -515,35 +515,35 @@
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.Text = "Product Name";
-            this.xrTableCell2.Weight = 1.9675363281647211D;
+            this.xrTableCell2.Weight = 1.8164249911251953D;
             // 
             // xrTableCell4
             // 
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.Text = "Batch Code";
-            this.xrTableCell4.Weight = 1.644637364081337D;
+            this.xrTableCell4.Weight = 1.9201938582018514D;
             // 
             // xrTableCell3
             // 
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.Text = "Unit";
-            this.xrTableCell3.Weight = 0.92244531156556375D;
+            this.xrTableCell3.Weight = 0.99201697094324892D;
             // 
             // xrTableCell6
             // 
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.Text = "Qty";
-            this.xrTableCell6.Weight = 0.45313603926093793D;
+            this.xrTableCell6.Weight = 0.4280078232603175D;
             // 
             // xrTableCell7
             // 
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.Text = "Unit Price";
-            this.xrTableCell7.Weight = 1.1897623248533307D;
+            this.xrTableCell7.Weight = 1.0208737243952772D;
             // 
             // xrTableCell8
             // 
@@ -577,35 +577,35 @@
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.Text = "2";
-            this.xrTableCell9.Weight = 1.9675363281647211D;
+            this.xrTableCell9.Weight = 1.8164249911251953D;
             // 
             // xrTableCell10
             // 
             this.xrTableCell10.Multiline = true;
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.Text = "3";
-            this.xrTableCell10.Weight = 1.644637364081337D;
+            this.xrTableCell10.Weight = 1.9201938582018514D;
             // 
             // xrTableCell11
             // 
             this.xrTableCell11.Multiline = true;
             this.xrTableCell11.Name = "xrTableCell11";
             this.xrTableCell11.Text = "4";
-            this.xrTableCell11.Weight = 0.92244531156556375D;
+            this.xrTableCell11.Weight = 0.99201697094324892D;
             // 
             // xrTableCell12
             // 
             this.xrTableCell12.Multiline = true;
             this.xrTableCell12.Name = "xrTableCell12";
             this.xrTableCell12.Text = "5";
-            this.xrTableCell12.Weight = 0.45313506269845977D;
+            this.xrTableCell12.Weight = 0.42800782326039694D;
             // 
             // xrTableCell13
             // 
             this.xrTableCell13.Multiline = true;
             this.xrTableCell13.Name = "xrTableCell13";
             this.xrTableCell13.Text = "6";
-            this.xrTableCell13.Weight = 1.189763952457461D;
+            this.xrTableCell13.Weight = 1.0208743754368501D;
             // 
             // xrTableCell14
             // 
