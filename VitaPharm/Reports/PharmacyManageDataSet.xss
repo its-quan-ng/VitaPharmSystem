@@ -8,8 +8,8 @@
   <Shapes>
     <Shape ID="DesignTable:ReceiptDetailList" ZOrder="6" X="521" Y="46" Height="240" Width="203" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="28" SplitterPosition="236" />
     <Shape ID="DesignTable:ReceiptList" ZOrder="5" X="220" Y="72" Height="149" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
-    <Shape ID="DesignTable:Invoice" ZOrder="3" X="191" Y="296" Height="217" Width="157" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="213" />
-    <Shape ID="DesignTable:InvoiceDetail" ZOrder="2" X="525" Y="316" Height="171" Width="162" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="167" />
+    <Shape ID="DesignTable:Invoice" ZOrder="3" X="189" Y="296" Height="217" Width="157" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="213" />
+    <Shape ID="DesignTable:InvoiceDetail" ZOrder="1" X="526" Y="317" Height="240" Width="169" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="28" SplitterPosition="213" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:ReceiptList_ReceiptDetailList" ZOrder="4" LineWidth="11">
@@ -24,15 +24,15 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Invoice_InvoiceDetail" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:Invoice_InvoiceDetail" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>348</X>
-          <Y>401</Y>
+          <X>346</X>
+          <Y>349</Y>
         </Point>
         <Point>
-          <X>525</X>
-          <Y>401</Y>
+          <X>526</X>
+          <Y>349</Y>
         </Point>
       </RoutePoints>
     </Connector>

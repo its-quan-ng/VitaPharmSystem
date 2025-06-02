@@ -42,8 +42,9 @@ namespace VitaPharm.Reports
                     dtDetail.Rows.Add(
                         d.InvoiceDetailID,
                         invoice.InvoiceID,
-                        d.Batch?.Commodity?.CommodityName ?? "",
+                        d.BatchID,
                         d.Batch?.BatchCode ?? "",
+                        d.Batch?.Commodity?.CommodityName ?? "",
                         d.Batch?.Commodity?.BaseUnit ?? "",
                         d.Quantity,
                         d.UnitPrice,
