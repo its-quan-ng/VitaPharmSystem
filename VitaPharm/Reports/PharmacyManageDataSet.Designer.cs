@@ -1459,7 +1459,13 @@ namespace VitaPharm.Reports {
             
             private global::System.Data.DataColumn columnInvoiceID;
             
+            private global::System.Data.DataColumn columnBatchID;
+            
+            private global::System.Data.DataColumn columnBatchCode;
+            
             private global::System.Data.DataColumn columnCommodityName;
+            
+            private global::System.Data.DataColumn columnBaseUnit;
             
             private global::System.Data.DataColumn columnQuantity;
             
@@ -1520,9 +1526,33 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BatchIDColumn {
+                get {
+                    return this.columnBatchID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BatchCodeColumn {
+                get {
+                    return this.columnBatchCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn CommodityNameColumn {
                 get {
                     return this.columnCommodityName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BaseUnitColumn {
+                get {
+                    return this.columnBaseUnit;
                 }
             }
             
@@ -1587,12 +1617,15 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public InvoiceDetailRow AddInvoiceDetailRow(int InvoiceDetailID, InvoiceRow parentInvoiceRowByInvoice_InvoiceDetail, string CommodityName, int Quantity, decimal UnitPrice, decimal Amount) {
+            public InvoiceDetailRow AddInvoiceDetailRow(int InvoiceDetailID, InvoiceRow parentInvoiceRowByInvoice_InvoiceDetail, int BatchID, string BatchCode, string CommodityName, string BaseUnit, int Quantity, decimal UnitPrice, decimal Amount) {
                 InvoiceDetailRow rowInvoiceDetailRow = ((InvoiceDetailRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         InvoiceDetailID,
                         null,
+                        BatchID,
+                        BatchCode,
                         CommodityName,
+                        BaseUnit,
                         Quantity,
                         UnitPrice,
                         Amount};
@@ -1630,7 +1663,10 @@ namespace VitaPharm.Reports {
             internal void InitVars() {
                 this.columnInvoiceDetailID = base.Columns["InvoiceDetailID"];
                 this.columnInvoiceID = base.Columns["InvoiceID"];
+                this.columnBatchID = base.Columns["BatchID"];
+                this.columnBatchCode = base.Columns["BatchCode"];
                 this.columnCommodityName = base.Columns["CommodityName"];
+                this.columnBaseUnit = base.Columns["BaseUnit"];
                 this.columnQuantity = base.Columns["Quantity"];
                 this.columnUnitPrice = base.Columns["UnitPrice"];
                 this.columnAmount = base.Columns["Amount"];
@@ -1643,8 +1679,14 @@ namespace VitaPharm.Reports {
                 base.Columns.Add(this.columnInvoiceDetailID);
                 this.columnInvoiceID = new global::System.Data.DataColumn("InvoiceID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnInvoiceID);
+                this.columnBatchID = new global::System.Data.DataColumn("BatchID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBatchID);
+                this.columnBatchCode = new global::System.Data.DataColumn("BatchCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBatchCode);
                 this.columnCommodityName = new global::System.Data.DataColumn("CommodityName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCommodityName);
+                this.columnBaseUnit = new global::System.Data.DataColumn("BaseUnit", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBaseUnit);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
                 this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -2512,6 +2554,38 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int BatchID {
+                get {
+                    try {
+                        return ((int)(this[this.tableInvoiceDetail.BatchIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BatchID\' in table \'InvoiceDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInvoiceDetail.BatchIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string BatchCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableInvoiceDetail.BatchCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BatchCode\' in table \'InvoiceDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInvoiceDetail.BatchCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string CommodityName {
                 get {
                     try {
@@ -2523,6 +2597,22 @@ namespace VitaPharm.Reports {
                 }
                 set {
                     this[this.tableInvoiceDetail.CommodityNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string BaseUnit {
+                get {
+                    try {
+                        return ((string)(this[this.tableInvoiceDetail.BaseUnitColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BaseUnit\' in table \'InvoiceDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInvoiceDetail.BaseUnitColumn] = value;
                 }
             }
             
@@ -2599,6 +2689,30 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBatchIDNull() {
+                return this.IsNull(this.tableInvoiceDetail.BatchIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBatchIDNull() {
+                this[this.tableInvoiceDetail.BatchIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBatchCodeNull() {
+                return this.IsNull(this.tableInvoiceDetail.BatchCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBatchCodeNull() {
+                this[this.tableInvoiceDetail.BatchCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsCommodityNameNull() {
                 return this.IsNull(this.tableInvoiceDetail.CommodityNameColumn);
             }
@@ -2607,6 +2721,18 @@ namespace VitaPharm.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetCommodityNameNull() {
                 this[this.tableInvoiceDetail.CommodityNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBaseUnitNull() {
+                return this.IsNull(this.tableInvoiceDetail.BaseUnitColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBaseUnitNull() {
+                this[this.tableInvoiceDetail.BaseUnitColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
