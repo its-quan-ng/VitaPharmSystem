@@ -1617,7 +1617,7 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public InvoiceDetailRow AddInvoiceDetailRow(int InvoiceDetailID, InvoiceRow parentInvoiceRowByInvoice_InvoiceDetail, string BatchID, int BatchCode, decimal CommodityName, decimal BaseUnit, string Quantity, string UnitPrice, string Amount) {
+            public InvoiceDetailRow AddInvoiceDetailRow(int InvoiceDetailID, InvoiceRow parentInvoiceRowByInvoice_InvoiceDetail, int BatchID, string BatchCode, string CommodityName, string BaseUnit, int Quantity, decimal UnitPrice, decimal Amount) {
                 InvoiceDetailRow rowInvoiceDetailRow = ((InvoiceDetailRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         InvoiceDetailID,
@@ -1679,19 +1679,19 @@ namespace VitaPharm.Reports {
                 base.Columns.Add(this.columnInvoiceDetailID);
                 this.columnInvoiceID = new global::System.Data.DataColumn("InvoiceID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnInvoiceID);
-                this.columnBatchID = new global::System.Data.DataColumn("BatchID", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnBatchID = new global::System.Data.DataColumn("BatchID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBatchID);
-                this.columnBatchCode = new global::System.Data.DataColumn("BatchCode", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnBatchCode = new global::System.Data.DataColumn("BatchCode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBatchCode);
-                this.columnCommodityName = new global::System.Data.DataColumn("CommodityName", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnCommodityName = new global::System.Data.DataColumn("CommodityName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCommodityName);
-                this.columnBaseUnit = new global::System.Data.DataColumn("BaseUnit", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnBaseUnit = new global::System.Data.DataColumn("BaseUnit", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBaseUnit);
-                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
-                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUnitPrice);
-                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnInvoiceDetailID}, true));
@@ -2554,10 +2554,10 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string BatchID {
+            public int BatchID {
                 get {
                     try {
-                        return ((string)(this[this.tableInvoiceDetail.BatchIDColumn]));
+                        return ((int)(this[this.tableInvoiceDetail.BatchIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'BatchID\' in table \'InvoiceDetail\' is DBNull.", e);
@@ -2570,10 +2570,10 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int BatchCode {
+            public string BatchCode {
                 get {
                     try {
-                        return ((int)(this[this.tableInvoiceDetail.BatchCodeColumn]));
+                        return ((string)(this[this.tableInvoiceDetail.BatchCodeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'BatchCode\' in table \'InvoiceDetail\' is DBNull.", e);
@@ -2586,10 +2586,10 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal CommodityName {
+            public string CommodityName {
                 get {
                     try {
-                        return ((decimal)(this[this.tableInvoiceDetail.CommodityNameColumn]));
+                        return ((string)(this[this.tableInvoiceDetail.CommodityNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CommodityName\' in table \'InvoiceDetail\' is DBNull.", e);
@@ -2602,10 +2602,10 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal BaseUnit {
+            public string BaseUnit {
                 get {
                     try {
-                        return ((decimal)(this[this.tableInvoiceDetail.BaseUnitColumn]));
+                        return ((string)(this[this.tableInvoiceDetail.BaseUnitColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'BaseUnit\' in table \'InvoiceDetail\' is DBNull.", e);
@@ -2618,10 +2618,10 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Quantity {
+            public int Quantity {
                 get {
                     try {
-                        return ((string)(this[this.tableInvoiceDetail.QuantityColumn]));
+                        return ((int)(this[this.tableInvoiceDetail.QuantityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'InvoiceDetail\' is DBNull.", e);
@@ -2634,10 +2634,10 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string UnitPrice {
+            public decimal UnitPrice {
                 get {
                     try {
-                        return ((string)(this[this.tableInvoiceDetail.UnitPriceColumn]));
+                        return ((decimal)(this[this.tableInvoiceDetail.UnitPriceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'UnitPrice\' in table \'InvoiceDetail\' is DBNull.", e);
@@ -2650,10 +2650,10 @@ namespace VitaPharm.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Amount {
+            public decimal Amount {
                 get {
                     try {
-                        return ((string)(this[this.tableInvoiceDetail.AmountColumn]));
+                        return ((decimal)(this[this.tableInvoiceDetail.AmountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'InvoiceDetail\' is DBNull.", e);
