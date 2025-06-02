@@ -71,8 +71,12 @@ namespace VitaPharm.Forms.Invoices
 
                 gridControl.DataSource = bsInvoiceDetails;
 
-                decimal totalAmount = invoiceDetailData.Sum(x => x.Amount);
-                lblTotal.Text = totalAmount.ToString("#,##0") + " VND";
+                decimal subtotal = invoiceDetailData.Sum(x => x.Amount);
+                decimal taxAmount = (subtotal * (decimal)currentInvoice.TaxRate) / 100;
+                decimal totalAmount = subtotal + taxAmount;
+
+                lblTax.Text = (currentInvoice.TaxRate) + "%"; 
+                lblTotal.Text = totalAmount.ToString("#,##0") + " VND"; 
 
                 SetFormReadOnly();
                 ConfigureGridView();
@@ -116,13 +120,6 @@ namespace VitaPharm.Forms.Invoices
                 amountColumn.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
                 amountColumn.DisplayFormat.FormatString = "#,##0";
             }
-
-            var onHandColumn = gridView.Columns["OnHand"];
-            if (onHandColumn != null)
-            {
-                onHandColumn.Visible = false;
-            }
-
             gridView.BestFitColumns();
         }
 
@@ -143,7 +140,7 @@ namespace VitaPharm.Forms.Invoices
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
