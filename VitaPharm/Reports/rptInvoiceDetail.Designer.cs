@@ -407,7 +407,7 @@
             // xrLabel2
             // 
             this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "  FormatString(\'{0:dd/MM/yyyy HH:mm:ss}\', ?pCreateDate) ")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "  FormatString(\'{0:dd/MM/yyyy}\', ?pCreateDate) ")});
             this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Times New Roman", 11F);
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(504.5585F, 115.951F);
             this.xrLabel2.Multiline = true;
