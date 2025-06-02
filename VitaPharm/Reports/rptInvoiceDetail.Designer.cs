@@ -728,7 +728,7 @@
             this.xrTableCell23.StylePriority.UseTextAlignment = false;
             this.xrTableCell23.Text = "Tax Rate:";
             this.xrTableCell23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell23.Weight = 4.3018257615200408D;
+            this.xrTableCell23.Weight = 4.0265819988440992D;
             // 
             // xrTableCell22
             // 
@@ -741,7 +741,7 @@
             this.xrTableCell22.StylePriority.UseTextAlignment = false;
             this.xrTableCell22.Text = "Subtotal:";
             this.xrTableCell22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrTableCell22.Weight = 7.6683326268878265D;
+            this.xrTableCell22.Weight = 7.9435763895637681D;
             // 
             // xrLabel17
             // 
