@@ -221,13 +221,13 @@
             // xrLabel2
             // 
             this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?pCreateDate")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "  FormatString(\'{0:dd/MM/yyyy HH:mm:ss}\', ?pCreateDate) ")});
             this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Times New Roman", 11F);
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(515.8627F, 115.951F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(504.5585F, 115.951F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(224.1373F, 23F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(235.4415F, 23.00001F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.Text = "xrLabel2";
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;

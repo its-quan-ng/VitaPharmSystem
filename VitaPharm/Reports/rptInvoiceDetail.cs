@@ -1,5 +1,10 @@
-﻿using VitaPharm.Data;
-using Microsoft.EntityFrameworkCore;
+﻿using DevExpress.XtraReports.UI;
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using VitaPharm.Data;
 
 namespace VitaPharm.Reports
 {
@@ -26,7 +31,6 @@ namespace VitaPharm.Reports
                 var dtMaster = ds.Invoice;
                 var dtDetail = ds.InvoiceDetail;
 
-                // Add master row
                 dtMaster.Rows.Add(
                     invoice.InvoiceID,
                     invoice.InvoiceCode,
@@ -38,13 +42,14 @@ namespace VitaPharm.Reports
                     invoice.InvoiceDetail.Sum(x => x.Amount)
                 );
 
-                // Add detail rows
                 foreach (var d in invoice.InvoiceDetail)
                 {
                     dtDetail.Rows.Add(
                         d.InvoiceDetailID,
                         invoice.InvoiceID,
                         d.Batch?.Commodity?.CommodityName ?? "",
+                        d.Batch?.BatchCode ?? "",
+                        d.Batch?.Commodity?.BaseUnit ?? "",
                         d.Quantity,
                         d.UnitPrice,
                         d.Amount
@@ -54,11 +59,10 @@ namespace VitaPharm.Reports
                 this.DataSource = ds;
                 this.DataMember = "InvoiceDetail";
 
-                // Set parameters
                 this.Parameters["pInvoiceCode"].Value = invoice.InvoiceCode;
                 this.Parameters["pCreateDate"].Value = invoice.CreatedDate;
                 this.Parameters["pCustomerName"].Value = invoice.Customer?.CustomerName ?? "";
-                this.Parameters["pCustomerContact"].Value = invoice.Customer?.Contact ?? "";
+                this.Parameters["pCustomerContact"].Value = invoice.Customer?.PhoneNumber ?? "";
                 this.Parameters["pEmployeeName"].Value = invoice.Employee?.EmployeeName ?? "";
                 this.Parameters["pNote"].Value = invoice.Note;
                 this.Parameters["pTaxRate"].Value = invoice.TaxRate;
@@ -68,8 +72,9 @@ namespace VitaPharm.Reports
                 this.Parameters["pSubtotal"].Value = subtotal;
                 this.Parameters["pTaxAmount"].Value = taxAmount;
                 this.Parameters["pTotalPayment"].Value = totalPayment;
+                this.Parameters["pCompanyAddress"].Value = "Địa chỉ công ty của bạn";
+                this.Parameters["pCompanyTaxCode"].Value = "Mã số thuế công ty";
 
-                // Ẩn panel tham số khi in
                 foreach (var param in this.Parameters)
                     param.Visible = false;
             }
