@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmResetPassword));
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            textUsername = new DevExpress.XtraEditors.TextEdit();
             txtFullName = new DevExpress.XtraEditors.TextEdit();
+            textUsername = new DevExpress.XtraEditors.TextEdit();
+            labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)textUsername.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtFullName.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)textUsername.Properties).BeginInit();
             SuspendLayout();
             // 
             // groupControl1
@@ -47,6 +47,7 @@
             groupControl1.AppearanceCaption.Options.UseBorderColor = true;
             groupControl1.AppearanceCaption.Options.UseForeColor = true;
             groupControl1.CaptionImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("groupControl1.CaptionImageOptions.SvgImage");
+            groupControl1.CaptionImageOptions.SvgImageSize = new Size(16, 16);
             groupControl1.Controls.Add(txtFullName);
             groupControl1.Controls.Add(textUsername);
             groupControl1.Controls.Add(labelControl2);
@@ -54,21 +55,23 @@
             groupControl1.Dock = DockStyle.Top;
             groupControl1.Location = new Point(0, 0);
             groupControl1.Name = "groupControl1";
-            groupControl1.Size = new Size(407, 149);
+            groupControl1.Size = new Size(407, 137);
             groupControl1.TabIndex = 0;
             groupControl1.Text = "Basic Info.";
             // 
-            // labelControl1
+            // txtFullName
             // 
-            labelControl1.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
-            labelControl1.Appearance.ForeColor = Color.FromArgb(15, 60, 186);
-            labelControl1.Appearance.Options.UseFont = true;
-            labelControl1.Appearance.Options.UseForeColor = true;
-            labelControl1.Location = new Point(27, 62);
-            labelControl1.Name = "labelControl1";
-            labelControl1.Size = new Size(69, 16);
-            labelControl1.TabIndex = 0;
-            labelControl1.Text = "Username:";
+            txtFullName.Location = new Point(147, 84);
+            txtFullName.Name = "txtFullName";
+            txtFullName.Size = new Size(212, 22);
+            txtFullName.TabIndex = 3;
+            // 
+            // textUsername
+            // 
+            textUsername.Location = new Point(147, 47);
+            textUsername.Name = "textUsername";
+            textUsername.Size = new Size(212, 22);
+            textUsername.TabIndex = 2;
             // 
             // labelControl2
             // 
@@ -76,25 +79,23 @@
             labelControl2.Appearance.ForeColor = Color.FromArgb(15, 60, 186);
             labelControl2.Appearance.Options.UseFont = true;
             labelControl2.Appearance.Options.UseForeColor = true;
-            labelControl2.Location = new Point(27, 99);
+            labelControl2.Location = new Point(45, 87);
             labelControl2.Name = "labelControl2";
             labelControl2.Size = new Size(64, 16);
             labelControl2.TabIndex = 1;
             labelControl2.Text = "Full name:";
             // 
-            // textUsername
+            // labelControl1
             // 
-            textUsername.Location = new Point(129, 59);
-            textUsername.Name = "textUsername";
-            textUsername.Size = new Size(212, 22);
-            textUsername.TabIndex = 2;
-            // 
-            // txtFullName
-            // 
-            txtFullName.Location = new Point(129, 96);
-            txtFullName.Name = "txtFullName";
-            txtFullName.Size = new Size(212, 22);
-            txtFullName.TabIndex = 3;
+            labelControl1.Appearance.Font = new Font("Tahoma", 7.8F, FontStyle.Bold);
+            labelControl1.Appearance.ForeColor = Color.FromArgb(15, 60, 186);
+            labelControl1.Appearance.Options.UseFont = true;
+            labelControl1.Appearance.Options.UseForeColor = true;
+            labelControl1.Location = new Point(45, 50);
+            labelControl1.Name = "labelControl1";
+            labelControl1.Size = new Size(69, 16);
+            labelControl1.TabIndex = 0;
+            labelControl1.Text = "Username:";
             // 
             // frmResetPassword
             // 
@@ -111,8 +112,8 @@
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)textUsername.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtFullName.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)textUsername.Properties).EndInit();
             ResumeLayout(false);
         }
 
