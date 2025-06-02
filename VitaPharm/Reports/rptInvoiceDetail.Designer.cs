@@ -917,7 +917,7 @@
             this.PageHeader,
             this.ReportFooter});
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
-            this.Margins = new DevExpress.Drawing.DXMargins(41F, 36F, 43.13726F, 83.25072F);
+            this.Margins = new DevExpress.Drawing.DXMargins(41F, 35F, 43.13726F, 83.25072F);
             this.PageHeight = 1169;
             this.PageWidth = 827;
             this.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.A4;
