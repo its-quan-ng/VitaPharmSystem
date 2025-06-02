@@ -115,8 +115,8 @@ namespace VitaPharm.Forms.Receipt
                 cboBatchCode.Properties.DisplayMember = "BatchCode";
                 cboBatchCode.Properties.ValueMember = "BatchID";
                 cboBatchCode.Properties.Columns.Clear();
-                cboBatchCode.Properties.Columns.Add(new LookUpColumnInfo("BatchCode", "Batch Code"));
-                var expDateColumn = new LookUpColumnInfo("ExpDate", "EXP.", 100);
+                cboBatchCode.Properties.Columns.Add(new LookUpColumnInfo("BatchCode", "Batch Code", 130));
+                var expDateColumn = new LookUpColumnInfo("ExpDate", "EXP.", 90);
                 expDateColumn.FormatType = DevExpress.Utils.FormatType.DateTime;
                 expDateColumn.FormatString = "dd/MM/yyyy";
                 cboBatchCode.Properties.Columns.Add(expDateColumn);
