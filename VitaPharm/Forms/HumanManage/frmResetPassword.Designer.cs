@@ -32,12 +32,12 @@
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            textUsername = new DevExpress.XtraEditors.TextEdit();
+            txtFullName = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)textUsername.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtFullName.Properties).BeginInit();
             SuspendLayout();
             // 
             // groupControl1
@@ -47,14 +47,14 @@
             groupControl1.AppearanceCaption.Options.UseBorderColor = true;
             groupControl1.AppearanceCaption.Options.UseForeColor = true;
             groupControl1.CaptionImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("groupControl1.CaptionImageOptions.SvgImage");
-            groupControl1.Controls.Add(textEdit2);
-            groupControl1.Controls.Add(textEdit1);
+            groupControl1.Controls.Add(txtFullName);
+            groupControl1.Controls.Add(textUsername);
             groupControl1.Controls.Add(labelControl2);
             groupControl1.Controls.Add(labelControl1);
             groupControl1.Dock = DockStyle.Top;
             groupControl1.Location = new Point(0, 0);
             groupControl1.Name = "groupControl1";
-            groupControl1.Size = new Size(479, 149);
+            groupControl1.Size = new Size(407, 149);
             groupControl1.TabIndex = 0;
             groupControl1.Text = "Basic Info.";
             // 
@@ -82,25 +82,25 @@
             labelControl2.TabIndex = 1;
             labelControl2.Text = "Full name:";
             // 
-            // textEdit1
+            // textUsername
             // 
-            textEdit1.Location = new Point(129, 59);
-            textEdit1.Name = "textEdit1";
-            textEdit1.Size = new Size(212, 22);
-            textEdit1.TabIndex = 2;
+            textUsername.Location = new Point(129, 59);
+            textUsername.Name = "textUsername";
+            textUsername.Size = new Size(212, 22);
+            textUsername.TabIndex = 2;
             // 
-            // textEdit2
+            // txtFullName
             // 
-            textEdit2.Location = new Point(129, 93);
-            textEdit2.Name = "textEdit2";
-            textEdit2.Size = new Size(212, 22);
-            textEdit2.TabIndex = 3;
+            txtFullName.Location = new Point(129, 96);
+            txtFullName.Name = "txtFullName";
+            txtFullName.Size = new Size(212, 22);
+            txtFullName.TabIndex = 3;
             // 
             // frmResetPassword
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(479, 302);
+            ClientSize = new Size(407, 302);
             Controls.Add(groupControl1);
             IconOptions.Image = Properties.Resources.vitapharm_transparent;
             MaximizeBox = false;
@@ -111,16 +111,16 @@
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)textEdit2.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)textUsername.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtFullName.Properties).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtFullName;
+        private DevExpress.XtraEditors.TextEdit textUsername;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
     }
