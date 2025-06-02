@@ -506,6 +506,7 @@
             Controls.Add(panelControl1);
             Controls.Add(groupControl1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            IconOptions.Image = Properties.Resources.vitapharm_transparent;
             Name = "frmAllUsers";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "All Users";

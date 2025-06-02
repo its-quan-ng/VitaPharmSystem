@@ -331,6 +331,7 @@
             Controls.Add(panelControl3);
             Controls.Add(panelControl2);
             Controls.Add(panelControl1);
+            IconOptions.Image = Properties.Resources.vitapharm_transparent;
             Name = "frmAllCustomers";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "All Customers";

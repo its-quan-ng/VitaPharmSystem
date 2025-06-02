@@ -330,6 +330,7 @@
             ClientSize = new Size(519, 372);
             Controls.Add(panelControl2);
             Controls.Add(panelControl1);
+            IconOptions.Image = Properties.Resources.vitapharm_transparent;
             Name = "frmNewUser";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "New User";
