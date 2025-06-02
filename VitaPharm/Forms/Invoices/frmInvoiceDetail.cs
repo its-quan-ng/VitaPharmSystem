@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 using VitaPharm.Data;
+using DevExpress.XtraReports.UI;
 
 namespace VitaPharm.Forms.Invoices
 {
@@ -140,7 +141,10 @@ namespace VitaPharm.Forms.Invoices
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+            var report = new rptInvoiceDetail();
+            report.LoadData(invoiceCode);
+            ReportPrintTool printTool = new ReportPrintTool(report);
+            printTool.ShowPreviewDialog();
         }
     }
 }

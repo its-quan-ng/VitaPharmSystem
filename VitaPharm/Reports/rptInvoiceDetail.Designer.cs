@@ -676,7 +676,7 @@
             // xrTableCell23
             // 
             this.xrTableCell23.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?pTaxRate")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "  \'Tax Rate: \' + FormatString(\'{0}%\', ?pTaxRate)")});
             this.xrTableCell23.Multiline = true;
             this.xrTableCell23.Name = "xrTableCell23";
             this.xrTableCell23.StylePriority.UseTextAlignment = false;
