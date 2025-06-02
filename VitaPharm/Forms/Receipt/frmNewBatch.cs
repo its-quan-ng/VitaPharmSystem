@@ -3,8 +3,6 @@ using VitaPharm.Data;
 using DevExpress.XtraEditors;
 using System.ComponentModel;
 using DevExpress.XtraEditors.Controls;
-using System.Globalization;
-using System.Text;
 
 namespace VitaPharm.Forms.Receipt
 {
@@ -117,7 +115,7 @@ namespace VitaPharm.Forms.Receipt
                 cboBatchCode.Properties.DisplayMember = "BatchCode";
                 cboBatchCode.Properties.ValueMember = "BatchID";
                 cboBatchCode.Properties.Columns.Clear();
-                cboBatchCode.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("BatchCode", "Batch Code"));
+                cboBatchCode.Properties.Columns.Add(new LookUpColumnInfo("BatchCode", "Batch Code"));
                 cboBatchCode.EditValue = null;
 
                 if (batches.Count == 0)
