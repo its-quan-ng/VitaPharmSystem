@@ -27,10 +27,12 @@ namespace VitaPharm.Forms.Receipt
                 CurrentUser.Role.Trim().Equals("Admin", StringComparison.OrdinalIgnoreCase))
             {
                 btnDeactive.Enabled = false;
+                btnNewGoodsReceipt.Enabled = false;
             }
             else
             {
                 btnDeactive.Enabled = true;
+                btnNewGoodsReceipt.Enabled = true;
             }
         }
 
