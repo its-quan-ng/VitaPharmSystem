@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Data;
 using VitaPharm.Data;
 using DevExpress.XtraReports.UI;
+using VitaPharm.Reports;
 
 namespace VitaPharm.Forms.Invoices
 {

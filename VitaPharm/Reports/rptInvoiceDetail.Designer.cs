@@ -611,7 +611,9 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Quantity]")});
             this.xrTableCell19.Multiline = true;
             this.xrTableCell19.Name = "xrTableCell19";
+            this.xrTableCell19.StylePriority.UseTextAlignment = false;
             this.xrTableCell19.Text = "Qty";
+            this.xrTableCell19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.xrTableCell19.Weight = 0.45313506269845977D;
             // 
             // xrTableCell20
@@ -620,7 +622,9 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[UnitPrice]")});
             this.xrTableCell20.Multiline = true;
             this.xrTableCell20.Name = "xrTableCell20";
+            this.xrTableCell20.StylePriority.UseTextAlignment = false;
             this.xrTableCell20.Text = "Unit Price";
+            this.xrTableCell20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.xrTableCell20.TextFormatString = "{0:N0} VND";
             this.xrTableCell20.Weight = 1.1897665566240694D;
             // 
@@ -630,7 +634,9 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Amount]")});
             this.xrTableCell21.Multiline = true;
             this.xrTableCell21.Name = "xrTableCell21";
+            this.xrTableCell21.StylePriority.UseTextAlignment = false;
             this.xrTableCell21.Text = "Amount";
+            this.xrTableCell21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.xrTableCell21.TextFormatString = "{0:N0} VND";
             this.xrTableCell21.Weight = 1.4282756251777677D;
             // 
@@ -738,8 +744,10 @@
             this.xrLabel18.Multiline = true;
             this.xrLabel18.Name = "xrLabel18";
             this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel18.SizeF = new System.Drawing.SizeF(113.9014F, 23F);
+            this.xrLabel18.SizeF = new System.Drawing.SizeF(122F, 23F);
+            this.xrLabel18.StylePriority.UseTextAlignment = false;
             this.xrLabel18.Text = "xrLabel18";
+            this.xrLabel18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.xrLabel18.TextFormatString = "{0:N0} VND";
             // 
             // xrLabel19
@@ -750,8 +758,10 @@
             this.xrLabel19.Multiline = true;
             this.xrLabel19.Name = "xrLabel19";
             this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel19.SizeF = new System.Drawing.SizeF(113.9014F, 23F);
+            this.xrLabel19.SizeF = new System.Drawing.SizeF(122F, 23F);
+            this.xrLabel19.StylePriority.UseTextAlignment = false;
             this.xrLabel19.Text = "xrLabel18";
+            this.xrLabel19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.xrLabel19.TextFormatString = "{0:N0} VND";
             // 
             // xrLabel20
@@ -762,8 +772,10 @@
             this.xrLabel20.Multiline = true;
             this.xrLabel20.Name = "xrLabel20";
             this.xrLabel20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel20.SizeF = new System.Drawing.SizeF(113.9014F, 23F);
+            this.xrLabel20.SizeF = new System.Drawing.SizeF(122F, 23F);
+            this.xrLabel20.StylePriority.UseTextAlignment = false;
             this.xrLabel20.Text = "xrLabel18";
+            this.xrLabel20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.xrLabel20.TextFormatString = "{0:N0} VND";
             // 
             // xrLabel21

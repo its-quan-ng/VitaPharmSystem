@@ -1,10 +1,5 @@
-﻿using DevExpress.XtraReports.UI;
-using System;
-using System.Collections;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using VitaPharm.Data;
+﻿using VitaPharm.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace VitaPharm.Reports
 {
@@ -63,7 +58,7 @@ namespace VitaPharm.Reports
                 this.Parameters["pInvoiceCode"].Value = invoice.InvoiceCode;
                 this.Parameters["pCreateDate"].Value = invoice.CreatedDate;
                 this.Parameters["pCustomerName"].Value = invoice.Customer?.CustomerName ?? "";
-                this.Parameters["pCustomerContact"].Value = invoice.Customer?.PhoneNumber ?? "";
+                this.Parameters["pCustomerContact"].Value = invoice.Customer?.Contact ?? "";
                 this.Parameters["pEmployeeName"].Value = invoice.Employee?.EmployeeName ?? "";
                 this.Parameters["pNote"].Value = invoice.Note;
                 this.Parameters["pTaxRate"].Value = invoice.TaxRate;
