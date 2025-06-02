@@ -4,6 +4,7 @@ using VitaPharm.Forms.Commodities;
 using VitaPharm.Data;
 using VitaPharm.Forms.Receipt;
 using VitaPharm.Forms.Invoices;
+using VitaPharm.Reports;
 
 namespace VitaPharm.Forms
 {
@@ -20,6 +21,7 @@ namespace VitaPharm.Forms
         private frmNewCommodity? newCommodityForm = null;
         private frmAllInvoices? allInvoicesForm = null;
         private frmNewInvoice? newInvoicesForm = null;
+        private frmRevenueReportViewer? revenueReportForm = null;
         private bool shouldClose = false;
         #endregion
 
@@ -91,10 +93,11 @@ namespace VitaPharm.Forms
             btnAllGoodsReceipt.Enabled = true;
             btnAllCustomers.Enabled = true;
             btnNewReceipt.Enabled = isUser;
-            btnAllCommodities.Enabled = isAdmin;
+            btnAllCommodities.Enabled = true;
             btnNewCommodity.Enabled = true;
             btnAllInvoices.Enabled = true;
             btnNewInvoice.Enabled = isUser;
+            btnRevenueReport.Enabled = isAdmin;
         }
 
         private void OpenProfile()
@@ -250,6 +253,20 @@ namespace VitaPharm.Forms
             newInvoicesForm.Show();
             newInvoicesForm.BringToFront();
         }
+
+        public void OpenRevenueReport()
+        {
+            foreach (var f in this.MdiChildren) f.Close();
+            if (revenueReportForm == null || revenueReportForm.IsDisposed)
+            {
+                revenueReportForm = new frmRevenueReportViewer()
+                {
+                    MdiParent = this
+                };
+            }
+            revenueReportForm.Show();
+            revenueReportForm.BringToFront();
+        }
         #endregion
 
 
@@ -312,6 +329,11 @@ namespace VitaPharm.Forms
         private void btnNewInvoice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenNewInvoice();
+        }
+
+        private void btnRevenueReport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenRevenueReport();
         }
     }
 }

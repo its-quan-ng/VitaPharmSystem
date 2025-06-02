@@ -34,6 +34,7 @@
             colBatchCode = new DevExpress.XtraGrid.Columns.GridColumn();
             colCommodityName = new DevExpress.XtraGrid.Columns.GridColumn();
             gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            colID = new DevExpress.XtraGrid.Columns.GridColumn();
             colUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             gridControl = new DevExpress.XtraGrid.GridControl();
             btnPrint = new DevExpress.XtraEditors.SimpleButton();
@@ -75,7 +76,7 @@
             colAmount.MinWidth = 25;
             colAmount.Name = "colAmount";
             colAmount.Visible = true;
-            colAmount.VisibleIndex = 5;
+            colAmount.VisibleIndex = 6;
             colAmount.Width = 150;
             // 
             // colBaseUnit
@@ -85,7 +86,7 @@
             colBaseUnit.MinWidth = 25;
             colBaseUnit.Name = "colBaseUnit";
             colBaseUnit.Visible = true;
-            colBaseUnit.VisibleIndex = 3;
+            colBaseUnit.VisibleIndex = 4;
             colBaseUnit.Width = 97;
             // 
             // colQuantity
@@ -95,7 +96,7 @@
             colQuantity.MinWidth = 25;
             colQuantity.Name = "colQuantity";
             colQuantity.Visible = true;
-            colQuantity.VisibleIndex = 2;
+            colQuantity.VisibleIndex = 3;
             colQuantity.Width = 55;
             // 
             // colBatchCode
@@ -105,7 +106,7 @@
             colBatchCode.MinWidth = 25;
             colBatchCode.Name = "colBatchCode";
             colBatchCode.Visible = true;
-            colBatchCode.VisibleIndex = 1;
+            colBatchCode.VisibleIndex = 2;
             colBatchCode.Width = 157;
             // 
             // colCommodityName
@@ -115,14 +116,24 @@
             colCommodityName.MinWidth = 25;
             colCommodityName.Name = "colCommodityName";
             colCommodityName.Visible = true;
-            colCommodityName.VisibleIndex = 0;
+            colCommodityName.VisibleIndex = 1;
             colCommodityName.Width = 262;
             // 
             // gridView
             // 
-            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colCommodityName, colBatchCode, colQuantity, colBaseUnit, colUnitPrice, colAmount });
+            gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colID, colCommodityName, colBatchCode, colQuantity, colBaseUnit, colUnitPrice, colAmount });
             gridView.GridControl = gridControl;
             gridView.Name = "gridView";
+            // 
+            // colID
+            // 
+            colID.Caption = "ID";
+            colID.FieldName = "ID";
+            colID.MinWidth = 25;
+            colID.Name = "colID";
+            colID.Visible = true;
+            colID.VisibleIndex = 0;
+            colID.Width = 94;
             // 
             // colUnitPrice
             // 
@@ -131,7 +142,7 @@
             colUnitPrice.MinWidth = 25;
             colUnitPrice.Name = "colUnitPrice";
             colUnitPrice.Visible = true;
-            colUnitPrice.VisibleIndex = 4;
+            colUnitPrice.VisibleIndex = 5;
             colUnitPrice.Width = 130;
             // 
             // gridControl
@@ -408,6 +419,7 @@
         private DevExpress.XtraEditors.LabelControl lblTax;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.LabelControl lblTotal;
+        private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraEditors.LabelControl labelControl16;
     }
 }

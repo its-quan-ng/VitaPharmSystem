@@ -1,11 +1,4 @@
-﻿using DevExpress.XtraReports.UI;
-using System;
-using System.Collections;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Collections.Generic;
-using VitaPharm.Data;
+﻿using VitaPharm.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace VitaPharm.Reports
@@ -35,7 +28,7 @@ namespace VitaPharm.Reports
                 var dtMaster = ds.ReceiptList;
                 var dtDetail = ds.ReceiptDetailList;
 
-                // Add master data
+
                 dtMaster.Rows.Add(
                     receipt.ReceiptID,
                     receipt.ReceiptCode,
@@ -45,7 +38,6 @@ namespace VitaPharm.Reports
                     receipt.Note
                 );
 
-                // Add detail data
                 foreach (var d in details)
                 {
                     dtDetail.Rows.Add(
@@ -61,11 +53,9 @@ namespace VitaPharm.Reports
                     );
                 }
 
-                // Set data source
                 this.DataSource = ds;
                 this.DataMember = "ReceiptDetailList";
 
-                // Set parameters
                 this.Parameters["pReceiptCode"].Value = receipt.ReceiptCode;
                 this.Parameters["pReceiptDate"].Value = receipt.ReceiptDate;
                 this.Parameters["pSupplierName"].Value = receipt.SupplierName;
@@ -74,7 +64,6 @@ namespace VitaPharm.Reports
                 this.Parameters["pCompanyAddress"].Value = "123 Dau Lac, Long Xuyen, An Giang";
                 this.Parameters["pCompanyTaxCode"].Value = "1900020407";
 
-                // Hide parameters
                 foreach (var param in this.Parameters)
                     param.Visible = false;
             }

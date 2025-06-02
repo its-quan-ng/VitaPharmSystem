@@ -50,8 +50,9 @@ namespace VitaPharm.Forms.Invoices
                 txtCustomer.Text = currentInvoice.Customer.CustomerName;
 
                 var invoiceDetailData = currentInvoice.InvoiceDetail
-                    .Select(id => new
+                    .Select((id, idx) => new
                     {
+                        ID = idx + 1,
                         id.InvoiceDetailID,
                         CommodityName = id.Batch?.Commodity?.CommodityName ?? "N/A",
                         BatchCode = id.Batch?.BatchCode ?? "N/A",

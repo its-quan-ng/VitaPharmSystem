@@ -164,7 +164,7 @@
             // colID
             // 
             colID.Caption = "ID";
-            colID.FieldName = "InvoiceID";
+            colID.FieldName = "ID";
             colID.MinWidth = 25;
             colID.Name = "colID";
             colID.OptionsColumn.AllowEdit = false;
