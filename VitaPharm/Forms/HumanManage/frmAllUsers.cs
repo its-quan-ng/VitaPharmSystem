@@ -183,13 +183,29 @@ namespace VitaPharm.Forms.HumanManage
             {
                 newUserForm = new frmNewUser
                 {
-                    MdiParent = mdiContainer,      
+                    MdiParent = mdiContainer,
                     StartPosition = FormStartPosition.CenterScreen
                 };
             }
             newUserForm.Show();
             newUserForm.BringToFront();
         }
+
+        private void btnResetPassword_Click(object sender, EventArgs e)
+        {
+            var row = gridView.GetRow(gridView.FocusedRowHandle) as dynamic;
+            if (row == null) return;
+            int accountId = row.AccountID;
+            string username = row.Username;
+            string fullName = row.EmployeeName;
+            using (var frm = new frmResetPassword(accountId, username, fullName))
+            {
+                frm.ShowDialog(this);
+            }
+        }
+
         #endregion
+
+
     }
 }

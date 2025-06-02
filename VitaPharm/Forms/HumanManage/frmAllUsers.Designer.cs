@@ -130,12 +130,13 @@
             btnResetPassword.Appearance.Options.UseFont = true;
             btnResetPassword.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnResetPassword.ImageOptions.SvgImage");
             btnResetPassword.ImageOptions.SvgImageSize = new Size(20, 20);
-            btnResetPassword.Location = new Point(678, 24);
+            btnResetPassword.Location = new Point(662, 24);
             btnResetPassword.Name = "btnResetPassword";
             btnResetPassword.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            btnResetPassword.Size = new Size(138, 36);
+            btnResetPassword.Size = new Size(142, 36);
             btnResetPassword.TabIndex = 4;
             btnResetPassword.Text = "Reset Password";
+            btnResetPassword.Click += btnResetPassword_Click;
             // 
             // txtAddress
             // 
