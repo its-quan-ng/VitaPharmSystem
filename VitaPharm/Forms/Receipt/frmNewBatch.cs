@@ -116,6 +116,7 @@ namespace VitaPharm.Forms.Receipt
                 cboBatchCode.Properties.ValueMember = "BatchID";
                 cboBatchCode.Properties.Columns.Clear();
                 cboBatchCode.Properties.Columns.Add(new LookUpColumnInfo("BatchCode", "Batch Code"));
+                cboBatchCode.Properties.Columns.Add(new LookUpColumnInfo("ExpDate", "EXP.", 100, DevExpress.Utils.FormatType.DateTime, "dd/MM/yyyy"));
                 cboBatchCode.EditValue = null;
 
                 if (batches.Count == 0)
@@ -177,7 +178,7 @@ namespace VitaPharm.Forms.Receipt
             int countTemp = tempBatchList.Count(b => b.MfgDate.Date == mfgDate.Date && b.CommodityName == commodityName);
             int count = countDb + countTemp + 1;
             string countPart = count.ToString("D3");
-            return $"{datePart}-{countPart}";
+            return $"BA-{datePart}-{countPart}";
         }
 
         private void ResetForm()
