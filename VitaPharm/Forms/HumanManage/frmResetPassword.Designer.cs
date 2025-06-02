@@ -35,14 +35,14 @@
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            btnEyeConfirm = new DevExpress.XtraEditors.SimpleButton();
+            btnEye = new DevExpress.XtraEditors.SimpleButton();
             btnSave = new DevExpress.XtraEditors.SimpleButton();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             labelControl4 = new DevExpress.XtraEditors.LabelControl();
             txtConfirmNewPassword = new DevExpress.XtraEditors.TextEdit();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
             txtNewPassword = new DevExpress.XtraEditors.TextEdit();
-            btnEye = new DevExpress.XtraEditors.SimpleButton();
-            btnEyeConfirm = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtFullName.Properties).BeginInit();
@@ -132,6 +132,32 @@
             groupControl2.TabIndex = 1;
             groupControl2.Text = "Reset Password";
             // 
+            // btnEyeConfirm
+            // 
+            btnEyeConfirm.Appearance.BackColor = Color.Transparent;
+            btnEyeConfirm.Appearance.Options.UseBackColor = true;
+            btnEyeConfirm.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnEyeConfirm.ImageOptions.SvgImage");
+            btnEyeConfirm.ImageOptions.SvgImageSize = new Size(16, 16);
+            btnEyeConfirm.Location = new Point(379, 84);
+            btnEyeConfirm.Name = "btnEyeConfirm";
+            btnEyeConfirm.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            btnEyeConfirm.Size = new Size(25, 21);
+            btnEyeConfirm.TabIndex = 10;
+            btnEyeConfirm.Click += btnEyeConfirm_Click;
+            // 
+            // btnEye
+            // 
+            btnEye.Appearance.BackColor = Color.Transparent;
+            btnEye.Appearance.Options.UseBackColor = true;
+            btnEye.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnEye.ImageOptions.SvgImage");
+            btnEye.ImageOptions.SvgImageSize = new Size(16, 16);
+            btnEye.Location = new Point(379, 43);
+            btnEye.Name = "btnEye";
+            btnEye.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            btnEye.Size = new Size(25, 21);
+            btnEye.TabIndex = 9;
+            btnEye.Click += btnEye_Click;
+            // 
             // btnSave
             // 
             btnSave.Anchor = AnchorStyles.Top;
@@ -177,7 +203,6 @@
             txtConfirmNewPassword.Location = new Point(179, 81);
             txtConfirmNewPassword.Name = "txtConfirmNewPassword";
             txtConfirmNewPassword.Properties.PasswordChar = '•';
-            txtConfirmNewPassword.Properties.UseSystemPasswordChar = true;
             txtConfirmNewPassword.Size = new Size(194, 22);
             txtConfirmNewPassword.TabIndex = 5;
             // 
@@ -198,36 +223,8 @@
             txtNewPassword.Location = new Point(179, 42);
             txtNewPassword.Name = "txtNewPassword";
             txtNewPassword.Properties.PasswordChar = '•';
-            txtNewPassword.Properties.UseSystemPasswordChar = true;
             txtNewPassword.Size = new Size(194, 22);
             txtNewPassword.TabIndex = 0;
-            txtNewPassword.EditValueChanged += txtNewPassword_EditValueChanged;
-            // 
-            // btnEye
-            // 
-            btnEye.Appearance.BackColor = Color.Transparent;
-            btnEye.Appearance.Options.UseBackColor = true;
-            btnEye.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("simpleButton1.ImageOptions.SvgImage");
-            btnEye.ImageOptions.SvgImageSize = new Size(16, 16);
-            btnEye.Location = new Point(379, 43);
-            btnEye.Name = "btnEye";
-            btnEye.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            btnEye.Size = new Size(25, 21);
-            btnEye.TabIndex = 9;
-            btnEye.Click += btnEye_Click;
-            // 
-            // btnEyeConfirm
-            // 
-            btnEyeConfirm.Appearance.BackColor = Color.Transparent;
-            btnEyeConfirm.Appearance.Options.UseBackColor = true;
-            btnEyeConfirm.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("simpleButton2.ImageOptions.SvgImage");
-            btnEyeConfirm.ImageOptions.SvgImageSize = new Size(16, 16);
-            btnEyeConfirm.Location = new Point(379, 84);
-            btnEyeConfirm.Name = "btnEyeConfirm";
-            btnEyeConfirm.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            btnEyeConfirm.Size = new Size(25, 21);
-            btnEyeConfirm.TabIndex = 10;
-            btnEyeConfirm.Click += btnEyeConfirm_Click;
             // 
             // frmResetPassword
             // 
