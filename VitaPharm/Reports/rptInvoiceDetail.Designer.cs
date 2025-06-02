@@ -100,6 +100,9 @@
             this.xrLabel22 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel23 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel24 = new DevExpress.XtraReports.UI.XRLabel();
+            this.pSubtotal = new DevExpress.XtraReports.Parameters.Parameter();
+            this.pTaxAmount = new DevExpress.XtraReports.Parameters.Parameter();
+            this.pTotalPayment = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -810,6 +813,27 @@
             this.xrLabel24.Text = "(Signature and Full Name)";
             this.xrLabel24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
+            // pSubtotal
+            // 
+            this.pSubtotal.Description = "Parameter1";
+            this.pSubtotal.Name = "pSubtotal";
+            this.pSubtotal.Type = typeof(decimal);
+            this.pSubtotal.ValueInfo = "0";
+            // 
+            // pTaxAmount
+            // 
+            this.pTaxAmount.Description = "Parameter1";
+            this.pTaxAmount.Name = "pTaxAmount";
+            this.pTaxAmount.Type = typeof(decimal);
+            this.pTaxAmount.ValueInfo = "0";
+            // 
+            // pTotalPayment
+            // 
+            this.pTotalPayment.Description = "Parameter1";
+            this.pTotalPayment.Name = "pTotalPayment";
+            this.pTotalPayment.Type = typeof(decimal);
+            this.pTotalPayment.ValueInfo = "0";
+            // 
             // rptInvoiceDetail
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -839,7 +863,10 @@
             this.pCustomerContact,
             this.pEmployeeName,
             this.pNote,
-            this.pTaxRate});
+            this.pTaxRate,
+            this.pSubtotal,
+            this.pTaxAmount,
+            this.pTotalPayment});
             this.Version = "24.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
@@ -921,5 +948,8 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel22;
         private DevExpress.XtraReports.UI.XRLabel xrLabel23;
         private DevExpress.XtraReports.UI.XRLabel xrLabel24;
+        private DevExpress.XtraReports.Parameters.Parameter pSubtotal;
+        private DevExpress.XtraReports.Parameters.Parameter pTaxAmount;
+        private DevExpress.XtraReports.Parameters.Parameter pTotalPayment;
     }
 }
