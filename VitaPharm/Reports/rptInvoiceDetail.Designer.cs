@@ -103,6 +103,8 @@
             this.pSubtotal = new DevExpress.XtraReports.Parameters.Parameter();
             this.pTaxAmount = new DevExpress.XtraReports.Parameters.Parameter();
             this.pTotalPayment = new DevExpress.XtraReports.Parameters.Parameter();
+            this.pCompanyAddress = new DevExpress.XtraReports.Parameters.Parameter();
+            this.pCompanyTaxCode = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -152,7 +154,7 @@
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable1});
-            this.PageHeader.HeightF = 50F;
+            this.PageHeader.HeightF = 43F;
             this.PageHeader.Name = "PageHeader";
             // 
             // ReportFooter
@@ -409,7 +411,7 @@
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1,
             this.xrTableRow2});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(749.9999F, 50F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(749.9999F, 43F);
             this.xrTable1.StylePriority.UseBorders = false;
             this.xrTable1.StylePriority.UseFont = false;
             this.xrTable1.StylePriority.UseTextAlignment = false;
@@ -488,7 +490,7 @@
             this.xrTableCell13,
             this.xrTableCell14});
             this.xrTableRow2.Name = "xrTableRow2";
-            this.xrTableRow2.Weight = 1D;
+            this.xrTableRow2.Weight = 0.72000000000000008D;
             // 
             // xrTableCell5
             // 
@@ -711,33 +713,40 @@
             // 
             // xrLabel15
             // 
+            this.xrLabel15.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(258.8531F, 4.782609F);
             this.xrLabel15.Multiline = true;
             this.xrLabel15.Name = "xrLabel15";
             this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrLabel15.SizeF = new System.Drawing.SizeF(125.8325F, 23F);
+            this.xrLabel15.StylePriority.UseBorders = false;
             this.xrLabel15.Text = "Subtotal:";
             // 
             // xrLabel16
             // 
+            this.xrLabel16.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(258.8531F, 27.78262F);
             this.xrLabel16.Multiline = true;
             this.xrLabel16.Name = "xrLabel16";
             this.xrLabel16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrLabel16.SizeF = new System.Drawing.SizeF(125.8325F, 23F);
+            this.xrLabel16.StylePriority.UseBorders = false;
             this.xrLabel16.Text = "Tax Amount:";
             // 
             // xrLabel17
             // 
+            this.xrLabel17.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(258.8531F, 51.78259F);
             this.xrLabel17.Multiline = true;
             this.xrLabel17.Name = "xrLabel17";
             this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel17.SizeF = new System.Drawing.SizeF(125.8325F, 23F);
+            this.xrLabel17.StylePriority.UseBorders = false;
             this.xrLabel17.Text = "Total Payment:";
             // 
             // xrLabel18
             // 
+            this.xrLabel18.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?pSubtotal")});
             this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(9.999939F, 4.782609F);
@@ -745,6 +754,7 @@
             this.xrLabel18.Name = "xrLabel18";
             this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrLabel18.SizeF = new System.Drawing.SizeF(122F, 23F);
+            this.xrLabel18.StylePriority.UseBorders = false;
             this.xrLabel18.StylePriority.UseTextAlignment = false;
             this.xrLabel18.Text = "xrLabel18";
             this.xrLabel18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
@@ -752,6 +762,7 @@
             // 
             // xrLabel19
             // 
+            this.xrLabel19.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel19.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?pTaxAmount")});
             this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(9.999939F, 27.78262F);
@@ -759,6 +770,7 @@
             this.xrLabel19.Name = "xrLabel19";
             this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel19.SizeF = new System.Drawing.SizeF(122F, 23F);
+            this.xrLabel19.StylePriority.UseBorders = false;
             this.xrLabel19.StylePriority.UseTextAlignment = false;
             this.xrLabel19.Text = "xrLabel18";
             this.xrLabel19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
@@ -766,6 +778,7 @@
             // 
             // xrLabel20
             // 
+            this.xrLabel20.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel20.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?pTotalPayment")});
             this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(9.999939F, 51.78259F);
@@ -773,6 +786,7 @@
             this.xrLabel20.Name = "xrLabel20";
             this.xrLabel20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel20.SizeF = new System.Drawing.SizeF(122F, 23F);
+            this.xrLabel20.StylePriority.UseBorders = false;
             this.xrLabel20.StylePriority.UseTextAlignment = false;
             this.xrLabel20.Text = "xrLabel18";
             this.xrLabel20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
@@ -867,6 +881,16 @@
             this.pTotalPayment.Type = typeof(decimal);
             this.pTotalPayment.ValueInfo = "0";
             // 
+            // pCompanyAddress
+            // 
+            this.pCompanyAddress.Description = "Parameter1";
+            this.pCompanyAddress.Name = "pCompanyAddress";
+            // 
+            // pCompanyTaxCode
+            // 
+            this.pCompanyTaxCode.Description = "Parameter1";
+            this.pCompanyTaxCode.Name = "pCompanyTaxCode";
+            // 
             // rptInvoiceDetail
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -899,7 +923,9 @@
             this.pTaxRate,
             this.pSubtotal,
             this.pTaxAmount,
-            this.pTotalPayment});
+            this.pTotalPayment,
+            this.pCompanyAddress,
+            this.pCompanyTaxCode});
             this.Version = "24.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
@@ -984,5 +1010,7 @@
         private DevExpress.XtraReports.Parameters.Parameter pSubtotal;
         private DevExpress.XtraReports.Parameters.Parameter pTaxAmount;
         private DevExpress.XtraReports.Parameters.Parameter pTotalPayment;
+        private DevExpress.XtraReports.Parameters.Parameter pCompanyAddress;
+        private DevExpress.XtraReports.Parameters.Parameter pCompanyTaxCode;
     }
 }
