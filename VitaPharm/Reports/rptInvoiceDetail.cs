@@ -68,8 +68,8 @@ namespace VitaPharm.Reports
                 this.Parameters["pSubtotal"].Value = subtotal;
                 this.Parameters["pTaxAmount"].Value = taxAmount;
                 this.Parameters["pTotalPayment"].Value = totalPayment;
-                this.Parameters["pCompanyAddress"].Value = "Địa chỉ công ty của bạn";
-                this.Parameters["pCompanyTaxCode"].Value = "Mã số thuế công ty";
+                this.Parameters["pCompanyAddress"].Value = "123 Dau Lac, Long Xuyen, An Giang";
+                this.Parameters["pCompanyTaxCode"].Value = "1900020407";
 
                 foreach (var param in this.Parameters)
                     param.Visible = false;
