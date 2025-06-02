@@ -373,24 +373,28 @@
             this.xrLabel5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?pInvoiceCode")});
             this.xrLabel5.Font = new DevExpress.Drawing.DXFont("Times New Roman", 11F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(352.9548F, 68.99998F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(375.5978F, 68.99999F);
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel5.SizeF = new System.Drawing.SizeF(162.1058F, 23F);
             this.xrLabel5.StylePriority.UseFont = false;
+            this.xrLabel5.StylePriority.UseTextAlignment = false;
             this.xrLabel5.Text = "xrLabel5";
+            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // xrLabel4
             // 
             this.xrLabel4.Font = new DevExpress.Drawing.DXFont("Times New Roman", 11F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(255.8959F, 68.99998F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(278.5389F, 68.99999F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel4.SizeF = new System.Drawing.SizeF(97.0589F, 23F);
             this.xrLabel4.StylePriority.UseFont = false;
+            this.xrLabel4.StylePriority.UseTextAlignment = false;
             this.xrLabel4.Text = "Invoice Code:";
+            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrLabel2
             // 
@@ -436,18 +440,22 @@
             this.xrLabelAddressAndTax.Name = "xrLabelAddressAndTax";
             this.xrLabelAddressAndTax.SizeF = new System.Drawing.SizeF(243.4783F, 23F);
             this.xrLabelAddressAndTax.StylePriority.UseFont = false;
+            this.xrLabelAddressAndTax.StylePriority.UseTextAlignment = false;
+            this.xrLabelAddressAndTax.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrLabel3
             // 
             this.xrLabel3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "  \'Tax Code: \' + ?pCompanyTaxCode")});
             this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Times New Roman", 11F);
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(271.5822F, 45.99999F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(293.3838F, 45.99998F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel3.SizeF = new System.Drawing.SizeF(221.6768F, 23F);
             this.xrLabel3.StylePriority.UseFont = false;
+            this.xrLabel3.StylePriority.UseTextAlignment = false;
+            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // PageHeader
             // 
