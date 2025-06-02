@@ -55,12 +55,9 @@
             colContact = new DevExpress.XtraGrid.Columns.GridColumn();
             colRole = new DevExpress.XtraGrid.Columns.GridColumn();
             colIsActive = new DevExpress.XtraGrid.Columns.GridColumn();
-            repochkEditIsActive = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            repoIsActive = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             colPassword = new DevExpress.XtraGrid.Columns.GridColumn();
             repotxtPassword = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            repositoryItemConditionalType1 = new DevExpress.XtraRichEdit.Design.RepositoryItemConditionalType();
-            repositoryItemAlignment1 = new DevExpress.XtraRichEdit.Design.RepositoryItemAlignment();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
             btnNewUser = new DevExpress.XtraEditors.SimpleButton();
             btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -80,12 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)txtUserName.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)repochkEditIsActive).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)repoIsActive).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repotxtPassword).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)repositoryItemDateEdit1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)repositoryItemDateEdit1.CalendarTimeProperties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)repositoryItemConditionalType1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)repositoryItemAlignment1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             SuspendLayout();
@@ -266,7 +259,7 @@
             gridControl.Location = new Point(0, 161);
             gridControl.MainView = gridView;
             gridControl.Name = "gridControl";
-            gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repochkEditIsActive, repotxtPassword, repositoryItemDateEdit1, repositoryItemConditionalType1, repositoryItemAlignment1 });
+            gridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repoIsActive, repotxtPassword });
             gridControl.Size = new Size(828, 235);
             gridControl.TabIndex = 1;
             gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView });
@@ -286,7 +279,7 @@
             colID.OptionsColumn.AllowEdit = false;
             colID.Visible = true;
             colID.VisibleIndex = 0;
-            colID.Width = 45;
+            colID.Width = 47;
             // 
             // colUsername
             // 
@@ -297,7 +290,7 @@
             colUsername.OptionsColumn.AllowEdit = false;
             colUsername.Visible = true;
             colUsername.VisibleIndex = 1;
-            colUsername.Width = 88;
+            colUsername.Width = 92;
             // 
             // colFullName
             // 
@@ -308,7 +301,7 @@
             colFullName.OptionsColumn.AllowEdit = false;
             colFullName.Visible = true;
             colFullName.VisibleIndex = 2;
-            colFullName.Width = 142;
+            colFullName.Width = 148;
             // 
             // colGender
             // 
@@ -318,8 +311,8 @@
             colGender.Name = "colGender";
             colGender.OptionsColumn.AllowEdit = false;
             colGender.Visible = true;
-            colGender.VisibleIndex = 6;
-            colGender.Width = 85;
+            colGender.VisibleIndex = 7;
+            colGender.Width = 86;
             // 
             // colBirthday
             // 
@@ -331,8 +324,8 @@
             colBirthday.Name = "colBirthday";
             colBirthday.OptionsColumn.AllowEdit = false;
             colBirthday.Visible = true;
-            colBirthday.VisibleIndex = 7;
-            colBirthday.Width = 85;
+            colBirthday.VisibleIndex = 8;
+            colBirthday.Width = 116;
             // 
             // colContact
             // 
@@ -343,7 +336,7 @@
             colContact.OptionsColumn.AllowEdit = false;
             colContact.Visible = true;
             colContact.VisibleIndex = 5;
-            colContact.Width = 85;
+            colContact.Width = 91;
             // 
             // colRole
             // 
@@ -353,25 +346,29 @@
             colRole.MinWidth = 25;
             colRole.Name = "colRole";
             colRole.Visible = true;
-            colRole.VisibleIndex = 8;
-            colRole.Width = 85;
+            colRole.VisibleIndex = 6;
+            colRole.Width = 77;
             // 
             // colIsActive
             // 
-            colIsActive.Caption = "IsActive";
-            colIsActive.ColumnEdit = repochkEditIsActive;
-            colIsActive.FieldName = "IsActive";
+            colIsActive.Caption = "Is Active?";
+            colIsActive.ColumnEdit = repoIsActive;
+            colIsActive.FieldName = "IsActiveBool";
             colIsActive.MinWidth = 25;
             colIsActive.Name = "colIsActive";
             colIsActive.OptionsColumn.AllowEdit = false;
+            colIsActive.OptionsFilter.FilterPopupMode = DevExpress.XtraGrid.Columns.FilterPopupMode.CheckedList;
+            colIsActive.UnboundDataType = typeof(bool);
+            colIsActive.UnboundExpression = "Convert([IsActive], 'System.Boolean')";
             colIsActive.Visible = true;
             colIsActive.VisibleIndex = 4;
-            colIsActive.Width = 85;
+            colIsActive.Width = 78;
             // 
-            // repochkEditIsActive
+            // repoIsActive
             // 
-            repochkEditIsActive.AutoHeight = false;
-            repochkEditIsActive.Name = "repochkEditIsActive";
+            repoIsActive.AutoHeight = false;
+            repoIsActive.Name = "repoIsActive";
+            repoIsActive.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
             // 
             // colPassword
             // 
@@ -383,7 +380,7 @@
             colPassword.Name = "colPassword";
             colPassword.Visible = true;
             colPassword.VisibleIndex = 3;
-            colPassword.Width = 98;
+            colPassword.Width = 102;
             // 
             // repotxtPassword
             // 
@@ -391,28 +388,6 @@
             repotxtPassword.Name = "repotxtPassword";
             repotxtPassword.PasswordChar = '•';
             repotxtPassword.UseSystemPasswordChar = true;
-            // 
-            // repositoryItemDateEdit1
-            // 
-            repositoryItemDateEdit1.AutoHeight = false;
-            repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
-            // 
-            // repositoryItemConditionalType1
-            // 
-            repositoryItemConditionalType1.AutoHeight = false;
-            repositoryItemConditionalType1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            repositoryItemConditionalType1.Name = "repositoryItemConditionalType1";
-            // 
-            // repositoryItemAlignment1
-            // 
-            repositoryItemAlignment1.AutoHeight = false;
-            repositoryItemAlignment1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            repositoryItemAlignment1.HasArabic = false;
-            repositoryItemAlignment1.HasDistribute = false;
-            repositoryItemAlignment1.HasThaiDistribute = false;
-            repositoryItemAlignment1.Name = "repositoryItemAlignment1";
             // 
             // panelControl1
             // 
@@ -506,6 +481,7 @@
             Controls.Add(panelControl1);
             Controls.Add(groupControl1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            IconOptions.Image = Properties.Resources.vitapharm_transparent;
             Name = "frmAllUsers";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "All Users";
@@ -524,12 +500,8 @@
             ((System.ComponentModel.ISupportInitialize)txtUserName.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridControl).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)repochkEditIsActive).EndInit();
+            ((System.ComponentModel.ISupportInitialize)repoIsActive).EndInit();
             ((System.ComponentModel.ISupportInitialize)repotxtPassword).EndInit();
-            ((System.ComponentModel.ISupportInitialize)repositoryItemDateEdit1.CalendarTimeProperties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)repositoryItemDateEdit1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)repositoryItemConditionalType1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)repositoryItemAlignment1).EndInit();
             ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             panelControl1.ResumeLayout(false);
             ResumeLayout(false);
@@ -562,7 +534,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colContact;
         private DevExpress.XtraGrid.Columns.GridColumn colRole;
         private DevExpress.XtraGrid.Columns.GridColumn colIsActive;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repochkEditIsActive;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repoIsActive;
         private DevExpress.XtraGrid.Columns.GridColumn colPassword;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repotxtPassword;
         private DevExpress.XtraEditors.PanelControl panelControl1;
@@ -572,8 +544,5 @@
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.CheckEdit chkIsActive;
         private DevExpress.XtraEditors.SimpleButton btnNewUser;
-        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
-        private DevExpress.XtraRichEdit.Design.RepositoryItemConditionalType repositoryItemConditionalType1;
-        private DevExpress.XtraRichEdit.Design.RepositoryItemAlignment repositoryItemAlignment1;
     }
 }

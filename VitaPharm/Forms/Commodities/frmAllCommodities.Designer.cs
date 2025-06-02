@@ -459,6 +459,7 @@
             Controls.Add(groupControl1);
             Controls.Add(panelControl1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            IconOptions.Image = Properties.Resources.vitapharm_transparent;
             Name = "frmAllCommodities";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "All Commodities";

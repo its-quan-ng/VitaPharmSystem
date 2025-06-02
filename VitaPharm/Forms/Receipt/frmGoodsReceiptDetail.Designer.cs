@@ -427,6 +427,7 @@
             Controls.Add(groupControl1);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            IconOptions.Image = Properties.Resources.vitapharm_transparent;
             Name = "frmGoodsReceiptDetail";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Goods Receipt Detail";

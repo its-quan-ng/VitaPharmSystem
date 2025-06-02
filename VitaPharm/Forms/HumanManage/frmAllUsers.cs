@@ -43,6 +43,7 @@ namespace VitaPharm.Forms.HumanManage
                     acc.Employee.Contact,
                     acc.Employee.EmployeeAddress,
                     acc.UserRole,
+                    IsActiveBool = acc.IsActive == "Active",
                     acc.IsActive,
                     acc.UserPassword,
                     acc.Employee.EmployeeID
@@ -64,7 +65,7 @@ namespace VitaPharm.Forms.HumanManage
             txtContact.Text = row.Contact;
             txtAddress.Text = row.EmployeeAddress;
             cboRole.SelectedItem = row.UserRole;
-            chkIsActive.Checked = (row.IsActive == "Active");
+            chkIsActive.Checked = row.IsActiveBool;
         }
         #endregion
 

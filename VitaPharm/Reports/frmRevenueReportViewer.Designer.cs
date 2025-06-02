@@ -41,19 +41,7 @@ namespace VitaPharm.Reports
             btnViewReport = new DevExpress.XtraEditors.SimpleButton();
             documentViewer = new DocumentViewer();
             documentViewerBarManager1 = new DocumentViewerBarManager(components);
-            barDockControlTop = new BarDockControl();
-            barDockControlBottom = new BarDockControl();
-            barDockControlLeft = new BarDockControl();
-            barDockControlRight = new BarDockControl();
             previewBar1 = new PreviewBar();
-            previewBar2 = new PreviewBar();
-            printPreviewStaticItemPageOfPages = new PrintPreviewStaticItem();
-            repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
-            progressBarEditItem = new ProgressBarEditItem();
-            printPreviewBarItem1 = new PrintPreviewBarItem();
-            printPreviewStaticItemZoomFactor = new PrintPreviewStaticItem();
-            repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
-            zoomTrackBarEditItem = new ZoomTrackBarEditItem();
             bbiDocumentMap = new PrintPreviewBarItem();
             bbiParameters = new PrintPreviewBarItem();
             bbiThumbnails = new PrintPreviewBarItem();
@@ -83,13 +71,25 @@ namespace VitaPharm.Reports
             bbiExportFile = new PrintPreviewBarItem();
             bbiSendFile = new PrintPreviewBarItem();
             bbiClosePreview = new PrintPreviewBarItem();
+            previewBar2 = new PreviewBar();
+            printPreviewStaticItemPageOfPages = new PrintPreviewStaticItem();
+            progressBarEditItem = new ProgressBarEditItem();
+            repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
+            printPreviewBarItem1 = new PrintPreviewBarItem();
+            printPreviewStaticItemZoomFactor = new PrintPreviewStaticItem();
+            zoomTrackBarEditItem = new ZoomTrackBarEditItem();
+            repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
+            barDockControlTop = new BarDockControl();
+            barDockControlBottom = new BarDockControl();
+            barDockControlLeft = new BarDockControl();
+            barDockControlRight = new BarDockControl();
             miFile = new PrintPreviewSubItem();
             miView = new PrintPreviewSubItem();
-            miBackground = new PrintPreviewSubItem();
             miPageLayout = new PrintPreviewSubItem();
             miPageLayoutFacing = new PrintPreviewBarItem();
             miPageLayoutContinuous = new PrintPreviewBarItem();
             miToolbars = new BarToolbarsListItem();
+            miBackground = new PrintPreviewSubItem();
             printPreviewBarCheckItem1 = new PrintPreviewBarCheckItem();
             printPreviewBarCheckItem2 = new PrintPreviewBarCheckItem();
             printPreviewBarCheckItem3 = new PrintPreviewBarCheckItem();
@@ -116,9 +116,9 @@ namespace VitaPharm.Reports
             ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)documentViewerBarManager1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)printPreviewRepositoryItemComboBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemProgressBar1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemZoomTrackBar1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)printPreviewRepositoryItemComboBox1).BeginInit();
             SuspendLayout();
             // 
             // labelControl1
@@ -229,38 +229,6 @@ namespace VitaPharm.Reports
             documentViewerBarManager1.StatusBar = previewBar2;
             documentViewerBarManager1.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
             // 
-            // barDockControlTop
-            // 
-            barDockControlTop.CausesValidation = false;
-            barDockControlTop.Dock = DockStyle.Top;
-            barDockControlTop.Location = new Point(0, 0);
-            barDockControlTop.Manager = documentViewerBarManager1;
-            barDockControlTop.Size = new Size(698, 0);
-            // 
-            // barDockControlBottom
-            // 
-            barDockControlBottom.CausesValidation = false;
-            barDockControlBottom.Dock = DockStyle.Bottom;
-            barDockControlBottom.Location = new Point(0, 302);
-            barDockControlBottom.Manager = documentViewerBarManager1;
-            barDockControlBottom.Size = new Size(698, 58);
-            // 
-            // barDockControlLeft
-            // 
-            barDockControlLeft.CausesValidation = false;
-            barDockControlLeft.Dock = DockStyle.Left;
-            barDockControlLeft.Location = new Point(0, 0);
-            barDockControlLeft.Manager = documentViewerBarManager1;
-            barDockControlLeft.Size = new Size(0, 302);
-            // 
-            // barDockControlRight
-            // 
-            barDockControlRight.CausesValidation = false;
-            barDockControlRight.Dock = DockStyle.Right;
-            barDockControlRight.Location = new Point(698, 0);
-            barDockControlRight.Manager = documentViewerBarManager1;
-            barDockControlRight.Size = new Size(0, 302);
-            // 
             // previewBar1
             // 
             previewBar1.BarName = "Toolbar";
@@ -272,85 +240,6 @@ namespace VitaPharm.Reports
             previewBar1.LinksPersistInfo.AddRange(new LinkPersistInfo[] { new LinkPersistInfo(bbiDocumentMap), new LinkPersistInfo(bbiParameters), new LinkPersistInfo(bbiThumbnails), new LinkPersistInfo(bbiFind), new LinkPersistInfo(bbiHighlightEditingFields), new LinkPersistInfo(bbiCustomize, true), new LinkPersistInfo(bbiOpen, true), new LinkPersistInfo(bbiSave), new LinkPersistInfo(bbiPrint, true), new LinkPersistInfo(bbiPrintDirect), new LinkPersistInfo(bbiPageSetup), new LinkPersistInfo(bbiEditPageHF), new LinkPersistInfo(bbiScale), new LinkPersistInfo(bbiHandTool, true), new LinkPersistInfo(bbiMagnifier), new LinkPersistInfo(bbiZoomOut, true), new LinkPersistInfo(bbiZoom), new LinkPersistInfo(bbiZoomIn), new LinkPersistInfo(bbiShowFirstPage, true), new LinkPersistInfo(bbiShowPrevPage), new LinkPersistInfo(bbiShowNextPage), new LinkPersistInfo(bbiShowLastPage), new LinkPersistInfo(bbiMultiplePages, true), new LinkPersistInfo(bbiFillBackground), new LinkPersistInfo(bbiWatermark), new LinkPersistInfo(bbiExportFile, true), new LinkPersistInfo(bbiSendFile), new LinkPersistInfo(bbiClosePreview, true) });
             previewBar1.Offset = 16;
             previewBar1.Text = "Toolbar";
-            // 
-            // previewBar2
-            // 
-            previewBar2.BarName = "Status Bar";
-            previewBar2.CanDockStyle = BarCanDockStyle.Bottom;
-            previewBar2.DockCol = 0;
-            previewBar2.DockRow = 0;
-            previewBar2.DockStyle = BarDockStyle.Bottom;
-            previewBar2.LinksPersistInfo.AddRange(new LinkPersistInfo[] { new LinkPersistInfo(printPreviewStaticItemPageOfPages), new LinkPersistInfo(progressBarEditItem), new LinkPersistInfo(printPreviewBarItem1), new LinkPersistInfo(printPreviewStaticItemZoomFactor, true), new LinkPersistInfo(zoomTrackBarEditItem) });
-            previewBar2.OptionsBar.AllowQuickCustomization = false;
-            previewBar2.OptionsBar.DrawDragBorder = false;
-            previewBar2.OptionsBar.UseWholeRow = true;
-            previewBar2.Text = "Status Bar";
-            // 
-            // printPreviewStaticItemPageOfPages
-            // 
-            printPreviewStaticItemPageOfPages.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            printPreviewStaticItemPageOfPages.Caption = "Nothing";
-            printPreviewStaticItemPageOfPages.Id = 0;
-            printPreviewStaticItemPageOfPages.LeftIndent = 1;
-            printPreviewStaticItemPageOfPages.Name = "printPreviewStaticItemPageOfPages";
-            printPreviewStaticItemPageOfPages.RightIndent = 1;
-            printPreviewStaticItemPageOfPages.Type = "PageOfPages";
-            // 
-            // repositoryItemProgressBar1
-            // 
-            repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
-            // 
-            // progressBarEditItem
-            // 
-            progressBarEditItem.Edit = repositoryItemProgressBar1;
-            progressBarEditItem.EditHeight = 12;
-            progressBarEditItem.EditWidth = 150;
-            progressBarEditItem.Id = 1;
-            progressBarEditItem.Name = "progressBarEditItem";
-            progressBarEditItem.Visibility = BarItemVisibility.Never;
-            // 
-            // printPreviewBarItem1
-            // 
-            printPreviewBarItem1.Caption = "Stop";
-            printPreviewBarItem1.Command = DevExpress.XtraPrinting.PrintingSystemCommand.StopPageBuilding;
-            printPreviewBarItem1.Enabled = false;
-            printPreviewBarItem1.Hint = "Stop";
-            printPreviewBarItem1.Id = 2;
-            printPreviewBarItem1.Name = "printPreviewBarItem1";
-            printPreviewBarItem1.Visibility = BarItemVisibility.Never;
-            // 
-            // printPreviewStaticItemZoomFactor
-            // 
-            printPreviewStaticItemZoomFactor.Alignment = BarItemLinkAlignment.Right;
-            printPreviewStaticItemZoomFactor.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            printPreviewStaticItemZoomFactor.Caption = "100%";
-            printPreviewStaticItemZoomFactor.Id = 3;
-            printPreviewStaticItemZoomFactor.Name = "printPreviewStaticItemZoomFactor";
-            printPreviewStaticItemZoomFactor.TextAlignment = StringAlignment.Far;
-            printPreviewStaticItemZoomFactor.Type = "ZoomFactor";
-            // 
-            // repositoryItemZoomTrackBar1
-            // 
-            repositoryItemZoomTrackBar1.Alignment = DevExpress.Utils.VertAlignment.Center;
-            repositoryItemZoomTrackBar1.AllowFocused = false;
-            repositoryItemZoomTrackBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            repositoryItemZoomTrackBar1.Maximum = 180;
-            repositoryItemZoomTrackBar1.Name = "repositoryItemZoomTrackBar1";
-            // 
-            // zoomTrackBarEditItem
-            // 
-            zoomTrackBarEditItem.Alignment = BarItemLinkAlignment.Right;
-            zoomTrackBarEditItem.Edit = repositoryItemZoomTrackBar1;
-            zoomTrackBarEditItem.EditValue = 90;
-            zoomTrackBarEditItem.EditWidth = 140;
-            zoomTrackBarEditItem.Enabled = false;
-            zoomTrackBarEditItem.Id = 4;
-            zoomTrackBarEditItem.Name = "zoomTrackBarEditItem";
-            zoomTrackBarEditItem.Range = new int[]
-    {
-    10,
-    500
-    };
             // 
             // bbiDocumentMap
             // 
@@ -626,6 +515,117 @@ namespace VitaPharm.Reports
             bbiClosePreview.Id = 32;
             bbiClosePreview.Name = "bbiClosePreview";
             // 
+            // previewBar2
+            // 
+            previewBar2.BarName = "Status Bar";
+            previewBar2.CanDockStyle = BarCanDockStyle.Bottom;
+            previewBar2.DockCol = 0;
+            previewBar2.DockRow = 0;
+            previewBar2.DockStyle = BarDockStyle.Bottom;
+            previewBar2.LinksPersistInfo.AddRange(new LinkPersistInfo[] { new LinkPersistInfo(printPreviewStaticItemPageOfPages), new LinkPersistInfo(progressBarEditItem), new LinkPersistInfo(printPreviewBarItem1), new LinkPersistInfo(printPreviewStaticItemZoomFactor, true), new LinkPersistInfo(zoomTrackBarEditItem) });
+            previewBar2.OptionsBar.AllowQuickCustomization = false;
+            previewBar2.OptionsBar.DrawDragBorder = false;
+            previewBar2.OptionsBar.UseWholeRow = true;
+            previewBar2.Text = "Status Bar";
+            // 
+            // printPreviewStaticItemPageOfPages
+            // 
+            printPreviewStaticItemPageOfPages.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            printPreviewStaticItemPageOfPages.Caption = "Nothing";
+            printPreviewStaticItemPageOfPages.Id = 0;
+            printPreviewStaticItemPageOfPages.LeftIndent = 1;
+            printPreviewStaticItemPageOfPages.Name = "printPreviewStaticItemPageOfPages";
+            printPreviewStaticItemPageOfPages.RightIndent = 1;
+            printPreviewStaticItemPageOfPages.Type = "PageOfPages";
+            // 
+            // progressBarEditItem
+            // 
+            progressBarEditItem.Edit = repositoryItemProgressBar1;
+            progressBarEditItem.EditHeight = 12;
+            progressBarEditItem.EditWidth = 150;
+            progressBarEditItem.Id = 1;
+            progressBarEditItem.Name = "progressBarEditItem";
+            progressBarEditItem.Visibility = BarItemVisibility.Never;
+            // 
+            // repositoryItemProgressBar1
+            // 
+            repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
+            // 
+            // printPreviewBarItem1
+            // 
+            printPreviewBarItem1.Caption = "Stop";
+            printPreviewBarItem1.Command = DevExpress.XtraPrinting.PrintingSystemCommand.StopPageBuilding;
+            printPreviewBarItem1.Enabled = false;
+            printPreviewBarItem1.Hint = "Stop";
+            printPreviewBarItem1.Id = 2;
+            printPreviewBarItem1.Name = "printPreviewBarItem1";
+            printPreviewBarItem1.Visibility = BarItemVisibility.Never;
+            // 
+            // printPreviewStaticItemZoomFactor
+            // 
+            printPreviewStaticItemZoomFactor.Alignment = BarItemLinkAlignment.Right;
+            printPreviewStaticItemZoomFactor.Border = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            printPreviewStaticItemZoomFactor.Caption = "100%";
+            printPreviewStaticItemZoomFactor.Id = 3;
+            printPreviewStaticItemZoomFactor.Name = "printPreviewStaticItemZoomFactor";
+            printPreviewStaticItemZoomFactor.TextAlignment = StringAlignment.Far;
+            printPreviewStaticItemZoomFactor.Type = "ZoomFactor";
+            // 
+            // zoomTrackBarEditItem
+            // 
+            zoomTrackBarEditItem.Alignment = BarItemLinkAlignment.Right;
+            zoomTrackBarEditItem.Edit = repositoryItemZoomTrackBar1;
+            zoomTrackBarEditItem.EditValue = 90;
+            zoomTrackBarEditItem.EditWidth = 140;
+            zoomTrackBarEditItem.Enabled = false;
+            zoomTrackBarEditItem.Id = 4;
+            zoomTrackBarEditItem.Name = "zoomTrackBarEditItem";
+            zoomTrackBarEditItem.Range = new int[]
+    {
+    10,
+    500
+    };
+            // 
+            // repositoryItemZoomTrackBar1
+            // 
+            repositoryItemZoomTrackBar1.Alignment = DevExpress.Utils.VertAlignment.Center;
+            repositoryItemZoomTrackBar1.AllowFocused = false;
+            repositoryItemZoomTrackBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            repositoryItemZoomTrackBar1.Maximum = 180;
+            repositoryItemZoomTrackBar1.Name = "repositoryItemZoomTrackBar1";
+            // 
+            // barDockControlTop
+            // 
+            barDockControlTop.CausesValidation = false;
+            barDockControlTop.Dock = DockStyle.Top;
+            barDockControlTop.Location = new Point(0, 0);
+            barDockControlTop.Manager = documentViewerBarManager1;
+            barDockControlTop.Size = new Size(698, 0);
+            // 
+            // barDockControlBottom
+            // 
+            barDockControlBottom.CausesValidation = false;
+            barDockControlBottom.Dock = DockStyle.Bottom;
+            barDockControlBottom.Location = new Point(0, 302);
+            barDockControlBottom.Manager = documentViewerBarManager1;
+            barDockControlBottom.Size = new Size(698, 58);
+            // 
+            // barDockControlLeft
+            // 
+            barDockControlLeft.CausesValidation = false;
+            barDockControlLeft.Dock = DockStyle.Left;
+            barDockControlLeft.Location = new Point(0, 0);
+            barDockControlLeft.Manager = documentViewerBarManager1;
+            barDockControlLeft.Size = new Size(0, 302);
+            // 
+            // barDockControlRight
+            // 
+            barDockControlRight.CausesValidation = false;
+            barDockControlRight.Dock = DockStyle.Right;
+            barDockControlRight.Location = new Point(698, 0);
+            barDockControlRight.Manager = documentViewerBarManager1;
+            barDockControlRight.Size = new Size(0, 302);
+            // 
             // miFile
             // 
             miFile.Caption = "&File";
@@ -641,14 +641,6 @@ namespace VitaPharm.Reports
             miView.Id = 34;
             miView.LinksPersistInfo.AddRange(new LinkPersistInfo[] { new LinkPersistInfo(miPageLayout, true), new LinkPersistInfo(miToolbars, true) });
             miView.Name = "miView";
-            // 
-            // miBackground
-            // 
-            miBackground.Caption = "&Background";
-            miBackground.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Background;
-            miBackground.Id = 35;
-            miBackground.LinksPersistInfo.AddRange(new LinkPersistInfo[] { new LinkPersistInfo(bbiFillBackground), new LinkPersistInfo(bbiWatermark) });
-            miBackground.Name = "miBackground";
             // 
             // miPageLayout
             // 
@@ -683,6 +675,14 @@ namespace VitaPharm.Reports
             miToolbars.Caption = "Bars";
             miToolbars.Id = 39;
             miToolbars.Name = "miToolbars";
+            // 
+            // miBackground
+            // 
+            miBackground.Caption = "&Background";
+            miBackground.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Background;
+            miBackground.Id = 35;
+            miBackground.LinksPersistInfo.AddRange(new LinkPersistInfo[] { new LinkPersistInfo(bbiFillBackground), new LinkPersistInfo(bbiWatermark) });
+            miBackground.Name = "miBackground";
             // 
             // printPreviewBarCheckItem1
             // 
@@ -889,6 +889,7 @@ namespace VitaPharm.Reports
             Controls.Add(barDockControlRight);
             Controls.Add(barDockControlBottom);
             Controls.Add(barDockControlTop);
+            IconOptions.Image = Properties.Resources.vitapharm_transparent;
             Name = "frmRevenueReportViewer";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Revenue Report Viewer";
@@ -900,9 +901,9 @@ namespace VitaPharm.Reports
             panelControl1.ResumeLayout(false);
             panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)documentViewerBarManager1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)printPreviewRepositoryItemComboBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemProgressBar1).EndInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemZoomTrackBar1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)printPreviewRepositoryItemComboBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
 

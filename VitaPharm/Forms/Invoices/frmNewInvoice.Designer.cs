@@ -716,6 +716,7 @@
             Controls.Add(groupControl3);
             Controls.Add(groupControl2);
             Controls.Add(groupControl1);
+            IconOptions.Image = Properties.Resources.vitapharm_transparent;
             Name = "frmNewInvoice";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "New Invoice";

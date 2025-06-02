@@ -3,8 +3,8 @@ using VitaPharm.Data;
 using DevExpress.XtraEditors;
 using System.ComponentModel;
 using DevExpress.XtraEditors.Controls;
-using System.Globalization;
 using System.Text;
+using System.Globalization;
 
 namespace VitaPharm.Forms.Receipt
 {
@@ -117,7 +117,11 @@ namespace VitaPharm.Forms.Receipt
                 cboBatchCode.Properties.DisplayMember = "BatchCode";
                 cboBatchCode.Properties.ValueMember = "BatchID";
                 cboBatchCode.Properties.Columns.Clear();
-                cboBatchCode.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("BatchCode", "Batch Code"));
+                cboBatchCode.Properties.Columns.Add(new LookUpColumnInfo("BatchCode", "Batch Code", 130));
+                var expDateColumn = new LookUpColumnInfo("ExpDate", "EXP.", 90);
+                expDateColumn.FormatType = DevExpress.Utils.FormatType.DateTime;
+                expDateColumn.FormatString = "dd/MM/yyyy";
+                cboBatchCode.Properties.Columns.Add(expDateColumn);
                 cboBatchCode.EditValue = null;
 
                 if (batches.Count == 0)
@@ -135,6 +139,7 @@ namespace VitaPharm.Forms.Receipt
                 lblNewBatchCode.Text = GenerateNewBatchCode(commodityName);
                 lblNewBatchCode.Visible = true;
             }
+            cboBatchCode.Enabled = true;
         }
 
         private void cboBatchCode_EditValueChanged(object sender, EventArgs e)
@@ -176,10 +181,11 @@ namespace VitaPharm.Forms.Receipt
             string namePart = RemoveDiacriticsAndToUpper(commodityName)
                 .Take(7)
                 .Aggregate("", (s, c) => s + c);
-            string datePart = DateTime.Now.ToString("ddMMyy");
+            DateTime mfgDate = dateMfg.DateTime == DateTime.MinValue ? DateTime.Now : dateMfg.DateTime;
+            string datePart = mfgDate.ToString("yyMMdd");
             int countDb = context.Batches
-                .Count(b => b.BatchDate.Date == DateTime.Now.Date && b.Commodity.CommodityName == commodityName);
-            int countTemp = tempBatchList.Count(b => b.MfgDate.Date == DateTime.Now.Date && b.CommodityName == commodityName);
+                .Count(b => b.MfgDate.Date == mfgDate.Date && b.Commodity.CommodityName == commodityName);
+            int countTemp = tempBatchList.Count(b => b.MfgDate.Date == mfgDate.Date && b.CommodityName == commodityName);
             int count = countDb + countTemp + 1;
             string countPart = count.ToString("D2");
             return $"{prefix}-{namePart}-{datePart}-{countPart}";

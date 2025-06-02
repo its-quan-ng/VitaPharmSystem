@@ -46,10 +46,10 @@
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            txtQuantity = new DevExpress.XtraEditors.TextEdit();
             btnCancel = new DevExpress.XtraEditors.SimpleButton();
             btnAdd = new DevExpress.XtraEditors.SimpleButton();
             panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            txtQuantity = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cboBatchCode.Properties).BeginInit();
@@ -61,8 +61,8 @@
             ((System.ComponentModel.ISupportInitialize)dateExp.Properties.CalendarTimeProperties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateMfg.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dateMfg.Properties.CalendarTimeProperties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)panelControl1).BeginInit();
             SuspendLayout();
             // 
             // groupControl1
@@ -302,6 +302,19 @@
             labelControl1.TabIndex = 0;
             labelControl1.Text = "Commodity:";
             // 
+            // txtQuantity
+            // 
+            txtQuantity.Anchor = AnchorStyles.Top;
+            txtQuantity.EditValue = new decimal(new int[] { 1, 0, 0, 0 });
+            txtQuantity.Location = new Point(397, 210);
+            txtQuantity.Name = "txtQuantity";
+            txtQuantity.Properties.Appearance.Options.UseTextOptions = true;
+            txtQuantity.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            txtQuantity.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            txtQuantity.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            txtQuantity.Size = new Size(83, 22);
+            txtQuantity.TabIndex = 8;
+            // 
             // btnCancel
             // 
             btnCancel.Anchor = AnchorStyles.Bottom;
@@ -338,19 +351,6 @@
             panelControl1.Size = new Size(784, 67);
             panelControl1.TabIndex = 9;
             // 
-            // txtQuantity
-            // 
-            txtQuantity.Anchor = AnchorStyles.Top;
-            txtQuantity.EditValue = new decimal(new int[] { 1, 0, 0, 0 });
-            txtQuantity.Location = new Point(397, 210);
-            txtQuantity.Name = "txtQuantity";
-            txtQuantity.Properties.Appearance.Options.UseTextOptions = true;
-            txtQuantity.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            txtQuantity.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
-            txtQuantity.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            txtQuantity.Size = new Size(83, 22);
-            txtQuantity.TabIndex = 8;
-            // 
             // frmNewBatch
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -361,6 +361,7 @@
             Controls.Add(btnAdd);
             Controls.Add(panelControl1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            IconOptions.Image = Properties.Resources.vitapharm_transparent;
             MaximizeBox = false;
             Name = "frmNewBatch";
             StartPosition = FormStartPosition.CenterScreen;
@@ -378,8 +379,8 @@
             ((System.ComponentModel.ISupportInitialize)dateExp.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateMfg.Properties.CalendarTimeProperties).EndInit();
             ((System.ComponentModel.ISupportInitialize)dateMfg.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtQuantity.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)panelControl1).EndInit();
             ResumeLayout(false);
         }
 

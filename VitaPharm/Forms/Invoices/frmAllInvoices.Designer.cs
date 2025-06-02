@@ -332,6 +332,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panelControl1);
+            IconOptions.Image = Properties.Resources.vitapharm_transparent;
             Name = "frmAllInvoices";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "All Invoices";

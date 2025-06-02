@@ -488,6 +488,7 @@
             ClientSize = new Size(917, 468);
             Controls.Add(panelControl1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            IconOptions.Image = Properties.Resources.vitapharm_transparent;
             Name = "frmNewGoodsReceipt";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "New Goods Receipt";
