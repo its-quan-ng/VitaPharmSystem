@@ -116,7 +116,10 @@ namespace VitaPharm.Forms.Receipt
                 cboBatchCode.Properties.ValueMember = "BatchID";
                 cboBatchCode.Properties.Columns.Clear();
                 cboBatchCode.Properties.Columns.Add(new LookUpColumnInfo("BatchCode", "Batch Code"));
-                cboBatchCode.Properties.Columns.Add(new LookUpColumnInfo("ExpDate", "EXP.", 100, DevExpress.Utils.FormatType.DateTime, "dd/MM/yyyy"));
+                var expDateColumn = new LookUpColumnInfo("ExpDate", "EXP.", 100);
+                expDateColumn.FormatType = DevExpress.Utils.FormatType.DateTime;
+                expDateColumn.FormatString = "dd/MM/yyyy";
+                cboBatchCode.Properties.Columns.Add(expDateColumn);
                 cboBatchCode.EditValue = null;
 
                 if (batches.Count == 0)
@@ -134,6 +137,7 @@ namespace VitaPharm.Forms.Receipt
                 lblNewBatchCode.Text = GenerateNewBatchCode(commodityName);
                 lblNewBatchCode.Visible = true;
             }
+            cboBatchCode.Enabled = true;
         }
 
         private void cboBatchCode_EditValueChanged(object sender, EventArgs e)
