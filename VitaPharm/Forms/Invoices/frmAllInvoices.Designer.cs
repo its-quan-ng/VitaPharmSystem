@@ -314,6 +314,7 @@
             btnImport.Name = "btnImport";
             btnImport.Size = new Size(79, 38);
             btnImport.Text = "Import";
+            btnImport.Click += btnImport_Click;
             // 
             // panel2
             // 
