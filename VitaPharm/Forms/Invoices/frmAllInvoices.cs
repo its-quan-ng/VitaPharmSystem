@@ -256,7 +256,236 @@ namespace VitaPharm.Forms.Invoices
                     XtraMessageBox.Show($"Error exporting data: {ex.Message}\n\nStack Trace: {ex.StackTrace}", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Import data from Excel file";
+            openFileDialog.Filter = "Excel Files|*.xls;*.xlsx";
+            openFileDialog.Multiselect = false;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    using (XLWorkbook workbook = new XLWorkbook(openFileDialog.FileName))
+                    {
+                        #region Process Invoice Sheet (Sheet 1)
+                        IXLWorksheet sheet1 = workbook.Worksheet(1);
+                        bool firstRowInvoice = true;
+                        string readRangeInvoice = "1:1";
+                        DataTable tableInvoice = new DataTable();
+
+                        foreach (IXLRow row in sheet1.RowsUsed())
+                        {
+                            if (firstRowInvoice)
+                            {
+                                readRangeInvoice = string.Format("{0}:{1}", 1, row.LastCellUsed().Address.ColumnNumber);
+                                foreach (IXLCell cell in row.Cells(readRangeInvoice))
+                                    tableInvoice.Columns.Add(cell.Value.ToString());
+                                firstRowInvoice = false;
+                            }
+                            else
+                            {
+                                tableInvoice.Rows.Add();
+                                int cellIndex = 0;
+                                foreach (IXLCell cell in row.Cells(readRangeInvoice))
+                                {
+                                    tableInvoice.Rows[tableInvoice.Rows.Count - 1][cellIndex] = cell.Value.ToString();
+                                    cellIndex++;
+                                }
+                            }
+                        }
+
+                        if (tableInvoice.Rows.Count > 0)
+                        {
+                            using (var transaction = context.Database.BeginTransaction())
+                            {
+                                foreach (DataRow r in tableInvoice.Rows)
+                                {
+                                    string invoiceCode = r["InvoiceCode"].ToString();
+                                    if (context.Invoices.Any(i => i.InvoiceCode == invoiceCode))
+                                    {
+                                        continue;
+                                    }
+
+                                    string employeeName = r["EmployeeName"].ToString();
+                                    var employee = context.Employees.FirstOrDefault(e => e.EmployeeName == employeeName);
+                                    if (employee == null)
+                                    {
+                                        XtraMessageBox.Show("Employee not found.",
+                                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        return;
+                                    }
+
+                                    string customerName = r["CustomerName"].ToString();
+                                    var customer = context.Customers.FirstOrDefault(c => c.CustomerName == customerName);
+                                    if (customer == null)
+                                    {
+                                        XtraMessageBox.Show($"Customer '{customerName}' not found.",
+                                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        return;
+                                    }
+
+                                    Invoice invoice = new Invoice();
+                                    invoice.InvoiceCode = invoiceCode;
+                                    invoice.CreatedDate = ParseDateTime(r["CreatedDate"].ToString());
+                                    invoice.Customer = customer;
+                                    invoice.Employee = employee;
+                                    invoice.InvoiceStatus = r["InvoiceStatus"]?.ToString() ?? "active";
+                                    invoice.Note = r["Note"]?.ToString() ?? "";
+                                    invoice.TaxRate = Convert.ToSingle(r["TaxRate"]?.ToString() ?? "0");
+
+                                    context.Invoices.Add(invoice);
+                                }
+                                context.SaveChanges();
+                                transaction.Commit();
+                            }
+                        }
+                        #endregion
+
+                        #region Process Invoice Details Sheet (Sheet 2)
+                        if (workbook.Worksheets.Count > 1)
+                        {
+                            IXLWorksheet sheet2 = workbook.Worksheet(2);
+                            bool firstRowInvoiceDetail = true;
+                            string readRangeInvoiceDetail = "1:1";
+                            DataTable tableInvoiceDetail = new DataTable();
+
+                            foreach (IXLRow row in sheet2.RowsUsed())
+                            {
+                                if (firstRowInvoiceDetail)
+                                {
+                                    readRangeInvoiceDetail = string.Format("{0}:{1}", 1, row.LastCellUsed().Address.ColumnNumber);
+                                    foreach (IXLCell cell in row.Cells(readRangeInvoiceDetail))
+                                        tableInvoiceDetail.Columns.Add(cell.Value.ToString());
+                                    firstRowInvoiceDetail = false;
+                                }
+                                else
+                                {
+                                    tableInvoiceDetail.Rows.Add();
+                                    int cellIndex = 0;
+                                    foreach (IXLCell cell in row.Cells(readRangeInvoiceDetail))
+                                    {
+                                        tableInvoiceDetail.Rows[tableInvoiceDetail.Rows.Count - 1][cellIndex] = cell.Value.ToString();
+                                        cellIndex++;
+                                    }
+                                }
+                            }
+
+                            if (tableInvoiceDetail.Rows.Count > 0)
+                            {
+                                using (var transaction = context.Database.BeginTransaction())
+                                {
+                                    foreach (DataRow r in tableInvoiceDetail.Rows)
+                                    {
+                                        string invoiceCode = r["InvoiceCode"].ToString();
+                                        string batchCode = r["BatchCode"].ToString();
+                                        string commodityName = r["CommodityName"].ToString();
+
+                                        var invoice = context.Invoices.FirstOrDefault(i => i.InvoiceCode == invoiceCode);
+                                        if (invoice == null) continue;
+
+                                        var batch = context.Batches
+                                            .Include(b => b.Commodity)
+                                            .FirstOrDefault(b => b.BatchCode == batchCode && 
+                                                               b.Commodity.CommodityName == commodityName);
+                                        if (batch == null)
+                                        {
+                                            XtraMessageBox.Show($"Batch '{batchCode}' with commodity '{commodityName}' not found.",
+                                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            continue;
+                                        }
+
+                                        if (context.InvoiceDetails.Any(id =>
+                                            id.Invoice.InvoiceID == invoice.InvoiceID &&
+                                            id.Batch.BatchID == batch.BatchID))
+                                        {
+                                            continue;
+                                        }
+
+                                        int quantity = Convert.ToInt32(r["Quantity"].ToString());
+                                        decimal unitPrice = Convert.ToDecimal(r["UnitPrice"].ToString());
+
+                                        InvoiceDetail detail = new InvoiceDetail();
+                                        detail.Quantity = quantity;
+                                        detail.UnitPrice = unitPrice;
+                                        detail.Invoice = invoice;
+                                        detail.Batch = batch;
+
+                                        context.InvoiceDetails.Add(detail);
+
+                                        // Update batch quantity
+                                        batch.QtyAvailable -= quantity;
+                                    }
+                                    context.SaveChanges();
+                                    transaction.Commit();
+                                }
+                            }
+                        }
+                        #endregion
+
+                        if (firstRowInvoice && workbook.Worksheets.Count == 1)
+                        {
+                            XtraMessageBox.Show("Excel file is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            int totalRows = tableInvoice.Rows.Count;
+                            XtraMessageBox.Show($"Successfully imported {totalRows} invoice(s).", "Success",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadInvoices();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show($"Error importing data: {ex.Message}\n\nStack Trace: {ex.StackTrace}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private DateTime ParseDateTime(string dateString)
+        {
+            if (string.IsNullOrEmpty(dateString))
+                return DateTime.Now;
+
+            string[] dateFormats = {
+                "dd/MM/yyyy",
+                "dd-MM-yyyy",
+                "MM/dd/yyyy",
+                "yyyy-MM-dd",
+                "dd/MM/yyyy HH:mm:ss",
+                "dd-MM-yyyy HH:mm:ss",
+                "MM/dd/yyyy HH:mm:ss",
+                "yyyy-MM-dd HH:mm:ss",
+                "dd/MM/yyyy HH:mm",
+                "dd-MM-yyyy HH:mm",
+                "MM/dd/yyyy HH:mm",
+                "yyyy-MM-dd HH:mm"
+            };
+
+            DateTime result;
+
+            foreach (string format in dateFormats)
+            {
+                if (DateTime.TryParseExact(dateString, format,
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.DateTimeStyles.None, out result))
+                {
+                    return result;
+                }
+            }
+
+            if (DateTime.TryParse(dateString, out result))
+            {
+                return result;
+            }
+
+            return DateTime.Now;
+        }
     }
 }
