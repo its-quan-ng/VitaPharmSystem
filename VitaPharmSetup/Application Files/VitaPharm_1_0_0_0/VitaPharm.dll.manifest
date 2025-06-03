@@ -1512,13 +1512,13 @@
       <dsig:DigestValue>ECZ+IgRuSR0wwOCo7so5Tk5yaoLnsp/Q98i9TNwzWEo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="VitaPharm.dll" size="1178624">
+  <file name="VitaPharm.dll" size="1182720">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ZRMi5BOj2jYQnP7gpUwJL8FlM9/hNhsyY7wiufw9Xsg=</dsig:DigestValue>
+      <dsig:DigestValue>JGvfZusjAaYtIvnUQBkb3flREzNZmWeRyU8JXUU9Pgg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="VitaPharm.dll.config" size="351">
@@ -1536,7 +1536,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>jYXPA0f3U9jfmFxxGgdEntPb+tOeRukkt/zKG7v2UIo=</dsig:DigestValue>
+      <dsig:DigestValue>Qh1SBdIVa4ucgPMb+ig/EAsw5zUWkUoEJHle7RImr6w=</dsig:DigestValue>
     </hash>
   </file>
   <file name="VitaPharm.runtimeconfig.json" size="585">
