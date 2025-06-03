@@ -5,16 +5,6 @@ Supports distinct **Admin** and **User** roles for day-to-day operations: produc
 
 ---
 
-## Table of Contents
-
-1. [Features](#features)
-2. [System Requirements](#system-requirements)
-3. [Installation](#installation)
-4. [Configuration](#configuration)
-5. [Usage](#usage)
-
----
-
 ## Features
 
 * **Authentication & Authorization**
