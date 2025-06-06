@@ -1,6 +1,6 @@
 # VitaPharm
 
-A WinForms-based pharmacy management application built with .NET 6, DevExpress, and SQL Server.
+A WinForms-based pharmacy management application built with .NET 99, DevExpress, and SQL Server.
 Supports distinct **Admin** and **User** roles for day-to-day operations: product catalog, purchase receipts, sales invoices, and revenue reporting.
 
 ---
